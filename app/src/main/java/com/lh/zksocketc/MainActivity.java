@@ -25,9 +25,6 @@ public class MainActivity extends Activity {
     @BindView(R.id.cb_lock)
     CheckBox cb_lock;
 
-    @BindView(R.id.img_yun)
-    ImageView img_yun;
-
     private Socket client;
     private PrintWriter out;
     private String BASEPATH = Environment.getExternalStorageDirectory() + "/lhzk";
@@ -78,24 +75,10 @@ public class MainActivity extends Activity {
     }
 
     private void initView() {
-        img_yun.setImageURI(Uri.fromFile(new File(BASEPATH + "/img/yun_1.png")));
-        isyun = false;
-
-    }
-
-
-    @OnClick(R.id.img_yun)
-    public void img_yun() {
-        if (!isyun) {
-            img_yun.setImageURI(Uri.fromFile(new File(BASEPATH + "/img/yun_2.png")));
-            isyun = true;
-        } else {
-            img_yun.setImageURI(Uri.fromFile(new File(BASEPATH + "/img/yun_1.png")));
-            isyun = false;
-        }
 
 
     }
+
 
     @OnClick(R.id.cb_lock)
     public void cb_lock() {
