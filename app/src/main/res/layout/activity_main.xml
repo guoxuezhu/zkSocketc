@@ -8,6 +8,7 @@
     android:layout_marginLeft="40dp"
     android:layout_marginRight="40dp"
     android:layout_marginTop="22dp"
+    android:background="@mipmap/splash_bg"
     android:orientation="horizontal"
     android:padding="@dimen/margin_10"
     tools:context=".MainActivity">
