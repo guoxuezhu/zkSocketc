@@ -2,7 +2,6 @@ package com.lh.zksocketc.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -14,6 +13,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ConnectException;
 import java.net.Socket;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.Callable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,30 +46,33 @@ public class MainActivity extends Activity {
 
 
     private void openClientThread() {
-        new Thread() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                try {
-                    clientSocket = new Socket(MyApplication.prefs.getZKIP(), Integer.parseInt(MyApplication.prefs.getZKPORT()));
-                    ELog.i("=====client====" + clientSocket);
-                    // client.setSoTimeout ( 5000 );//设置超时时间
-                    if (clientSocket != null) {
-                        out = new PrintWriter(clientSocket.getOutputStream());
-                    } else {
-                        ELog.e("======网络连接失败====");
-                    }
-                    ELog.i("=====ip=" + MyApplication.prefs.getZKIP() + " =====port=" + MyApplication.prefs.getZKPORT());
-
-                } catch (ConnectException e) {
-                    ELog.e("==========openClientThread============IOException====");
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    ELog.e("==========openClientThread============IOException====");
-                    e.printStackTrace();
+                if (clientSocket == null || clientSocket.isClosed()) {
+                    createlientSocket();
+                } else {
+                    ELog.d("=======心跳=========网络检测=======socket=====");
                 }
             }
-        }.start();
+        }, 1, 5000);
 
+    }
+
+    private void createlientSocket() {
+        try {
+            clientSocket = new Socket(MyApplication.prefs.getZKIP(), Integer.parseInt(MyApplication.prefs.getZKPORT()));
+            if (clientSocket != null) {
+                out = new PrintWriter(clientSocket.getOutputStream());
+            }
+        } catch (ConnectException e) {
+            ELog.e("==========createlientSocket============ConnectException====");
+            e.printStackTrace();
+        } catch (IOException e) {
+            ELog.e("==========createlientSocket============IOException====");
+            e.printStackTrace();
+        }
     }
 
     private void initView() {
@@ -145,7 +150,6 @@ public class MainActivity extends Activity {
                     out.flush();
                 } else {
                     ELog.i("======网络连接已断开，请重新连接=====");
-                    //Toast.makeText(MainActivity.this, "网络连接已断开，请重新连接", Toast.LENGTH_LONG).show();
                 }
             }
         }.start();
