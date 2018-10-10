@@ -1,4 +1,4 @@
-package com.lh.zksocketc;
+package com.lh.zksocketc.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

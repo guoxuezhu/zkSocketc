@@ -11,7 +11,7 @@
     android:background="@mipmap/splash_bg"
     android:orientation="horizontal"
     android:padding="@dimen/margin_10"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
 
     <LinearLayout

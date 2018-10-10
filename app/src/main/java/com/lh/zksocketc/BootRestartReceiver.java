@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.lh.zksocketc.ui.SplashActivity;
+
 public class BootRestartReceiver extends BroadcastReceiver {
     private final String ACTION = "android.intent.action.BOOT_COMPLETED";
 

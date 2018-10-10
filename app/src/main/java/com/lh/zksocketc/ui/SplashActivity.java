@@ -1,8 +1,11 @@
-package com.lh.zksocketc;
+package com.lh.zksocketc.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.lh.zksocketc.MyApplication;
+import com.lh.zksocketc.R;
 
 public class SplashActivity extends Activity {
 

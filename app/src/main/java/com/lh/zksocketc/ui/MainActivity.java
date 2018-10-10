@@ -1,15 +1,15 @@
-package com.lh.zksocketc;
+package com.lh.zksocketc.ui;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.io.File;
+import com.lh.zksocketc.MyApplication;
+import com.lh.zksocketc.R;
+import com.lh.zksocketc.utils.ELog;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ConnectException;
@@ -25,10 +25,8 @@ public class MainActivity extends Activity {
     @BindView(R.id.cb_lock)
     CheckBox cb_lock;
 
-    private Socket client;
+    private Socket clientSocket;
     private PrintWriter out;
-    private String BASEPATH = Environment.getExternalStorageDirectory() + "/lhzk";
-    private boolean isyun;
 
 
     @Override
@@ -37,7 +35,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        FileUtil.createFile();
 
         openClientThread();
         initView();
@@ -51,22 +48,21 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 try {
-                    client = new Socket(MyApplication.prefs.getZKIP(), Integer.parseInt(MyApplication.prefs.getZKPORT()));
-                    Log.i("lh", "=====client====" + client);
+                    clientSocket = new Socket(MyApplication.prefs.getZKIP(), Integer.parseInt(MyApplication.prefs.getZKPORT()));
+                    ELog.i("=====client====" + clientSocket);
                     // client.setSoTimeout ( 5000 );//设置超时时间
-                    if (client != null) {
-                        out = new PrintWriter(client.getOutputStream());
+                    if (clientSocket != null) {
+                        out = new PrintWriter(clientSocket.getOutputStream());
                     } else {
-                        Log.e("lh", "=====网络连接失败====");
-//                        Toast.makeText(MainActivity.this, "网络连接失败", Toast.LENGTH_LONG).show();
+                        ELog.e("======网络连接失败====");
                     }
-                    Log.i("lh", "====ip=" + MyApplication.prefs.getZKIP() + " =====port=" + MyApplication.prefs.getZKPORT());
+                    ELog.i("=====ip=" + MyApplication.prefs.getZKIP() + " =====port=" + MyApplication.prefs.getZKPORT());
 
                 } catch (ConnectException e) {
-                    Log.e("lh", "==========openClientThread============IOException====");
+                    ELog.e("==========openClientThread============IOException====");
                     e.printStackTrace();
                 } catch (IOException e) {
-                    Log.e("lh", "==========openClientThread============IOException====");
+                    ELog.e("==========openClientThread============IOException====");
                     e.printStackTrace();
                 }
             }
@@ -116,8 +112,8 @@ public class MainActivity extends Activity {
 
     private void stop() {
         try {
-            if (client != null) {
-                client.close();
+            if (clientSocket != null) {
+                clientSocket.close();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -132,7 +128,7 @@ public class MainActivity extends Activity {
         new Thread() {
             @Override
             public void run() {
-                if (client != null) {
+                if (clientSocket != null) {
                     if (tyep == 1) {
                         out.print("锁定" + "\n");
                     } else if (tyep == 2) {
@@ -148,7 +144,7 @@ public class MainActivity extends Activity {
                     }
                     out.flush();
                 } else {
-                    Log.i("lh", "=====网络连接已断开，请重新连接=====");
+                    ELog.i("======网络连接已断开，请重新连接=====");
                     //Toast.makeText(MainActivity.this, "网络连接已断开，请重新连接", Toast.LENGTH_LONG).show();
                 }
             }
@@ -158,5 +154,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        stop();
     }
 }

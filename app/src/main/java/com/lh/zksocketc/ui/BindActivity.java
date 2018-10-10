@@ -1,10 +1,13 @@
-package com.lh.zksocketc;
+package com.lh.zksocketc.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.lh.zksocketc.MyApplication;
+import com.lh.zksocketc.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
