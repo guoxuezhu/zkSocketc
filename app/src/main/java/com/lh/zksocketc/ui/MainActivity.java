@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
 
     private Socket clientSocket;
     private PrintWriter out;
+    private Timer timer;
 
 
     @Override
@@ -46,7 +47,7 @@ public class MainActivity extends Activity {
 
 
     private void openClientThread() {
-        Timer timer = new Timer();
+        timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -117,6 +118,9 @@ public class MainActivity extends Activity {
 
     private void stop() {
         try {
+            if (timer != null) {
+                timer.cancel();
+            }
             if (clientSocket != null) {
                 clientSocket.close();
             }
