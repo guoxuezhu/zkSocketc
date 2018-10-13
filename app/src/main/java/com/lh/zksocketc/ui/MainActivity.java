@@ -5,14 +5,21 @@ import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.data.Lamp;
 import com.lh.zksocketc.utils.ELog;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ConnectException;
 import java.net.Socket;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.Callable;
@@ -66,6 +73,7 @@ public class MainActivity extends Activity {
             clientSocket = new Socket(MyApplication.prefs.getZKIP(), Integer.parseInt(MyApplication.prefs.getZKPORT()));
             if (clientSocket != null) {
                 out = new PrintWriter(clientSocket.getOutputStream());
+                new SocketReadThread().start();
             }
         } catch (ConnectException e) {
             ELog.e("==========createlientSocket============ConnectException====");
@@ -73,6 +81,37 @@ public class MainActivity extends Activity {
         } catch (IOException e) {
             ELog.e("==========createlientSocket============IOException====");
             e.printStackTrace();
+        }
+    }
+
+    private class SocketReadThread extends Thread {
+        @Override
+        public void run() {
+            super.run();
+            try {
+                if (clientSocket != null) {
+                    InputStream in = clientSocket.getInputStream();
+                    InputStreamReader reader = new InputStreamReader(in);
+                    BufferedReader bufReader = new BufferedReader(reader);
+                    String s = null;
+                    while ((s = bufReader.readLine()) != null) {
+                        ELog.d("======msg==00000==" + s);
+                        Gson gson = new Gson();
+                        List<Lamp> lamps = gson.fromJson(s, new TypeToken<List<Lamp>>() {
+                        }.getType());
+
+                    }
+                    in.close();
+                    reader.close();
+                    bufReader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                ELog.e("====SocketReadThread====IOException====" + e);
+            } catch (Exception e) {
+                e.printStackTrace();
+                ELog.e("====SocketReadThread====Exception====" + e);
+            }
         }
     }
 
