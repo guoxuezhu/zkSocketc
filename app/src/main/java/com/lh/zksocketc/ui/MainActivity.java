@@ -198,6 +198,11 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        return;
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         stop();

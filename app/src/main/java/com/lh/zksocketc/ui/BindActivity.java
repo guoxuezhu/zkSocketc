@@ -47,5 +47,13 @@ public class BindActivity extends BaseActivity {
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        return;
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

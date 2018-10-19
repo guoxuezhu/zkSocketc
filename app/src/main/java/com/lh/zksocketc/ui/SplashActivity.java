@@ -18,8 +18,9 @@ public class SplashActivity extends BaseActivity {
         } else {
             startActivity(new Intent(this, BindActivity.class));
         }
-        finish();
     }
+
+
 
     private boolean isBind() {
         if (MyApplication.prefs.getZKIP() != null && MyApplication.prefs.getZKPORT() != null) {
@@ -29,5 +30,13 @@ public class SplashActivity extends BaseActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        return;
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
