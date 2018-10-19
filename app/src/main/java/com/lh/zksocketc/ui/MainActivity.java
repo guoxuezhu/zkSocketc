@@ -1,6 +1,5 @@
 package com.lh.zksocketc.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.Toast;
@@ -28,7 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
 
     @BindView(R.id.cb_lock)
