@@ -3,7 +3,7 @@
 
     <!-- 设置填充颜色 -->
 
-    <solid android:color="#ffffff" />
+    <solid android:color="#00ffffff" />
 
     <!-- 设置圆角矩形 -->
 
