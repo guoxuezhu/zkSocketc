@@ -33,5 +33,6 @@
     <dimen name="text_size_20">18sp</dimen>
     <dimen name="text_size_22">22sp</dimen>
     <dimen name="text_size_24">24sp</dimen>
+    <dimen name="text_size_44">44sp</dimen>
 
 </resources>
