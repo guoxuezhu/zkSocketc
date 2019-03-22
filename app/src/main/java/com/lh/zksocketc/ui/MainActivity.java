@@ -8,7 +8,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
-import com.lh.zksocketc.data.Lamp;
 import com.lh.zksocketc.utils.ELog;
 
 import java.io.BufferedReader;
@@ -95,9 +94,9 @@ public class MainActivity extends BaseActivity {
                     String s = null;
                     while ((s = bufReader.readLine()) != null) {
                         ELog.d("======msg==00000==" + s);
-                        Gson gson = new Gson();
-                        List<Lamp> lamps = gson.fromJson(s, new TypeToken<List<Lamp>>() {
-                        }.getType());
+//                        Gson gson = new Gson();
+//                        List<Lamp> lamps = gson.fromJson(s, new TypeToken<List<Lamp>>() {
+//                        }.getType());
 
                     }
                     in.close();

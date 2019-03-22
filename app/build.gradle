@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
 
 android {
 
@@ -49,6 +51,12 @@ android {
             outputFileName = "操作面板-${variant.name}-${variant.versionName}.apk"
         }
     }
+
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.lh.zksocketc.data.DbDao'
+        targetGenDir 'src/main/java'
+    }
 }
 
 dependencies {
@@ -66,4 +74,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.7'
 
     implementation 'com.umeng.analytics:analytics:latest.integration'
+
+
+    //数据库//http://blog.csdn.net/axuanqq/article/details/51344299
+    implementation 'org.greenrobot:greendao:3.2.2'
+
 }

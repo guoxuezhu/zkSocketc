@@ -20,7 +20,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/et_shangke"
+            android:id="@+id/et_ml_shangke"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请输入绑定命令,如: 1-1-1,1-2-1,2-1-1"
