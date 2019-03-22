@@ -1,6 +1,13 @@
 package com.lh.zksocketc.ui;
 
+import android.annotation.SuppressLint;
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.PowerManager;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -8,6 +15,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.ScreenOffAdminReceiver;
 import com.lh.zksocketc.utils.ELog;
 
 import java.io.BufferedReader;
@@ -35,6 +43,10 @@ public class MainActivity extends BaseActivity {
     private Socket clientSocket;
     private PrintWriter out;
     private Timer timer;
+    private ComponentName adminReceiver;
+    private PowerManager mPowerManager;
+    private DevicePolicyManager policyManager;
+    private PowerManager.WakeLock mWakeLock;
 
 
     @Override
@@ -44,78 +56,100 @@ public class MainActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-        openClientThread();
-        initView();
-
-
-    }
-
-
-    private void openClientThread() {
-        timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                if (clientSocket == null || clientSocket.isClosed()) {
-                    createlientSocket();
-                } else {
-                    ELog.d("=======心跳=========网络检测=======socket=====");
-                }
-            }
-        }, 1, 5000);
+        adminReceiver = new ComponentName(MainActivity.this, ScreenOffAdminReceiver.class);
+        mPowerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        policyManager = (DevicePolicyManager) MainActivity.this.getSystemService(Context.DEVICE_POLICY_SERVICE);
+        checkAndTurnOnDeviceManager(null);
 
     }
 
-    private void createlientSocket() {
-        try {
-            clientSocket = new Socket(MyApplication.prefs.getZKIP(), Integer.parseInt(MyApplication.prefs.getZKPORT()));
-            if (clientSocket != null) {
-                out = new PrintWriter(clientSocket.getOutputStream());
-                new SocketReadThread().start();
-            }
-        } catch (ConnectException e) {
-            ELog.e("==========createlientSocket============ConnectException====");
-            e.printStackTrace();
-        } catch (IOException e) {
-            ELog.e("==========createlientSocket============IOException====");
-            e.printStackTrace();
+
+    /**
+     * @param view 检测并去激活设备管理器权限
+     */
+    public void checkAndTurnOnDeviceManager(View view) {
+        Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+        intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, adminReceiver);
+        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "开启后就可以使用锁屏功能了...");//显示位置见图二
+        startActivityForResult(intent, 0);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        isOpen();
+    }
+
+
+    private void isOpen() {
+        if (policyManager.isAdminActive(adminReceiver)) {//判断超级管理员是否激活
+            showToast("设备已被激活");
+        } else {
+            showToast("设备没有被激活");
+
         }
     }
 
-    private class SocketReadThread extends Thread {
-        @Override
-        public void run() {
-            super.run();
-            try {
-                if (clientSocket != null) {
-                    InputStream in = clientSocket.getInputStream();
-                    InputStreamReader reader = new InputStreamReader(in);
-                    BufferedReader bufReader = new BufferedReader(reader);
-                    String s = null;
-                    while ((s = bufReader.readLine()) != null) {
-                        ELog.d("======msg==00000==" + s);
-//                        Gson gson = new Gson();
-//                        List<Lamp> lamps = gson.fromJson(s, new TypeToken<List<Lamp>>() {
-//                        }.getType());
 
-                    }
-                    in.close();
-                    reader.close();
-                    bufReader.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-                ELog.e("====SocketReadThread====IOException====" + e);
-            } catch (Exception e) {
-                e.printStackTrace();
-                ELog.e("====SocketReadThread====Exception====" + e);
-            }
+    /**
+     * @param view 检测屏幕状态
+     */
+    public void checkScreen(View view) {
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        boolean screenOn = pm.isScreenOn();
+        if (!screenOn) {//如果灭屏
+            //相关操作
+            showToast("屏幕是息屏");
+        } else {
+            showToast("屏幕是亮屏");
+
         }
     }
 
-    private void initView() {
+
+    /**
+     * @param view 亮屏
+     */
+    @SuppressLint("InvalidWakeLockTag")
+    public void checkScreenOn(View view) {
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "tag");
+        mWakeLock.acquire();
+        mWakeLock.release();
+    }
+
+    /**
+     * @param view 熄屏
+     */
+    @SuppressLint("InvalidWakeLockTag")
+    public void checkScreenOff(View view) {
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "tag");
+        boolean admin = policyManager.isAdminActive(adminReceiver);
+        mWakeLock.acquire();
+        if (admin) {
+            policyManager.lockNow();
+        } else {
+            showToast("没有设备管理权限");
+        }
+    }
+
+    /**
+     * @param view 熄屏并延时亮屏
+     */
+    @SuppressLint("InvalidWakeLockTag")
+    public void checkScreenOffAndDelayOn(View view) {
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "tag");
+        boolean admin = policyManager.isAdminActive(adminReceiver);
+        if (admin) {
+            policyManager.lockNow();
+        } else {
+            showToast("没有设备管理权限");
+        }
+    }
 
 
+    private void showToast(String Str) {
+        Toast.makeText(this, Str, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -126,84 +160,30 @@ public class MainActivity extends BaseActivity {
         } else {
             Toast.makeText(this, "解锁", Toast.LENGTH_SHORT).show();
         }
-        sendMsg(1);
     }
 
     @OnClick(R.id.cb_shangke)
     public void cb_shangke() {
         Toast.makeText(this, "上课", Toast.LENGTH_SHORT).show();
-        sendMsg(2);
     }
 
     @OnClick(R.id.cb_xiuxi)
     public void cb_xiuxi() {
         Toast.makeText(this, "课间休息", Toast.LENGTH_SHORT).show();
-        sendMsg(3);
     }
 
     @OnClick(R.id.cb_xiake)
     public void cb_xiake() {
         Toast.makeText(this, "下课", Toast.LENGTH_SHORT).show();
-        sendMsg(4);
     }
 
     @OnClick(R.id.cb_monitor1)
     public void cb_monitor1() {
         Toast.makeText(this, "开显示器", Toast.LENGTH_SHORT).show();
-        sendMsg(5);
-    }
-
-    private void stop() {
-        try {
-            if (timer != null) {
-                timer.cancel();
-            }
-            if (clientSocket != null) {
-                clientSocket.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (out != null) {
-            out.close();
-        }
-    }
-
-
-    private void sendMsg(final int tyep) {
-        new Thread() {
-            @Override
-            public void run() {
-                if (clientSocket != null) {
-                    if (tyep == 1) {
-                        out.print("锁定" + "\n");
-                    } else if (tyep == 2) {
-                        out.print("上课" + "\n");
-                    } else if (tyep == 3) {
-                        out.print("课间休息" + "\n");
-                    } else if (tyep == 4) {
-                        out.print("下课" + "\n");
-                    } else if (tyep == 5) {
-                        out.print("开显示器" + "\n");
-                    } else if (tyep == 6) {
-                        out.print("开显示器2" + "\n");
-                    }
-                    out.flush();
-                } else {
-                    ELog.i("======网络连接已断开，请重新连接=====");
-                }
-            }
-        }.start();
-    }
-
-    @Override
-    public void onBackPressed() {
-        return;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stop();
     }
 }
