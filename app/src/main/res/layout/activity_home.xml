@@ -4,32 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/splash_bg"
     android:gravity="center"
     android:orientation="horizontal"
-    tools:context=".ui.SplashActivity">
-
-
-    <Button
-        android:id="@+id/xitong_seting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:text="系统设置" />
+    tools:context=".ui.HomeActivity">
 
     <Button
-        android:id="@+id/admin_seting"
+        android:id="@+id/shangke_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:text="管理员设置" />
+        android:text="上课"
+        android:textSize="40sp" />
 
     <Button
-        android:id="@+id/huanjing_seting"
+        android:id="@+id/chongzhi_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:text="环境控制" />
+        android:text="重置"
+        android:textSize="40sp" />
 
 
+    <CheckBox
+        android:id="@+id/lamp_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/checkbox_status_11"
+        android:button="@null" />
 </LinearLayout>

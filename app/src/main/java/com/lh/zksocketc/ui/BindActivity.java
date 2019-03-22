@@ -29,21 +29,21 @@ public class BindActivity extends BaseActivity {
 
     @OnClick(R.id.btn_lianjie)
     public void btn_lianjie() {
-        if (et_ip.getText().toString().length() != 0) {
-            MyApplication.prefs.setZKIP(et_ip.getText().toString());
-        } else {
-            Toast.makeText(this, "请输入中控的ip", Toast.LENGTH_SHORT).show();
-            return;
-        }
+//        if (et_ip.getText().toString().length() != 0) {
+//            MyApplication.prefs.setZKIP(et_ip.getText().toString());
+//        } else {
+//            Toast.makeText(this, "请输入中控的ip", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//
+//        if (et_port.getText().toString().length() != 0) {
+//            MyApplication.prefs.setZKPORT(et_port.getText().toString());
+//        } else {
+//            Toast.makeText(this, "请输入中控的端口", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
 
-        if (et_port.getText().toString().length() != 0) {
-            MyApplication.prefs.setZKPORT(et_port.getText().toString());
-        } else {
-            Toast.makeText(this, "请输入中控的端口", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, AdminActivity.class));
         finish();
     }
 
