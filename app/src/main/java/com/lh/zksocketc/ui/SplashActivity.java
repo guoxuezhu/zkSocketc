@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.utils.SerialPortUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -24,6 +25,8 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
 
         ButterKnife.bind(this);
+
+        SerialPortUtil.open();
 //        timer = new Timer();
 //        timer.schedule(new TimerTask() {
 //            @Override
