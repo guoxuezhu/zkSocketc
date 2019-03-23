@@ -29,7 +29,7 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.shangke_btn)
     public void shangke_btn() {
-        if (mLsListsDao.loadAll().size() == 0) {
+        if (mLsListsDao.loadAll().size() == 0 || mLsListsDao.load((long) 1).mlStrs.length() == 0) {
             Toast.makeText(this, "请绑定事件命令", Toast.LENGTH_SHORT).show();
         } else {
             SerialPortUtil.sendMsg(1, mLsListsDao.load((long) 1).mlStrs);
