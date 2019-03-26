@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <Button
+        android:id="@+id/btn_shangke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上课"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/btn_xiake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下课"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/btn_zixi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自习"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/btn_xiuxi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="休息"
+        android:textSize="40sp" />
+</LinearLayout>

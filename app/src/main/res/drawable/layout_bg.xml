@@ -3,14 +3,14 @@
 
     <!-- 设置填充颜色 -->
 
-    <solid android:color="#ffffff" />
+    <solid android:color="@color/di_color" />
 
     <!-- 设置圆角矩形 -->
 
     <corners android:radius="15dp" />
 
     <!-- 设置边框 -->
-    <stroke android:color="#878C91"
+    <stroke android:color="@color/xian_color"
         android:width="2dp"/>
 
 </shape>

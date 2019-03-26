@@ -9,6 +9,28 @@
     <color name="black">#ff000000</color>
     <color name="red">#ffff0000</color>
 
+
+    <color name="xian_color">#c7c5c5</color>
+    <color name="di_color">#f0f0f0</color>
+    <color name="text_color_1">#505050</color>
+    <color name="rdio_btn_color_1">#d8ba00</color>
+    <color name="rdio_btn_color_2">#dcdcdc</color>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Default user icon colors -->
     <color name="user_icon_1">#ff00bcd4</color><!-- cyan 500 -->
     <color name="user_icon_2">#ff3f51b5</color><!-- indigo 500 -->
