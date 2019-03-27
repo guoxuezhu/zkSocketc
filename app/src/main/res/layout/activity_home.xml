@@ -56,7 +56,7 @@
                     android:layout_height="110dp"
                     android:background="@drawable/radio_btn_status_1"
                     android:button="@null"
-                    android:drawableLeft="@drawable/png_12_1"
+                    android:drawableLeft="@drawable/shebei"
                     android:drawablePadding="1dp"
                     android:paddingLeft="10dp"
                     android:text="设备"
@@ -159,8 +159,7 @@
         <FrameLayout
             android:id="@+id/mFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="8dp"></FrameLayout>
+            android:layout_height="match_parent"></FrameLayout>
 
     </LinearLayout>
 

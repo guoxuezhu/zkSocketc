@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/di_color"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -13,129 +14,299 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@drawable/layout_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="窗帘"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/text_size_20" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="窗帘１开"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="窗帘１关"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="窗帘２开"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="窗帘２关"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@drawable/layout_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="投影机/幕布"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/text_size_20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="投影机开"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="投影机关"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="幕布升"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="幕布降"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_10"
         android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:background="@drawable/layout_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
 
-        <Button
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="灯光"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/text_size_20" />
 
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
+            android:layout_marginTop="@dimen/shebei_btn_marginTop"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光１开"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光１关"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_2"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光２开"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光２关"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
+            android:layout_marginTop="@dimen/shebei_btn_marginTop"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光３开"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光３关"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_2"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光４开"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光４关"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="窗帘１开"
-            android:textSize="40sp" />
-
-    </LinearLayout>
 
 </LinearLayout>
