@@ -44,6 +44,20 @@ public class YinpinFragment extends Fragment {
         return view;
     }
 
+    @OnClick(R.id.zongyinliang)
+    public void zongyinliang() {
+        jingyin.setChecked(false);
+    }
+
+    @OnClick(R.id.yinxiang)
+    public void yinxiang() {
+        jingyin.setChecked(false);
+    }
+
+    @OnClick(R.id.maikefeng)
+    public void maikefeng() {
+        jingyin.setChecked(false);
+    }
 
     @OnClick(R.id.yinliang_jia)
     public void yinliang_jia() {

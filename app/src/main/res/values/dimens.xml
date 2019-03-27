@@ -16,7 +16,8 @@
     <dimen name="yinpin_btn_marginLeft">100dp</dimen>
     <dimen name="yinpin_btn_marginTop">80dp</dimen>
 
-
+    <dimen name="changjing_btn_marginLeft">160dp</dimen>
+    <dimen name="changjing_btn_marginTop">80dp</dimen>
 
 
 

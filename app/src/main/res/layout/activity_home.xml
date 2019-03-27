@@ -38,7 +38,7 @@
                     android:layout_height="110dp"
                     android:background="@drawable/radio_btn_status_1"
                     android:button="@null"
-                    android:drawableLeft="@drawable/shebei"
+                    android:drawableLeft="@drawable/changjing"
                     android:drawablePadding="1dp"
                     android:paddingLeft="10dp"
                     android:text="场景"
