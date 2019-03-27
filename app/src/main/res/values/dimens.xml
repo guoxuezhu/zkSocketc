@@ -13,6 +13,13 @@
     <dimen name="shebei_btn_marginLeft_2">100dp</dimen>
     <dimen name="shebei_btn_marginTop">10dp</dimen>
 
+    <dimen name="yinpin_btn_marginLeft">100dp</dimen>
+    <dimen name="yinpin_btn_marginTop">80dp</dimen>
+
+
+
+
+
 
 
 

@@ -37,8 +37,6 @@ import butterknife.OnClick;
 public class MainActivity extends BaseActivity {
 
 
-    @BindView(R.id.cb_lock)
-    CheckBox cb_lock;
 
     private Socket clientSocket;
     private PrintWriter out;
@@ -153,34 +151,6 @@ public class MainActivity extends BaseActivity {
     }
 
 
-    @OnClick(R.id.cb_lock)
-    public void cb_lock() {
-        if (cb_lock.isChecked()) {
-            Toast.makeText(this, "锁定", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "解锁", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @OnClick(R.id.cb_shangke)
-    public void cb_shangke() {
-        Toast.makeText(this, "上课", Toast.LENGTH_SHORT).show();
-    }
-
-    @OnClick(R.id.cb_xiuxi)
-    public void cb_xiuxi() {
-        Toast.makeText(this, "课间休息", Toast.LENGTH_SHORT).show();
-    }
-
-    @OnClick(R.id.cb_xiake)
-    public void cb_xiake() {
-        Toast.makeText(this, "下课", Toast.LENGTH_SHORT).show();
-    }
-
-    @OnClick(R.id.cb_monitor1)
-    public void cb_monitor1() {
-        Toast.makeText(this, "开显示器", Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     protected void onDestroy() {
