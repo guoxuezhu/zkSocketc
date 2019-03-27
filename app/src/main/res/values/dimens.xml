@@ -5,12 +5,24 @@
 
 
 
+    <dimen name="shipin_btn_height">75dp</dimen>
+    <dimen name="shipin_btn_marginTop">13dp</dimen>
+    <dimen name="shipin_btn_marginLeft">28dp</dimen>
+
+
+
+
+
+
     <dimen name="margin_10">10dp</dimen>
     <dimen name="dp_5">5dp</dimen>
     <dimen name="dp_10">10dp</dimen>
     <dimen name="dp_15">15dp</dimen>
     <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_100">100dp</dimen>
+
+
+
 
 
 
