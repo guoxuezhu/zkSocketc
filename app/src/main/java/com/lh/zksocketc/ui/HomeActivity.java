@@ -31,10 +31,16 @@ public class HomeActivity extends BaseActivity {
 //    @BindView(R.id.mFragment)
 //    FrameLayout mFragment;
 
+    private static boolean isFinishStatus = true;
+
     private List<Fragment> fragments = new ArrayList<>();
     private FragmentManager fm;
     private FragmentTransaction transaction;
     private Fragment fragment;
+
+    public static boolean isFinish() {
+        return isFinishStatus;
+    }
 
 
     @Override
@@ -42,6 +48,10 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+
+        isFinishStatus = false;
+
+
         rbtn_changjing.setChecked(true);
 
 
@@ -114,6 +124,6 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        isFinishStatus = true;
     }
 }

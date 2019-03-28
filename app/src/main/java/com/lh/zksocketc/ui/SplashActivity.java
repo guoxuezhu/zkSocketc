@@ -2,11 +2,14 @@ package com.lh.zksocketc.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.Settings;
 import android.widget.Toast;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
 import java.util.Timer;
@@ -19,6 +22,23 @@ public class SplashActivity extends BaseActivity {
 
     private Timer timer;
 
+    Handler hander = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 333:
+                    // msg.obj.toString();
+                    if (HomeActivity.isFinish()) {
+                        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                    }
+                    break;
+            }
+
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +47,9 @@ public class SplashActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         SerialPortUtil.open();
+        SerialPortUtil.readCard(hander);
+
+
 //        timer = new Timer();
 //        timer.schedule(new TimerTask() {
 //            @Override
@@ -46,20 +69,6 @@ public class SplashActivity extends BaseActivity {
 
 
 
-    @OnClick(R.id.xitong_seting)
-    public void xitong_seting() {
-        startActivity(new Intent(Settings.ACTION_SETTINGS));
-    }
-
-    @OnClick(R.id.updata_seting)
-    public void updata_seting() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");//设置类型，我这里是任意类型，任意后缀的可以这样写。
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        startActivityForResult(intent,1);
-
-    }
-
 
 
     @OnClick(R.id.admin_seting)
@@ -68,12 +77,10 @@ public class SplashActivity extends BaseActivity {
     }
 
 
-
     @OnClick(R.id.huanjing_seting)
     public void huanjing_seting() {
         startActivity(new Intent(this, HomeActivity.class));
     }
-
 
 
     @Override
@@ -84,5 +91,6 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        SerialPortUtil.stopReadCard();
     }
 }

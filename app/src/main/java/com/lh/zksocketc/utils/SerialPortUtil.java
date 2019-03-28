@@ -1,5 +1,8 @@
 package com.lh.zksocketc.utils;
 
+import android.os.Handler;
+import android.os.Message;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +16,7 @@ public class SerialPortUtil {
     private static SerialPort serialPort, serialPort1;
     private static OutputStream outputStream;
     private static InputStream inputStream1;
+    private static boolean isReadCard;
 
     public static void open() {
         try {
@@ -46,16 +50,17 @@ public class SerialPortUtil {
 
     }
 
-    public static void readCard() {
+    public static void readCard(final Handler hander) {
         new Thread() {
             @Override
             public void run() {
                 super.run();
                 //判断进程是否在运行，更安全的结束进程
+                isReadCard = true;
                 byte[] buffer = new byte[64];
                 int size; //读取数据的大小
                 try {
-                    while (true && (size = inputStream1.read(buffer, 0, 64)) > 0) {
+                    while (isReadCard && (size = inputStream1.read(buffer, 0, 64)) > 0) {
                         if (size > 0) {
                             byte[] bs = new byte[4];
                             System.arraycopy(buffer, 1, bs, 0, 4);
@@ -70,6 +75,12 @@ public class SerialPortUtil {
                             String msg = Long.parseLong(ret, 16) + "";
                             ELog.i("=========run: 接收到了卡号=======" + msg);
                             ELog.i("=========run: 接收到了卡号大小=======" + msg.length());
+                            if(msg.length()==10){
+                                Message message =new Message();
+                                message.obj=msg;
+                                message.what=333;
+                                hander.sendMessage(message);
+                            }
                         }
                     }
 
@@ -84,45 +95,9 @@ public class SerialPortUtil {
     }
 
 
-//    /**
-//     * 单开一线程，来读数据
-//     */
-//    private class ReadThread1 extends Thread {
-//        @Override
-//        public void run() {
-//            super.run();
-//            //判断进程是否在运行，更安全的结束进程
-//            byte[] buffer = new byte[1024];
-//            int size; //读取数据的大小
-//            try {
-//                while (true && (size = inputStream1.read(buffer, 0, 1024)) > 0) {
-//                    if (size > 0) {
-//                        String msg = new String(buffer, 0, size);
-//                        ELog.i("=========run: 接收到了数据=======" + msg);
-//                        ELog.i("=========run: 接收到了数据=======" + msg.substring(0, 1));
-//                        ELog.i("=========run: 接收到了数据大小=====" + size);
-//
-//                        if (msg.substring(0, 1).equals("1")) {
-//                            ELog.i("========串口指令======");
-//                            getCKMLto2();
-//
-//
-//                        } else if (msg.substring(0, 1).equals("2")) {
-//                            ELog.i("========io口指令======");
-//                        } else if (msg.substring(0, 1).equals("3")) {
-//                            ELog.i("========继电器指令======");
-//                        } else {
-//                            ELog.i("========视频指令======");
-//                            getCKMLto3();
-//                        }
-//                    }
-//                }
-//
-//            } catch (IOException e) {
-//                ELog.i("=========run: 数据读取异常========" + e.toString());
-//            }
-//        }
-//    }
-
-
+    public static void stopReadCard() {
+        if (isReadCard) {
+            isReadCard = false;
+        }
+    }
 }

@@ -9,7 +9,7 @@
     tools:context=".ui.BindActivity">
 
     <EditText
-        android:id="@+id/et_ip"
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请输入管理员帐号"
@@ -17,7 +17,7 @@
 
 
     <EditText
-        android:id="@+id/et_port"
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="请输入密码"

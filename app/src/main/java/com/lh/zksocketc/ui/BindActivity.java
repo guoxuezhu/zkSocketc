@@ -14,10 +14,10 @@ import butterknife.OnClick;
 
 public class BindActivity extends BaseActivity {
 
-    @BindView(R.id.et_ip)
-    EditText et_ip;
-    @BindView(R.id.et_port)
-    EditText et_port;
+    @BindView(R.id.et_name)
+    EditText et_name;
+    @BindView(R.id.et_password)
+    EditText et_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,28 +29,38 @@ public class BindActivity extends BaseActivity {
 
     @OnClick(R.id.btn_lianjie)
     public void btn_lianjie() {
-//        if (et_ip.getText().toString().length() != 0) {
-//            MyApplication.prefs.setZKIP(et_ip.getText().toString());
-//        } else {
-//            Toast.makeText(this, "请输入中控的ip", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//
-//        if (et_port.getText().toString().length() != 0) {
-//            MyApplication.prefs.setZKPORT(et_port.getText().toString());
-//        } else {
-//            Toast.makeText(this, "请输入中控的端口", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
+        if (et_name.getText().toString().length() == 0) {
+            Toast.makeText(this, "请输入管理员帐号", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        startActivity(new Intent(this, AdminActivity.class));
-        finish();
+        if (et_password.getText().toString().length() == 0) {
+            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (et_name.getText().toString().equals("hzlhadmin")) {
+            if (et_password.getText().toString().equals("hzlhadmin")) {
+                startActivity(new Intent(this, AdminActivity.class));
+                finish();
+                return;
+            }
+        }
+
+
+        if (et_name.getText().toString().equals("admin")) {
+            if (et_password.getText().toString().equals("admin")) {
+                startActivity(new Intent(this, AdminActivity.class));
+                finish();
+                return;
+            }
+        }
+
+        Toast.makeText(this, "帐号或密码错误", Toast.LENGTH_SHORT).show();
+
+
     }
 
-    @Override
-    public void onBackPressed() {
-        return;
-    }
 
     @Override
     protected void onDestroy() {
