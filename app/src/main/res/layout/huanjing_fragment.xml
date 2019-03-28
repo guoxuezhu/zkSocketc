@@ -2,32 +2,236 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/di_color"
     android:gravity="center"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="空调开"
-        android:textSize="40sp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="空调关"
-        android:textSize="40sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_weight="1"
+        android:background="@drawable/layout_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="窗帘１开"
-        android:textSize="40sp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="窗帘１开"
-        android:textSize="40sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="环境"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/text_size_20" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/huanjing_tv_marginTop_1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="wrap_content"
+                        android:text="温度："
+                        android:textColor="@color/text_color_1"
+                        android:textSize="@dimen/huanjing_text_size" />
+
+                    <TextView
+                        android:layout_width="@dimen/huanjing_tv_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/huanjing_layout_bg"
+                        android:paddingLeft="@dimen/dp_15"
+                        android:text="22"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="@dimen/huanjing_text_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/huanjing_tv_marginTop"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="wrap_content"
+                        android:text="PM 2.5："
+                        android:textColor="@color/text_color_1"
+                        android:textSize="@dimen/huanjing_text_size" />
+
+                    <TextView
+                        android:layout_width="@dimen/huanjing_tv_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/huanjing_layout_bg"
+                        android:paddingLeft="@dimen/dp_15"
+                        android:text="300"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="@dimen/huanjing_text_size" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/huanjing_tv_marginTop_1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="wrap_content"
+                        android:text="湿度："
+                        android:textColor="@color/text_color_1"
+                        android:textSize="@dimen/huanjing_text_size" />
+
+                    <TextView
+                        android:layout_width="@dimen/huanjing_tv_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/huanjing_layout_bg"
+                        android:paddingLeft="@dimen/dp_15"
+                        android:text="0.22"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="@dimen/huanjing_text_size" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_weight="1"
+        android:background="@drawable/layout_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="空调"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/text_size_20" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/huanjing_btn_marginTop"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="开／关"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="模式"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="风速"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/huanjing_btn_marginTop"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="温度＋"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="温度－"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="风向"
+                android:textColor="@color/text_color_1"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -75,12 +75,11 @@
         android:orientation="horizontal">
 
 
-        <CheckBox
+        <Button
             android:id="@+id/yinliang_jia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
+            android:background="@drawable/yinpin_btn_status"
             android:drawableTop="@drawable/yin_jia"
             android:drawablePadding="0dp"
             android:gravity="center"
@@ -89,13 +88,12 @@
             android:textColor="@color/text_color_1"
             android:textSize="@dimen/text_size_20" />
 
-        <CheckBox
+        <Button
             android:id="@+id/yinliang_jian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
+            android:background="@drawable/yinpin_btn_status"
             android:drawableTop="@drawable/yin_jian"
             android:drawablePadding="0dp"
             android:gravity="center"
