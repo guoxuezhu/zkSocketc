@@ -6,12 +6,25 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.utils.SerialPortUtil;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LuboFragment extends Fragment {
+
+    @BindView(R.id.luzhi)
+    CheckBox luzhi;
+    @BindView(R.id.zanting)
+    CheckBox zanting;
+    @BindView(R.id.tingzhi)
+    CheckBox tingzhi;
+    @BindView(R.id.zhibo)
+    CheckBox zhibo;
 
 
     @Nullable
@@ -22,5 +35,38 @@ public class LuboFragment extends Fragment {
         return view;
     }
 
+
+
+    @OnClick(R.id.luzhi)
+    public void luzhi() {
+        luzhi.setChecked(true);
+        zanting.setChecked(false);
+        tingzhi.setChecked(false);
+        zhibo.setChecked(false);
+    }
+
+    @OnClick(R.id.zanting)
+    public void zanting() {
+        luzhi.setChecked(false);
+        zanting.setChecked(true);
+        tingzhi.setChecked(false);
+        zhibo.setChecked(false);
+    }
+
+    @OnClick(R.id.tingzhi)
+    public void tingzhi() {
+        luzhi.setChecked(false);
+        zanting.setChecked(false);
+        tingzhi.setChecked(true);
+        zhibo.setChecked(false);
+    }
+
+    @OnClick(R.id.zhibo)
+    public void zhibo() {
+        luzhi.setChecked(false);
+        zanting.setChecked(false);
+        tingzhi.setChecked(false);
+        zhibo.setChecked(true);
+    }
 
 }

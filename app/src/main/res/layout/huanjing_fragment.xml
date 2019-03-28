@@ -171,7 +171,7 @@
                 android:background="@drawable/huanjing_btn_status"
                 android:text="开／关"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_20"  />
 
             <Button
                 android:layout_width="wrap_content"
@@ -180,7 +180,7 @@
                 android:background="@drawable/huanjing_btn_status"
                 android:text="模式"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_20"  />
 
             <Button
                 android:layout_width="wrap_content"
@@ -189,7 +189,7 @@
                 android:background="@drawable/huanjing_btn_status"
                 android:text="风速"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_20"  />
 
 
         </LinearLayout>
@@ -208,7 +208,7 @@
                 android:background="@drawable/huanjing_btn_status"
                 android:text="温度＋"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_20" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -217,7 +217,7 @@
                 android:background="@drawable/huanjing_btn_status"
                 android:text="温度－"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_20" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -226,7 +226,7 @@
                 android:background="@drawable/huanjing_btn_status"
                 android:text="风向"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_20" />
 
 
         </LinearLayout>

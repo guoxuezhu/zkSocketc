@@ -2,20 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="@color/di_color"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="全开"
-        android:textSize="40sp" />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="全关"
-        android:textSize="40sp" />
+        android:layout_marginTop="@dimen/dianyuan_btn_marginTop"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yinpin_btn_status"
+            android:drawableTop="@drawable/all_open"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_10"
+            android:text="全开"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/text_size_20" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dianyuan_btn_marginLeft"
+            android:background="@drawable/yinpin_btn_status"
+            android:drawableTop="@drawable/all_close"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_10"
+            android:text="全关"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/text_size_20" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

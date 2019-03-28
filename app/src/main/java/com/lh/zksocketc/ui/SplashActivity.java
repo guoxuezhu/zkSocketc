@@ -76,20 +76,6 @@ public class SplashActivity extends BaseActivity {
 
 
 
-
-
-
-
-
-
-    private boolean isBind() {
-        if (MyApplication.prefs.getZKIP() != null && MyApplication.prefs.getZKPORT() != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     @Override
     public void onBackPressed() {
         return;
