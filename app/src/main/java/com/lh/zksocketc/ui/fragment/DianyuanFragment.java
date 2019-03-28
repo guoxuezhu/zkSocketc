@@ -8,8 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.utils.SerialPortUtil;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class DianyuanFragment extends Fragment {
 
@@ -21,6 +23,18 @@ public class DianyuanFragment extends Fragment {
         ButterKnife.bind(this, view);
         return view;
     }
+
+
+    @OnClick(R.id.dy_all_open)
+    public void dy_all_open() {
+        SerialPortUtil.sendMsg("37");
+    }
+
+    @OnClick(R.id.dy_all_close)
+    public void dy_all_close() {
+        SerialPortUtil.sendMsg("38");
+    }
+
 
 
 }

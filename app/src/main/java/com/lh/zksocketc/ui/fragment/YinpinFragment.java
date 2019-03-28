@@ -57,8 +57,11 @@ public class YinpinFragment extends Fragment {
     @OnClick(R.id.yinliang_jia)
     public void yinliang_jia() {
         if (zongyinliang.isChecked()) {
+            SerialPortUtil.sendMsg("21");
         } else if (yinxiang.isChecked()) {
+            SerialPortUtil.sendMsg("25");
         } else if (maikefeng.isChecked()) {
+            SerialPortUtil.sendMsg("29");
         }
 
     }
@@ -67,24 +70,33 @@ public class YinpinFragment extends Fragment {
     @OnClick(R.id.yinliang_jian)
     public void yinliang_jian() {
         if (zongyinliang.isChecked()) {
+            SerialPortUtil.sendMsg("22");
         } else if (yinxiang.isChecked()) {
+            SerialPortUtil.sendMsg("26");
         } else if (maikefeng.isChecked()) {
-            SerialPortUtil.sendMsg("VID1");
+            SerialPortUtil.sendMsg("30");
         }
     }
 
     @OnClick(R.id.jingyin)
     public void jingyin() {
-        if (zongyinliang.isChecked()) {
-        } else if (yinxiang.isChecked()) {
-        } else if (maikefeng.isChecked()) {
+        if (jingyin.isChecked()) {
+            if (zongyinliang.isChecked()) {
+                SerialPortUtil.sendMsg("23");
+            } else if (yinxiang.isChecked()) {
+                SerialPortUtil.sendMsg("27");
+            } else if (maikefeng.isChecked()) {
+                SerialPortUtil.sendMsg("31");
+            }
+        } else {
+            if (zongyinliang.isChecked()) {
+                SerialPortUtil.sendMsg("24");
+            } else if (yinxiang.isChecked()) {
+                SerialPortUtil.sendMsg("28");
+            } else if (maikefeng.isChecked()) {
+                SerialPortUtil.sendMsg("32");
+            }
         }
-
-//        if (jingyin.isChecked()) {
-//            jingyin.setChecked(false);
-//        } else {
-//            jingyin.setChecked(true);
-//        }
 
 
     }

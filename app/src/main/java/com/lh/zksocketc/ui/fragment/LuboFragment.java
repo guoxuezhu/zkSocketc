@@ -35,14 +35,13 @@ public class LuboFragment extends Fragment {
         return view;
     }
 
-
-
     @OnClick(R.id.luzhi)
     public void luzhi() {
         luzhi.setChecked(true);
         zanting.setChecked(false);
         tingzhi.setChecked(false);
         zhibo.setChecked(false);
+        SerialPortUtil.sendMsg("33");
     }
 
     @OnClick(R.id.zanting)
@@ -51,6 +50,7 @@ public class LuboFragment extends Fragment {
         zanting.setChecked(true);
         tingzhi.setChecked(false);
         zhibo.setChecked(false);
+        SerialPortUtil.sendMsg("34");
     }
 
     @OnClick(R.id.tingzhi)
@@ -59,6 +59,7 @@ public class LuboFragment extends Fragment {
         zanting.setChecked(false);
         tingzhi.setChecked(true);
         zhibo.setChecked(false);
+        SerialPortUtil.sendMsg("35");
     }
 
     @OnClick(R.id.zhibo)
@@ -67,6 +68,7 @@ public class LuboFragment extends Fragment {
         zanting.setChecked(false);
         tingzhi.setChecked(false);
         zhibo.setChecked(true);
+        SerialPortUtil.sendMsg("36");
     }
 
 }
