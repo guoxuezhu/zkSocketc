@@ -23,35 +23,42 @@ public class SharePreferenceUtil {
         editor = sp.edit();
     }
 
-    /**
-     * @param udid
-     */
-    public void setUdid(String udid) {
-        editor.putString("udid", udid);
+    public void setZhanghao(String user) {
+        editor.putString("user", user);
         editor.commit();
     }
 
-    public String getUdid() {
-        return sp.getString("udid", null);
+    public String getZhanghao() {
+        return sp.getString("user", "admin");
     }
 
-
-    public void setZKIP(String zkIp) {
-        editor.putString("zkIp", zkIp);
+    public void setMima(String mima) {
+        editor.putString("mima", mima);
         editor.commit();
     }
 
-    public String getZKIP() {
-        return sp.getString("zkIp", null);
+    public String getMima() {
+        return sp.getString("mima", "admin");
     }
 
-    public void setZKPORT(String zkPort) {
-        editor.putString("zkPort", zkPort);
+    public void setIsAddCrad(boolean isAddCrad) {
+        editor.putBoolean("isAddCrad", isAddCrad);
         editor.commit();
     }
 
-    public String getZKPORT() {
-        return sp.getString("zkPort", null);
+    public boolean getIsAddCrad() {
+        return sp.getBoolean("isAddCrad", true);
     }
+
+
+    public void setHttpUrl(String httpUrl) {
+        editor.putString("httpUrl", httpUrl);
+        editor.commit();
+    }
+
+    public String getHttpUrl() {
+        return sp.getString("httpUrl", "");
+    }
+
 
 }

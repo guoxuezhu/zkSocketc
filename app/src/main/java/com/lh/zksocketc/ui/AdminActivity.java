@@ -60,10 +60,26 @@ public class AdminActivity extends BaseActivity {
 
 
 
-//    @OnClick(R.id.baocun_btn)
-//    public void baocun_btn() {
-//        mLsListsDao.update(new MLsLists((long) 1, "上课", et_ml_shangke.getText().toString()));
-//        Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
-//    }
+    @OnClick(R.id.btn_user)
+    public void btn_user() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+    }
+
+
+    @OnClick(R.id.btn_ic)
+    public void btn_ic() {
+        startActivity(new Intent(this, IcActivity.class));
+        finish();
+
+    }
+
+    @OnClick(R.id.admin_back)
+    public void admin_back() {
+        finish();
+    }
+
+
+
 
 }

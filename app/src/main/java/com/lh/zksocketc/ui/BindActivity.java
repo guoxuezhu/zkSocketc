@@ -48,8 +48,8 @@ public class BindActivity extends BaseActivity {
         }
 
 
-        if (et_name.getText().toString().equals("admin")) {
-            if (et_password.getText().toString().equals("admin")) {
+        if (et_name.getText().toString().equals(MyApplication.prefs.getZhanghao())) {
+            if (et_password.getText().toString().equals(MyApplication.prefs.getMima())) {
                 startActivity(new Intent(this, AdminActivity.class));
                 finish();
                 return;
@@ -59,6 +59,11 @@ public class BindActivity extends BaseActivity {
         Toast.makeText(this, "帐号或密码错误", Toast.LENGTH_SHORT).show();
 
 
+    }
+
+    @OnClick(R.id.login_back)
+    public void login_back() {
+        finish();
     }
 
 

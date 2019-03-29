@@ -9,9 +9,12 @@ import android.widget.Toast;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.data.DbDao.IcCardNumerDao;
+import com.lh.zksocketc.data.model.IcCardNumer;
 import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,7 +23,7 @@ import butterknife.OnClick;
 
 public class SplashActivity extends BaseActivity {
 
-    private Timer timer;
+    private IcCardNumerDao icCardNumerDao;
 
     Handler hander = new Handler() {
         @Override
@@ -29,8 +32,16 @@ public class SplashActivity extends BaseActivity {
             switch (msg.what) {
                 case 333:
                     // msg.obj.toString();
-                    if (HomeActivity.isFinish()) {
-                        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                    if (icCardNumerDao.loadAll().size() != 0) {
+                        List<IcCardNumer> cardNumers = icCardNumerDao.queryBuilder()
+                                .where(IcCardNumerDao.Properties.CardNum.eq(msg.obj.toString()))
+                                .list();
+                        ELog.e("==========cardNumers=======" + cardNumers.size());
+                        if (cardNumers.size() != 0) {
+                            if (HomeActivity.isFinish()) {
+                                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                            }
+                        }
                     }
                     break;
             }
@@ -49,26 +60,9 @@ public class SplashActivity extends BaseActivity {
         SerialPortUtil.open();
         SerialPortUtil.readCard(hander);
 
+        icCardNumerDao = MyApplication.getDaoSession().getIcCardNumerDao();
 
-//        timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-//                timer.cancel();
-//            }
-//        }, 3000);
-
-
-//        if (isBind()) {
-//            startActivity(new Intent(this, MainActivity.class));
-//        } else {
-//            startActivity(new Intent(this, BindActivity.class));
-//        }
     }
-
-
-
 
 
     @OnClick(R.id.admin_seting)
