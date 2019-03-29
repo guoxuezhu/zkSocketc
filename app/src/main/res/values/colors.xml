@@ -17,6 +17,10 @@
     <color name="rdio_btn_color_2">#dcdcdc</color>
 
 
+    <color name="admin_btn_color_1">#001e40</color>
+    <color name="admin_btn_color_2">#023A78</color>
+    <color name="admin_btn_bian_color">#B7C6D6</color>
+
     <color name="login_btn_color_1">#045D95</color>
     <color name="login_et_di_color">#003c62</color>
     <color name="login_et_xian_color">#ffffffff</color>
