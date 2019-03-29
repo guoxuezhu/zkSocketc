@@ -24,8 +24,6 @@
         android:id="@+id/huanjing_seting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
         android:text="环境控制"
         android:textSize="16sp" />
 

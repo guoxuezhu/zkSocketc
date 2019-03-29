@@ -1,6 +1,7 @@
 package com.lh.zksocketc.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.EditText;
@@ -10,6 +11,8 @@ import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.data.DbDao.MLsListsDao;
 import com.lh.zksocketc.data.model.MLsLists;
+
+import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,10 +55,20 @@ public class AdminActivity extends BaseActivity {
 
     @OnClick(R.id.updata_seting)
     public void updata_seting() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");//设置类型，我这里是任意类型，任意后缀的可以这样写。
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        startActivityForResult(intent, 1);
+//        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//        intent.setType("*/*");//设置类型，我这里是任意类型，任意后缀的可以这样写。
+//        intent.addCategory(Intent.CATEGORY_OPENABLE);
+//        startActivityForResult(intent, 1);
+
+        File apkFile = new File("/mnt/usbhost1/lh/操作面板-release-1.0.2.apk");
+        if (apkFile.exists()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setDataAndType(Uri.fromFile(apkFile), "application/vnd.android.package-archive");
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "请插入有升级包的U盘", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
