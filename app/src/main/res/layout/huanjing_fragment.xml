@@ -166,6 +166,7 @@
 
 
             <Button
+                android:id="@+id/huanjng_btn_kaiguan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/huanjing_btn_status"
@@ -174,6 +175,7 @@
                 android:textSize="@dimen/text_size_20"  />
 
             <Button
+                android:id="@+id/huanjng_btn_moshi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
@@ -183,6 +185,7 @@
                 android:textSize="@dimen/text_size_20"  />
 
             <Button
+                android:id="@+id/huanjng_btn_fengsu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
@@ -203,6 +206,7 @@
 
 
             <Button
+                android:id="@+id/huanjng_btn_wd_jia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/huanjing_btn_status"
@@ -211,6 +215,7 @@
                 android:textSize="@dimen/text_size_20" />
 
             <Button
+                android:id="@+id/huanjng_btn_wd_jian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
@@ -220,6 +225,7 @@
                 android:textSize="@dimen/text_size_20" />
 
             <Button
+                android:id="@+id/huanjng_btn_fengxiang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"

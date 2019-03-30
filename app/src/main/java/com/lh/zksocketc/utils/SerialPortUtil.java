@@ -15,7 +15,7 @@ public class SerialPortUtil {
 
     private static SerialPort serialPort, serialPort1;
     private static OutputStream outputStream;
-    private static InputStream inputStream1;
+    private static InputStream inputStream, inputStream1;
     private static boolean isReadCard;
 
     public static void open() {
@@ -23,7 +23,7 @@ public class SerialPortUtil {
             serialPort = new SerialPort(new File("/dev/ttyS0"), 9600, 0);//中控
             serialPort1 = new SerialPort(new File("/dev/ttyS1"), 9600, 0);//读卡器
             //获取打开的串口中的输入输出流，以便于串口数据的收发
-            //inputStream = serialPort.getInputStream();
+            inputStream = serialPort.getInputStream();
             outputStream = serialPort.getOutputStream();
 
             inputStream1 = serialPort1.getInputStream();
@@ -50,6 +50,34 @@ public class SerialPortUtil {
 
     }
 
+    public static void readSerialPortData(final Handler hander) {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                //判断进程是否在运行，更安全的结束进程
+                isReadCard = true;
+                byte[] buffer = new byte[64];
+                int size; //读取数据的大小
+                try {
+                    while (isReadCard && (size = inputStream.read(buffer, 0, 64)) > 0) {
+                        if (size > 0) {
+                            ELog.i("=========run: 接收到了数据=======" + new String(buffer, 0, size));
+
+                        }
+                    }
+
+                } catch (IOException e) {
+                    ELog.i("=========run: 数据读取异常========" + e.toString());
+                }
+
+            }
+        }.start();
+
+
+    }
+
+
     public static void readCard(final Handler hander) {
         new Thread() {
             @Override
@@ -75,10 +103,10 @@ public class SerialPortUtil {
                             String msg = Long.parseLong(ret, 16) + "";
                             ELog.i("=========run: 接收到了卡号=======" + msg);
                             ELog.i("=========run: 接收到了卡号大小=======" + msg.length());
-                            if(msg.length()==10){
-                                Message message =new Message();
-                                message.obj=msg;
-                                message.what=333;
+                            if (msg.length() == 10) {
+                                Message message = new Message();
+                                message.obj = msg;
+                                message.what = 333;
                                 hander.sendMessage(message);
                             }
                         }
