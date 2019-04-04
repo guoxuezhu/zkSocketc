@@ -3,6 +3,11 @@ package com.lh.zksocketc.utils;
 import android.os.Handler;
 import android.os.Message;
 
+import com.lh.zksocketc.MyApplication;
+import com.lh.zksocketc.data.DbDao.IcCardNumerDao;
+import com.lh.zksocketc.data.DbDao.WsdDataDao;
+import com.lh.zksocketc.data.model.WsdData;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,6 +22,7 @@ public class SerialPortUtil {
     private static OutputStream outputStream;
     private static InputStream inputStream, inputStream1;
     private static boolean isReadCard;
+    private static boolean isReadWsd;
 
     public static void open() {
         try {
@@ -50,19 +56,27 @@ public class SerialPortUtil {
 
     }
 
-    public static void readSerialPortData(final Handler hander) {
+    public static void readSerialPortData() {
         new Thread() {
             @Override
             public void run() {
                 super.run();
                 //判断进程是否在运行，更安全的结束进程
-                isReadCard = true;
+                isReadWsd = true;
                 byte[] buffer = new byte[64];
                 int size; //读取数据的大小
                 try {
-                    while (isReadCard && (size = inputStream.read(buffer, 0, 64)) > 0) {
+                    while (isReadWsd && (size = inputStream.read(buffer, 0, 64)) > 0) {
                         if (size > 0) {
-                            ELog.i("=========run: 接收到了数据=======" + new String(buffer, 0, size));
+                            String msg = new String(buffer, 0, size);
+                            ELog.i("=====接收到了数据==温湿度=====" + msg);
+                            String[] msglist = msg.split(";");
+                            if (msglist[0].equals("WSD")) {
+                                WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
+                                wsdDataDao.deleteAll();
+                                wsdDataDao.insert(new WsdData(msglist[1], msglist[2], "0"));
+                            }
+
 
                         }
                     }
@@ -75,6 +89,13 @@ public class SerialPortUtil {
         }.start();
 
 
+    }
+
+
+    public static void stopReadWsd() {
+        if (isReadWsd) {
+            isReadWsd = false;
+        }
     }
 
 

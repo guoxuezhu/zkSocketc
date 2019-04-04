@@ -53,6 +53,7 @@
                         android:textSize="@dimen/huanjing_text_size" />
 
                     <TextView
+                        android:id="@+id/tv_wsd_wd"
                         android:layout_width="@dimen/huanjing_tv_width"
                         android:layout_height="wrap_content"
                         android:background="@drawable/huanjing_layout_bg"
@@ -78,6 +79,7 @@
                         android:textSize="@dimen/huanjing_text_size" />
 
                     <TextView
+                        android:id="@+id/tv_wsd_pm"
                         android:layout_width="@dimen/huanjing_tv_width"
                         android:layout_height="wrap_content"
                         android:background="@drawable/huanjing_layout_bg"
@@ -111,6 +113,7 @@
                         android:textSize="@dimen/huanjing_text_size" />
 
                     <TextView
+                        android:id="@+id/tv_wsd_sd"
                         android:layout_width="@dimen/huanjing_tv_width"
                         android:layout_height="wrap_content"
                         android:background="@drawable/huanjing_layout_bg"

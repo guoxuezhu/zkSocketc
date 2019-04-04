@@ -59,6 +59,7 @@ public class SplashActivity extends BaseActivity {
 
         SerialPortUtil.open();
         SerialPortUtil.readCard(hander);
+        SerialPortUtil.readSerialPortData();
 
         icCardNumerDao = MyApplication.getDaoSession().getIcCardNumerDao();
 
