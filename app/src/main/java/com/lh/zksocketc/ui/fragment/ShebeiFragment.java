@@ -122,4 +122,14 @@ public class ShebeiFragment extends Fragment {
     }
 
 
+
+    @OnClick(R.id.rbtn_mj_1_open)
+    public void rbtn_mj_1_open() {
+        SerialPortUtil.sendMsg("46");
+    }
+
+    @OnClick(R.id.rbtn_mj_1_close)
+    public void rbtn_mj_1_close() {
+        SerialPortUtil.sendMsg("47");
+    }
 }
