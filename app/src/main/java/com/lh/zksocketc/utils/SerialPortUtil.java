@@ -129,6 +129,7 @@ public class SerialPortUtil {
                                 message.obj = msg;
                                 message.what = 333;
                                 hander.sendMessage(message);
+                                MyApplication.prefs.setCardNum(msg);
                             }
                         }
                     }

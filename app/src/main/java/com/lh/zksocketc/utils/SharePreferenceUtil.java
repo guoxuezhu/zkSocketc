@@ -61,4 +61,13 @@ public class SharePreferenceUtil {
     }
 
 
+    public void setCardNum(String cardNum) {
+        editor.putString("cardNum", cardNum);
+        editor.commit();
+    }
+
+    public String getCardNum() {
+        return sp.getString("cardNum", "");
+    }
+
 }

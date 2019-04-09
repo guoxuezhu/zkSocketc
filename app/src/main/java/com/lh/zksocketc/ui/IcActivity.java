@@ -28,6 +28,7 @@ public class IcActivity extends BaseActivity {
     RadioButton rbtn_add;
     @BindView(R.id.rbtn_http)
     RadioButton rbtn_http;
+    private IcCardNumerDao icCardNumerDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +37,23 @@ public class IcActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-        if (MyApplication.prefs.getIsAddCrad()) {
-            rbtn_add.setChecked(true);
-        } else {
-            rbtn_http.setChecked(true);
+        icCardNumerDao = MyApplication.getDaoSession().getIcCardNumerDao();
+        if (icCardNumerDao.loadAll().size() != 0) {
+            if (MyApplication.prefs.getIsAddCrad()) {
+                rbtn_add.setChecked(true);
+                et_kaohao.setText(icCardNumerDao.loadAll().get(0).cardNum);
+            } else {
+                rbtn_http.setChecked(true);
+                et_ic_http.setText(MyApplication.prefs.getHttpUrl());
+            }
         }
+    }
 
-
+    @OnClick(R.id.et_kaohao)
+    public void et_kaohao() {
+        if (et_kaohao.getText().toString().isEmpty()) {
+            et_kaohao.setText(MyApplication.prefs.getCardNum());
+        }
     }
 
     @OnClick(R.id.btn_ic_baocun)
@@ -59,7 +70,6 @@ public class IcActivity extends BaseActivity {
                 return;
             }
             MyApplication.prefs.setIsAddCrad(true);
-            IcCardNumerDao icCardNumerDao = MyApplication.getDaoSession().getIcCardNumerDao();
             icCardNumerDao.deleteAll();
             icCardNumerDao.insert(new IcCardNumer(et_kaohao.getText().toString()));
         } else if (rbtn_http.isChecked()) {

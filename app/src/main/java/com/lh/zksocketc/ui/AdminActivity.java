@@ -60,7 +60,7 @@ public class AdminActivity extends BaseActivity {
 //        intent.addCategory(Intent.CATEGORY_OPENABLE);
 //        startActivityForResult(intent, 1);
 
-        File apkFile = new File("/mnt/usbhost1/lh/操作面板-release-1.0.2.apk");
+        File apkFile = new File("/mnt/usbhost1/lh/操作面板.apk");
         if (apkFile.exists()) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
