@@ -53,11 +53,20 @@ public class HuanjingFragment extends Fragment {
     }
 
 
-    @OnClick(R.id.huanjng_btn_kaiguan)
-    public void huanjng_btn_kaiguan() {
+    @OnClick(R.id.huanjng_btn_kai)
+    public void huanjng_btn_kai() {
         SerialPortUtil.sendMsg("39");
     }
 
+    @OnClick(R.id.huanjng_btn_guan)
+    public void huanjng_btn_guan() {
+        SerialPortUtil.sendMsg("48");
+    }
+
+    @OnClick(R.id.huanjng_btn_baifeng)
+    public void huanjng_btn_baifeng() {
+        SerialPortUtil.sendMsg("49");
+    }
 
     @OnClick(R.id.huanjng_btn_moshi)
     public void huanjng_btn_moshi() {

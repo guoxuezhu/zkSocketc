@@ -34,15 +34,15 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     android:layout_marginTop="@dimen/huanjing_tv_marginTop_1"
+                    android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
                     <TextView
@@ -67,8 +67,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     android:layout_marginTop="@dimen/huanjing_tv_marginTop"
+                    android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
                     <TextView
@@ -94,15 +94,15 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     android:layout_marginTop="@dimen/huanjing_tv_marginTop_1"
+                    android:gravity="center_horizontal"
                     android:orientation="horizontal">
 
                     <TextView
@@ -125,16 +125,8 @@
                 </LinearLayout>
 
 
-
             </LinearLayout>
         </LinearLayout>
-
-
-
-
-
-
-
 
 
     </LinearLayout>
@@ -169,13 +161,24 @@
 
 
             <Button
-                android:id="@+id/huanjng_btn_kaiguan"
+                android:id="@+id/huanjng_btn_kai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/huanjing_btn_status"
-                android:text="开／关"
+                android:text="开"
                 android:textColor="@color/text_color_1"
-                android:textSize="@dimen/text_size_20"  />
+                android:textSize="@dimen/text_size_20" />
+
+            <Button
+                android:id="@+id/huanjng_btn_wd_jia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="温度＋"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/text_size_20" />
+
 
             <Button
                 android:id="@+id/huanjng_btn_moshi"
@@ -185,7 +188,7 @@
                 android:background="@drawable/huanjing_btn_status"
                 android:text="模式"
                 android:textColor="@color/text_color_1"
-                android:textSize="@dimen/text_size_20"  />
+                android:textSize="@dimen/text_size_20" />
 
             <Button
                 android:id="@+id/huanjng_btn_fengsu"
@@ -195,7 +198,7 @@
                 android:background="@drawable/huanjing_btn_status"
                 android:text="风速"
                 android:textColor="@color/text_color_1"
-                android:textSize="@dimen/text_size_20"  />
+                android:textSize="@dimen/text_size_20" />
 
 
         </LinearLayout>
@@ -207,15 +210,15 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-
             <Button
-                android:id="@+id/huanjng_btn_wd_jia"
+                android:id="@+id/huanjng_btn_guan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/huanjing_btn_status"
-                android:text="温度＋"
+                android:text="关"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/text_size_20" />
+
 
             <Button
                 android:id="@+id/huanjng_btn_wd_jian"
@@ -224,6 +227,16 @@
                 android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
                 android:background="@drawable/huanjing_btn_status"
                 android:text="温度－"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/text_size_20" />
+
+            <Button
+                android:id="@+id/huanjng_btn_baifeng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/huanjing_btn_marginLeft"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="摆风"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/text_size_20" />
 

@@ -20,7 +20,7 @@
     <dimen name="changjing_btn_marginLeft">160dp</dimen>
     <dimen name="changjing_btn_marginTop">80dp</dimen>
 
-    <dimen name="huanjing_btn_marginLeft">150dp</dimen>
+    <dimen name="huanjing_btn_marginLeft">90dp</dimen>
     <dimen name="huanjing_btn_marginTop">10dp</dimen>
     <dimen name="huanjing_tv_marginTop_1">30dp</dimen>
     <dimen name="huanjing_tv_marginTop">40dp</dimen>
