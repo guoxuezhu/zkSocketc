@@ -52,6 +52,8 @@ public class ChuanjingFragment extends Fragment {
         btn_xiake.setChecked(true);
         btn_zixi.setChecked(false);
         btn_xiuxi.setChecked(false);
+
+        getActivity().finish();
     }
 
     @OnClick(R.id.btn_zixi)
@@ -71,7 +73,5 @@ public class ChuanjingFragment extends Fragment {
         btn_zixi.setChecked(false);
         btn_xiuxi.setChecked(true);
     }
-
-
 
 }

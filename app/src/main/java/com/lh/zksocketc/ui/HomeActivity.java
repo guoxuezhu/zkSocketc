@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.FrameLayout;
 import android.widget.RadioButton;
 
 import com.lh.zksocketc.R;
@@ -27,9 +26,6 @@ public class HomeActivity extends BaseActivity {
 
     @BindView(R.id.rbtn_changjing)
     RadioButton rbtn_changjing;
-
-//    @BindView(R.id.mFragment)
-//    FrameLayout mFragment;
 
     private static boolean isFinishStatus = true;
 
