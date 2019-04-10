@@ -5,9 +5,10 @@
 
 
 
-    <dimen name="shipin_btn_height">75dp</dimen>
-    <dimen name="shipin_btn_marginTop">25dp</dimen>
-    <dimen name="shipin_btn_marginLeft">28dp</dimen>
+    <dimen name="shipin_btn_width">115dp</dimen>
+    <dimen name="shipin_btn_height">65dp</dimen>
+    <dimen name="shipin_btn_marginTop">15dp</dimen>
+    <dimen name="shipin_btn_marginLeft">20dp</dimen>
 
     <dimen name="shebei_btn_marginLeft_1">30dp</dimen>
     <dimen name="shebei_btn_marginLeft_2">30dp</dimen>

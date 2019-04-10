@@ -36,8 +36,8 @@
 
             <CheckBox
                 android:id="@+id/spbtn_all_lubo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:layout_marginTop="@dimen/shipin_btn_marginTop"
                 android:background="@drawable/juzhen_checkbox_status"
                 android:button="@null"
@@ -57,8 +57,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_all_diannao"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
                     android:gravity="center"
@@ -68,8 +68,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_all_touping"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
@@ -91,8 +91,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_all_zu_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
                     android:gravity="center"
@@ -102,8 +102,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_all_zu_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
@@ -125,8 +125,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_all_zu_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
                     android:gravity="center"
@@ -136,8 +136,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_all_zu_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
@@ -159,8 +159,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_all_zu_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
                     android:gravity="center"
@@ -170,8 +170,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_all_zu_6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
@@ -187,7 +187,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/shipin_btn_marginTop"
                 android:gravity="center"
                 android:text="小组显示"
                 android:textColor="@color/text_color_1"
@@ -201,9 +200,9 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_10"
         android:layout_marginRight="@dimen/dp_10"
         android:layout_marginBottom="@dimen/dp_10"
-        android:layout_marginLeft="@dimen/dp_10"
         android:layout_weight="2"
         android:gravity="center"
         android:orientation="vertical">
@@ -234,8 +233,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_dan_in_lubo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:layout_marginTop="@dimen/shipin_btn_marginTop"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
@@ -255,8 +254,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_in_diannao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -266,8 +265,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_in_touping"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
@@ -289,8 +288,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_in_zu_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -300,8 +299,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_in_zu_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
@@ -323,8 +322,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_in_zu_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -334,8 +333,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_in_zu_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
@@ -357,8 +356,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_in_zu_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -368,8 +367,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_in_zu_6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
@@ -385,7 +384,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
                     android:gravity="center"
                     android:text="视频输入"
                     android:textColor="@color/text_color_1"
@@ -409,8 +407,8 @@
 
                 <CheckBox
                     android:id="@+id/spbtn_dan_out_lubo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/shipin_btn_width"
+                    android:layout_height="@dimen/shipin_btn_height"
                     android:layout_marginTop="@dimen/shipin_btn_marginTop"
                     android:background="@drawable/juzhen_checkbox_status"
                     android:button="@null"
@@ -430,8 +428,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_out_diannao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -441,8 +439,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_out_touping"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
@@ -464,8 +462,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_out_zu_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -475,8 +473,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_out_zu_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
@@ -498,8 +496,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_out_zu_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -509,8 +507,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_out_zu_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
@@ -532,8 +530,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_out_zu_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -543,8 +541,8 @@
 
                     <CheckBox
                         android:id="@+id/spbtn_dan_out_zu_6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/shipin_btn_width"
+                        android:layout_height="@dimen/shipin_btn_height"
                         android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
                         android:background="@drawable/juzhen_checkbox_status"
                         android:button="@null"
@@ -560,7 +558,6 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
                     android:gravity="center"
                     android:text="视频输出"
                     android:textColor="@color/text_color_1"
