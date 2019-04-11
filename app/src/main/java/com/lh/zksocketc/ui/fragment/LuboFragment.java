@@ -64,11 +64,11 @@ public class LuboFragment extends Fragment {
 
     @OnClick(R.id.zhibo)
     public void zhibo() {
-        luzhi.setChecked(false);
-        zanting.setChecked(false);
-        tingzhi.setChecked(false);
-        zhibo.setChecked(true);
-        SerialPortUtil.sendMsg("LUB4");
+        if (zhibo.isChecked()) {
+            SerialPortUtil.sendMsg("LUB4");
+        } else {
+            SerialPortUtil.sendMsg("LUB5");
+        }
     }
 
 }
