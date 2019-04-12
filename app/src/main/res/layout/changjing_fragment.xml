@@ -13,12 +13,11 @@
         android:orientation="horizontal">
 
 
-        <CheckBox
+        <Button
             android:id="@+id/btn_shangke"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
+            android:background="@drawable/yinpin_btn_status"
             android:drawableTop="@drawable/shangke"
             android:drawablePadding="0dp"
             android:gravity="center"
@@ -27,13 +26,13 @@
             android:textColor="@color/text_color_1"
             android:textSize="@dimen/text_size_20" />
 
-        <CheckBox
+
+        <Button
             android:id="@+id/btn_xiake"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/changjing_btn_marginLeft"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
+            android:background="@drawable/yinpin_btn_status"
             android:drawableTop="@drawable/xiake"
             android:drawablePadding="0dp"
             android:gravity="center"
@@ -53,12 +52,11 @@
         android:orientation="horizontal">
 
 
-        <CheckBox
+        <Button
             android:id="@+id/btn_zixi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
+            android:background="@drawable/yinpin_btn_status"
             android:drawableTop="@drawable/zixi"
             android:drawablePadding="0dp"
             android:gravity="center"
@@ -68,13 +66,12 @@
             android:textSize="@dimen/text_size_20" />
 
 
-        <CheckBox
+        <Button
             android:id="@+id/btn_xiuxi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/changjing_btn_marginLeft"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
+            android:background="@drawable/yinpin_btn_status"
             android:drawableTop="@drawable/xiuxi"
             android:drawablePadding="0dp"
             android:gravity="center"

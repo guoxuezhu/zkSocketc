@@ -48,25 +48,21 @@
                     android:orientation="vertical">
 
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_cl_1_open"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="窗帘１开"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_cl_1_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="窗帘１关"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
@@ -82,25 +78,21 @@
                     android:orientation="vertical">
 
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_cl_2_open"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="窗帘２开"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_cl_2_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="窗帘２关"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
@@ -148,25 +140,21 @@
                     android:orientation="vertical">
 
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_tyj_open"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="投影机开"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_tyj_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="投影机关"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
@@ -182,25 +170,21 @@
                     android:orientation="vertical">
 
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_tyj_bu_open"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="幕布升"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_tyj_bu_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="幕布降"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
@@ -213,7 +197,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 
     <LinearLayout
@@ -258,25 +241,21 @@
                     android:orientation="vertical">
 
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_dg_1_open"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="灯光１开"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_dg_1_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="灯光１关"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
@@ -292,25 +271,21 @@
                     android:orientation="vertical">
 
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_dg_2_open"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="灯光２开"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_dg_2_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="灯光２关"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
@@ -327,25 +302,21 @@
                     android:orientation="vertical">
 
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_dg_3_open"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="灯光３开"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_dg_3_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="灯光３关"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
@@ -362,25 +333,21 @@
                     android:orientation="vertical">
 
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_dg_4_open"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="灯光４开"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
 
-                    <RadioButton
+                    <Button
                         android:id="@+id/rbtn_dg_4_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
-                        android:background="@drawable/shebei_checkbox_status"
-                        android:button="@null"
-                        android:gravity="center"
+                        android:background="@drawable/huanjing_btn_status"
                         android:text="灯光４关"
                         android:textColor="@color/text_color_1"
                         android:textSize="16sp" />
@@ -428,19 +395,18 @@
                     android:background="@drawable/huanjing_btn_status"
                     android:text="前门开"
                     android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/text_size_16"  />
-
+                    android:textSize="@dimen/text_size_16" />
 
 
                 <Button
                     android:id="@+id/rbtn_mj_1_close"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/huanjing_btn_status"
                     android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                    android:background="@drawable/huanjing_btn_status"
                     android:text="后门开"
                     android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/text_size_16"  />
+                    android:textSize="@dimen/text_size_16" />
 
 
             </LinearLayout>
@@ -448,11 +414,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
-
-
-
 
 
 </LinearLayout>

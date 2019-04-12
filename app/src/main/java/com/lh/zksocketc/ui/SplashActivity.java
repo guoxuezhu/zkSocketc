@@ -142,12 +142,6 @@ public class SplashActivity extends BaseActivity {
     }
 
 
-    @OnClick(R.id.huanjing_seting)
-    public void huanjing_seting() {
-        startActivity(new Intent(this, HomeActivity.class));
-    }
-
-
     @Override
     public void onBackPressed() {
         return;
@@ -176,7 +170,7 @@ public class SplashActivity extends BaseActivity {
                     offTimer = null;
                 }
             }
-        }, 1000 * 60);
+        }, 1000 * 60 * 5);
 
     }
 
