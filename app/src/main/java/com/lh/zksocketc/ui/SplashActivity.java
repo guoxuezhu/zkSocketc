@@ -44,6 +44,7 @@ public class SplashActivity extends BaseActivity {
                         ELog.e("==========cardNumers=======" + cardNumers.size());
                         if (cardNumers.size() != 0) {
                             if (HomeActivity.isFinish()) {
+                                SerialPortUtil.sendMsg("37");
                                 startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                             }
                         }
