@@ -29,7 +29,7 @@
 
 
     <dimen name="dianyuan_btn_marginLeft">200dp</dimen>
-    <dimen name="dianyuan_btn_marginTop">100dp</dimen>
+    <dimen name="dianyuan_btn_marginTop">10dp</dimen>
 
 
 

@@ -36,5 +36,47 @@ public class DianyuanFragment extends Fragment {
     }
 
 
+    @OnClick(R.id.btn_hw_ds_1)
+    public void btn_hw_ds_1() {
+        SerialPortUtil.sendMsg("52");
+    }
+
+    @OnClick(R.id.btn_hw_ds_2)
+    public void btn_hw_ds_2() {
+        SerialPortUtil.sendMsg("53");
+    }
+
+    @OnClick(R.id.btn_hw_ds_3)
+    public void btn_hw_ds_3() {
+        SerialPortUtil.sendMsg("54");
+    }
+
+    @OnClick(R.id.btn_hw_ds_4)
+    public void btn_hw_ds_4() {
+        SerialPortUtil.sendMsg("55");
+    }
+
+
+    @OnClick(R.id.btn_hw_ds_5)
+    public void btn_hw_ds_5() {
+        SerialPortUtil.sendMsg("56");
+    }
+
+    @OnClick(R.id.btn_hw_ds_6)
+    public void btn_hw_ds_6() {
+        SerialPortUtil.sendMsg("57");
+    }
+
+
+    @OnClick(R.id.btn_hw_ds_7)
+    public void btn_hw_ds_7() {
+        SerialPortUtil.sendMsg("58");
+    }
+
+    @OnClick(R.id.btn_hw_ds_8)
+    public void btn_hw_ds_8() {
+        SerialPortUtil.sendMsg("59");
+    }
+
 
 }
