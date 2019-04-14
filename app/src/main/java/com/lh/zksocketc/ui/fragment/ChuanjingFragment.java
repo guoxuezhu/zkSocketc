@@ -1,6 +1,7 @@
 package com.lh.zksocketc.ui.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.ui.SplashActivity;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
 import butterknife.BindView;
@@ -37,7 +39,7 @@ public class ChuanjingFragment extends Fragment {
     @OnClick(R.id.btn_xiake)
     public void btn_xiake() {
         SerialPortUtil.sendMsg("2");
-
+        startActivity(new Intent(getActivity(), SplashActivity.class));
         getActivity().finish();
     }
 

@@ -2,6 +2,8 @@ package com.lh.zksocketc.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -10,11 +12,17 @@ import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.data.DbDao.IcCardNumerDao;
 import com.lh.zksocketc.data.model.IcCardNumer;
+import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.HttpUtil;
+import com.lh.zksocketc.utils.SerialPortUtil;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class IcActivity extends BaseActivity {
 
@@ -30,13 +38,25 @@ public class IcActivity extends BaseActivity {
     RadioButton rbtn_http;
     private IcCardNumerDao icCardNumerDao;
 
+    Handler icHander = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 333:
+                    ELog.e("======icHander====cardNumers=======" + msg.obj.toString());
+                    et_kaohao.setText(msg.obj.toString());
+                    break;
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ic);
 
         ButterKnife.bind(this);
-
         icCardNumerDao = MyApplication.getDaoSession().getIcCardNumerDao();
         if (icCardNumerDao.loadAll().size() != 0) {
             if (MyApplication.prefs.getIsAddCrad()) {
@@ -47,14 +67,23 @@ public class IcActivity extends BaseActivity {
                 et_ic_http.setText(MyApplication.prefs.getHttpUrl());
             }
         }
+
+        readCard();
     }
 
-    @OnClick(R.id.et_kaohao)
-    public void et_kaohao() {
-        if (et_kaohao.getText().toString().isEmpty()) {
-            et_kaohao.setText(MyApplication.prefs.getCardNum());
-        }
+    private void readCard() {
+        SerialPortUtil.flowReadCard().subscribeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe((kahao) -> {
+                    ELog.e("======IcActivity====readCard===" + kahao);
+                    Message msg = new Message();
+                    msg.obj = kahao.trim().toString();
+                    msg.what = 333;
+                    icHander.sendMessage(msg);
+
+                });
     }
+
 
     @OnClick(R.id.btn_ic_baocun)
     public void btn_ic_baocun() {
@@ -70,8 +99,14 @@ public class IcActivity extends BaseActivity {
                 return;
             }
             MyApplication.prefs.setIsAddCrad(true);
-            icCardNumerDao.deleteAll();
-            icCardNumerDao.insert(new IcCardNumer(et_kaohao.getText().toString()));
+
+            List<IcCardNumer> cardNumers = icCardNumerDao.queryBuilder()
+                    .where(IcCardNumerDao.Properties.CardNum.eq(et_kaohao.getText().toString()))
+                    .list();
+            ELog.e("======IcActivity====add=======" + cardNumers.size());
+            if (cardNumers.size() == 0) {
+                icCardNumerDao.insert(new IcCardNumer(et_kaohao.getText().toString()));
+            }
         } else if (rbtn_http.isChecked()) {
             if (et_ic_http.getText().toString().length() == 0) {
                 Toast.makeText(this, "请输入服务器IC卡数据接口", Toast.LENGTH_SHORT).show();
@@ -89,6 +124,7 @@ public class IcActivity extends BaseActivity {
 
     @OnClick(R.id.ic_back)
     public void ic_back() {
+        SerialPortUtil.stopReadCard();
         startActivity(new Intent(this, AdminActivity.class));
         finish();
     }

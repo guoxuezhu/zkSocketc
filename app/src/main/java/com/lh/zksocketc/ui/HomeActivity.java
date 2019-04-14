@@ -2,8 +2,6 @@ package com.lh.zksocketc.ui;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.widget.RadioButton;
 
 import com.lh.zksocketc.R;
@@ -27,17 +25,8 @@ public class HomeActivity extends BaseActivity {
     @BindView(R.id.rbtn_changjing)
     RadioButton rbtn_changjing;
 
-    private static boolean isFinishStatus = true;
-
     private List<Fragment> fragments = new ArrayList<>();
-    private FragmentManager fm;
-    private FragmentTransaction transaction;
     private Fragment fragment;
-
-    public static boolean isFinish() {
-        return isFinishStatus;
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +34,7 @@ public class HomeActivity extends BaseActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        isFinishStatus = false;
-
-
         rbtn_changjing.setChecked(true);
-
 
         fragments = getFragments(); //添加布局
         showFragment(0);
@@ -120,6 +105,5 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        isFinishStatus = true;
     }
 }

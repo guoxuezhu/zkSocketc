@@ -63,6 +63,7 @@ public class BindActivity extends BaseActivity {
 
     @OnClick(R.id.login_back)
     public void login_back() {
+        startActivity(new Intent(this, SplashActivity.class));
         finish();
     }
 

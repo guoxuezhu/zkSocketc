@@ -25,36 +25,13 @@ import java.util.TimerTask;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class SplashActivity extends BaseActivity {
 
     private IcCardNumerDao icCardNumerDao;
 
-    Handler hander = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-                case 333:
-                    screenOn();
-                    if (icCardNumerDao.loadAll().size() != 0) {
-                        List<IcCardNumer> cardNumers = icCardNumerDao.queryBuilder()
-                                .where(IcCardNumerDao.Properties.CardNum.eq(msg.obj.toString()))
-                                .list();
-                        ELog.e("==========cardNumers=======" + cardNumers.size());
-                        if (cardNumers.size() != 0) {
-                            if (HomeActivity.isFinish()) {
-                                SerialPortUtil.sendMsg("37");
-                                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-                            }
-                        }
-                    }
-                    break;
-            }
-
-
-        }
-    };
     private ComponentName adminReceiver;
     private PowerManager mPowerManager;
     private DevicePolicyManager policyManager;
@@ -68,9 +45,6 @@ public class SplashActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-        SerialPortUtil.open();
-        SerialPortUtil.readCard(hander);
-        SerialPortUtil.readSerialPortData();
 
         icCardNumerDao = MyApplication.getDaoSession().getIcCardNumerDao();
 
@@ -81,6 +55,29 @@ public class SplashActivity extends BaseActivity {
         checkAndTurnOnDeviceManager();
 
         startTimerOff();
+        readCard();
+    }
+
+
+    private void readCard() {
+        SerialPortUtil.flowReadCard().subscribeOn(Schedulers.io())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe((kahao) -> {
+                    ELog.e("======SplashActivity====readCard===" + kahao);
+                    screenOn();
+                    if (icCardNumerDao.loadAll().size() != 0) {
+                        List<IcCardNumer> cardNumers = icCardNumerDao.queryBuilder()
+                                .where(IcCardNumerDao.Properties.CardNum.eq(kahao))
+                                .list();
+                        ELog.e("==========cardNumers=======" + cardNumers.size());
+                        if (cardNumers.size() != 0) {
+                            SerialPortUtil.sendMsg("37");
+                            destroyFinish();
+                            startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                            finish();
+                        }
+                    }
+                });
     }
 
 
@@ -139,7 +136,9 @@ public class SplashActivity extends BaseActivity {
 
     @OnClick(R.id.admin_seting)
     public void admin_seting() {
+        destroyFinish();
         startActivity(new Intent(this, BindActivity.class));
+        finish();
     }
 
 
@@ -149,37 +148,28 @@ public class SplashActivity extends BaseActivity {
     }
 
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        ELog.e("=====11111111111111111111111====onRestart=======");
-        startTimerOff();
-    }
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        ELog.e("=====11111111111111111111111====onRestart=======");
+//        startTimerOff();
+//    }
 
     private void startTimerOff() {
-        if (offTimer != null) {
-            offTimer.cancel();
-            offTimer = null;
-        }
+        stopTimerOff();
         offTimer = new Timer();
         offTimer.schedule(new TimerTask() {
             @Override
             public void run() {
                 screenOff();
-                if (offTimer != null) {
-                    offTimer.cancel();
-                    offTimer = null;
-                }
+                stopTimerOff();
             }
         }, 1000 * 60 * 5);
 
     }
 
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        ELog.e("=====11111111111111111111111====onStop=======");
+    private void stopTimerOff() {
         if (offTimer != null) {
             offTimer.cancel();
             offTimer = null;
@@ -187,10 +177,25 @@ public class SplashActivity extends BaseActivity {
     }
 
 
+    private void destroyFinish() {
+        ELog.e("=====222222222222222====destroyFinish=======");
+        SerialPortUtil.stopReadCard();
+        stopTimerOff();
+    }
+
+
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        ELog.e("=====11111111111111111111111====onStop=======");
+//        stopTimerOff();
+//    }
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SerialPortUtil.stopReadCard();
+
     }
 
 
