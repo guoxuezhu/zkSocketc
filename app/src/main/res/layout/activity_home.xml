@@ -95,7 +95,7 @@
                     android:drawableLeft="@drawable/shipin"
                     android:drawablePadding="15dp"
                     android:paddingLeft="10dp"
-                    android:text="矩阵"
+                    android:text="互动"
                     android:textColor="@color/text_color_1"
                     android:textSize="30sp" />
 

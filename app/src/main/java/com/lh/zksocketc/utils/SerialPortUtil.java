@@ -36,7 +36,7 @@ public class SerialPortUtil {
         }
     }
 
-    public static void sendMsg(String msg) {
+    public synchronized static  void sendMsg(String msg) {
         ELog.d("===========串口数据发送=============" + msg);
         byte[] data = msg.getBytes();
         try {
