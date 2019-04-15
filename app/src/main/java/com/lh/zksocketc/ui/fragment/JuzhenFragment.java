@@ -87,7 +87,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_lubo)
     public void spbtn_all_lubo() {
-        SerialPortUtil.sendMsg("VIDC1");
+        SerialPortUtil.sendMsg("VIDC8");
         spbtn_all_lubo.setChecked(true);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -102,7 +102,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_diannao)
     public void spbtn_all_diannao() {
-        SerialPortUtil.sendMsg("VIDC2");
+        SerialPortUtil.sendMsg("VIDC9");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(true);
         spbtn_all_touping.setChecked(false);
@@ -117,7 +117,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_touping)
     public void spbtn_all_touping() {
-        SerialPortUtil.sendMsg("VIDC3");
+        SerialPortUtil.sendMsg("VIDC1");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(true);
@@ -132,7 +132,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_1)
     public void spbtn_all_zu_1() {
-        SerialPortUtil.sendMsg("VIDC4");
+        SerialPortUtil.sendMsg("VIDC2");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -147,7 +147,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_2)
     public void spbtn_all_zu_2() {
-        SerialPortUtil.sendMsg("VIDC5");
+        SerialPortUtil.sendMsg("VIDC3");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -162,7 +162,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_3)
     public void spbtn_all_zu_3() {
-        SerialPortUtil.sendMsg("VIDC6");
+        SerialPortUtil.sendMsg("VIDC4");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -177,7 +177,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_4)
     public void spbtn_all_zu_4() {
-        SerialPortUtil.sendMsg("VIDC7");
+        SerialPortUtil.sendMsg("VIDC5");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -192,7 +192,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_5)
     public void spbtn_all_zu_5() {
-        SerialPortUtil.sendMsg("VIDC8");
+        SerialPortUtil.sendMsg("VIDC6");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -207,7 +207,7 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_6)
     public void spbtn_all_zu_6() {
-        SerialPortUtil.sendMsg("VIDC9");
+        SerialPortUtil.sendMsg("VIDC7");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -536,23 +536,23 @@ public class JuzhenFragment extends Fragment {
 
     private void sendDan(int i) {
         if (spbtn_dan_in_lubo.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA1," + i);
-        } else if (spbtn_dan_in_diannao.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA2," + i);
-        } else if (spbtn_dan_in_touping.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA3," + i);
-        } else if (spbtn_dan_in_zu_1.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA4," + i);
-        } else if (spbtn_dan_in_zu_2.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA5," + i);
-        } else if (spbtn_dan_in_zu_3.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA6," + i);
-        } else if (spbtn_dan_in_zu_4.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA7," + i);
-        } else if (spbtn_dan_in_zu_5.isChecked()) {
             SerialPortUtil.sendMsg("VIDA8," + i);
-        } else if (spbtn_dan_in_zu_6.isChecked()) {
+        } else if (spbtn_dan_in_diannao.isChecked()) {
             SerialPortUtil.sendMsg("VIDA9," + i);
+        } else if (spbtn_dan_in_touping.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA1," + i);
+        } else if (spbtn_dan_in_zu_1.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA2," + i);
+        } else if (spbtn_dan_in_zu_2.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA3," + i);
+        } else if (spbtn_dan_in_zu_3.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA4," + i);
+        } else if (spbtn_dan_in_zu_4.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA5," + i);
+        } else if (spbtn_dan_in_zu_5.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA6," + i);
+        } else if (spbtn_dan_in_zu_6.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA7," + i);
         }
     }
 
