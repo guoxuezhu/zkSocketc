@@ -25,8 +25,6 @@ import java.util.TimerTask;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 public class SplashActivity extends BaseActivity {
 
@@ -37,6 +35,32 @@ public class SplashActivity extends BaseActivity {
     private DevicePolicyManager policyManager;
     private PowerManager.WakeLock mWakeLock;
     private Timer offTimer;
+
+
+    Handler sHander = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 333:
+                    ELog.e("======sHander====SplashActivity=======" + msg.obj.toString());
+                    screenOn();
+                    if (icCardNumerDao.loadAll().size() != 0) {
+                        List<IcCardNumer> cardNumers = icCardNumerDao.queryBuilder()
+                                .where(IcCardNumerDao.Properties.CardNum.eq(msg.obj.toString()))
+                                .list();
+                        ELog.e("==========cardNumers=======" + cardNumers.size());
+                        if (cardNumers.size() != 0) {
+                            SerialPortUtil.sendMsg("37");
+                            destroyFinish();
+                            startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                            finish();
+                        }
+                    }
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,29 +79,7 @@ public class SplashActivity extends BaseActivity {
         checkAndTurnOnDeviceManager();
 
         startTimerOff();
-        readCard();
-    }
-
-
-    private void readCard() {
-        SerialPortUtil.flowReadCard().subscribeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribe((kahao) -> {
-                    ELog.e("======SplashActivity====readCard===" + kahao);
-                    screenOn();
-                    if (icCardNumerDao.loadAll().size() != 0) {
-                        List<IcCardNumer> cardNumers = icCardNumerDao.queryBuilder()
-                                .where(IcCardNumerDao.Properties.CardNum.eq(kahao))
-                                .list();
-                        ELog.e("==========cardNumers=======" + cardNumers.size());
-                        if (cardNumers.size() != 0) {
-                            SerialPortUtil.sendMsg("37");
-                            destroyFinish();
-                            startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-                            finish();
-                        }
-                    }
-                });
+        SerialPortUtil.readCardnumer(sHander);
     }
 
 
@@ -148,13 +150,6 @@ public class SplashActivity extends BaseActivity {
     }
 
 
-//    @Override
-//    protected void onRestart() {
-//        super.onRestart();
-//        ELog.e("=====11111111111111111111111====onRestart=======");
-//        startTimerOff();
-//    }
-
     private void startTimerOff() {
         stopTimerOff();
         offTimer = new Timer();
@@ -178,18 +173,11 @@ public class SplashActivity extends BaseActivity {
 
 
     private void destroyFinish() {
-        ELog.e("=====222222222222222====destroyFinish=======");
+        ELog.e("==============================destroyFinish=======");
         SerialPortUtil.stopReadCard();
         stopTimerOff();
+        sHander = null;
     }
-
-
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        ELog.e("=====11111111111111111111111====onStop=======");
-//        stopTimerOff();
-//    }
 
 
     @Override

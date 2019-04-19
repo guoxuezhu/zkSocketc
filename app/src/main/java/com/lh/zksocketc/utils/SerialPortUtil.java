@@ -1,19 +1,18 @@
 package com.lh.zksocketc.utils;
 
+import android.os.Handler;
+import android.os.Message;
+
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
 import com.lh.zksocketc.data.model.WsdData;
 
-import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 import android_serialport_api.SerialPort;
-import io.reactivex.BackpressureStrategy;
-import io.reactivex.Flowable;
-import io.reactivex.FlowableEmitter;
 
 public class SerialPortUtil {
 
@@ -23,6 +22,10 @@ public class SerialPortUtil {
     private static InputStream inputStream;
 
     private static boolean isReadWsd;
+    private static SerialPort serialPort1;
+    private static InputStream inputStream1;
+    private static boolean isReadCard;
+    private static Handler myHander;
 
     public static void open() {
         try {
@@ -36,7 +39,7 @@ public class SerialPortUtil {
         }
     }
 
-    public synchronized static  void sendMsg(String msg) {
+    public synchronized static void sendMsg(String msg) {
         ELog.d("===========串口数据发送=============" + msg);
         byte[] data = msg.getBytes();
         try {
@@ -90,97 +93,108 @@ public class SerialPortUtil {
         if (isReadWsd) {
             isReadWsd = false;
         }
-    }
-
-    private static final String DEVICE_PATH = "/dev/ttyS1";
-    private static final int BAUDRATE = 9600;
-    private static volatile boolean isReadCard = false;
-    private static FlowableEmitter<String> cardEmitter;
-
-    public static Flowable<String> flowReadCard() {
-        return Flowable.fromCallable(() -> new SerialPort(new File(DEVICE_PATH), BAUDRATE, 0).getInputStream())
-                .flatMap(fileInputStream -> Flowable.create((emitter) -> {
-                            final InputStream in = fileInputStream;
-
-                            isReadCard = true;
-                            cardEmitter = emitter;
-                            new Thread() {
-                                @Override
-                                public void run() {
-                                    int len;
-                                    byte[] buffer = new byte[64];
-                                    try {
-                                        while (isReadCard && (len = in.read(buffer, 0, 64)) > 0) {
-                                            if (len > 0) {
-                                                ELog.i("=========len======" + len);
-                                                byte[] bs = new byte[4];
-                                                System.arraycopy(buffer, 1, bs, 0, 4);
-                                                String ret = "";
-                                                for (int i = 0; i < bs.length; i++) {
-                                                    String hex = Integer.toHexString(bs[i] & 0xFF);
-                                                    if (hex.length() == 1) {
-                                                        hex = "0" + hex;
-                                                    }
-                                                    ret += hex.toUpperCase();
-                                                    ELog.i("=========hex=======" + ret);
-                                                }
-                                                String msg = Long.parseLong(ret, 16) + "";
-                                                ELog.i("=========run: 接收到了卡号=======" + msg);
-                                                ELog.i("=========run: 接收到了卡号大小=======" + msg.length());
-                                                if (msg.length() == 10) {
-                                                    cardEmitter.onNext(msg);
-                                                } else if (msg.length() == 9) {
-                                                    cardEmitter.onNext("0" + msg);
-                                                } else if (msg.length() == 8) {
-                                                    cardEmitter.onNext("00" + msg);
-                                                } else if (msg.length() == 7) {
-                                                    cardEmitter.onNext("000" + msg);
-                                                } else if (msg.length() == 6) {
-                                                    cardEmitter.onNext("0000" + msg);
-                                                } else if (msg.length() == 5) {
-                                                    cardEmitter.onNext("00000" + msg);
-                                                } else if (msg.length() == 4) {
-                                                    cardEmitter.onNext("000000" + msg);
-                                                } else if (msg.length() == 3) {
-                                                    cardEmitter.onNext("0000000" + msg);
-                                                } else if (msg.length() == 2) {
-                                                    cardEmitter.onNext("00000000" + msg);
-                                                } else if (msg.length() == 1) {
-                                                    cardEmitter.onNext("000000000" + msg);
-                                                }
-                                                sleep(500);
-                                            }
-                                        }
-                                    } catch (IOException e) {
-                                        cardEmitter.onError(e);
-                                    } catch (InterruptedException e) {
-                                        cardEmitter.onError(e);
-                                    } finally {
-                                        closeQuietly(in);
-                                        isReadCard = false;
-                                        cardEmitter.onComplete();
-                                    }
-                                }
-                            }.start();
-                        }
-                        , BackpressureStrategy.BUFFER));
-    }
-
-    public static void closeQuietly(Closeable stream) {
         try {
-            if (stream != null) {
-                stream.close();
+            if (inputStream != null) {
+                inputStream.close();
+            }
+            if (outputStream != null) {
+                outputStream.close();
             }
         } catch (IOException e) {
             // Ignore.
         }
+        serialPort.close();
+    }
+
+
+    public static void readCardnumer(Handler hander) {
+        myHander = hander;
+
+        try {
+            serialPort1 = new SerialPort(new File("/dev/ttyS1"), 9600, 0);
+            inputStream1 = serialPort1.getInputStream();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                isReadCard = true;
+                byte[] buffer = new byte[64];
+                int size; //读取数据的大小
+                try {
+                    while (isReadCard && (size = inputStream1.read(buffer, 0, 64)) > 0) {
+                        if (isReadCard && size > 0) {
+                            ELog.i("=========size======" + size);
+                            byte[] bs = new byte[4];
+                            System.arraycopy(buffer, 1, bs, 0, 4);
+                            String ret = "";
+                            for (int i = 0; i < bs.length; i++) {
+                                String hex = Integer.toHexString(bs[i] & 0xFF);
+                                if (hex.length() == 1) {
+                                    hex = "0" + hex;
+                                }
+                                ret += hex.toUpperCase();
+                            }
+                            String msg = Long.parseLong(ret, 16) + "";
+                            ELog.i("=========run: 接收到了卡号=======" + msg);
+                            ELog.i("=========run: 接收到了卡号大小=======" + msg.length());
+                            if (msg.length() == 9) {
+                                msg = "0" + msg;
+                            } else if (msg.length() == 8) {
+                                msg = "00" + msg;
+                            } else if (msg.length() == 7) {
+                                msg = "000" + msg;
+                            } else if (msg.length() == 6) {
+                                msg = "0000" + msg;
+                            } else if (msg.length() == 5) {
+                                msg = "00000" + msg;
+                            } else if (msg.length() == 4) {
+                                msg = "000000" + msg;
+                            } else if (msg.length() == 3) {
+                                msg = "0000000" + msg;
+                            } else if (msg.length() == 2) {
+                                msg = "00000000" + msg;
+                            } else if (msg.length() == 1) {
+                                msg = "000000000" + msg;
+                            }
+
+                            Message message = new Message();
+                            message.obj = msg;
+                            message.what = 333;
+                            myHander.sendMessage(message);
+
+                            sleep(500);
+                        }
+                    }
+
+                } catch (IOException e) {
+                    ELog.i("=========run: 数据读取异常========" + e.toString());
+                } catch (InterruptedException e) {
+                    ELog.i("=========run: 数据读取异常========" + e.toString());
+                }
+
+            }
+        }.start();
+
+
     }
 
 
     public static void stopReadCard() {
         isReadCard = false;
-        if (cardEmitter != null) {
-            cardEmitter.onComplete();
+        try {
+            if (inputStream1 != null) {
+                inputStream1.close();
+            }
+        } catch (IOException e) {
+            // Ignore.
         }
+        serialPort1.close();
+        myHander = null;
+        ELog.i("========stopReadCard=============");
     }
 }

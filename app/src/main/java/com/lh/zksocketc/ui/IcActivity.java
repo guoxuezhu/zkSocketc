@@ -21,8 +21,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 public class IcActivity extends BaseActivity {
 
@@ -68,20 +66,7 @@ public class IcActivity extends BaseActivity {
             }
         }
 
-        readCard();
-    }
-
-    private void readCard() {
-        SerialPortUtil.flowReadCard().subscribeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribe((kahao) -> {
-                    ELog.e("======IcActivity====readCard===" + kahao);
-                    Message msg = new Message();
-                    msg.obj = kahao.trim().toString();
-                    msg.what = 333;
-                    icHander.sendMessage(msg);
-
-                });
+        SerialPortUtil.readCardnumer(icHander);
     }
 
 
@@ -125,6 +110,7 @@ public class IcActivity extends BaseActivity {
     @OnClick(R.id.ic_back)
     public void ic_back() {
         SerialPortUtil.stopReadCard();
+        icHander = null;
         startActivity(new Intent(this, AdminActivity.class));
         finish();
     }
