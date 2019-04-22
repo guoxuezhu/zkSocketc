@@ -71,9 +71,14 @@ public class SerialPortUtil {
                             ELog.i("=====接收到了数据==温湿度=====" + msg);
                             String[] msglist = msg.split(";");
                             if (msglist[0].equals("WSD")) {
-                                WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
-                                wsdDataDao.deleteAll();
-                                wsdDataDao.insert(new WsdData(msglist[1], msglist[2], "0"));
+                                try {
+                                    WsdData wsd = new WsdData(msglist[1], msglist[2], "0");
+                                    WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
+                                    wsdDataDao.deleteAll();
+                                    wsdDataDao.insert(wsd);
+                                } catch (Exception e) {
+                                    ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
+                                }
                             }
                         }
                     }
