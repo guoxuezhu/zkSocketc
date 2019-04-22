@@ -55,46 +55,46 @@ public class HuanjingFragment extends Fragment {
 
     @OnClick(R.id.huanjng_btn_kai)
     public void huanjng_btn_kai() {
-        SerialPortUtil.sendMsg("39");
+        SerialPortUtil.sendMsg("MBS39");
     }
 
     @OnClick(R.id.huanjng_btn_guan)
     public void huanjng_btn_guan() {
-        SerialPortUtil.sendMsg("48");
+        SerialPortUtil.sendMsg("MBS48");
     }
 
     @OnClick(R.id.huanjng_btn_baifeng)
     public void huanjng_btn_baifeng() {
-        SerialPortUtil.sendMsg("49");
+        SerialPortUtil.sendMsg("MBS49");
     }
 
     @OnClick(R.id.huanjng_btn_moshi)
     public void huanjng_btn_moshi() {
-        SerialPortUtil.sendMsg("40");
+        SerialPortUtil.sendMsg("MBS40");
     }
 
 
     @OnClick(R.id.huanjng_btn_fengsu)
     public void huanjng_btn_fengsu() {
-        SerialPortUtil.sendMsg("41");
+        SerialPortUtil.sendMsg("MBS41");
     }
 
 
     @OnClick(R.id.huanjng_btn_wd_jia)
     public void huanjng_btn_wd_jia() {
-        SerialPortUtil.sendMsg("43");
+        SerialPortUtil.sendMsg("MBS43");
     }
 
 
     @OnClick(R.id.huanjng_btn_wd_jian)
     public void huanjng_btn_wd_jian() {
-        SerialPortUtil.sendMsg("44");
+        SerialPortUtil.sendMsg("MBS44");
     }
 
 
     @OnClick(R.id.huanjng_btn_fengxiang)
     public void huanjng_btn_fengxiang() {
-        SerialPortUtil.sendMsg("42");
+        SerialPortUtil.sendMsg("MBS42");
     }
 
 }

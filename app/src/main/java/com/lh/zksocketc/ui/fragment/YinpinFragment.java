@@ -57,11 +57,11 @@ public class YinpinFragment extends Fragment {
     @OnClick(R.id.yinliang_jia)
     public void yinliang_jia() {
         if (zongyinliang.isChecked()) {
-            SerialPortUtil.sendMsg("21");
+            SerialPortUtil.sendMsg("MBS21");
         } else if (yinxiang.isChecked()) {
-            SerialPortUtil.sendMsg("25");
+            SerialPortUtil.sendMsg("MBS25");
         } else if (maikefeng.isChecked()) {
-            SerialPortUtil.sendMsg("29");
+            SerialPortUtil.sendMsg("MBS29");
         }
 
     }
@@ -70,11 +70,11 @@ public class YinpinFragment extends Fragment {
     @OnClick(R.id.yinliang_jian)
     public void yinliang_jian() {
         if (zongyinliang.isChecked()) {
-            SerialPortUtil.sendMsg("22");
+            SerialPortUtil.sendMsg("MBS22");
         } else if (yinxiang.isChecked()) {
-            SerialPortUtil.sendMsg("26");
+            SerialPortUtil.sendMsg("MBS26");
         } else if (maikefeng.isChecked()) {
-            SerialPortUtil.sendMsg("30");
+            SerialPortUtil.sendMsg("MBS30");
         }
     }
 
@@ -82,19 +82,19 @@ public class YinpinFragment extends Fragment {
     public void jingyin() {
         if (jingyin.isChecked()) {
             if (zongyinliang.isChecked()) {
-                SerialPortUtil.sendMsg("23");
+                SerialPortUtil.sendMsg("MBS23");
             } else if (yinxiang.isChecked()) {
-                SerialPortUtil.sendMsg("27");
+                SerialPortUtil.sendMsg("MBS27");
             } else if (maikefeng.isChecked()) {
-                SerialPortUtil.sendMsg("31");
+                SerialPortUtil.sendMsg("MBS31");
             }
         } else {
             if (zongyinliang.isChecked()) {
-                SerialPortUtil.sendMsg("24");
+                SerialPortUtil.sendMsg("MBS24");
             } else if (yinxiang.isChecked()) {
-                SerialPortUtil.sendMsg("28");
+                SerialPortUtil.sendMsg("MBS28");
             } else if (maikefeng.isChecked()) {
-                SerialPortUtil.sendMsg("32");
+                SerialPortUtil.sendMsg("MBS32");
             }
         }
 

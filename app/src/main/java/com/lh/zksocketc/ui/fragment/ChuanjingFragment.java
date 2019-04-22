@@ -32,26 +32,26 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.btn_shangke)
     public void btn_shangke() {
-        SerialPortUtil.sendMsg("1");
+        SerialPortUtil.sendMsg("MBS1");
 
     }
 
     @OnClick(R.id.btn_xiake)
     public void btn_xiake() {
-        SerialPortUtil.sendMsg("2");
+        SerialPortUtil.sendMsg("MBS2");
         startActivity(new Intent(getActivity(), SplashActivity.class));
         getActivity().finish();
     }
 
     @OnClick(R.id.btn_zixi)
     public void btn_zixi() {
-        SerialPortUtil.sendMsg("3");
+        SerialPortUtil.sendMsg("MBS3");
 
     }
 
     @OnClick(R.id.btn_xiuxi)
     public void btn_xiuxi() {
-        SerialPortUtil.sendMsg("4");
+        SerialPortUtil.sendMsg("MBS4");
     }
 
 }
