@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.utils.ELog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,27 +30,29 @@ public class BindActivity extends BaseActivity {
 
     @OnClick(R.id.btn_lianjie)
     public void btn_lianjie() {
-        if (et_name.getText().toString().length() == 0) {
+        if (et_name.getText().toString().trim().length() == 0) {
             Toast.makeText(this, "请输入管理员帐号", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (et_password.getText().toString().length() == 0) {
+        if (et_password.getText().toString().trim().length() == 0) {
             Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (et_name.getText().toString().equals("hzlhadmin")) {
-            if (et_password.getText().toString().equals("hzlhadmin")) {
+        if (et_name.getText().toString().trim().equals("hzlhadmin")) {
+            if (et_password.getText().toString().trim().equals("hzlhadmin")) {
                 startActivity(new Intent(this, AdminActivity.class));
                 finish();
                 return;
             }
         }
 
+        ELog.d("==========getZhanghao=======" + MyApplication.prefs.getZhanghao());
+        ELog.d("==========getMima===========" + MyApplication.prefs.getMima());
 
-        if (et_name.getText().toString().equals(MyApplication.prefs.getZhanghao())) {
-            if (et_password.getText().toString().equals(MyApplication.prefs.getMima())) {
+        if (et_name.getText().toString().trim().equals(MyApplication.prefs.getZhanghao())) {
+            if (et_password.getText().toString().trim().equals(MyApplication.prefs.getMima())) {
                 startActivity(new Intent(this, AdminActivity.class));
                 finish();
                 return;

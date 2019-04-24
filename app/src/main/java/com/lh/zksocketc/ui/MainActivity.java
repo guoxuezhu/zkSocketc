@@ -38,16 +38,16 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.btn_fix_ok)
     public void btn_fix_ok() {
-        if (et_new_user.getText().toString().length() == 0) {
+        if (et_new_user.getText().toString().trim().length() == 0) {
             Toast.makeText(this, "请输入新帐号", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (et_new_password.getText().toString().length() == 0) {
+        if (et_new_password.getText().toString().trim().length() == 0) {
             Toast.makeText(this, "请输入新密码", Toast.LENGTH_SHORT).show();
             return;
         }
-        MyApplication.prefs.setZhanghao(et_new_user.getText().toString());
-        MyApplication.prefs.setMima(et_new_password.getText().toString());
+        MyApplication.prefs.setZhanghao(et_new_user.getText().toString().trim());
+        MyApplication.prefs.setMima(et_new_password.getText().toString().trim());
 
         tv_zh_mm.setText("帐号:" + MyApplication.prefs.getZhanghao() + "        密码:" + MyApplication.prefs.getMima());
         Toast.makeText(this, "修改成功", Toast.LENGTH_SHORT).show();
