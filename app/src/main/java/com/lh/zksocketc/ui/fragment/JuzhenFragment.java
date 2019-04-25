@@ -401,7 +401,7 @@ public class JuzhenFragment extends Fragment {
 
 
     @OnClick(R.id.spbtn_dan_out_lubo)
-    public void spbtn_out_in_lubo() {
+    public void spbtn_dan_out_lubo() {
         spbtn_dan_out_lubo.setChecked(true);
         spbtn_dan_out_diannao.setChecked(false);
         spbtn_dan_out_touping.setChecked(false);
