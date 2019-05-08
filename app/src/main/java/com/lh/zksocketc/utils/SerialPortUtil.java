@@ -72,7 +72,7 @@ public class SerialPortUtil {
                             String[] msglist = msg.split(";");
                             if (msglist[0].equals("WSD")) {
                                 try {
-                                    WsdData wsd = new WsdData(msglist[1], msglist[2], "0");
+                                    WsdData wsd = new WsdData(msglist[1], msglist[2], msglist[3]);
                                     WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
                                     wsdDataDao.deleteAll();
                                     wsdDataDao.insert(wsd);
