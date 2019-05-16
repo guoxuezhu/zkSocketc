@@ -47,13 +47,6 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ui.HomeActivity" />
 
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="5bc6a56ef1f55631f3000043" />
-        <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="Channel ID" />
-
         <receiver
             android:name=".ScreenOffAdminReceiver"
             android:label="@string/app_name"

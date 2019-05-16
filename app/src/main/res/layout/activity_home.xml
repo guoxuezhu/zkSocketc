@@ -1,173 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".ui.HomeActivity">
-
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ding_img" />
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical"
+              tools:context=".ui.HomeActivity">
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
-
-        <ScrollView
-            android:layout_width="160dp"
-            android:layout_height="match_parent"
-            android:scrollbars="none">
-
-            <RadioGroup
+        <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="110dp"
+                android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/rbtn_changjing"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:background="@drawable/radio_btn_status_1"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/changjing"
-                    android:drawablePadding="15dp"
-                    android:paddingLeft="10dp"
-                    android:text="场景"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="30sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
-
-                <RadioButton
-                    android:id="@+id/rbtn_shebei"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:background="@drawable/radio_btn_status_1"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/shebei"
-                    android:drawablePadding="15dp"
-                    android:paddingLeft="10dp"
-                    android:text="设备"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="30sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
-
-                <RadioButton
-                    android:id="@+id/rbtn_lubo"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:background="@drawable/radio_btn_status_1"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/lubo"
-                    android:drawablePadding="15dp"
-                    android:paddingLeft="10dp"
-                    android:text="录播"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="30sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
-
-                <RadioButton
-                    android:id="@+id/rbtn_juzhen"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:background="@drawable/radio_btn_status_1"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/shipin"
-                    android:drawablePadding="15dp"
-                    android:paddingLeft="10dp"
-                    android:text="互动"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="30sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
-
-                <RadioButton
-                    android:id="@+id/rbtn_huanjing"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:background="@drawable/radio_btn_status_1"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/huanjing"
-                    android:drawablePadding="15dp"
-                    android:paddingLeft="10dp"
-                    android:text="环境"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="30sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
-
-                <RadioButton
-                    android:id="@+id/rbtn_yinpin"
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
+            <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@drawable/radio_btn_status_1"
                     android:button="@null"
                     android:drawableLeft="@drawable/yinpin"
                     android:drawablePadding="15dp"
                     android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
                     android:text="音频"
                     android:textColor="@color/text_color_1"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
+            <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/xian"/>
 
-                <RadioButton
-                    android:id="@+id/rbtn_dianyuan"
-                    android:layout_width="match_parent"
+            <RadioButton
+                    android:layout_width="wrap_content"
                     android:layout_height="110dp"
                     android:background="@drawable/radio_btn_status_1"
                     android:button="@null"
+                    android:paddingRight="10dp"
                     android:drawableLeft="@drawable/dianyuan"
                     android:drawablePadding="15dp"
                     android:paddingLeft="10dp"
                     android:text="电源"
                     android:textColor="@color/text_color_1"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"/>
+        </RadioGroup>
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+        <ScrollView
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+            <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <RadioButton
+                        android:id="@+id/rbtn_changjing"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/radio_btn_status_1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/changjing"
+                        android:drawablePadding="15dp"
+                        android:paddingLeft="10dp"
+                        android:text="场景"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="30sp"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/xian"/>
+
+                <RadioButton
+                        android:id="@+id/rbtn_shebei"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/radio_btn_status_1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/shebei"
+                        android:drawablePadding="15dp"
+                        android:paddingLeft="10dp"
+                        android:text="设备"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="30sp"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/xian"/>
+
+                <RadioButton
+                        android:id="@+id/rbtn_lubo"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/radio_btn_status_1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/lubo"
+                        android:drawablePadding="15dp"
+                        android:paddingLeft="10dp"
+                        android:text="录播"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="30sp"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/xian"/>
+
+                <RadioButton
+                        android:id="@+id/rbtn_juzhen"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/radio_btn_status_1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/shipin"
+                        android:drawablePadding="15dp"
+                        android:paddingLeft="10dp"
+                        android:text="互动"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="30sp"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/xian"/>
+
+                <RadioButton
+                        android:id="@+id/rbtn_huanjing"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/radio_btn_status_1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/huanjing"
+                        android:drawablePadding="15dp"
+                        android:paddingLeft="10dp"
+                        android:text="环境"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="30sp"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/xian"/>
+
+                <RadioButton
+                        android:id="@+id/rbtn_yinpin"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/radio_btn_status_1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/yinpin"
+                        android:drawablePadding="15dp"
+                        android:paddingLeft="10dp"
+                        android:text="音频"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="30sp"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/xian"/>
+
+                <RadioButton
+                        android:id="@+id/rbtn_dianyuan"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="@drawable/radio_btn_status_1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/dianyuan"
+                        android:drawablePadding="15dp"
+                        android:paddingLeft="10dp"
+                        android:text="电源"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="30sp"/>
             </RadioGroup>
 
         </ScrollView>
 
         <FrameLayout
-            android:id="@+id/mFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
+                android:id="@+id/mFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></FrameLayout>
 
     </LinearLayout>
-
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/di_img" />
 
 
 </LinearLayout>
