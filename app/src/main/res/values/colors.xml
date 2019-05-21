@@ -13,8 +13,10 @@
     <color name="xian_color">#c7c5c5</color>
     <color name="di_color">#f0f0f0</color>
     <color name="text_color_1">#505050</color>
-    <color name="rdio_btn_color_1">#d8ba00</color>
-    <color name="rdio_btn_color_2">#dcdcdc</color>
+    <color name="rdio_btn_color_1">#D8BA00</color>
+    <color name="rdio_btn_color_2">#959393</color>
+
+    <color name="rdio_btn_bg_color">#DCDCDC</color>
 
 
     <color name="admin_btn_color_1">#001e40</color>

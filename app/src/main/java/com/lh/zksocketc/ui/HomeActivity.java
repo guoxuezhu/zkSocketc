@@ -75,12 +75,6 @@ public class HomeActivity extends BaseActivity {
     }
 
 
-    @OnClick(R.id.rbtn_huanjing)
-    public void rbtn_huanjing() {
-        showFragment(4);
-    }
-
-
     @OnClick(R.id.rbtn_yinpin)
     public void rbtn_yinpin() {
         showFragment(5);
