@@ -151,7 +151,6 @@
             android:layout_width="150dp"
             android:layout_height="match_parent"
             android:background="@color/rdio_btn_bg_color"
-            android:gravity="center"
             android:orientation="vertical">
 
             <RadioGroup
@@ -170,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/radio_btn_status_2"
                     android:button="@null"
-                    android:drawableTop="@drawable/fuwei"
+                    android:drawableLeft="@drawable/fuwei"
                     android:gravity="center"
                     android:padding="15dp"
                     android:text="复位"
@@ -188,7 +187,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/radio_btn_status_2"
                     android:button="@null"
-                    android:drawableTop="@drawable/shangke"
+                    android:drawableLeft="@drawable/shangke"
                     android:gravity="center"
                     android:padding="15dp"
                     android:text="上课"
@@ -207,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/radio_btn_status_2"
                     android:button="@null"
-                    android:drawableTop="@drawable/xiake"
+                    android:drawableLeft="@drawable/xiake"
                     android:gravity="center"
                     android:padding="15dp"
                     android:text="下课"
@@ -221,6 +220,35 @@
 
 
             </RadioGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/xian" />
+
+                <CheckBox
+                    android:id="@+id/rbtn_set_hdmi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_btn_status_2"
+                    android:button="@null"
+                    android:drawableTop="@drawable/fuwei"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/dp_20"
+                    android:text="内置/外置"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
