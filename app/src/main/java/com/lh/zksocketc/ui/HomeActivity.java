@@ -1,17 +1,18 @@
 package com.lh.zksocketc.ui;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.RadioButton;
 
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
 import com.lh.zksocketc.ui.fragment.DianyuanFragment;
-import com.lh.zksocketc.ui.fragment.HuanjingFragment;
 import com.lh.zksocketc.ui.fragment.JuzhenFragment;
 import com.lh.zksocketc.ui.fragment.LuboFragment;
 import com.lh.zksocketc.ui.fragment.ShebeiFragment;
 import com.lh.zksocketc.ui.fragment.YinpinFragment;
+import com.lh.zksocketc.utils.SerialPortUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,9 @@ public class HomeActivity extends BaseActivity {
     @BindView(R.id.rbtn_changjing)
     RadioButton rbtn_changjing;
 
+    @BindView(R.id.rbtn_fuwei)
+    RadioButton rbtn_fuwei;
+
     private List<Fragment> fragments = new ArrayList<>();
     private Fragment fragment;
 
@@ -35,6 +39,7 @@ public class HomeActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         rbtn_changjing.setChecked(true);
+        rbtn_fuwei.setChecked(true);
 
         fragments = getFragments(); //添加布局
         showFragment(0);
@@ -47,7 +52,7 @@ public class HomeActivity extends BaseActivity {
         fragments.add(new ShebeiFragment());
         fragments.add(new LuboFragment());
         fragments.add(new JuzhenFragment());
-        fragments.add(new HuanjingFragment());
+//        fragments.add(new HuanjingFragment());
         fragments.add(new YinpinFragment());
         fragments.add(new DianyuanFragment());
         return fragments;
@@ -77,13 +82,13 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.rbtn_yinpin)
     public void rbtn_yinpin() {
-        showFragment(5);
+        showFragment(4);
     }
 
 
     @OnClick(R.id.rbtn_dianyuan)
     public void rbtn_dianyuan() {
-        showFragment(6);
+        showFragment(5);
     }
 
 
@@ -93,6 +98,20 @@ public class HomeActivity extends BaseActivity {
                 .replace(R.id.mFragment, fragment).commit();
 //        getFragmentManager().beginTransaction().show(fragment);
 
+    }
+
+
+    @OnClick(R.id.rbtn_shangke)
+    public void rbtn_shangke() {
+        SerialPortUtil.sendMsg("MBS1");
+    }
+
+
+    @OnClick(R.id.rbtn_xiake)
+    public void rbtn_xiake() {
+        SerialPortUtil.sendMsg("MBS2");
+        startActivity(new Intent(this, SplashActivity.class));
+        finish();
     }
 
 

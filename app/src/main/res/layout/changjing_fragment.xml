@@ -41,7 +41,7 @@
                 android:gravity="center"
                 android:text="录播"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
             <CheckBox
                 android:id="@+id/spbtn_all_diannao"
@@ -53,7 +53,7 @@
                 android:gravity="center"
                 android:text="老师电脑"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
             <CheckBox
                 android:id="@+id/spbtn_all_touping"
@@ -65,7 +65,7 @@
                 android:gravity="center"
                 android:text="老师投屏"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
 
         </LinearLayout>
@@ -87,7 +87,7 @@
                 android:gravity="center"
                 android:text="小组一"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
             <CheckBox
                 android:id="@+id/spbtn_all_zu_2"
@@ -99,7 +99,7 @@
                 android:gravity="center"
                 android:text="小组二"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
             <CheckBox
                 android:id="@+id/spbtn_all_zu_3"
@@ -111,7 +111,7 @@
                 android:gravity="center"
                 android:text="小组三"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
         </LinearLayout>
 
@@ -131,7 +131,7 @@
                 android:gravity="center"
                 android:text="小组四"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
             <CheckBox
                 android:id="@+id/spbtn_all_zu_5"
@@ -143,7 +143,7 @@
                 android:gravity="center"
                 android:text="小组五"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
             <CheckBox
                 android:id="@+id/spbtn_all_zu_6"
@@ -155,92 +155,12 @@
                 android:gravity="center"
                 android:text="小组六"
                 android:textColor="@color/text_color_1"
-                android:textSize="16sp" />
+                android:textSize="@dimen/spjz_text_size_all" />
 
 
         </LinearLayout>
 
 
     </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-
-        <Button
-            android:id="@+id/btn_shangke"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/yinpin_btn_status"
-            android:drawableTop="@drawable/shangke"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="上课"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
-
-
-        <Button
-            android:id="@+id/btn_xiake"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/changjing_btn_marginLeft"
-            android:background="@drawable/yinpin_btn_status"
-            android:drawableTop="@drawable/xiake"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="下课"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/changjing_btn_marginTop"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-
-        <Button
-            android:id="@+id/btn_zixi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/yinpin_btn_status"
-            android:drawableTop="@drawable/zixi"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="自习"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
-
-
-        <Button
-            android:id="@+id/btn_xiuxi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/changjing_btn_marginLeft"
-            android:background="@drawable/yinpin_btn_status"
-            android:drawableTop="@drawable/xiuxi"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="休息"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
-
-
-    </LinearLayout>
-
 
 </LinearLayout>

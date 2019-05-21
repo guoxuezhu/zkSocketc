@@ -62,7 +62,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(false);
         spbtn_all_zu_5.setChecked(false);
         spbtn_all_zu_6.setChecked(false);
-        danBtnClosed();
     }
 
     @OnClick(R.id.spbtn_all_diannao)
@@ -77,7 +76,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(false);
         spbtn_all_zu_5.setChecked(false);
         spbtn_all_zu_6.setChecked(false);
-        danBtnClosed();
     }
 
     @OnClick(R.id.spbtn_all_touping)
@@ -92,7 +90,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(false);
         spbtn_all_zu_5.setChecked(false);
         spbtn_all_zu_6.setChecked(false);
-        danBtnClosed();
     }
 
     @OnClick(R.id.spbtn_all_zu_1)
@@ -107,7 +104,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(false);
         spbtn_all_zu_5.setChecked(false);
         spbtn_all_zu_6.setChecked(false);
-        danBtnClosed();
     }
 
     @OnClick(R.id.spbtn_all_zu_2)
@@ -122,7 +118,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(false);
         spbtn_all_zu_5.setChecked(false);
         spbtn_all_zu_6.setChecked(false);
-        danBtnClosed();
     }
 
     @OnClick(R.id.spbtn_all_zu_3)
@@ -137,7 +132,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(false);
         spbtn_all_zu_5.setChecked(false);
         spbtn_all_zu_6.setChecked(false);
-        danBtnClosed();
     }
 
     @OnClick(R.id.spbtn_all_zu_4)
@@ -152,7 +146,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(true);
         spbtn_all_zu_5.setChecked(false);
         spbtn_all_zu_6.setChecked(false);
-        danBtnClosed();
     }
 
     @OnClick(R.id.spbtn_all_zu_5)
@@ -167,7 +160,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(false);
         spbtn_all_zu_5.setChecked(true);
         spbtn_all_zu_6.setChecked(false);
-        danBtnClosed();
     }
 
     @OnClick(R.id.spbtn_all_zu_6)
@@ -182,70 +174,7 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_zu_4.setChecked(false);
         spbtn_all_zu_5.setChecked(false);
         spbtn_all_zu_6.setChecked(true);
-        danBtnClosed();
     }
 
-    private void danBtnClosed() {
-
-//        spbtn_dan_in_lubo.setChecked(false);
-//        spbtn_dan_in_diannao.setChecked(false);
-//        spbtn_dan_in_touping.setChecked(false);
-//        spbtn_dan_in_zu_1.setChecked(false);
-//        spbtn_dan_in_zu_2.setChecked(false);
-//        spbtn_dan_in_zu_3.setChecked(false);
-//        spbtn_dan_in_zu_4.setChecked(false);
-//        spbtn_dan_in_zu_5.setChecked(false);
-//        spbtn_dan_in_zu_6.setChecked(false);
-//
-//        spbtn_dan_out_lubo.setChecked(false);
-//        spbtn_dan_out_diannao.setChecked(false);
-//        spbtn_dan_out_touping.setChecked(false);
-//        spbtn_dan_out_zu_1.setChecked(false);
-//        spbtn_dan_out_zu_2.setChecked(false);
-//        spbtn_dan_out_zu_3.setChecked(false);
-//        spbtn_dan_out_zu_4.setChecked(false);
-//        spbtn_dan_out_zu_5.setChecked(false);
-//        spbtn_dan_out_zu_6.setChecked(false);
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//    @OnClick(R.id.btn_shangke)
-//    public void btn_shangke() {
-//        SerialPortUtil.sendMsg("MBS1");
-//
-//    }
-//
-//    @OnClick(R.id.btn_xiake)
-//    public void btn_xiake() {
-//        SerialPortUtil.sendMsg("MBS2");
-//        startActivity(new Intent(getActivity(), SplashActivity.class));
-//        getActivity().finish();
-//    }
-//
-//    @OnClick(R.id.btn_zixi)
-//    public void btn_zixi() {
-//        SerialPortUtil.sendMsg("MBS3");
-//
-//    }
-//
-//    @OnClick(R.id.btn_xiuxi)
-//    public void btn_xiuxi() {
-//        SerialPortUtil.sendMsg("MBS4");
-//    }
 
 }
