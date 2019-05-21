@@ -28,8 +28,9 @@
                 android:button="@null"
                 android:drawableLeft="@drawable/changjing"
                 android:drawablePadding="15dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text="一键"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -47,9 +48,9 @@
                 android:background="@drawable/radio_btn_status_1"
                 android:button="@null"
                 android:drawableLeft="@drawable/shipin"
-                android:drawablePadding="15dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text="互动"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -67,9 +68,9 @@
                 android:background="@drawable/radio_btn_status_1"
                 android:button="@null"
                 android:drawableLeft="@drawable/shebei"
-                android:drawablePadding="15dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text="物联"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -88,9 +89,9 @@
                 android:background="@drawable/radio_btn_status_1"
                 android:button="@null"
                 android:drawableLeft="@drawable/lubo"
-                android:drawablePadding="15dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text="录播"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -108,9 +109,9 @@
                 android:background="@drawable/radio_btn_status_1"
                 android:button="@null"
                 android:drawableLeft="@drawable/yinpin"
-                android:drawablePadding="15dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text="音频"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -128,9 +129,9 @@
                 android:background="@drawable/radio_btn_status_1"
                 android:button="@null"
                 android:drawableLeft="@drawable/dianyuan"
-                android:drawablePadding="15dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text="电源"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -148,7 +149,7 @@
 
 
         <LinearLayout
-            android:layout_width="150dp"
+            android:layout_width="169dp"
             android:layout_height="match_parent"
             android:background="@color/rdio_btn_bg_color"
             android:orientation="vertical">
@@ -219,36 +220,43 @@
                     android:background="@color/xian" />
 
 
-            </RadioGroup>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
+                <RadioButton
+                    android:id="@+id/rbtn_nei_hdmi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_btn_status_2"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/xiake"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="内置"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="20sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/xian" />
 
-                <CheckBox
-                    android:id="@+id/rbtn_set_hdmi"
+
+                <RadioButton
+                    android:id="@+id/rbtn_wai_hdmi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/radio_btn_status_2"
                     android:button="@null"
-                    android:drawableTop="@drawable/fuwei"
+                    android:drawableLeft="@drawable/xiake"
                     android:gravity="center"
-                    android:paddingBottom="@dimen/dp_20"
-                    android:text="内置/外置"
+                    android:padding="15dp"
+                    android:text="外置"
                     android:textColor="@color/text_color_1"
                     android:textSize="20sp" />
 
-
-            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/xian" />
+            </RadioGroup>
 
 
         </LinearLayout>

@@ -3,6 +3,7 @@ package com.lh.zksocketc.ui;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 
@@ -27,12 +28,6 @@ public class HomeActivity extends BaseActivity {
     @BindView(R.id.rbtn_changjing)
     RadioButton rbtn_changjing;
 
-    @BindView(R.id.rbtn_fuwei)
-    RadioButton rbtn_fuwei;
-
-    @BindView(R.id.rbtn_set_hdmi)
-    CheckBox rbtn_set_hdmi;
-
     private List<Fragment> fragments = new ArrayList<>();
     private Fragment fragment;
 
@@ -43,7 +38,7 @@ public class HomeActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         rbtn_changjing.setChecked(true);
-        rbtn_fuwei.setChecked(true);
+//        rbtn_fuwei.setChecked(true);
 
         fragments = getFragments(); //添加布局
         showFragment(0);
@@ -123,13 +118,14 @@ public class HomeActivity extends BaseActivity {
         finish();
     }
 
-    @OnClick(R.id.rbtn_set_hdmi)
-    public void rbtn_set_hdmi() {
-        if (rbtn_set_hdmi.isChecked()) {
-            SerialPortUtil.sendMsg("MBS50");
-        } else {
-            SerialPortUtil.sendMsg("MBS51");
-        }
+    @OnClick(R.id.rbtn_nei_hdmi)
+    public void rbtn_nei_hdmi(View view) {
+        SerialPortUtil.sendMsg("MBS50");
+    }
+
+    @OnClick(R.id.rbtn_wai_hdmi)
+    public void rbtn_wai_hdmi() {
+        SerialPortUtil.sendMsg("MBS51");
     }
 
     @Override
