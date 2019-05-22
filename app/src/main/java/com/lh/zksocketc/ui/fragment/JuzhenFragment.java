@@ -71,7 +71,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_lubo)
     public void spbtn_dan_in_lubo() {
-        SerialPortUtil.sendMsg("MBS51");
         spbtn_dan_in_lubo.setChecked(true);
         spbtn_dan_in_diannao.setChecked(false);
         spbtn_dan_in_touping.setChecked(false);
@@ -86,7 +85,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_diannao)
     public void spbtn_dan_in_diannao() {
-        SerialPortUtil.sendMsg("MBS50");
         spbtn_dan_in_lubo.setChecked(false);
         spbtn_dan_in_diannao.setChecked(true);
         spbtn_dan_in_touping.setChecked(false);
@@ -102,7 +100,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_touping)
     public void spbtn_dan_in_touping() {
-        SerialPortUtil.sendMsg("MBS51");
         spbtn_dan_in_lubo.setChecked(false);
         spbtn_dan_in_diannao.setChecked(false);
         spbtn_dan_in_touping.setChecked(true);
@@ -117,7 +114,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_zu_1)
     public void spbtn_dan_in_zu_1() {
-        SerialPortUtil.sendMsg("MBS51");
         spbtn_dan_in_lubo.setChecked(false);
         spbtn_dan_in_diannao.setChecked(false);
         spbtn_dan_in_touping.setChecked(false);
@@ -133,7 +129,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_zu_2)
     public void spbtn_dan_in_zu_2() {
-        SerialPortUtil.sendMsg("MBS51");
         spbtn_dan_in_lubo.setChecked(false);
         spbtn_dan_in_diannao.setChecked(false);
         spbtn_dan_in_touping.setChecked(false);
@@ -148,7 +143,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_zu_3)
     public void spbtn_dan_in_zu_3() {
-        SerialPortUtil.sendMsg("MBS51");
         spbtn_dan_in_lubo.setChecked(false);
         spbtn_dan_in_diannao.setChecked(false);
         spbtn_dan_in_touping.setChecked(false);
@@ -164,7 +158,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_zu_4)
     public void spbtn_dan_in_zu_4() {
-        SerialPortUtil.sendMsg("MBS51");
         spbtn_dan_in_lubo.setChecked(false);
         spbtn_dan_in_diannao.setChecked(false);
         spbtn_dan_in_touping.setChecked(false);
@@ -180,7 +173,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_zu_5)
     public void spbtn_dan_in_zu_5() {
-        SerialPortUtil.sendMsg("MBS51");
         spbtn_dan_in_lubo.setChecked(false);
         spbtn_dan_in_diannao.setChecked(false);
         spbtn_dan_in_touping.setChecked(false);
@@ -196,7 +188,6 @@ public class JuzhenFragment extends Fragment {
 
     @OnClick(R.id.spbtn_dan_in_zu_6)
     public void spbtn_dan_in_zu_6() {
-        SerialPortUtil.sendMsg("MBS51");
         spbtn_dan_in_lubo.setChecked(false);
         spbtn_dan_in_diannao.setChecked(false);
         spbtn_dan_in_touping.setChecked(false);
