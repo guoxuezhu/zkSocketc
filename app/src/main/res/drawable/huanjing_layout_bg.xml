@@ -3,7 +3,7 @@
 
     <!-- 设置填充颜色 -->
 
-    <solid android:color="@color/rdio_btn_color_2" />
+    <solid android:color="@color/rdio_btn_bg_color" />
 
     <!-- 设置圆角矩形 -->
 
