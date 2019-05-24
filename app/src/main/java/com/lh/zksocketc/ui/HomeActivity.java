@@ -30,6 +30,7 @@ public class HomeActivity extends BaseActivity {
 
     private List<Fragment> fragments = new ArrayList<>();
     private Fragment fragment;
+    private boolean isShangke = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class HomeActivity extends BaseActivity {
 
         fragments = getFragments(); //添加布局
         showFragment(0);
-
+        isShangke = false;
 
     }
 
@@ -107,13 +108,17 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.rbtn_shangke)
     public void rbtn_shangke() {
-        SerialPortUtil.sendMsg("MBS1");
+        if (!isShangke) {
+            SerialPortUtil.sendMsg("MBS1");
+            isShangke = true;
+        }
     }
 
 
     @OnClick(R.id.rbtn_xiake)
     public void rbtn_xiake() {
         SerialPortUtil.sendMsg("MBS2");
+        isShangke = false;
         startActivity(new Intent(this, SplashActivity.class));
         finish();
     }
