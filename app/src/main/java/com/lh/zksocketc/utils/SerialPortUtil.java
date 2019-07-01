@@ -79,6 +79,13 @@ public class SerialPortUtil {
                                 } catch (Exception e) {
                                     ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
                                 }
+                            } else if (msglist[0].equals("SKJ")) {
+                                if (myHander != null) {
+                                    Message message = new Message();
+                                    message.obj = msg;
+                                    message.what = 444;
+                                    myHander.sendMessage(message);
+                                }
                             }
                         }
                     }

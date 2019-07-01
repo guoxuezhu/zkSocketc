@@ -42,8 +42,16 @@ public class SplashActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
+                case 444:
+                    ELog.e("======sHander====SplashActivity====444=========" + msg.obj.toString());
+                    screenOn();
+                    SerialPortUtil.sendMsg("MBS37");
+                    destroyFinish();
+                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                    finish();
+                    break;
                 case 333:
-                    ELog.e("======sHander====SplashActivity=======" + msg.obj.toString());
+                    ELog.e("======sHander=====333=====SplashActivity=======" + msg.obj.toString());
                     screenOn();
                     if (icCardNumerDao.loadAll().size() != 0) {
                         List<IcCardNumer> cardNumers = icCardNumerDao.queryBuilder()
