@@ -126,7 +126,7 @@ public class ShebeiFragment extends Fragment {
 
     @OnClick(R.id.btn_mj_pc)
     public void btn_mj_pc() {
-        SerialPortUtil.sendMsg("MBS46");
+        SerialPortUtil.sendMsg("MJD46");
     }
 
 
