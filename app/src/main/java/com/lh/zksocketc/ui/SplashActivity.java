@@ -140,7 +140,7 @@ public class SplashActivity extends BaseActivity {
 
 
     private void showToast(String Str) {
-        Toast.makeText(this, Str, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, Str, Toast.LENGTH_SHORT).show();
     }
 
 

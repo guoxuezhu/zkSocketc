@@ -9,13 +9,9 @@ import android.widget.TextView;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
-import com.lh.zksocketc.data.DbDao.IcCardNumerDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
-import com.lh.zksocketc.data.model.IcCardNumer;
 import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,13 +35,9 @@ public class SmallActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
-                case 444:
-                    ELog.e("======sHander====SmallActivity====444=========" + msg.obj.toString());
-
-                    break;
-                case 333:
-                    ELog.e("======sHander=====333=====SmallActivity=======" + msg.obj.toString());
-
+                case 567:
+                    ELog.e("======smHander====SmallActivity====567=========" + msg.obj.toString());
+                    initView();
                     break;
             }
         }
@@ -58,6 +50,7 @@ public class SmallActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         initView();
+        SerialPortUtil.setWSDmsg(smHander);
     }
 
     private void initView() {
@@ -82,6 +75,7 @@ public class SmallActivity extends BaseActivity {
 
     @OnClick(R.id.rbtn_xiake)
     public void rbtn_xiake() {
+        SerialPortUtil.stopWSDmsg(smHander);
         SerialPortUtil.sendMsg("MBS2");
         startActivity(new Intent(this, SplashActivity.class));
         finish();
@@ -159,7 +153,6 @@ public class SmallActivity extends BaseActivity {
     public void btn_mj_pc() {
         SerialPortUtil.sendMsg("MJD46");
     }
-
 
 
     @Override
