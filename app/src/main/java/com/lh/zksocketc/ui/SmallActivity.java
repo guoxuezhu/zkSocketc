@@ -2,13 +2,20 @@ package com.lh.zksocketc.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.data.DbDao.IcCardNumerDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
+import com.lh.zksocketc.data.model.IcCardNumer;
+import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,12 +34,27 @@ public class SmallActivity extends BaseActivity {
     @BindView(R.id.ckbox_kt_open_close)
     CheckBox ckbox_kt_open_close;
 
+    Handler smHander = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 444:
+                    ELog.e("======sHander====SmallActivity====444=========" + msg.obj.toString());
+
+                    break;
+                case 333:
+                    ELog.e("======sHander=====333=====SmallActivity=======" + msg.obj.toString());
+
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_small);
-
         ButterKnife.bind(this);
 
         initView();
@@ -64,23 +86,6 @@ public class SmallActivity extends BaseActivity {
         startActivity(new Intent(this, SplashActivity.class));
         finish();
     }
-
-
-
-    private void showView() {
-        WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
-        if (wsdDataDao.loadAll().size() == 0) {
-            tv_wsd_wd.setText("");
-            tv_wsd_sd.setText("");
-            tv_wsd_pm.setText("");
-        } else {
-            tv_wsd_wd.setText(wsdDataDao.loadAll().get(0).wendu);
-            tv_wsd_sd.setText(wsdDataDao.loadAll().get(0).shidu);
-            tv_wsd_pm.setText(wsdDataDao.loadAll().get(0).pm25);
-        }
-
-    }
-
 
     @OnClick(R.id.rbtn_cl_open)
     public void rbtn_cl_open() {
