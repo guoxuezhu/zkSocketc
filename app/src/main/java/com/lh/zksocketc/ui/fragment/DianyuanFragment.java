@@ -79,4 +79,13 @@ public class DianyuanFragment extends Fragment {
     }
 
 
+    @OnClick(R.id.rbtn_nei_hdmi)
+    public void rbtn_nei_hdmi() {
+        SerialPortUtil.sendMsg("MBS50");
+    }
+
+    @OnClick(R.id.rbtn_wai_hdmi)
+    public void rbtn_wai_hdmi() {
+        SerialPortUtil.sendMsg("MBS51");
+    }
 }

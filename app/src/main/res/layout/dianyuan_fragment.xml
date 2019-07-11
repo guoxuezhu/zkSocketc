@@ -6,62 +6,113 @@
     android:orientation="vertical"
     android:padding="@dimen/dp_20">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/layout_bg"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            android:text="电源"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
-
+        android:layout_weight="2"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/shebei_btn_marginTop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/layout_bg"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
 
-            <Button
-                android:id="@+id/dy_all_open"
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/yinpin_btn_status"
-                android:drawableTop="@drawable/all_open"
-                android:drawablePadding="0dp"
+                android:layout_margin="5dp"
                 android:gravity="center"
-                android:paddingTop="@dimen/dp_10"
-                android:text="全开"
+                android:text="电源时序器"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/text_size_20" />
 
-            <Button
-                android:id="@+id/dy_all_close"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dianyuan_btn_marginLeft"
-                android:background="@drawable/yinpin_btn_status"
-                android:drawableTop="@drawable/all_close"
-                android:drawablePadding="0dp"
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
                 android:gravity="center"
-                android:paddingTop="@dimen/dp_10"
-                android:text="全关"
-                android:textColor="@color/text_color_1"
-                android:textSize="@dimen/text_size_20" />
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/dy_all_open"
+                    android:layout_width="@dimen/dianyuan_btn_width"
+                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:background="@drawable/huanjing_btn_status"
+                    android:text="全开"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="@dimen/dianyuan_text_size" />
+
+                <Button
+                    android:id="@+id/dy_all_close"
+                    android:layout_width="@dimen/dianyuan_btn_width"
+                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                    android:background="@drawable/huanjing_btn_status"
+                    android:text="全关"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="@dimen/dianyuan_text_size" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@drawable/layout_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="大屏一体机"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/text_size_20" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/rbtn_nei_hdmi"
+                    android:layout_width="@dimen/dianyuan_btn_width"
+                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:background="@drawable/huanjing_btn_status"
+                    android:text="内置HDMI"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="@dimen/dianyuan_text_size" />
+
+                <Button
+                    android:id="@+id/rbtn_wai_hdmi"
+                    android:layout_width="@dimen/dianyuan_btn_width"
+                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                    android:background="@drawable/huanjing_btn_status"
+                    android:text="外置HDMI"
+                    android:textColor="@color/text_color_1"
+                    android:textSize="@dimen/dianyuan_text_size" />
+
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 
 
@@ -69,7 +120,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/dp_10"
-        android:layout_weight="1"
+        android:layout_weight="3"
         android:background="@drawable/layout_bg"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -87,9 +138,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/shebei_btn_marginTop"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:orientation="vertical">
 
 

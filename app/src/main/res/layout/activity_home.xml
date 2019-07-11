@@ -132,7 +132,7 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="电源"
+                android:text="其它"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -211,44 +211,6 @@
                     android:gravity="center"
                     android:padding="15dp"
                     android:text="下课"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="20sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
-
-
-                <RadioButton
-                    android:id="@+id/rbtn_nei_hdmi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_btn_status_2"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/xiake"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:text="内置"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="20sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
-
-
-                <RadioButton
-                    android:id="@+id/rbtn_wai_hdmi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_btn_status_2"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/xiake"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:text="外置"
                     android:textColor="@color/text_color_1"
                     android:textSize="20sp" />
 

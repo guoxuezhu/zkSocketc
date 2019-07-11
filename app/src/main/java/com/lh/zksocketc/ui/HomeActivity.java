@@ -123,16 +123,6 @@ public class HomeActivity extends BaseActivity {
         finish();
     }
 
-    @OnClick(R.id.rbtn_nei_hdmi)
-    public void rbtn_nei_hdmi(View view) {
-        SerialPortUtil.sendMsg("MBS50");
-    }
-
-    @OnClick(R.id.rbtn_wai_hdmi)
-    public void rbtn_wai_hdmi() {
-        SerialPortUtil.sendMsg("MBS51");
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
