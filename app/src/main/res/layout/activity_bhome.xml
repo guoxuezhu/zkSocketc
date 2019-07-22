@@ -33,7 +33,7 @@
                 android:textSize="@dimen/huanjing_text_size" />
 
             <TextView
-                android:id="@+id/tv_wsd_wd"
+                android:id="@+id/B_tv_wsd_wd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/huanjing_layout_bg"
@@ -61,7 +61,7 @@
                 android:textSize="@dimen/huanjing_text_size" />
 
             <TextView
-                android:id="@+id/tv_wsd_pm"
+                android:id="@+id/B_tv_wsd_pm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/huanjing_layout_bg"
@@ -89,7 +89,7 @@
                 android:textSize="@dimen/huanjing_text_size" />
 
             <TextView
-                android:id="@+id/tv_wsd_sd"
+                android:id="@+id/B_tv_wsd_sd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/huanjing_layout_bg"
@@ -125,7 +125,7 @@
 
 
                 <RadioButton
-                    android:id="@+id/rbtn_shangke"
+                    android:id="@+id/B_rbtn_shangke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/yinpin_checked_status"
@@ -139,7 +139,7 @@
                     android:textSize="@dimen/text_size_20" />
 
                 <RadioButton
-                    android:id="@+id/rbtn_xiake"
+                    android:id="@+id/B_rbtn_xiake"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_50"
@@ -182,7 +182,7 @@
 
 
                     <RadioButton
-                        android:id="@+id/rbtn_cl_open"
+                        android:id="@+id/B_rbtn_cl_open"
                         android:layout_width="@dimen/shebei_btn_width"
                         android:layout_height="@dimen/shebei_btn_height"
                         android:background="@drawable/shebei_checkbox_status"
@@ -194,7 +194,7 @@
 
 
                     <RadioButton
-                        android:id="@+id/rbtn_cl_close"
+                        android:id="@+id/B_rbtn_cl_close"
                         android:layout_width="@dimen/shebei_btn_width"
                         android:layout_height="@dimen/shebei_btn_height"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
@@ -217,7 +217,7 @@
 
 
                     <RadioButton
-                        android:id="@+id/rbtn_dg_open"
+                        android:id="@+id/B_rbtn_dg_open"
                         android:layout_width="@dimen/shebei_btn_width"
                         android:layout_height="@dimen/shebei_btn_height"
                         android:background="@drawable/shebei_checkbox_status"
@@ -228,7 +228,7 @@
                         android:textSize="@dimen/shebei_text_size" />
 
                     <RadioButton
-                        android:id="@+id/rbtn_dg_close"
+                        android:id="@+id/B_rbtn_dg_close"
                         android:layout_width="@dimen/shebei_btn_width"
                         android:layout_height="@dimen/shebei_btn_height"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
@@ -252,7 +252,7 @@
 
 
                     <RadioButton
-                        android:id="@+id/rbtn_tyj_open"
+                        android:id="@+id/B_rbtn_tyj_open"
                         android:layout_width="@dimen/shebei_btn_width"
                         android:layout_height="@dimen/shebei_btn_height"
                         android:background="@drawable/shebei_checkbox_status"
@@ -263,7 +263,7 @@
                         android:textSize="@dimen/shebei_text_size" />
 
                     <RadioButton
-                        android:id="@+id/rbtn_tyj_close"
+                        android:id="@+id/B_rbtn_tyj_close"
                         android:layout_width="@dimen/shebei_btn_width"
                         android:layout_height="@dimen/shebei_btn_height"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
@@ -287,7 +287,7 @@
 
 
                     <RadioButton
-                        android:id="@+id/rbtn_tyj_bu_open"
+                        android:id="@+id/B_rbtn_tyj_bu_open"
                         android:layout_width="@dimen/shebei_btn_width"
                         android:layout_height="@dimen/shebei_btn_height"
                         android:background="@drawable/shebei_checkbox_status"
@@ -298,7 +298,7 @@
                         android:textSize="@dimen/shebei_text_size" />
 
                     <RadioButton
-                        android:id="@+id/rbtn_tyj_bu_close"
+                        android:id="@+id/B_rbtn_tyj_bu_close"
                         android:layout_width="@dimen/shebei_btn_width"
                         android:layout_height="@dimen/shebei_btn_height"
                         android:layout_marginTop="@dimen/shebei_btn_marginTop"
@@ -323,7 +323,7 @@
 
 
                 <CheckBox
-                    android:id="@+id/ckbox_kt_open_close"
+                    android:id="@+id/B_ckbox_kt_open_close"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_height"
                     android:background="@drawable/shebei_checkbox_status"
@@ -334,7 +334,7 @@
                     android:textSize="@dimen/shebei_text_size" />
 
                 <Button
-                    android:id="@+id/btn_kt_wd_y"
+                    android:id="@+id/B_btn_kt_wd_y"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_height"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
@@ -344,7 +344,7 @@
                     android:textSize="@dimen/shebei_text_size" />
 
                 <Button
-                    android:id="@+id/btn_kt_wd_n"
+                    android:id="@+id/B_btn_kt_wd_n"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_height"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
@@ -354,7 +354,7 @@
                     android:textSize="@dimen/shebei_text_size" />
 
                 <Button
-                    android:id="@+id/btn_mj_pc"
+                    android:id="@+id/B_btn_mj_pc"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_height"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
