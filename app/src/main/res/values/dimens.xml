@@ -39,7 +39,9 @@
 
 
 
-
+    <dimen name="shebei_B_btn_width">150dp</dimen>
+    <dimen name="shebei_B_btn_height">90dp</dimen>
+    <dimen name="shebei_B_btn_marginTop">30dp</dimen>
 
 
 

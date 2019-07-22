@@ -183,8 +183,8 @@
 
                     <RadioButton
                         android:id="@+id/B_rbtn_cl_open"
-                        android:layout_width="@dimen/shebei_btn_width"
-                        android:layout_height="@dimen/shebei_btn_height"
+                        android:layout_width="@dimen/shebei_B_btn_width"
+                        android:layout_height="@dimen/shebei_B_btn_height"
                         android:background="@drawable/shebei_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -195,9 +195,9 @@
 
                     <RadioButton
                         android:id="@+id/B_rbtn_cl_close"
-                        android:layout_width="@dimen/shebei_btn_width"
-                        android:layout_height="@dimen/shebei_btn_height"
-                        android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                        android:layout_width="@dimen/shebei_B_btn_width"
+                        android:layout_height="@dimen/shebei_B_btn_height"
+                        android:layout_marginTop="@dimen/shebei_B_btn_marginTop"
                         android:background="@drawable/shebei_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -218,8 +218,8 @@
 
                     <RadioButton
                         android:id="@+id/B_rbtn_dg_open"
-                        android:layout_width="@dimen/shebei_btn_width"
-                        android:layout_height="@dimen/shebei_btn_height"
+                        android:layout_width="@dimen/shebei_B_btn_width"
+                        android:layout_height="@dimen/shebei_B_btn_height"
                         android:background="@drawable/shebei_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -229,9 +229,9 @@
 
                     <RadioButton
                         android:id="@+id/B_rbtn_dg_close"
-                        android:layout_width="@dimen/shebei_btn_width"
-                        android:layout_height="@dimen/shebei_btn_height"
-                        android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                        android:layout_width="@dimen/shebei_B_btn_width"
+                        android:layout_height="@dimen/shebei_B_btn_height"
+                        android:layout_marginTop="@dimen/shebei_B_btn_marginTop"
                         android:background="@drawable/shebei_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -253,8 +253,8 @@
 
                     <RadioButton
                         android:id="@+id/B_rbtn_tyj_open"
-                        android:layout_width="@dimen/shebei_btn_width"
-                        android:layout_height="@dimen/shebei_btn_height"
+                        android:layout_width="@dimen/shebei_B_btn_width"
+                        android:layout_height="@dimen/shebei_B_btn_height"
                         android:background="@drawable/shebei_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -264,9 +264,9 @@
 
                     <RadioButton
                         android:id="@+id/B_rbtn_tyj_close"
-                        android:layout_width="@dimen/shebei_btn_width"
-                        android:layout_height="@dimen/shebei_btn_height"
-                        android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                        android:layout_width="@dimen/shebei_B_btn_width"
+                        android:layout_height="@dimen/shebei_B_btn_height"
+                        android:layout_marginTop="@dimen/shebei_B_btn_marginTop"
                         android:background="@drawable/shebei_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -288,8 +288,8 @@
 
                     <RadioButton
                         android:id="@+id/B_rbtn_tyj_bu_open"
-                        android:layout_width="@dimen/shebei_btn_width"
-                        android:layout_height="@dimen/shebei_btn_height"
+                        android:layout_width="@dimen/shebei_B_btn_width"
+                        android:layout_height="@dimen/shebei_B_btn_height"
                         android:background="@drawable/shebei_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -299,9 +299,9 @@
 
                     <RadioButton
                         android:id="@+id/B_rbtn_tyj_bu_close"
-                        android:layout_width="@dimen/shebei_btn_width"
-                        android:layout_height="@dimen/shebei_btn_height"
-                        android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                        android:layout_width="@dimen/shebei_B_btn_width"
+                        android:layout_height="@dimen/shebei_B_btn_height"
+                        android:layout_marginTop="@dimen/shebei_B_btn_marginTop"
                         android:background="@drawable/shebei_checkbox_status"
                         android:button="@null"
                         android:gravity="center"
@@ -317,15 +317,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:layout_marginTop="@dimen/shebei_B_btn_marginTop"
                 android:gravity="center"
                 android:orientation="horizontal">
 
 
                 <CheckBox
                     android:id="@+id/B_ckbox_kt_open_close"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_height"
+                    android:layout_width="@dimen/shebei_B_btn_width"
+                    android:layout_height="@dimen/shebei_B_btn_height"
                     android:background="@drawable/shebei_checkbox_status"
                     android:button="@null"
                     android:gravity="center"
@@ -335,8 +335,8 @@
 
                 <Button
                     android:id="@+id/B_btn_kt_wd_y"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_height"
+                    android:layout_width="@dimen/shebei_B_btn_width"
+                    android:layout_height="@dimen/shebei_B_btn_height"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                     android:background="@drawable/huanjing_btn_status"
                     android:text="温度+"
@@ -345,8 +345,8 @@
 
                 <Button
                     android:id="@+id/B_btn_kt_wd_n"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_height"
+                    android:layout_width="@dimen/shebei_B_btn_width"
+                    android:layout_height="@dimen/shebei_B_btn_height"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                     android:background="@drawable/huanjing_btn_status"
                     android:text="温度-"
@@ -355,8 +355,8 @@
 
                 <Button
                     android:id="@+id/B_btn_mj_pc"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_height"
+                    android:layout_width="@dimen/shebei_B_btn_width"
+                    android:layout_height="@dimen/shebei_B_btn_height"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                     android:background="@drawable/huanjing_btn_status"
                     android:text="开门"
