@@ -60,14 +60,13 @@ public class SharePreferenceUtil {
         return sp.getString("httpUrl", "");
     }
 
+    public void setMoshi(String moshi) {
+        editor.putString("moshi", moshi);
+        editor.commit();
+    }
 
-//    public void setCardNum(String cardNum) {
-//        editor.putString("cardNum", cardNum);
-//        editor.commit();
-//    }
-//
-//    public String getCardNum() {
-//        return sp.getString("cardNum", "");
-//    }
+    public String getMoshi() {
+        return sp.getString("moshi", "A");
+    }
 
 }

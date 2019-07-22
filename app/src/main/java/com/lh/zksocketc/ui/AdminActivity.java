@@ -5,8 +5,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.Toast;
+
 import com.lh.zksocketc.R;
+
 import java.io.File;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -19,6 +22,12 @@ public class AdminActivity extends BaseActivity {
         setContentView(R.layout.activity_admin);
         ButterKnife.bind(this);
 
+    }
+
+    @OnClick(R.id.moshi_btn)
+    public void moshi_btn() {
+        startActivity(new Intent(this, MoshiActivity.class));
+        finish();
     }
 
     @OnClick(R.id.xitong_seting)
@@ -45,7 +54,6 @@ public class AdminActivity extends BaseActivity {
     }
 
 
-
     @OnClick(R.id.btn_user)
     public void btn_user() {
         startActivity(new Intent(this, MainActivity.class));
@@ -57,15 +65,11 @@ public class AdminActivity extends BaseActivity {
     public void btn_ic() {
         startActivity(new Intent(this, IcActivity.class));
         finish();
-
     }
 
     @OnClick(R.id.admin_back)
     public void admin_back() {
         finish();
     }
-
-
-
 
 }
