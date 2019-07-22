@@ -113,8 +113,8 @@ public class BHomeActivity extends BaseActivity {
 
     }
 
-    @OnClick(R.id.rbtn_tyj_close)
-    public void rbtn_tyj_close() {
+    @OnClick(R.id.B_rbtn_tyj_close)
+    public void B_rbtn_tyj_close() {
         SerialPortUtil.sendMsg("MBS10");
 
     }
