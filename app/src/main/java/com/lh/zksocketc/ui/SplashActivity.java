@@ -47,7 +47,11 @@ public class SplashActivity extends BaseActivity {
                     screenOn();
                     SerialPortUtil.sendMsg("MBS37");
                     destroyFinish();
-                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                    if (MyApplication.prefs.getMoshi().equals("A")) {
+                        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                    } else {
+                        startActivity(new Intent(SplashActivity.this, BHomeActivity.class));
+                    }
                     finish();
                     break;
                 case 333:
@@ -61,7 +65,11 @@ public class SplashActivity extends BaseActivity {
                         if (cardNumers.size() != 0) {
                             SerialPortUtil.sendMsg("MBS37");
                             destroyFinish();
-                            startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                            if (MyApplication.prefs.getMoshi().equals("A")) {
+                                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                            } else {
+                                startActivity(new Intent(SplashActivity.this, BHomeActivity.class));
+                            }
                             finish();
                         }
                     }

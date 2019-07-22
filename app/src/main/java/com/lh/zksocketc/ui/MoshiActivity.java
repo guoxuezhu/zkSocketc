@@ -27,6 +27,8 @@ public class MoshiActivity extends BaseActivity {
 
         if (MyApplication.prefs.getMoshi().equals("A")) {
             rbtn_ms_1.setChecked(true);
+        } else {
+            rbtn_ms_2.setChecked(true);
         }
     }
 
