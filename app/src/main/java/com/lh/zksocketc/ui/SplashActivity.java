@@ -121,7 +121,7 @@ public class SplashActivity extends BaseActivity {
 
     private void isOpen() {
         if (policyManager.isAdminActive(adminReceiver)) {//判断超级管理员是否激活
-            showToast("设备已被激活");
+//            showToast("设备已被激活");
         } else {
             showToast("设备没有被激活");
 
