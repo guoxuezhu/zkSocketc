@@ -71,7 +71,11 @@ public class SplashActivity extends BaseActivity {
                                 startActivity(new Intent(SplashActivity.this, BHomeActivity.class));
                             }
                             finish();
+                        } else {
+                            startTimerOff();
                         }
+                    } else {
+                        startTimerOff();
                     }
                     break;
             }
