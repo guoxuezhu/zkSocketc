@@ -22,7 +22,7 @@
             android:layout_width="@dimen/dianyuan_btn_width"
             android:layout_height="@dimen/dianyuan_btn_height"
             android:background="@drawable/huanjing_btn_status"
-            android:text="全开"
+            android:text="灯光全开"
             android:textColor="@color/text_color_1"
             android:textSize="@dimen/dianyuan_text_size" />
 
@@ -32,7 +32,7 @@
             android:layout_height="@dimen/dianyuan_btn_height"
             android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
             android:background="@drawable/huanjing_btn_status"
-            android:text="全关"
+            android:text="灯光全关"
             android:textColor="@color/text_color_1"
             android:textSize="@dimen/dianyuan_text_size" />
 
