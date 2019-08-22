@@ -57,8 +57,8 @@
 
             <RadioButton
                 android:id="@+id/rbtn_cl_open_1"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
                 android:gravity="center"
@@ -69,8 +69,8 @@
 
             <RadioButton
                 android:id="@+id/rbtn_cl_close_1"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:layout_marginTop="@dimen/shebei_btn_marginTop"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
@@ -85,15 +85,15 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_2"
             android:gravity="center"
             android:orientation="vertical">
 
 
             <RadioButton
                 android:id="@+id/rbtn_cl_open_2"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
                 android:gravity="center"
@@ -103,8 +103,8 @@
 
             <RadioButton
                 android:id="@+id/rbtn_cl_close_2"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:layout_marginTop="@dimen/shebei_btn_marginTop"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
@@ -119,15 +119,15 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_2"
             android:gravity="center"
             android:orientation="vertical">
 
 
             <RadioButton
                 android:id="@+id/rbtn_cl_open_3"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
                 android:gravity="center"
@@ -137,8 +137,8 @@
 
             <RadioButton
                 android:id="@+id/rbtn_cl_close_3"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:layout_marginTop="@dimen/shebei_btn_marginTop"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
@@ -153,15 +153,15 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_2"
             android:gravity="center"
             android:orientation="vertical">
 
 
             <RadioButton
                 android:id="@+id/rbtn_cl_open_4"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
                 android:gravity="center"
@@ -171,8 +171,8 @@
 
             <RadioButton
                 android:id="@+id/rbtn_cl_close_4"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:layout_marginTop="@dimen/shebei_btn_marginTop"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
@@ -187,15 +187,15 @@
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_2"
             android:gravity="center"
             android:orientation="vertical">
 
 
             <RadioButton
                 android:id="@+id/rbtn_cl_open_5"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
                 android:gravity="center"
@@ -205,8 +205,8 @@
 
             <RadioButton
                 android:id="@+id/rbtn_cl_close_5"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
                 android:layout_marginTop="@dimen/shebei_btn_marginTop"
                 android:background="@drawable/shebei_checkbox_status"
                 android:button="@null"
