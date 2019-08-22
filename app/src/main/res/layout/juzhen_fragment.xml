@@ -4,379 +4,151 @@
     android:layout_height="match_parent"
     android:background="@color/di_color"
     android:gravity="center"
-    android:padding="@dimen/dp_20"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/dp_25">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
         android:orientation="horizontal">
 
 
-        <TextView
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="视频输入"
+        <Button
+            android:id="@+id/dg_all_open"
+            android:layout_width="@dimen/dianyuan_btn_width"
+            android:layout_height="@dimen/dianyuan_btn_height"
+            android:background="@drawable/huanjing_btn_status"
+            android:text="全开"
             android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/dianyuan_text_size" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:background="@drawable/layout_bg"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_lubo"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="录播"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_diannao"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="老师电脑"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_touping"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="老师投屏"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_zu_1"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组一"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_zu_2"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组二"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_zu_3"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组三"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_zu_4"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组四"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_zu_5"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组五"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_in_zu_6"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组六"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-
+        <Button
+            android:id="@+id/dg_all_close"
+            android:layout_width="@dimen/dianyuan_btn_width"
+            android:layout_height="@dimen/dianyuan_btn_height"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:background="@drawable/huanjing_btn_status"
+            android:text="全关"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/dianyuan_text_size" />
 
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_weight="3"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
         android:orientation="horizontal">
 
 
-        <TextView
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="视频输出"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:background="@drawable/layout_bg"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+            <RadioButton
+                android:id="@+id/rbtn_dg_open_1"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
                 android:gravity="center"
-                android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_lubo"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="录播"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
+                android:text="灯光1开"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
 
 
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+            <RadioButton
+                android:id="@+id/rbtn_dg_close_1"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
                 android:gravity="center"
-                android:orientation="vertical">
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_diannao"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="老师大屏"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_touping"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="投影"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
+                android:text="灯光1关"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
 
 
-            </LinearLayout>
+        </RadioGroup>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <RadioButton
+                android:id="@+id/rbtn_dg_open_2"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:text="灯光2开"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
 
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_zu_1"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组一"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_zu_2"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组二"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+            <RadioButton
+                android:id="@+id/rbtn_dg_close_2"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:text="灯光2关"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
 
 
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_zu_3"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组三"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
+        </RadioGroup>
 
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_zu_4"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组四"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:gravity="center"
+            android:orientation="vertical">
 
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+            <RadioButton
+                android:id="@+id/rbtn_dg_open_3"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:text="灯光3开"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
+
+            <RadioButton
+                android:id="@+id/rbtn_dg_close_3"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="灯光3关"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
 
 
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_zu_5"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组五"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-                <CheckBox
-                    android:id="@+id/spbtn_dan_out_zu_6"
-                    android:layout_width="@dimen/shipin_btn_width"
-                    android:layout_height="@dimen/shipin_btn_height"
-                    android:layout_marginTop="@dimen/shipin_btn_marginTop"
-                    android:background="@drawable/juzhen_checkbox_status"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="小组六"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="@dimen/spjz_text_size" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
+        </RadioGroup>
 
     </LinearLayout>
 

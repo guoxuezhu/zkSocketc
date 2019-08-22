@@ -17,14 +17,7 @@ import butterknife.OnClick;
 
 public class LuboFragment extends Fragment {
 
-    @BindView(R.id.luzhi)
-    CheckBox luzhi;
-    @BindView(R.id.zanting)
-    CheckBox zanting;
-    @BindView(R.id.tingzhi)
-    CheckBox tingzhi;
-    @BindView(R.id.zhibo)
-    CheckBox zhibo;
+
 
 
     @Nullable
@@ -35,37 +28,34 @@ public class LuboFragment extends Fragment {
         return view;
     }
 
-    @OnClick(R.id.luzhi)
-    public void luzhi() {
-        luzhi.setChecked(true);
-        zanting.setChecked(false);
-        tingzhi.setChecked(false);
-        SerialPortUtil.sendMsg("LUB1");
+    @OnClick(R.id.btn_xf_open)
+    public void btn_xf_open() {
+        SerialPortUtil.sendMsg("MBS60");
     }
 
-    @OnClick(R.id.zanting)
-    public void zanting() {
-        luzhi.setChecked(false);
-        zanting.setChecked(true);
-        tingzhi.setChecked(false);
-        SerialPortUtil.sendMsg("LUB2");
+    @OnClick(R.id.btn_xf_close)
+    public void btn_xf_close() {
+        SerialPortUtil.sendMsg("MBS61");
     }
 
-    @OnClick(R.id.tingzhi)
-    public void tingzhi() {
-        luzhi.setChecked(false);
-        zanting.setChecked(false);
-        tingzhi.setChecked(true);
-        SerialPortUtil.sendMsg("LUB3");
+    @OnClick(R.id.btn_xf_zidong)
+    public void btn_xf_zidong() {
+        SerialPortUtil.sendMsg("MBS33");
     }
 
-    @OnClick(R.id.zhibo)
-    public void zhibo() {
-        if (zhibo.isChecked()) {
-            SerialPortUtil.sendMsg("LUB4");
-        } else {
-            SerialPortUtil.sendMsg("LUB5");
-        }
+    @OnClick(R.id.btn_xf_fs_1)
+    public void btn_xf_fs_1() {
+        SerialPortUtil.sendMsg("MBS34");
+    }
+
+    @OnClick(R.id.btn_xf_fs_2)
+    public void btn_xf_fs_2() {
+        SerialPortUtil.sendMsg("MBS35");
+    }
+
+    @OnClick(R.id.btn_xf_fs_3)
+    public void btn_xf_fs_3() {
+        SerialPortUtil.sendMsg("MBS36");
     }
 
 }

@@ -31,7 +31,7 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="一键"
+                android:text="窗帘"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -51,7 +51,7 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="互动"
+                android:text="灯光"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -71,7 +71,7 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="物联"
+                android:text="空调"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -92,27 +92,7 @@
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="录播"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/xian" />
-
-            <RadioButton
-                android:id="@+id/rbtn_yinpin"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/radio_btn_status_1"
-                android:button="@null"
-                android:drawableLeft="@drawable/yinpin"
-                android:gravity="center"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:text="音频"
+                android:text="新风"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -158,24 +138,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
-
-                <RadioButton
-                    android:id="@+id/rbtn_fuwei"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_btn_status_2"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/fuwei"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:text="复位"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="20sp" />
 
                 <View
                     android:layout_width="match_parent"

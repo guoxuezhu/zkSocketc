@@ -3,8 +3,6 @@ package com.lh.zksocketc.ui;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
 
 import com.lh.zksocketc.R;
@@ -53,7 +51,7 @@ public class HomeActivity extends BaseActivity {
         fragments.add(new LuboFragment());
         fragments.add(new JuzhenFragment());
 //        fragments.add(new HuanjingFragment());
-        fragments.add(new YinpinFragment());
+//        fragments.add(new YinpinFragment());
         fragments.add(new DianyuanFragment());
         return fragments;
     }
@@ -80,15 +78,15 @@ public class HomeActivity extends BaseActivity {
     }
 
 
-    @OnClick(R.id.rbtn_yinpin)
-    public void rbtn_yinpin() {
-        showFragment(4);
-    }
+//    @OnClick(R.id.rbtn_yinpin)
+//    public void rbtn_yinpin() {
+//        showFragment(4);
+//    }
 
 
     @OnClick(R.id.rbtn_dianyuan)
     public void rbtn_dianyuan() {
-        showFragment(5);
+        showFragment(4);
     }
 
 
@@ -100,10 +98,10 @@ public class HomeActivity extends BaseActivity {
 
     }
 
-    @OnClick(R.id.rbtn_fuwei)
-    public void rbtn_fuwei() {
-        SerialPortUtil.sendMsg("FWS0");
-    }
+//    @OnClick(R.id.rbtn_fuwei)
+//    public void rbtn_fuwei() {
+//        SerialPortUtil.sendMsg("FWS0");
+//    }
 
 
     @OnClick(R.id.rbtn_shangke)

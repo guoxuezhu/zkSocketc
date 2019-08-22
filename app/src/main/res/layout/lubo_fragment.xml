@@ -4,85 +4,94 @@
     android:layout_height="match_parent"
     android:background="@color/di_color"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/dp_25">
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:orientation="vertical">
 
 
-        <CheckBox
-            android:id="@+id/luzhi"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
-            android:drawableTop="@drawable/luzhi"
-            android:drawablePadding="0dp"
             android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="录制"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
+            android:orientation="horizontal">
 
-        <CheckBox
-            android:id="@+id/zanting"
-            android:layout_width="wrap_content"
+
+            <Button
+                android:id="@+id/btn_xf_open"
+                android:layout_width="@dimen/dianyuan_btn_width"
+                android:layout_height="@dimen/dianyuan_btn_height"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="开启"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/dianyuan_text_size" />
+
+            <Button
+                android:id="@+id/btn_xf_close"
+                android:layout_width="144dp"
+                android:layout_height="@dimen/dianyuan_btn_height"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="关闭"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/dianyuan_text_size" />
+
+            <Button
+                android:id="@+id/btn_xf_zidong"
+                android:layout_width="144dp"
+                android:layout_height="@dimen/dianyuan_btn_height"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="自动"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/dianyuan_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/changjing_btn_marginLeft"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
-            android:drawableTop="@drawable/zanting"
-            android:drawablePadding="0dp"
+            android:layout_marginTop="@dimen/dp_50"
             android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="暂停"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
+            android:orientation="horizontal">
 
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_xf_fs_1"
+                android:layout_width="@dimen/dianyuan_btn_width"
+                android:layout_height="@dimen/dianyuan_btn_height"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="风速-低"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/dianyuan_text_size" />
 
+            <Button
+                android:id="@+id/btn_xf_fs_2"
+                android:layout_width="@dimen/dianyuan_btn_width"
+                android:layout_height="@dimen/dianyuan_btn_height"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="风速-中"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/dianyuan_text_size" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/changjing_btn_marginTop"
-        android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_xf_fs_3"
+                android:layout_width="@dimen/dianyuan_btn_width"
+                android:layout_height="@dimen/dianyuan_btn_height"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="风速-高"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/dianyuan_text_size" />
 
-
-        <CheckBox
-            android:id="@+id/tingzhi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
-            android:drawableTop="@drawable/tingzhi"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="停止"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
-
-
-        <CheckBox
-            android:id="@+id/zhibo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/changjing_btn_marginLeft"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
-            android:drawableTop="@drawable/zhibo"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="直播"
-            android:textColor="@color/text_color_1"
-            android:textSize="@dimen/text_size_20" />
-
+        </LinearLayout>
 
     </LinearLayout>
 

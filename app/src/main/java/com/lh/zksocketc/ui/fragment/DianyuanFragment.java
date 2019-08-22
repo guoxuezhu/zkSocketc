@@ -25,67 +25,9 @@ public class DianyuanFragment extends Fragment {
     }
 
 
-    @OnClick(R.id.dy_all_open)
-    public void dy_all_open() {
-        SerialPortUtil.sendMsg("MBS37");
+    @OnClick(R.id.btn_door_open)
+    public void btn_door_open() {
+        SerialPortUtil.sendMsg("MBS46");
     }
 
-    @OnClick(R.id.dy_all_close)
-    public void dy_all_close() {
-        SerialPortUtil.sendMsg("MBS38");
-    }
-
-
-    @OnClick(R.id.btn_hw_ds_1)
-    public void btn_hw_ds_1() {
-        SerialPortUtil.sendMsg("MBS52");
-    }
-
-    @OnClick(R.id.btn_hw_ds_2)
-    public void btn_hw_ds_2() {
-        SerialPortUtil.sendMsg("MBS53");
-    }
-
-    @OnClick(R.id.btn_hw_ds_3)
-    public void btn_hw_ds_3() {
-        SerialPortUtil.sendMsg("MBS54");
-    }
-
-    @OnClick(R.id.btn_hw_ds_4)
-    public void btn_hw_ds_4() {
-        SerialPortUtil.sendMsg("MBS55");
-    }
-
-
-    @OnClick(R.id.btn_hw_ds_5)
-    public void btn_hw_ds_5() {
-        SerialPortUtil.sendMsg("MBS56");
-    }
-
-    @OnClick(R.id.btn_hw_ds_6)
-    public void btn_hw_ds_6() {
-        SerialPortUtil.sendMsg("MBS57");
-    }
-
-
-    @OnClick(R.id.btn_hw_ds_7)
-    public void btn_hw_ds_7() {
-        SerialPortUtil.sendMsg("MBS58");
-    }
-
-    @OnClick(R.id.btn_hw_ds_8)
-    public void btn_hw_ds_8() {
-        SerialPortUtil.sendMsg("MBS59");
-    }
-
-
-    @OnClick(R.id.rbtn_nei_hdmi)
-    public void rbtn_nei_hdmi() {
-        SerialPortUtil.sendMsg("MBS50");
-    }
-
-    @OnClick(R.id.rbtn_wai_hdmi)
-    public void rbtn_wai_hdmi() {
-        SerialPortUtil.sendMsg("MBS51");
-    }
 }
