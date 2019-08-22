@@ -51,13 +51,71 @@ public class SmallActivity extends BaseActivity {
 
     @OnClick(R.id.rbtn_cl_open)
     public void rbtn_cl_open() {
-        SerialPortUtil.sendMsg("MBS5");
+        SerialPortUtil.sendMsg("MBS3");
     }
 
 
     @OnClick(R.id.rbtn_cl_close)
     public void rbtn_cl_close() {
+        SerialPortUtil.sendMsg("MBS4");
+    }
+
+
+    @OnClick(R.id.rbtn_cl_open_1)
+    public void rbtn_cl_open_1() {
+        SerialPortUtil.sendMsg("MBS5");
+    }
+
+
+    @OnClick(R.id.rbtn_cl_close_1)
+    public void rbtn_cl_close_1() {
         SerialPortUtil.sendMsg("MBS6");
+    }
+
+
+    @OnClick(R.id.rbtn_cl_open_2)
+    public void rbtn_cl_open_2() {
+        SerialPortUtil.sendMsg("MBS7");
+    }
+
+
+    @OnClick(R.id.rbtn_cl_close_2)
+    public void rbtn_cl_close_2() {
+        SerialPortUtil.sendMsg("MBS8");
+    }
+
+    @OnClick(R.id.rbtn_cl_open_3)
+    public void rbtn_cl_open_3() {
+        SerialPortUtil.sendMsg("MBS62");
+    }
+
+
+    @OnClick(R.id.rbtn_cl_close_3)
+    public void rbtn_cl_close_3() {
+        SerialPortUtil.sendMsg("MBS63");
+    }
+
+
+    @OnClick(R.id.rbtn_cl_open_4)
+    public void rbtn_cl_open_4() {
+        SerialPortUtil.sendMsg("MBS64");
+    }
+
+
+    @OnClick(R.id.rbtn_cl_close_4)
+    public void rbtn_cl_close_4() {
+        SerialPortUtil.sendMsg("MBS65");
+    }
+
+
+    @OnClick(R.id.rbtn_cl_open_5)
+    public void rbtn_cl_open_5() {
+        SerialPortUtil.sendMsg("MBS66");
+    }
+
+    @OnClick(R.id.rbtn_cl_close_5)
+    public void rbtn_cl_close_5() {
+        SerialPortUtil.sendMsg("MBS67");
     }
 
 
@@ -69,20 +127,47 @@ public class SmallActivity extends BaseActivity {
     @OnClick(R.id.rbtn_dg_close)
     public void rbtn_dg_close() {
         SerialPortUtil.sendMsg("MBS14");
+    }
 
+    @OnClick(R.id.rbtn_dg_open_1)
+    public void rbtn_dg_open_1() {
+        SerialPortUtil.sendMsg("MBS15");
+    }
+
+    @OnClick(R.id.rbtn_dg_close_1)
+    public void rbtn_dg_close_1() {
+        SerialPortUtil.sendMsg("MBS16");
+    }
+
+    @OnClick(R.id.rbtn_dg_open_2)
+    public void rbtn_dg_open_2() {
+        SerialPortUtil.sendMsg("MBS17");
+    }
+
+    @OnClick(R.id.rbtn_dg_close_2)
+    public void rbtn_dg_close_2() {
+        SerialPortUtil.sendMsg("MBS18");
+    }
+
+    @OnClick(R.id.rbtn_dg_open_3)
+    public void rbtn_dg_open_3() {
+        SerialPortUtil.sendMsg("MBS19");
+    }
+
+    @OnClick(R.id.rbtn_dg_close_3)
+    public void rbtn_dg_close_3() {
+        SerialPortUtil.sendMsg("MBS20");
     }
 
 
     @OnClick(R.id.rbtn_tyj_open)
     public void rbtn_tyj_open() {
         SerialPortUtil.sendMsg("MBS9");
-
     }
 
     @OnClick(R.id.rbtn_tyj_close)
     public void rbtn_tyj_close() {
         SerialPortUtil.sendMsg("MBS10");
-
     }
 
 
@@ -104,18 +189,56 @@ public class SmallActivity extends BaseActivity {
 
     @OnClick(R.id.btn_kt_close)
     public void btn_kt_close() {
-        SerialPortUtil.sendMsg("MBS48");
+        SerialPortUtil.sendMsg("MBS40");
     }
+
+    @OnClick(R.id.btn_kt_zidong)
+    public void btn_kt_zidong() {
+        SerialPortUtil.sendMsg("MBS41");
+    }
+
+    @OnClick(R.id.btn_kt_zlen)
+    public void btn_kt_zlen() {
+        SerialPortUtil.sendMsg("MBS42");
+    }
+
+    @OnClick(R.id.btn_kt_zre)
+    public void btn_kt_zre() {
+        SerialPortUtil.sendMsg("MBS43");
+    }
+
 
     @OnClick(R.id.btn_xf_open)
     public void btn_xf_open() {
-        SerialPortUtil.sendMsg("MBS58");
+        SerialPortUtil.sendMsg("MBS60");
     }
 
     @OnClick(R.id.btn_xf_close)
     public void btn_xf_close() {
-        SerialPortUtil.sendMsg("MBS59");
+        SerialPortUtil.sendMsg("MBS61");
     }
+
+
+    @OnClick(R.id.btn_xf_zidong)
+    public void btn_xf_zidong() {
+        SerialPortUtil.sendMsg("MBS33");
+    }
+
+    @OnClick(R.id.btn_xf_fs_1)
+    public void btn_xf_fs_1() {
+        SerialPortUtil.sendMsg("MBS34");
+    }
+
+    @OnClick(R.id.btn_xf_fs_2)
+    public void btn_xf_fs_2() {
+        SerialPortUtil.sendMsg("MBS35");
+    }
+
+    @OnClick(R.id.btn_xf_fs_3)
+    public void btn_xf_fs_3() {
+        SerialPortUtil.sendMsg("MBS36");
+    }
+
 
 //    @OnClick(R.id.btn_kt_wd_y)
 //    public void btn_kt_wd_y() {
