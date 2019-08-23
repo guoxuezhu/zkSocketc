@@ -47,6 +47,47 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/dg_close_open_1"
+            android:layout_width="@dimen/dianyuan_btn_width"
+            android:layout_height="@dimen/dianyuan_btn_height"
+            android:background="@drawable/huanjing_btn_status"
+            android:text="灯光1"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/dianyuan_text_size" />
+
+        <Button
+            android:id="@+id/dg_close_open_2"
+            android:layout_width="@dimen/dianyuan_btn_width"
+            android:layout_height="@dimen/dianyuan_btn_height"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:background="@drawable/huanjing_btn_status"
+            android:text="灯光2"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/dianyuan_text_size" />
+
+        <Button
+            android:id="@+id/dg_close_open_3"
+            android:layout_width="@dimen/dianyuan_btn_width"
+            android:layout_height="@dimen/dianyuan_btn_height"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:background="@drawable/huanjing_btn_status"
+            android:text="灯光3"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/dianyuan_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_weight="3"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
 
         <RadioGroup
             android:layout_width="wrap_content"

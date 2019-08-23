@@ -6,12 +6,10 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -67,6 +65,22 @@ public class JuzhenFragment extends Fragment {
     @OnClick(R.id.rbtn_dg_close_3)
     public void rbtn_dg_close_3() {
         SerialPortUtil.sendMsg("MBS20");
+    }
+
+
+    @OnClick(R.id.dg_close_open_1)
+    public void dg_close_open_1() {
+        SerialPortUtil.sendMsg("MBS15");
+    }
+
+    @OnClick(R.id.dg_close_open_2)
+    public void dg_close_open_2() {
+        SerialPortUtil.sendMsg("MBS17");
+    }
+
+    @OnClick(R.id.dg_close_open_3)
+    public void dg_close_open_3() {
+        SerialPortUtil.sendMsg("MBS19");
     }
 
 }

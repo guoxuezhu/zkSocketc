@@ -16,52 +16,43 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
         <RadioGroup
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/xian" />
 
             <RadioButton
                 android:id="@+id/rbtn_shangke"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/radio_btn_status_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
-                android:drawableLeft="@drawable/shangke"
+                android:drawableTop="@drawable/shangke"
+                android:drawablePadding="0dp"
                 android:gravity="center"
-                android:padding="15dp"
+                android:paddingTop="@dimen/dp_10"
                 android:text="上课"
                 android:textColor="@color/text_color_1"
-                android:textSize="20sp" />
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/xian" />
+                android:textSize="@dimen/text_size_20" />
 
             <RadioButton
                 android:id="@+id/rbtn_xiake"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/radio_btn_status_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_50"
+                android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
-                android:drawableLeft="@drawable/xiake"
+                android:drawableTop="@drawable/xiake"
+                android:drawablePadding="0dp"
                 android:gravity="center"
-                android:padding="15dp"
+                android:paddingTop="@dimen/dp_10"
                 android:text="下课"
                 android:textColor="@color/text_color_1"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_size_20" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/xian" />
+
         </RadioGroup>
 
 
