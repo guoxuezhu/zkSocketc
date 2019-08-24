@@ -29,9 +29,6 @@ public class ShebeiFragment extends Fragment {
     TextView tv_wsd_pm;
 
 
-    @BindView(R.id.ckbox_kt_open_close)
-    CheckBox ckbox_kt_open_close;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -58,13 +55,13 @@ public class ShebeiFragment extends Fragment {
 
     @OnClick(R.id.rbtn_cl_open)
     public void rbtn_cl_open() {
-        SerialPortUtil.sendMsg("MBS5");
+        SerialPortUtil.sendMsg("MBS3");
     }
 
 
     @OnClick(R.id.rbtn_cl_close)
     public void rbtn_cl_close() {
-        SerialPortUtil.sendMsg("MBS6");
+        SerialPortUtil.sendMsg("MBS4");
     }
 
 
@@ -104,24 +101,20 @@ public class ShebeiFragment extends Fragment {
     }
 
 
-    @OnClick(R.id.ckbox_kt_open_close)
-    public void ckbox_kt_open_close() {
-        if (ckbox_kt_open_close.isChecked()) {
-            SerialPortUtil.sendMsg("MBS39");
-        } else {
-            SerialPortUtil.sendMsg("MBS48");
-        }
+    @OnClick(R.id.btn_kt_open)
+    public void btn_kt_open() {
+        SerialPortUtil.sendMsg("MBS39");
     }
 
 
-    @OnClick(R.id.btn_kt_wd_y)
-    public void btn_kt_wd_y() {
-        SerialPortUtil.sendMsg("MBS43");
+    @OnClick(R.id.btn_kt_close)
+    public void btn_kt_close() {
+        SerialPortUtil.sendMsg("MBS40");
     }
 
-    @OnClick(R.id.btn_kt_wd_n)
-    public void btn_kt_wd_n() {
-        SerialPortUtil.sendMsg("MBS44");
+    @OnClick(R.id.btn_kt_zidong)
+    public void btn_kt_zidong() {
+        SerialPortUtil.sendMsg("MBS41");
     }
 
     @OnClick(R.id.btn_mj_pc)

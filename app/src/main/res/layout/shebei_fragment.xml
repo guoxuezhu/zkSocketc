@@ -276,34 +276,32 @@
             android:orientation="horizontal">
 
 
-            <CheckBox
-                android:id="@+id/ckbox_kt_open_close"
+            <Button
+                android:id="@+id/btn_kt_open"
                 android:layout_width="@dimen/shebei_btn_width"
                 android:layout_height="@dimen/shebei_btn_height"
-                android:background="@drawable/shebei_checkbox_status"
-                android:button="@null"
-                android:gravity="center"
-                android:text="空调开/关"
+                android:background="@drawable/huanjing_btn_status"
+                android:text="空调开"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
 
             <Button
-                android:id="@+id/btn_kt_wd_y"
+                android:id="@+id/btn_kt_close"
                 android:layout_width="@dimen/shebei_btn_width"
                 android:layout_height="@dimen/shebei_btn_height"
                 android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                 android:background="@drawable/huanjing_btn_status"
-                android:text="温度+"
+                android:text="空调关"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
 
             <Button
-                android:id="@+id/btn_kt_wd_n"
+                android:id="@+id/btn_kt_zidong"
                 android:layout_width="@dimen/shebei_btn_width"
                 android:layout_height="@dimen/shebei_btn_height"
                 android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                 android:background="@drawable/huanjing_btn_status"
-                android:text="温度-"
+                android:text="自动"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
 
