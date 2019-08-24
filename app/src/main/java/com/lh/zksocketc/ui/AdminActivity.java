@@ -5,8 +5,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.Toast;
+
 import com.lh.zksocketc.R;
+
 import java.io.File;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -28,22 +31,28 @@ public class AdminActivity extends BaseActivity {
 
     @OnClick(R.id.updata_seting)
     public void updata_seting() {
-//        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-//        intent.setType("*/*");//设置类型，我这里是任意类型，任意后缀的可以这样写。
-//        intent.addCategory(Intent.CATEGORY_OPENABLE);
-//        startActivityForResult(intent, 1);
-
-        File apkFile = new File("/mnt/usbhost1/lh/操作面板.apk");
-        if (apkFile.exists()) {
+        File apkFile1 = new File("/mnt/usbhost1/lh/操作面板.apk");
+        File apkFile2 = new File("/mnt/usbhost2/lh/操作面板.apk");
+        File apkFile3 = new File("/mnt/usbhost3/lh/操作面板.apk");
+        if (apkFile1.exists()) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setDataAndType(Uri.fromFile(apkFile), "application/vnd.android.package-archive");
+            intent.setDataAndType(Uri.fromFile(apkFile1), "application/vnd.android.package-archive");
+            startActivity(intent);
+        } else if (apkFile2.exists()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setDataAndType(Uri.fromFile(apkFile2), "application/vnd.android.package-archive");
+            startActivity(intent);
+        } else if (apkFile3.exists()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setDataAndType(Uri.fromFile(apkFile3), "application/vnd.android.package-archive");
             startActivity(intent);
         } else {
             Toast.makeText(this, "请插入有升级包的U盘", Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
     @OnClick(R.id.btn_user)
@@ -64,8 +73,6 @@ public class AdminActivity extends BaseActivity {
     public void admin_back() {
         finish();
     }
-
-
 
 
 }
