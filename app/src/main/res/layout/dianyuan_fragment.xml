@@ -9,30 +9,101 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:background="@drawable/layout_bg"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_door_open"
+            android:layout_width="@dimen/dianyuan_btn_width"
+            android:layout_height="@dimen/dianyuan_btn_height"
+            android:background="@drawable/huanjing_btn_status"
+            android:text="开门"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/dianyuan_text_size" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_weight="3"
+        android:background="@drawable/layout_bg"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-
-            <Button
-                android:id="@+id/btn_door_open"
-                android:layout_width="@dimen/dianyuan_btn_width"
-                android:layout_height="@dimen/dianyuan_btn_height"
-                android:background="@drawable/huanjing_btn_status"
-                android:text="开门"
+            <RadioButton
+                android:id="@+id/rbtn_tyj_open"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="投影机开"
                 android:textColor="@color/text_color_1"
-                android:textSize="@dimen/dianyuan_text_size" />
+                android:textSize="@dimen/shebei_text_size" />
 
-        </LinearLayout>
+            <RadioButton
+                android:id="@+id/rbtn_tyj_close"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="投影机关"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
 
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <RadioButton
+                android:id="@+id/rbtn_tyj_bu_open"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="幕布升"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
+
+            <RadioButton
+                android:id="@+id/rbtn_tyj_bu_close"
+                android:layout_width="@dimen/shebei_btn_width"
+                android:layout_height="@dimen/shebei_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="幕布降"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
+
+
+        </RadioGroup>
 
     </LinearLayout>
 

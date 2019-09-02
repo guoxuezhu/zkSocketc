@@ -30,4 +30,24 @@ public class DianyuanFragment extends Fragment {
         SerialPortUtil.sendMsg("MBS46");
     }
 
+
+    @OnClick(R.id.rbtn_tyj_open)
+    public void rbtn_tyj_open() {
+        SerialPortUtil.sendMsg("MBS9");
+    }
+
+    @OnClick(R.id.rbtn_tyj_close)
+    public void rbtn_tyj_close() {
+        SerialPortUtil.sendMsg("MBS10");
+    }
+
+    @OnClick(R.id.rbtn_tyj_bu_open)
+    public void rbtn_tyj_bu_open() {
+        SerialPortUtil.sendMsg("MBS11");
+    }
+
+    @OnClick(R.id.rbtn_tyj_bu_close)
+    public void rbtn_tyj_bu_close() {
+        SerialPortUtil.sendMsg("MBS12");
+    }
 }
