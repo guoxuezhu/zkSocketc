@@ -90,4 +90,30 @@ public class ChuanjingFragment extends Fragment {
     }
 
 
+    @OnClick(R.id.rbtn_cl_stop_1)
+    public void rbtn_cl_stop_1() {
+        SerialPortUtil.sendMsg("MBS55");
+    }
+
+    @OnClick(R.id.rbtn_cl_stop_2)
+    public void rbtn_cl_stop_2() {
+        SerialPortUtil.sendMsg("MBS56");
+    }
+
+    @OnClick(R.id.rbtn_cl_stop_3)
+    public void rbtn_cl_stop_3() {
+        SerialPortUtil.sendMsg("MBS57");
+    }
+
+    @OnClick(R.id.rbtn_cl_stop_4)
+    public void rbtn_cl_stop_4() {
+        SerialPortUtil.sendMsg("MBS58");
+    }
+
+    @OnClick(R.id.rbtn_cl_stop_5)
+    public void rbtn_cl_stop_5() {
+        SerialPortUtil.sendMsg("MBS59");
+    }
+
+
 }

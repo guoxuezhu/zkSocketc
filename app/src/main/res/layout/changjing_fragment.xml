@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/dp_25"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:background="@drawable/layout_bg"
         android:gravity="center"
         android:orientation="horizontal">
@@ -66,6 +66,17 @@
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
 
+            <RadioButton
+                android:id="@+id/rbtn_cl_stop_1"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="窗帘1停"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
 
             <RadioButton
                 android:id="@+id/rbtn_cl_close_1"
@@ -98,6 +109,18 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="窗帘2开"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
+
+            <RadioButton
+                android:id="@+id/rbtn_cl_stop_2"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="窗帘2停"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
 
@@ -136,6 +159,18 @@
                 android:textSize="@dimen/shebei_text_size" />
 
             <RadioButton
+                android:id="@+id/rbtn_cl_stop_3"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="窗帘3停"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
+
+            <RadioButton
                 android:id="@+id/rbtn_cl_close_3"
                 android:layout_width="@dimen/shipin_btn_width"
                 android:layout_height="@dimen/shipin_btn_height"
@@ -170,6 +205,18 @@
                 android:textSize="@dimen/shebei_text_size" />
 
             <RadioButton
+                android:id="@+id/rbtn_cl_stop_4"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="窗帘4停"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
+
+            <RadioButton
                 android:id="@+id/rbtn_cl_close_4"
                 android:layout_width="@dimen/shipin_btn_width"
                 android:layout_height="@dimen/shipin_btn_height"
@@ -200,6 +247,18 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="窗帘5开"
+                android:textColor="@color/text_color_1"
+                android:textSize="@dimen/shebei_text_size" />
+
+            <RadioButton
+                android:id="@+id/rbtn_cl_stop_5"
+                android:layout_width="@dimen/shipin_btn_width"
+                android:layout_height="@dimen/shipin_btn_height"
+                android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                android:background="@drawable/shebei_checkbox_status"
+                android:button="@null"
+                android:gravity="center"
+                android:text="窗帘5停"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
 
