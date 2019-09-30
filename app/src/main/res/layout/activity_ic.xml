@@ -68,7 +68,7 @@
             android:background="@drawable/login_et_bg"
             android:hint="请输入服务器IC卡数据接口"
             android:paddingLeft="@dimen/dp_10"
-            android:text=""
+            android:text="http://192.168.0.100"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 

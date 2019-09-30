@@ -1,11 +1,14 @@
 package com.lh.zksocketc.data.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
 public class IcCardNumer {
 
+    @SerializedName("card_no")
     public String cardNum;
 
     @Generated(hash = 1779761528)
