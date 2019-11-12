@@ -52,7 +52,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_lubo)
     public void spbtn_all_lubo() {
-        SerialPortUtil.sendMsg("VIDC8");
+        SerialPortUtil.sendMsg("VIDC7");
         spbtn_all_lubo.setChecked(true);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -66,7 +66,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_diannao)
     public void spbtn_all_diannao() {
-        SerialPortUtil.sendMsg("VIDC9");
+        SerialPortUtil.sendMsg("VIDC8");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(true);
         spbtn_all_touping.setChecked(false);
@@ -80,7 +80,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_touping)
     public void spbtn_all_touping() {
-        SerialPortUtil.sendMsg("VIDC1");
+        SerialPortUtil.sendMsg("VIDC0");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(true);
@@ -94,7 +94,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_1)
     public void spbtn_all_zu_1() {
-        SerialPortUtil.sendMsg("VIDC2");
+        SerialPortUtil.sendMsg("VIDC1");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -108,7 +108,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_2)
     public void spbtn_all_zu_2() {
-        SerialPortUtil.sendMsg("VIDC3");
+        SerialPortUtil.sendMsg("VIDC2");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -122,7 +122,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_3)
     public void spbtn_all_zu_3() {
-        SerialPortUtil.sendMsg("VIDC4");
+        SerialPortUtil.sendMsg("VIDC3");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -136,7 +136,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_4)
     public void spbtn_all_zu_4() {
-        SerialPortUtil.sendMsg("VIDC5");
+        SerialPortUtil.sendMsg("VIDC4");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -150,7 +150,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_5)
     public void spbtn_all_zu_5() {
-        SerialPortUtil.sendMsg("VIDC6");
+        SerialPortUtil.sendMsg("VIDC5");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);
@@ -164,7 +164,7 @@ public class ChuanjingFragment extends Fragment {
 
     @OnClick(R.id.spbtn_all_zu_6)
     public void spbtn_all_zu_6() {
-        SerialPortUtil.sendMsg("VIDC7");
+        SerialPortUtil.sendMsg("VIDC6");
         spbtn_all_lubo.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_touping.setChecked(false);

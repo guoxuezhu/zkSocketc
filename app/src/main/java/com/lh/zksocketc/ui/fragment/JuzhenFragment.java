@@ -225,7 +225,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_4.setChecked(false);
         spbtn_dan_out_zu_5.setChecked(false);
         spbtn_dan_out_zu_6.setChecked(false);
-        sendDan(1);
+        sendDan(0);
 
 
     }
@@ -241,7 +241,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_4.setChecked(false);
         spbtn_dan_out_zu_5.setChecked(false);
         spbtn_dan_out_zu_6.setChecked(false);
-        sendDan(2);
+        sendDan(1);
     }
 
 
@@ -256,7 +256,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_4.setChecked(false);
         spbtn_dan_out_zu_5.setChecked(false);
         spbtn_dan_out_zu_6.setChecked(false);
-        sendDan(3);
+        sendDan(2);
     }
 
     @OnClick(R.id.spbtn_dan_out_zu_1)
@@ -270,7 +270,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_4.setChecked(false);
         spbtn_dan_out_zu_5.setChecked(false);
         spbtn_dan_out_zu_6.setChecked(false);
-        sendDan(4);
+        sendDan(3);
     }
 
 
@@ -285,7 +285,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_4.setChecked(false);
         spbtn_dan_out_zu_5.setChecked(false);
         spbtn_dan_out_zu_6.setChecked(false);
-        sendDan(5);
+        sendDan(4);
     }
 
     @OnClick(R.id.spbtn_dan_out_zu_3)
@@ -299,7 +299,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_4.setChecked(false);
         spbtn_dan_out_zu_5.setChecked(false);
         spbtn_dan_out_zu_6.setChecked(false);
-        sendDan(6);
+        sendDan(5);
     }
 
 
@@ -314,7 +314,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_4.setChecked(true);
         spbtn_dan_out_zu_5.setChecked(false);
         spbtn_dan_out_zu_6.setChecked(false);
-        sendDan(7);
+        sendDan(6);
     }
 
 
@@ -329,7 +329,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_4.setChecked(false);
         spbtn_dan_out_zu_5.setChecked(true);
         spbtn_dan_out_zu_6.setChecked(false);
-        sendDan(8);
+        sendDan(7);
     }
 
 
@@ -345,28 +345,28 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_zu_5.setChecked(false);
         spbtn_dan_out_zu_6.setChecked(true);
 
-        sendDan(9);
+        sendDan(8);
     }
 
     private void sendDan(int i) {
         if (spbtn_dan_in_lubo.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA8," + i);
-        } else if (spbtn_dan_in_diannao.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA9," + i);
-        } else if (spbtn_dan_in_touping.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA1," + i);
-        } else if (spbtn_dan_in_zu_1.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA2," + i);
-        } else if (spbtn_dan_in_zu_2.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA3," + i);
-        } else if (spbtn_dan_in_zu_3.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA4," + i);
-        } else if (spbtn_dan_in_zu_4.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA5," + i);
-        } else if (spbtn_dan_in_zu_5.isChecked()) {
-            SerialPortUtil.sendMsg("VIDA6," + i);
-        } else if (spbtn_dan_in_zu_6.isChecked()) {
             SerialPortUtil.sendMsg("VIDA7," + i);
+        } else if (spbtn_dan_in_diannao.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA8," + i);
+        } else if (spbtn_dan_in_touping.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA0," + i);
+        } else if (spbtn_dan_in_zu_1.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA1," + i);
+        } else if (spbtn_dan_in_zu_2.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA2," + i);
+        } else if (spbtn_dan_in_zu_3.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA3," + i);
+        } else if (spbtn_dan_in_zu_4.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA4," + i);
+        } else if (spbtn_dan_in_zu_5.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA5," + i);
+        } else if (spbtn_dan_in_zu_6.isChecked()) {
+            SerialPortUtil.sendMsg("VIDA6," + i);
         }
     }
 
