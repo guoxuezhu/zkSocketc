@@ -24,68 +24,130 @@ public class DianyuanFragment extends Fragment {
         return view;
     }
 
-
-    @OnClick(R.id.dy_all_open)
-    public void dy_all_open() {
-        SerialPortUtil.sendMsg("MBS37");
-    }
-
-    @OnClick(R.id.dy_all_close)
-    public void dy_all_close() {
-        SerialPortUtil.sendMsg("MBS38");
-    }
-
-
-    @OnClick(R.id.btn_hw_ds_1)
-    public void btn_hw_ds_1() {
+    @OnClick(R.id.btn_jdq_1)
+    public void btn_jdq_1() {
         SerialPortUtil.sendMsg("MBS52");
     }
 
-    @OnClick(R.id.btn_hw_ds_2)
-    public void btn_hw_ds_2() {
+    @OnClick(R.id.btn_jdq_2)
+    public void btn_jdq_2() {
         SerialPortUtil.sendMsg("MBS53");
     }
 
-    @OnClick(R.id.btn_hw_ds_3)
-    public void btn_hw_ds_3() {
+    @OnClick(R.id.btn_jdq_3)
+    public void btn_jdq_3() {
         SerialPortUtil.sendMsg("MBS54");
     }
 
-    @OnClick(R.id.btn_hw_ds_4)
-    public void btn_hw_ds_4() {
+    @OnClick(R.id.btn_jdq_4)
+    public void btn_jdq_4() {
         SerialPortUtil.sendMsg("MBS55");
     }
 
-
-    @OnClick(R.id.btn_hw_ds_5)
-    public void btn_hw_ds_5() {
+    @OnClick(R.id.btn_jdq_5)
+    public void btn_jdq_5() {
         SerialPortUtil.sendMsg("MBS56");
     }
 
-    @OnClick(R.id.btn_hw_ds_6)
-    public void btn_hw_ds_6() {
+    @OnClick(R.id.btn_jdq_6)
+    public void btn_jdq_6() {
         SerialPortUtil.sendMsg("MBS57");
     }
 
-
-    @OnClick(R.id.btn_hw_ds_7)
-    public void btn_hw_ds_7() {
+    @OnClick(R.id.btn_jdq_7)
+    public void btn_jdq_7() {
         SerialPortUtil.sendMsg("MBS58");
     }
 
-    @OnClick(R.id.btn_hw_ds_8)
-    public void btn_hw_ds_8() {
+    @OnClick(R.id.btn_jdq_8)
+    public void btn_jdq_8() {
         SerialPortUtil.sendMsg("MBS59");
     }
 
 
-    @OnClick(R.id.rbtn_nei_hdmi)
-    public void rbtn_nei_hdmi() {
-        SerialPortUtil.sendMsg("MBS50");
+    @OnClick(R.id.btn_ck_1)
+    public void btn_ck_1() {
+        SerialPortUtil.sendMsg("MBS60");
     }
 
-    @OnClick(R.id.rbtn_wai_hdmi)
-    public void rbtn_wai_hdmi() {
-        SerialPortUtil.sendMsg("MBS51");
+    @OnClick(R.id.btn_ck_2)
+    public void btn_ck_2() {
+        SerialPortUtil.sendMsg("MBS61");
     }
+
+    @OnClick(R.id.btn_ck_3)
+    public void btn_ck_3() {
+        SerialPortUtil.sendMsg("MBS62");
+    }
+
+    @OnClick(R.id.btn_ck_4)
+    public void btn_ck_4() {
+        SerialPortUtil.sendMsg("MBS63");
+    }
+
+    @OnClick(R.id.btn_ck_5)
+    public void btn_ck_5() {
+        SerialPortUtil.sendMsg("MBS64");
+    }
+
+    @OnClick(R.id.btn_ck_6)
+    public void btn_ck_6() {
+        SerialPortUtil.sendMsg("MBS65");
+    }
+
+    @OnClick(R.id.btn_ck_7)
+    public void btn_ck_7() {
+        SerialPortUtil.sendMsg("MBS66");
+    }
+
+    @OnClick(R.id.btn_ck_8)
+    public void btn_ck_8() {
+        SerialPortUtil.sendMsg("MBS67");
+    }
+
+
+    @OnClick(R.id.btn_io_1)
+    public void btn_io_1() {
+        SerialPortUtil.sendMsg("MBS17");
+    }
+
+    @OnClick(R.id.btn_io_2)
+    public void btn_io_2() {
+        SerialPortUtil.sendMsg("MBS18");
+    }
+
+    @OnClick(R.id.btn_io_3)
+    public void btn_io_3() {
+        SerialPortUtil.sendMsg("MBS19");
+    }
+
+    @OnClick(R.id.btn_io_4)
+    public void btn_io_4() {
+        SerialPortUtil.sendMsg("MBS20");
+    }
+
+
+    @OnClick(R.id.btn_dout_1)
+    public void btn_dout_1() {
+        SerialPortUtil.sendMsg("MBS41");
+    }
+
+    @OnClick(R.id.btn_dout_2)
+    public void btn_dout_2() {
+        SerialPortUtil.sendMsg("MBS42");
+    }
+
+    @OnClick(R.id.btn_dout_3)
+    public void btn_dout_3() {
+        SerialPortUtil.sendMsg("MBS43");
+    }
+
+    @OnClick(R.id.btn_dout_4)
+    public void btn_dout_4() {
+        SerialPortUtil.sendMsg("MBS44");
+    }
+
+
+
+
 }
