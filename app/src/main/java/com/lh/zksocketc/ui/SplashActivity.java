@@ -59,7 +59,7 @@ public class SplashActivity extends BaseActivity {
                                 .list();
                         ELog.e("==========cardNumers=======" + cardNumers.size());
                         if (cardNumers.size() != 0) {
-                            SerialPortUtil.sendMsg("MBS37");
+                            SerialPortUtil.sendMsg("CRD" + msg.obj.toString());
                             destroyFinish();
                             startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                             finish();
