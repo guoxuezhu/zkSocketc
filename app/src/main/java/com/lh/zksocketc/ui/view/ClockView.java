@@ -135,7 +135,7 @@ public class ClockView extends View {
         mHeight = h;
         mCenterX = w / 2;
         mCenterY = h / 2;
-        mRadius = (float) (w / 2 * 0.8);
+        mRadius = (float) (w / 2 * 0.99);
 
         initClockPointerLength();
     }
