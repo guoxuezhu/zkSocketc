@@ -3,13 +3,13 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="shipin_btn_width_1">160dp</dimen>
-    <dimen name="shipin_btn_height_1">100dp</dimen>
+    <dimen name="shipin_btn_width_1">230dp</dimen>
+    <dimen name="shipin_btn_height_1">150dp</dimen>
 
-    <dimen name="shipin_btn_width">130dp</dimen>
-    <dimen name="shipin_btn_height">80dp</dimen>
+    <dimen name="shipin_btn_width">180dp</dimen>
+    <dimen name="shipin_btn_height">110dp</dimen>
     <dimen name="shipin_btn_marginTop">20dp</dimen>
-    <dimen name="shipin_btn_marginLeft">70dp</dimen>
+    <dimen name="shipin_btn_marginLeft">30dp</dimen>
 
     <dimen name="shebei_btn_width">140dp</dimen>
     <dimen name="shebei_btn_height">80dp</dimen>
@@ -32,7 +32,7 @@
 
 
     <dimen name="dianyuan_btn_width">140dp</dimen>
-    <dimen name="dianyuan_btn_height">80dp</dimen>
+    <dimen name="dianyuan_btn_height">100dp</dimen>
     <dimen name="dianyuan_btn_marginLeft">200dp</dimen>
     <dimen name="dianyuan_btn_marginTop">10dp</dimen>
     <dimen name="dianyuan_text_size">20sp</dimen>
