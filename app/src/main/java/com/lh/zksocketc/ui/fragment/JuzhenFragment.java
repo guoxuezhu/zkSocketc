@@ -97,7 +97,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_touying.setChecked(true);
         spbtn_dan_out_dp_1.setChecked(false);
         spbtn_dan_out_dp_2.setChecked(false);
-        sendDan(2);
+        sendDan(1);
 
 
     }
@@ -107,7 +107,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_touying.setChecked(false);
         spbtn_dan_out_dp_1.setChecked(true);
         spbtn_dan_out_dp_2.setChecked(false);
-        sendDan(3);
+        sendDan(2);
     }
 
 
@@ -116,7 +116,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_touying.setChecked(false);
         spbtn_dan_out_dp_1.setChecked(false);
         spbtn_dan_out_dp_2.setChecked(true);
-        sendDan(4);
+        sendDan(3);
     }
 
     private void sendDan(int i) {

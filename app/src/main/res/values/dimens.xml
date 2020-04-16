@@ -6,7 +6,7 @@
     <dimen name="shipin_btn_width_1">230dp</dimen>
     <dimen name="shipin_btn_height_1">150dp</dimen>
 
-    <dimen name="shipin_btn_width">180dp</dimen>
+    <dimen name="shipin_btn_width">165dp</dimen>
     <dimen name="shipin_btn_height">110dp</dimen>
     <dimen name="shipin_btn_marginTop">20dp</dimen>
     <dimen name="shipin_btn_marginLeft">30dp</dimen>
