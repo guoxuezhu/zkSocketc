@@ -100,10 +100,10 @@ public class HomeActivity extends BaseActivity {
 
     }
 
-    @OnClick(R.id.rbtn_fuwei)
-    public void rbtn_fuwei() {
-        SerialPortUtil.sendMsg("FWS0");
-    }
+//    @OnClick(R.id.rbtn_fuwei)
+//    public void rbtn_fuwei() {
+//        SerialPortUtil.sendMsg("FWS0");
+//    }
 
 
     @OnClick(R.id.rbtn_shangke)

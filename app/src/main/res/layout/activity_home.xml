@@ -164,23 +164,6 @@
                     android:layout_height="1dp"
                     android:background="@color/xian" />
 
-                <RadioButton
-                    android:id="@+id/rbtn_fuwei"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/radio_btn_status_2"
-                    android:button="@null"
-                    android:drawableLeft="@drawable/fuwei"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:text="复位"
-                    android:textColor="@color/text_color_1"
-                    android:textSize="20sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/xian" />
 
                 <RadioButton
                     android:id="@+id/rbtn_shangke"
