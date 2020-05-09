@@ -40,7 +40,7 @@
 
 
 
-
+    <dimen name="context_padding_dp">10dp</dimen>
 
 
 

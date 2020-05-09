@@ -27,6 +27,23 @@
     <color name="login_et_di_color">#003c62</color>
     <color name="login_et_xian_color">#ffffffff</color>
 
+    <color name="btn_rb_left_1">#3b3b71</color>
+    <color name="btn_rb_left_2">#0A58A9</color>
+    <color name="login_et_xian_color3">#4b4b83</color>
+    <color name="activity_bg">#242448</color>
+
+    <color name="xian_1">#ffffffff</color>
+
+    <color name="top_bg">#353960</color>
+
+    <color name="login_et_xian_color6">#ffffffff</color>
+    <color name="login_et_xian_color7">#ffffffff</color>
+    <color name="login_et_xian_color8">#ffffffff</color>
+    <color name="login_et_xian_color9">#ffffffff</color>
+    <color name="login_et_xian_color10">#ffffffff</color>
+    <color name="login_et_xian_color22">#ffffffff</color>
+    <color name="login_et_xian_color33">#ffffffff</color>
+
 
 
 
