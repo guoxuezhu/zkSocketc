@@ -48,7 +48,7 @@ android {
 
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "zkc-${variant.name}-${variant.versionName}.apk"
+            outputFileName = "操作面板-${variant.name}-${variant.versionName}.apk"
         }
     }
 
