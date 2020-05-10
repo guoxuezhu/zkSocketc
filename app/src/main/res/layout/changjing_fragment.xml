@@ -2,97 +2,87 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/di_color"
     android:gravity="center"
-    android:orientation="vertical"
-    android:padding="@dimen/dp_25">
+    android:background="@drawable/layout_bg"
+    android:orientation="vertical">
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:text="一键模式"
-        android:textColor="@color/text_color_1"
-        android:textSize="@dimen/text_size_24" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/layout_bg"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+        <CheckBox
+            android:id="@+id/spbtn_all_gpy"
+            android:layout_width="@dimen/shipin_btn_height_1"
+            android:layout_height="@dimen/shipin_btn_height_1"
+            android:background="@drawable/yinpin_checked_status"
+            android:button="@null"
+            android:drawableTop="@drawable/sp_4"
+            android:drawablePadding="0dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:paddingTop="@dimen/dp_30"
+            android:text="老师电脑"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20" />
 
-            <CheckBox
-                android:id="@+id/spbtn_all_gpy"
-                android:layout_width="@dimen/shipin_btn_width_1"
-                android:layout_height="@dimen/shipin_btn_height_1"
-                android:background="@drawable/juzhen_checkbox_status"
-                android:button="@null"
-                android:gravity="center"
-                android:text="高拍仪"
-                android:textColor="@color/text_color_1"
-                android:textSize="@dimen/spjz_text_size_all" />
-
-            <CheckBox
-                android:id="@+id/spbtn_all_diannao"
-                android:layout_width="@dimen/shipin_btn_width_1"
-                android:layout_height="@dimen/shipin_btn_height_1"
-                android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
-                android:background="@drawable/juzhen_checkbox_status"
-                android:button="@null"
-                android:gravity="center"
-                android:text="台式机"
-                android:textColor="@color/text_color_1"
-                android:textSize="@dimen/spjz_text_size_all" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+        <CheckBox
+            android:id="@+id/spbtn_all_diannao"
+            android:layout_width="@dimen/shipin_btn_height_1"
+            android:layout_height="@dimen/shipin_btn_height_1"
+            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
+            android:background="@drawable/yinpin_checked_status"
+            android:button="@null"
+            android:drawableTop="@drawable/sp_5"
+            android:drawablePadding="0dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:paddingTop="@dimen/dp_30"
+            android:text="台式机"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20" />
 
 
-            <CheckBox
-                android:id="@+id/spbtn_all_bjb_1"
-                android:layout_width="@dimen/shipin_btn_width_1"
-                android:layout_height="@dimen/shipin_btn_height_1"
-                android:background="@drawable/juzhen_checkbox_status"
-                android:button="@null"
-                android:gravity="center"
-                android:text="笔记本1"
-                android:textColor="@color/text_color_1"
-                android:textSize="@dimen/spjz_text_size_all" />
+    </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/spbtn_all_bjb_2"
-                android:layout_width="@dimen/shipin_btn_width_1"
-                android:layout_height="@dimen/shipin_btn_height_1"
-                android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
-                android:background="@drawable/juzhen_checkbox_status"
-                android:button="@null"
-                android:gravity="center"
-                android:text="笔记本2"
-                android:textColor="@color/text_color_1"
-                android:textSize="@dimen/spjz_text_size_all" />
-
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
 
 
+        <CheckBox
+            android:id="@+id/spbtn_all_bjb_1"
+            android:layout_width="@dimen/shipin_btn_height_1"
+            android:layout_height="@dimen/shipin_btn_height_1"
+            android:background="@drawable/yinpin_checked_status"
+            android:button="@null"
+            android:drawableTop="@drawable/sp_1"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_30"
+            android:text="笔记本"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20" />
 
-
+        <CheckBox
+            android:id="@+id/spbtn_all_bjb_2"
+            android:layout_width="@dimen/shipin_btn_height_1"
+            android:layout_height="@dimen/shipin_btn_height_1"
+            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
+            android:background="@drawable/yinpin_checked_status"
+            android:button="@null"
+            android:drawableTop="@drawable/sp_3"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_30"
+            android:text="高拍仪"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20" />
 
     </LinearLayout>
 

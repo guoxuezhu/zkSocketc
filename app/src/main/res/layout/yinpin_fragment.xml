@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/di_color"
+    android:background="@drawable/layout_bg"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -20,8 +20,8 @@
 
             <RadioButton
                 android:id="@+id/zongyinliang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/yinpin_btn_height"
+                android:layout_height="@dimen/yinpin_btn_height"
                 android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
                 android:drawableTop="@drawable/zongyinliang"
@@ -29,13 +29,13 @@
                 android:gravity="center"
                 android:paddingTop="@dimen/dp_10"
                 android:text="总音量"
-                android:textColor="@color/text_color_1"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20" />
 
             <RadioButton
                 android:id="@+id/yinxiang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/yinpin_btn_height"
+                android:layout_height="@dimen/yinpin_btn_height"
                 android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
                 android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
@@ -44,13 +44,13 @@
                 android:gravity="center"
                 android:paddingTop="@dimen/dp_10"
                 android:text="音响"
-                android:textColor="@color/text_color_1"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20" />
 
             <RadioButton
                 android:id="@+id/maikefeng"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/yinpin_btn_height"
+                android:layout_height="@dimen/yinpin_btn_height"
                 android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
                 android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
@@ -59,7 +59,7 @@
                 android:gravity="center"
                 android:paddingTop="@dimen/dp_10"
                 android:text="麦克风"
-                android:textColor="@color/text_color_1"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20" />
 
         </RadioGroup>
@@ -77,21 +77,21 @@
 
         <Button
             android:id="@+id/yinliang_jia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/yinpin_btn_height"
+            android:layout_height="@dimen/yinpin_btn_height"
             android:background="@drawable/yinpin_btn_status"
             android:drawableTop="@drawable/yin_jia"
             android:drawablePadding="0dp"
             android:gravity="center"
             android:paddingTop="@dimen/dp_10"
             android:text="音量＋"
-            android:textColor="@color/text_color_1"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_20" />
 
         <Button
             android:id="@+id/yinliang_jian"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/yinpin_btn_height"
+            android:layout_height="@dimen/yinpin_btn_height"
             android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
             android:background="@drawable/yinpin_btn_status"
             android:drawableTop="@drawable/yin_jian"
@@ -99,14 +99,14 @@
             android:gravity="center"
             android:paddingTop="@dimen/dp_10"
             android:text="音量－"
-            android:textColor="@color/text_color_1"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_20" />
 
 
         <CheckBox
             android:id="@+id/jingyin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/yinpin_btn_height"
+            android:layout_height="@dimen/yinpin_btn_height"
             android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
             android:background="@drawable/yinpin_checked_status"
             android:button="@null"
@@ -115,7 +115,7 @@
             android:gravity="center"
             android:paddingTop="@dimen/dp_10"
             android:text="静音"
-            android:textColor="@color/text_color_1"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_20" />
 
 

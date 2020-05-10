@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/di_color"
+    android:background="@drawable/layout_bg"
     android:orientation="vertical"
     android:padding="@dimen/dp_20">
 
@@ -17,7 +17,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/layout_bg"
+            android:background="@drawable/layout_bg_1"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -28,7 +28,7 @@
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:text="电源时序器"
-                android:textColor="@color/text_color_1"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20" />
 
 
@@ -43,20 +43,26 @@
                 <Button
                     android:id="@+id/dy_all_open"
                     android:layout_width="@dimen/dianyuan_btn_width"
-                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_height="@dimen/dianyuan_btn_width"
                     android:background="@drawable/huanjing_btn_status"
+                    android:drawableTop="@drawable/all_open"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
                     android:text="全开"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/dianyuan_text_size" />
 
                 <Button
                     android:id="@+id/dy_all_close"
                     android:layout_width="@dimen/dianyuan_btn_width"
-                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_height="@dimen/dianyuan_btn_width"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                     android:background="@drawable/huanjing_btn_status"
+                    android:drawableTop="@drawable/all_close"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
                     android:text="全关"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/dianyuan_text_size" />
 
             </LinearLayout>
@@ -68,7 +74,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_weight="1"
-            android:background="@drawable/layout_bg"
+            android:background="@drawable/layout_bg_1"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -79,7 +85,7 @@
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:text="大屏一体机"
-                android:textColor="@color/text_color_1"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20" />
 
 
@@ -94,20 +100,26 @@
                 <Button
                     android:id="@+id/rbtn_nei_hdmi"
                     android:layout_width="@dimen/dianyuan_btn_width"
-                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_height="@dimen/dianyuan_btn_width"
                     android:background="@drawable/huanjing_btn_status"
+                    android:drawableTop="@drawable/neizhi"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
                     android:text="内置HDMI"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/dianyuan_text_size" />
 
                 <Button
                     android:id="@+id/rbtn_wai_hdmi"
                     android:layout_width="@dimen/dianyuan_btn_width"
-                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_height="@dimen/dianyuan_btn_width"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                     android:background="@drawable/huanjing_btn_status"
+                    android:drawableTop="@drawable/waizhi"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
                     android:text="外置HDMI"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/dianyuan_text_size" />
 
             </LinearLayout>
@@ -121,7 +133,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/dp_10"
         android:layout_weight="2"
-        android:background="@drawable/layout_bg"
+        android:background="@drawable/layout_bg_1"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -132,7 +144,7 @@
             android:layout_margin="5dp"
             android:gravity="center"
             android:text="电视机"
-            android:textColor="@color/text_color_1"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_20" />
 
 
@@ -153,41 +165,53 @@
                 <Button
                     android:id="@+id/btn_hw_ds_1"
                     android:layout_width="@dimen/dianyuan_btn_width"
-                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_height="@dimen/dianyuan_btn_width"
                     android:background="@drawable/huanjing_btn_status"
+                    android:drawableTop="@drawable/dsj_1"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
                     android:text="电视机1"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/dianyuan_text_size" />
 
                 <Button
                     android:id="@+id/btn_hw_ds_2"
                     android:layout_width="@dimen/dianyuan_btn_width"
-                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_height="@dimen/dianyuan_btn_width"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                     android:background="@drawable/huanjing_btn_status"
+                    android:drawableTop="@drawable/dsj_1"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
                     android:text="电视机2"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/dianyuan_text_size" />
 
                 <Button
                     android:id="@+id/btn_hw_ds_3"
                     android:layout_width="@dimen/dianyuan_btn_width"
-                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_height="@dimen/dianyuan_btn_width"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                     android:background="@drawable/huanjing_btn_status"
+                    android:drawableTop="@drawable/dsj_1"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
                     android:text="电视机3"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/dianyuan_text_size" />
 
 
                 <Button
                     android:id="@+id/btn_hw_ds_4"
                     android:layout_width="@dimen/dianyuan_btn_width"
-                    android:layout_height="@dimen/dianyuan_btn_height"
+                    android:layout_height="@dimen/dianyuan_btn_width"
                     android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                     android:background="@drawable/huanjing_btn_status"
+                    android:drawableTop="@drawable/dsj_1"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
                     android:text="电视机4"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/dianyuan_text_size" />
 
 

@@ -7,16 +7,17 @@
     <dimen name="shipin_btn_height_1">150dp</dimen>
 
     <dimen name="shipin_btn_width">165dp</dimen>
-    <dimen name="shipin_btn_height">110dp</dimen>
+    <dimen name="shipin_btn_height">120dp</dimen>
     <dimen name="shipin_btn_marginTop">20dp</dimen>
-    <dimen name="shipin_btn_marginLeft">30dp</dimen>
+    <dimen name="shipin_btn_marginLeft">60dp</dimen>
 
-    <dimen name="shebei_btn_width">140dp</dimen>
+    <dimen name="shebei_btn_width">110dp</dimen>
     <dimen name="shebei_btn_height">80dp</dimen>
-    <dimen name="shebei_btn_marginLeft_1">40dp</dimen>
+    <dimen name="shebei_btn_marginLeft_1">20dp</dimen>
     <dimen name="shebei_btn_marginLeft_2">30dp</dimen>
     <dimen name="shebei_btn_marginTop">10dp</dimen>
 
+    <dimen name="yinpin_btn_height">150dp</dimen>
     <dimen name="yinpin_btn_marginLeft">100dp</dimen>
     <dimen name="yinpin_btn_marginTop">80dp</dimen>
 
@@ -25,13 +26,13 @@
 
     <dimen name="huanjing_btn_marginLeft">90dp</dimen>
     <dimen name="huanjing_btn_marginTop">10dp</dimen>
-    <dimen name="huanjing_tv_marginTop_1">30dp</dimen>
-    <dimen name="huanjing_tv_marginTop">40dp</dimen>
+    <dimen name="huanjing_tv_marginTop_1">20dp</dimen>
+    <dimen name="huanjing_tv_marginTop">20dp</dimen>
     <dimen name="huanjing_tv_width">200dp</dimen>
-    <dimen name="huanjing_text_size">24sp</dimen>
+    <dimen name="huanjing_text_size">20sp</dimen>
 
 
-    <dimen name="dianyuan_btn_width">140dp</dimen>
+    <dimen name="dianyuan_btn_width">120dp</dimen>
     <dimen name="dianyuan_btn_height">100dp</dimen>
     <dimen name="dianyuan_btn_marginLeft">200dp</dimen>
     <dimen name="dianyuan_btn_marginTop">10dp</dimen>
