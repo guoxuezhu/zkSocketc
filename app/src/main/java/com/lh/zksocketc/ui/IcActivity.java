@@ -45,6 +45,10 @@ public class IcActivity extends BaseActivity {
                     ELog.e("======icHander====cardNumers=======" + msg.obj.toString());
                     et_kaohao.setText(msg.obj.toString());
                     break;
+                case 56:
+                    ELog.e("======icHander====56=======" + msg.obj.toString());
+                    Toast.makeText(IcActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                    break;
             }
         }
     };
@@ -92,6 +96,7 @@ public class IcActivity extends BaseActivity {
             if (cardNumers.size() == 0) {
                 icCardNumerDao.insert(new IcCardNumer(et_kaohao.getText().toString()));
             }
+            Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
         } else if (rbtn_http.isChecked()) {
             if (et_ic_http.getText().toString().length() == 0) {
                 Toast.makeText(this, "请输入服务器IC卡数据接口", Toast.LENGTH_SHORT).show();
@@ -99,10 +104,9 @@ public class IcActivity extends BaseActivity {
             }
             MyApplication.prefs.setIsAddCrad(false);
             MyApplication.prefs.setHttpUrl(et_ic_http.getText().toString());
-            HttpUtil.getCards(et_ic_http.getText().toString());
+            HttpUtil.getCards(et_ic_http.getText().toString(), icHander);
         }
 
-        Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
 
     }
 

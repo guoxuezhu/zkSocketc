@@ -1,5 +1,8 @@
 package com.lh.zksocketc.utils;
 
+import android.os.Handler;
+import android.os.Message;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lh.zksocketc.MyApplication;
@@ -20,7 +23,7 @@ import okhttp3.Response;
 public class HttpUtil {
 
 
-    public static void getCards(String url) {
+    public static void getCards(String url, final Handler icHander) {
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(url)
@@ -48,9 +51,12 @@ public class HttpUtil {
                     IcCardNumerDao icCardNumerDao = MyApplication.getDaoSession().getIcCardNumerDao();
                     icCardNumerDao.deleteAll();
                     for (int i = 0; i < httpRowHttpData.getData().getRows().size(); i++) {
-                        icCardNumerDao.update(httpRowHttpData.getData().getRows().get(i));
+                        icCardNumerDao.insert(httpRowHttpData.getData().getRows().get(i));
                     }
-
+                    Message message = new Message();
+                    message.obj = "同步数据，保存成功";
+                    message.what = 56;
+                    icHander.sendMessage(message);
                 } else {
 
                 }
