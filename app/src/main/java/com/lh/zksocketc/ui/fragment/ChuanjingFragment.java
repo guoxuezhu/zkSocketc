@@ -26,8 +26,8 @@ public class ChuanjingFragment extends Fragment {
     CheckBox spbtn_all_diannao;
     @BindView(R.id.spbtn_all_bjb_1)
     CheckBox spbtn_all_bjb_1;
-    @BindView(R.id.spbtn_all_bjb_2)
-    CheckBox spbtn_all_bjb_2;
+    @BindView(R.id.spbtn_all_laoshi_diannao)
+    CheckBox spbtn_all_laoshi_diannao;
 
 
 
@@ -41,13 +41,13 @@ public class ChuanjingFragment extends Fragment {
     }
 
 
-    @OnClick(R.id.spbtn_all_gpy)
-    public void spbtn_all_gpy() {
+    @OnClick(R.id.spbtn_all_laoshi_diannao)
+    public void spbtn_all_laoshi_diannao() {
         SerialPortUtil.sendMsg("VIDC1");
-        spbtn_all_gpy.setChecked(true);
+        spbtn_all_gpy.setChecked(false);
         spbtn_all_diannao.setChecked(false);
         spbtn_all_bjb_1.setChecked(false);
-        spbtn_all_bjb_2.setChecked(false);
+        spbtn_all_laoshi_diannao.setChecked(true);
     }
 
     @OnClick(R.id.spbtn_all_diannao)
@@ -56,27 +56,26 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_gpy.setChecked(false);
         spbtn_all_diannao.setChecked(true);
         spbtn_all_bjb_1.setChecked(false);
-        spbtn_all_bjb_2.setChecked(false);
+        spbtn_all_laoshi_diannao.setChecked(false);
     }
 
     @OnClick(R.id.spbtn_all_bjb_1)
     public void spbtn_all_bjb_1() {
-        SerialPortUtil.sendMsg("VIDC4");
-        spbtn_all_gpy.setChecked(false);
-        spbtn_all_diannao.setChecked(false);
-        spbtn_all_bjb_1.setChecked(true);
-        spbtn_all_bjb_2.setChecked(false);
-    }
-
-    @OnClick(R.id.spbtn_all_bjb_2)
-    public void spbtn_all_bjb_2() {
         SerialPortUtil.sendMsg("VIDC3");
         spbtn_all_gpy.setChecked(false);
         spbtn_all_diannao.setChecked(false);
-        spbtn_all_bjb_1.setChecked(false);
-        spbtn_all_bjb_2.setChecked(true);
+        spbtn_all_bjb_1.setChecked(true);
+        spbtn_all_laoshi_diannao.setChecked(false);
     }
 
+    @OnClick(R.id.spbtn_all_gpy)
+    public void spbtn_all_gpy() {
+        SerialPortUtil.sendMsg("VIDC4");
+        spbtn_all_gpy.setChecked(true);
+        spbtn_all_diannao.setChecked(false);
+        spbtn_all_bjb_1.setChecked(false);
+        spbtn_all_laoshi_diannao.setChecked(false);
+    }
 
 
 

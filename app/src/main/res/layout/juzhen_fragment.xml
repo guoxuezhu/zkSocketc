@@ -26,7 +26,7 @@
         android:orientation="horizontal">
 
         <CheckBox
-            android:id="@+id/spbtn_dan_in_gaopaiyi"
+            android:id="@+id/spbtn_dan_in_bjb_2"
             android:layout_width="@dimen/shipin_btn_height"
             android:layout_height="@dimen/shipin_btn_height"
             android:background="@drawable/yinpin_checked_status"
@@ -70,7 +70,7 @@
             android:textSize="@dimen/text_size_20" />
 
         <CheckBox
-            android:id="@+id/spbtn_dan_in_bjb_2"
+            android:id="@+id/spbtn_dan_in_gaopaiyi"
             android:layout_width="@dimen/shipin_btn_height"
             android:layout_height="@dimen/shipin_btn_height"
             android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
