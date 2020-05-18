@@ -27,24 +27,35 @@
     <color name="login_et_di_color">#003c62</color>
     <color name="login_et_xian_color">#ffffffff</color>
 
-    <color name="btn_rb_left_1">#3b3b71</color>
-    <color name="btn_rb_left_2">#0A58A9</color>
-    <color name="fragement_bg_xian">#4b4b83</color>
-    <color name="fragement_bg">#3b3b71</color>
-    <color name="activity_bg">#242448</color>
+
+
+    <color name="btn_rb_left_1">#154D8A</color>
+    <color name="btn_rb_left_2">#3987DC</color>
+    <color name="fragement_bg_xian">#006CC5</color>
+    <color name="fragement_bg">#006CC5</color>
+    <color name="activity_bg">#082859</color>
 
     <color name="xian_1">#ffffffff</color>
 
-    <color name="top_bg">#353960</color>
 
+    <color name="et_bg_xian">#4b4b83</color>
+    <color name="et_bg">#3b3b71</color>
+
+
+    <color name="top_bg">#15518F</color>
+
+    <color name="btn_no">#15518F</color>
+    <color name="btn_ok">#3987DC</color>
 
 
     <color name="btn_bg_1">#401F98</color>
     <color name="btn_bg_2">#0CBBE7</color>
-    <color name="login_et_xian_color9">#ffffffff</color>
-    <color name="login_et_xian_color10">#ffffffff</color>
-    <color name="login_et_xian_color22">#ffffffff</color>
-    <color name="login_et_xian_color33">#ffffffff</color>
+
+
+    <color name="login_et_xian_color10">#006CC5</color>
+    <color name="login_et_xian_color22">#163F7D</color>
+    <color name="login_et_xian_color33">#00C46C</color>
+
 
 
 
