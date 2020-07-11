@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -33,6 +34,21 @@ public class HomeActivity extends BaseActivity {
 
     @BindView(R.id.time_tv_home)
     TextView time_tv_home;
+
+    @BindView(R.id.spbtn_all_gpy)
+    CheckBox spbtn_all_gpy;
+    @BindView(R.id.spbtn_all_diannao)
+    CheckBox spbtn_all_diannao;
+    @BindView(R.id.spbtn_all_bjb_1)
+    CheckBox spbtn_all_bjb_1;
+    @BindView(R.id.spbtn_all_laoshi_diannao)
+    CheckBox spbtn_all_laoshi_diannao;
+
+    @BindView(R.id.lubo_luzhi_stop)
+    CheckBox lubo_luzhi_stop;
+
+
+
 
     private boolean isShangke = false;
     private Timer timeTimer;
@@ -82,7 +98,41 @@ public class HomeActivity extends BaseActivity {
         }
     }
 
+    @OnClick(R.id.spbtn_all_laoshi_diannao)
+    public void spbtn_all_laoshi_diannao() {
+        SerialPortUtil.sendMsg("VIDC1");
+        spbtn_all_gpy.setChecked(false);
+        spbtn_all_diannao.setChecked(false);
+        spbtn_all_bjb_1.setChecked(false);
+        spbtn_all_laoshi_diannao.setChecked(true);
+    }
 
+    @OnClick(R.id.spbtn_all_diannao)
+    public void spbtn_all_diannao() {
+        SerialPortUtil.sendMsg("VIDC2");
+        spbtn_all_gpy.setChecked(false);
+        spbtn_all_diannao.setChecked(true);
+        spbtn_all_bjb_1.setChecked(false);
+        spbtn_all_laoshi_diannao.setChecked(false);
+    }
+
+    @OnClick(R.id.spbtn_all_bjb_1)
+    public void spbtn_all_bjb_1() {
+        SerialPortUtil.sendMsg("VIDC3");
+        spbtn_all_gpy.setChecked(false);
+        spbtn_all_diannao.setChecked(false);
+        spbtn_all_bjb_1.setChecked(true);
+        spbtn_all_laoshi_diannao.setChecked(false);
+    }
+
+    @OnClick(R.id.spbtn_all_gpy)
+    public void spbtn_all_gpy() {
+        SerialPortUtil.sendMsg("VIDC4");
+        spbtn_all_gpy.setChecked(true);
+        spbtn_all_diannao.setChecked(false);
+        spbtn_all_bjb_1.setChecked(false);
+        spbtn_all_laoshi_diannao.setChecked(false);
+    }
 
 
 
@@ -111,6 +161,72 @@ public class HomeActivity extends BaseActivity {
         startActivity(new Intent(this, SplashActivity.class));
         finish();
     }
+
+
+    @OnClick(R.id.rbtn_cl_open)
+    public void rbtn_cl_open() {
+        SerialPortUtil.sendMsg("MBS3");
+    }
+
+    @OnClick(R.id.rbtn_cl_close)
+    public void rbtn_cl_close() {
+        SerialPortUtil.sendMsg("MBS4");
+    }
+
+    @OnClick(R.id.rbtn_dg_open)
+    public void rbtn_dg_open() {
+        SerialPortUtil.sendMsg("MBS13");
+    }
+
+    @OnClick(R.id.rbtn_dg_close)
+    public void rbtn_dg_close() {
+        SerialPortUtil.sendMsg("MBS14");
+    }
+
+    @OnClick(R.id.btn_kt_open)
+    public void btn_kt_open() {
+        SerialPortUtil.sendMsg("MBS39");
+    }
+
+    @OnClick(R.id.btn_kt_close)
+    public void btn_kt_close() {
+        SerialPortUtil.sendMsg("MBS40");
+    }
+
+    @OnClick(R.id.btn_mj_pc)
+    public void btn_mj_pc() {
+        SerialPortUtil.sendMsg("MJD46");
+    }
+
+    @OnClick(R.id.rbtn_tyj_open)
+    public void rbtn_tyj_open() {
+        SerialPortUtil.sendMsg("MBS9");
+    }
+
+    @OnClick(R.id.rbtn_tyj_close)
+    public void rbtn_tyj_close() {
+        SerialPortUtil.sendMsg("MBS10");
+    }
+
+
+    @OnClick(R.id.lubo_luzhi_stop)
+    public void lubo_luzhi_stop() {
+        if (lubo_luzhi_stop.isChecked()) {
+            SerialPortUtil.sendMsg("LUB1");
+        } else {
+            SerialPortUtil.sendMsg("LUB3");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
     @Override
     protected void onDestroy() {

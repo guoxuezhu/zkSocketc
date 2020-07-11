@@ -51,6 +51,7 @@
                 android:orientation="vertical">
 
                 <CheckBox
+                    android:id="@+id/spbtn_all_laoshi_diannao"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_width"
                     android:background="@drawable/yinpin_checked_status"
@@ -66,6 +67,7 @@
 
 
                 <CheckBox
+                    android:id="@+id/spbtn_all_gpy"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_width"
                     android:layout_marginTop="@dimen/shebei_btn_marginTop"
@@ -91,6 +93,7 @@
                 android:orientation="vertical">
 
                 <CheckBox
+                    android:id="@+id/spbtn_all_bjb_1"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_width"
                     android:background="@drawable/yinpin_checked_status"
@@ -106,6 +109,7 @@
 
 
                 <CheckBox
+                    android:id="@+id/spbtn_all_diannao"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_width"
                     android:layout_marginTop="@dimen/shebei_btn_marginTop"
@@ -325,7 +329,7 @@
                 android:orientation="vertical">
 
                 <CheckBox
-                    android:id="@+id/jingyin"
+                    android:id="@+id/lubo_luzhi_stop"
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_width"
                     android:background="@drawable/yinpin_checked_status"
@@ -416,6 +420,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
+
                 <CheckBox
                     android:layout_width="@dimen/shebei_btn_width"
                     android:layout_height="@dimen/shebei_btn_width"
@@ -429,7 +434,6 @@
                     android:text="主屏"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_20" />
-
 
                 <CheckBox
                     android:layout_width="@dimen/shebei_btn_width"
