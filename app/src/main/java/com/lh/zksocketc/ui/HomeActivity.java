@@ -30,14 +30,10 @@ import butterknife.OnClick;
 
 public class HomeActivity extends BaseActivity {
 
-    @BindView(R.id.rbtn_changjing)
-    RadioButton rbtn_changjing;
 
     @BindView(R.id.time_tv_home)
     TextView time_tv_home;
 
-    private List<Fragment> fragments = new ArrayList<>();
-    private Fragment fragment;
     private boolean isShangke = false;
     private Timer timeTimer;
     private Handler homeHander = new Handler() {
@@ -59,11 +55,6 @@ public class HomeActivity extends BaseActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        rbtn_changjing.setChecked(true);
-//        rbtn_fuwei.setChecked(true);
-
-        fragments = getFragments(); //添加布局
-        showFragment(0);
         isShangke = false;
 
         tvgetTime();
@@ -92,58 +83,11 @@ public class HomeActivity extends BaseActivity {
     }
 
 
-    public List<Fragment> getFragments() {
-        fragments.add(new ChuanjingFragment());
-        fragments.add(new ShebeiFragment());
-        fragments.add(new LuboFragment());
-        fragments.add(new JuzhenFragment());
-//        fragments.add(new HuanjingFragment());
-        fragments.add(new YinpinFragment());
-        fragments.add(new DianyuanFragment());
-        return fragments;
-    }
-
-    @OnClick(R.id.rbtn_changjing)
-    public void rbtn_changjing() {
-        showFragment(0);
-    }
-
-    @OnClick(R.id.rbtn_shebei)
-    public void rbtn_shebei() {
-        showFragment(1);
-    }
 
 
-    @OnClick(R.id.rbtn_lubo)
-    public void rbtn_lubo() {
-        showFragment(2);
-    }
-
-    @OnClick(R.id.rbtn_juzhen)
-    public void rbtn_juzhen() {
-        showFragment(3);
-    }
 
 
-    @OnClick(R.id.rbtn_yinpin)
-    public void rbtn_yinpin() {
-        showFragment(4);
-    }
 
-
-    @OnClick(R.id.rbtn_dianyuan)
-    public void rbtn_dianyuan() {
-        showFragment(5);
-    }
-
-
-    private void showFragment(int i) {
-        fragment = fragments.get(i);
-        getFragmentManager().beginTransaction()
-                .replace(R.id.mFragment, fragment).commit();
-//        getFragmentManager().beginTransaction().show(fragment);
-
-    }
 
 //    @OnClick(R.id.rbtn_fuwei)
 //    public void rbtn_fuwei() {
