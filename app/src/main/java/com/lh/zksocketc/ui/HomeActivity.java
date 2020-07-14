@@ -1,6 +1,5 @@
 package com.lh.zksocketc.ui;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,18 +9,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.lh.zksocketc.R;
-import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
-import com.lh.zksocketc.ui.fragment.DianyuanFragment;
-import com.lh.zksocketc.ui.fragment.JuzhenFragment;
-import com.lh.zksocketc.ui.fragment.LuboFragment;
-import com.lh.zksocketc.ui.fragment.ShebeiFragment;
-import com.lh.zksocketc.ui.fragment.YinpinFragment;
 import com.lh.zksocketc.utils.DateUtil;
 import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -48,8 +39,30 @@ public class HomeActivity extends BaseActivity {
     CheckBox lubo_luzhi_stop;
 
 
+    @BindView(R.id.zhuping_fuwei)
+    RadioButton zhuping_fuwei;
+    @BindView(R.id.sp_fen_ping)
+    RadioButton sp_fen_ping;
+
+    @BindView(R.id.sp_all_guangbo)
+    CheckBox sp_all_guangbo;
+    @BindView(R.id.sp_out_banshu)
+    CheckBox sp_out_banshu;
+    @BindView(R.id.sp_xz_1)
+    CheckBox sp_xz_1;
+    @BindView(R.id.sp_xz_2)
+    CheckBox sp_xz_2;
+    @BindView(R.id.sp_xz_3)
+    CheckBox sp_xz_3;
+    @BindView(R.id.sp_xz_4)
+    CheckBox sp_xz_4;
+    @BindView(R.id.sp_xz_5)
+    CheckBox sp_xz_5;
+    @BindView(R.id.sp_xz_6)
+    CheckBox sp_xz_6;
 
 
+    private int count = 0;
     private boolean isShangke = false;
     private Timer timeTimer;
     private Handler homeHander = new Handler() {
@@ -222,10 +235,190 @@ public class HomeActivity extends BaseActivity {
 
 
 
+    @OnClick(R.id.zhuping_fuwei)
+    public void zhuping_fuwei() {
+        SerialPortUtil.sendMsg("JZFFP1");
+        sp_out_banshu.setChecked(false);
+        sp_xz_1.setChecked(false);
+        sp_xz_2.setChecked(false);
+        sp_xz_3.setChecked(false);
+        sp_xz_4.setChecked(false);
+        sp_xz_5.setChecked(false);
+        sp_xz_6.setChecked(false);
+        sp_all_guangbo.setChecked(false);
+    }
+
+    @OnClick(R.id.sp_fen_ping)
+    public void sp_fen_ping() {
+        count = 0;
+        SerialPortUtil.sendMsg("JZFFP2");
+        sp_out_banshu.setChecked(false);
+        sp_xz_1.setChecked(false);
+        sp_xz_2.setChecked(false);
+        sp_xz_3.setChecked(false);
+        sp_xz_4.setChecked(false);
+        sp_xz_5.setChecked(false);
+        sp_xz_6.setChecked(false);
+        sp_all_guangbo.setChecked(false);
+    }
 
 
+    @OnClick(R.id.sp_out_banshu)
+    public void sp_out_banshu() {
+        if (sp_fen_ping.isChecked()) {
+            qiehuan(8);
+        } else {
+            SerialPortUtil.sendMsg("JZFAA8");
+        }
+        sp_out_banshu.setChecked(true);
+        sp_xz_1.setChecked(false);
+        sp_xz_2.setChecked(false);
+        sp_xz_3.setChecked(false);
+        sp_xz_4.setChecked(false);
+        sp_xz_5.setChecked(false);
+        sp_xz_6.setChecked(false);
+        sp_all_guangbo.setChecked(false);
+    }
+
+    @OnClick(R.id.sp_xz_1)
+    public void sp_xz_1() {
+        if (sp_fen_ping.isChecked()) {
+            qiehuan(2);
+        } else {
+            SerialPortUtil.sendMsg("JZFAA2");
+        }
+        sp_out_banshu.setChecked(false);
+        sp_xz_1.setChecked(true);
+        sp_xz_2.setChecked(false);
+        sp_xz_3.setChecked(false);
+        sp_xz_4.setChecked(false);
+        sp_xz_5.setChecked(false);
+        sp_xz_6.setChecked(false);
+        sp_all_guangbo.setChecked(false);
+    }
+
+    @OnClick(R.id.sp_xz_2)
+    public void sp_xz_2() {
+        if (sp_fen_ping.isChecked()) {
+            qiehuan(3);
+        } else {
+            SerialPortUtil.sendMsg("JZFAA3");
+        }
+        sp_out_banshu.setChecked(false);
+        sp_xz_1.setChecked(false);
+        sp_xz_2.setChecked(true);
+        sp_xz_3.setChecked(false);
+        sp_xz_4.setChecked(false);
+        sp_xz_5.setChecked(false);
+        sp_xz_6.setChecked(false);
+        sp_all_guangbo.setChecked(false);
+    }
+
+    @OnClick(R.id.sp_xz_3)
+    public void sp_xz_3() {
+        if (sp_fen_ping.isChecked()) {
+            qiehuan(4);
+        } else {
+            SerialPortUtil.sendMsg("JZFAA4");
+        }
+        sp_out_banshu.setChecked(false);
+        sp_xz_1.setChecked(false);
+        sp_xz_2.setChecked(false);
+        sp_xz_3.setChecked(true);
+        sp_xz_4.setChecked(false);
+        sp_xz_5.setChecked(false);
+        sp_xz_6.setChecked(false);
+        sp_all_guangbo.setChecked(false);
+    }
+
+    @OnClick(R.id.sp_xz_4)
+    public void sp_xz_4() {
+        if (sp_fen_ping.isChecked()) {
+            qiehuan(5);
+        } else {
+            SerialPortUtil.sendMsg("JZFAA5");
+        }
+        sp_out_banshu.setChecked(false);
+        sp_xz_1.setChecked(false);
+        sp_xz_2.setChecked(false);
+        sp_xz_3.setChecked(false);
+        sp_xz_4.setChecked(true);
+        sp_xz_5.setChecked(false);
+        sp_xz_6.setChecked(false);
+        sp_all_guangbo.setChecked(false);
+    }
+
+    @OnClick(R.id.sp_xz_5)
+    public void sp_xz_5() {
+        if (sp_fen_ping.isChecked()) {
+            qiehuan(6);
+        } else {
+            SerialPortUtil.sendMsg("JZFAA6");
+        }
+        sp_out_banshu.setChecked(false);
+        sp_xz_1.setChecked(false);
+        sp_xz_2.setChecked(false);
+        sp_xz_3.setChecked(false);
+        sp_xz_4.setChecked(false);
+        sp_xz_5.setChecked(true);
+        sp_xz_6.setChecked(false);
+        sp_all_guangbo.setChecked(false);
+    }
+
+    @OnClick(R.id.sp_xz_6)
+    public void sp_xz_6() {
+        if (sp_fen_ping.isChecked()) {
+            qiehuan(7);
+        } else {
+            SerialPortUtil.sendMsg("JZFAA7");
+        }
+        sp_out_banshu.setChecked(false);
+        sp_xz_1.setChecked(false);
+        sp_xz_2.setChecked(false);
+        sp_xz_3.setChecked(false);
+        sp_xz_4.setChecked(false);
+        sp_xz_5.setChecked(false);
+        sp_xz_6.setChecked(true);
+        sp_all_guangbo.setChecked(false);
+
+    }
+
+    private void qiehuan(int i) {
+        count++;
+        sp_all_guangbo.setChecked(false);
+        if (count == 1) {
+            SerialPortUtil.sendMsg("JZFAA" + i);
+        } else if (count == 2) {
+            SerialPortUtil.sendMsg("JZFBB" + i);
+        } else if (count == 3) {
+            count = 0;
+            SerialPortUtil.sendMsg("JZFAA" + i);
+        }
+    }
 
 
+    @OnClick(R.id.sp_all_guangbo)
+    public void sp_all_guangbo() {
+        if (sp_fen_ping.isChecked()) {
+            SerialPortUtil.sendMsg("JZFGB9");
+        } else {
+            if (sp_out_banshu.isChecked()) {
+                SerialPortUtil.sendMsg("JZFGB8");
+            } else if (sp_xz_1.isChecked()) {
+                SerialPortUtil.sendMsg("JZFGB2");
+            } else if (sp_xz_2.isChecked()) {
+                SerialPortUtil.sendMsg("JZFGB3");
+            } else if (sp_xz_3.isChecked()) {
+                SerialPortUtil.sendMsg("JZFGB4");
+            } else if (sp_xz_4.isChecked()) {
+                SerialPortUtil.sendMsg("JZFGB5");
+            } else if (sp_xz_5.isChecked()) {
+                SerialPortUtil.sendMsg("JZFGB6");
+            } else if (sp_xz_6.isChecked()) {
+                SerialPortUtil.sendMsg("JZFGB7");
+            }
+        }
+    }
 
 
     @Override
