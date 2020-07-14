@@ -389,10 +389,8 @@ public class HomeActivity extends BaseActivity {
         if (count == 1) {
             SerialPortUtil.sendMsg("JZFAA" + i);
         } else if (count == 2) {
-            SerialPortUtil.sendMsg("JZFBB" + i);
-        } else if (count == 3) {
             count = 0;
-            SerialPortUtil.sendMsg("JZFAA" + i);
+            SerialPortUtil.sendMsg("JZFBB" + i);
         }
     }
 
