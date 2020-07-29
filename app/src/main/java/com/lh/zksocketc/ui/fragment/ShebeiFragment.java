@@ -79,25 +79,25 @@ public class ShebeiFragment extends Fragment {
 
     @OnClick(R.id.rbtn_tyj_open)
     public void rbtn_tyj_open() {
-        SerialPortUtil.sendMsg("MBS9");
+        SerialPortUtil.sendMsg("MBS15");
 
     }
 
     @OnClick(R.id.rbtn_tyj_close)
     public void rbtn_tyj_close() {
-        SerialPortUtil.sendMsg("MBS10");
+        SerialPortUtil.sendMsg("MBS16");
 
     }
 
 
     @OnClick(R.id.rbtn_tyj_bu_open)
     public void rbtn_tyj_bu_open() {
-        SerialPortUtil.sendMsg("MBS11");
+        SerialPortUtil.sendMsg("MBS66");
     }
 
     @OnClick(R.id.rbtn_tyj_bu_close)
     public void rbtn_tyj_bu_close() {
-        SerialPortUtil.sendMsg("MBS12");
+        SerialPortUtil.sendMsg("MBS67");
     }
 
 
@@ -112,15 +112,27 @@ public class ShebeiFragment extends Fragment {
         SerialPortUtil.sendMsg("MBS40");
     }
 
-    @OnClick(R.id.btn_kt_zidong)
-    public void btn_kt_zidong() {
-        SerialPortUtil.sendMsg("MBS41");
+    @OnClick(R.id.btn_kt_leng)
+    public void btn_kt_leng() {
+        SerialPortUtil.sendMsg("MBS42");
     }
 
-    @OnClick(R.id.btn_mj_pc)
-    public void btn_mj_pc() {
-        SerialPortUtil.sendMsg("MJD46");
+
+    @OnClick(R.id.btn_kt_re)
+    public void btn_kt_re() {
+        SerialPortUtil.sendMsg("MBS43");
     }
+
+//
+//    @OnClick(R.id.btn_kt_zidong)
+//    public void btn_kt_zidong() {
+//        SerialPortUtil.sendMsg("MBS41");
+//    }
+//
+//    @OnClick(R.id.btn_mj_pc)
+//    public void btn_mj_pc() {
+//        SerialPortUtil.sendMsg("MJD46");
+//    }
 
 
 }

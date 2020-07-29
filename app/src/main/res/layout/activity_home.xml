@@ -29,7 +29,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/changjing"
                 android:gravity="center"
-                android:paddingTop="13dp"
+                android:paddingTop="40dp"
                 android:paddingBottom="13dp"
                 android:text="一键"
                 android:textColor="@color/white"
@@ -49,7 +49,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/shipin"
                 android:gravity="center"
-                android:paddingTop="13dp"
+                android:paddingTop="40dp"
                 android:paddingBottom="13dp"
                 android:text="互动"
                 android:textColor="@color/white"
@@ -69,7 +69,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/shebei"
                 android:gravity="center"
-                android:paddingTop="13dp"
+                android:paddingTop="40dp"
                 android:paddingBottom="13dp"
                 android:text="物联"
                 android:textColor="@color/white"
@@ -79,6 +79,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:visibility="gone"
                 android:background="@color/xian_1" />
 
             <RadioButton
@@ -93,12 +94,14 @@
                 android:paddingTop="13dp"
                 android:paddingBottom="13dp"
                 android:text="录播"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:visibility="gone"
                 android:background="@color/xian_1" />
 
             <RadioButton
@@ -112,6 +115,7 @@
                 android:gravity="center"
                 android:paddingTop="13dp"
                 android:paddingBottom="13dp"
+                android:visibility="gone"
                 android:text="音频"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -119,6 +123,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:visibility="gone"
                 android:background="@color/xian_1" />
 
             <RadioButton
@@ -133,6 +138,7 @@
                 android:paddingTop="13dp"
                 android:paddingBottom="13dp"
                 android:text="其它"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 

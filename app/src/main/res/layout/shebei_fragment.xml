@@ -12,6 +12,7 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:background="@drawable/layout_bg_1"
+        android:visibility="gone"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -188,7 +189,7 @@
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
                     android:gravity="center"
-                    android:text="灯光开"
+                    android:text="黑板开"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -203,7 +204,7 @@
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
                     android:gravity="center"
-                    android:text="灯光关"
+                    android:text="黑板关"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -225,11 +226,11 @@
                     android:layout_height="@dimen/shebei_btn_width"
                     android:background="@drawable/shebei_checkbox_status"
                     android:button="@null"
-                    android:drawableTop="@drawable/wl_tyj_2"
+                    android:drawableTop="@drawable/wl_dg_2"
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
                     android:gravity="center"
-                    android:text="投影机开"
+                    android:text="教室灯开"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -240,11 +241,11 @@
                     android:layout_marginTop="@dimen/shebei_btn_marginTop"
                     android:background="@drawable/shebei_checkbox_status"
                     android:button="@null"
-                    android:drawableTop="@drawable/wl_tyj_1"
+                    android:drawableTop="@drawable/wl_dg_1"
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
                     android:gravity="center"
-                    android:text="投影机关"
+                    android:text="教室灯关"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -267,10 +268,10 @@
                     android:background="@drawable/shebei_checkbox_status"
                     android:button="@null"
                     android:drawableTop="@drawable/wl_mb_1"
+                    android:gravity="center"
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
-                    android:gravity="center"
-                    android:text="幕布升"
+                    android:text="场景开"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -285,7 +286,7 @@
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
                     android:gravity="center"
-                    android:text="幕布降"
+                    android:text="场景关"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -322,11 +323,50 @@
                     android:layout_marginTop="@dimen/shebei_btn_marginTop"
                     android:background="@drawable/shebei_checkbox_status"
                     android:button="@null"
-                    android:drawableTop="@drawable/wl_kt_1"
+                    android:drawableTop="@drawable/wl_kt_2"
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
                     android:gravity="center"
                     android:text="空调关"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/shebei_text_size" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <RadioButton
+                    android:id="@+id/btn_kt_leng"
+                    android:layout_width="@dimen/shebei_btn_width"
+                    android:layout_height="@dimen/shebei_btn_width"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:drawableTop="@drawable/wl_kt_1"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
+                    android:gravity="center"
+                    android:text="空调制冷"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/shebei_text_size" />
+
+                <RadioButton
+                    android:id="@+id/btn_kt_re"
+                    android:layout_width="@dimen/shebei_btn_width"
+                    android:layout_height="@dimen/shebei_btn_width"
+                    android:layout_marginTop="@dimen/shebei_btn_marginTop"
+                    android:background="@drawable/shebei_checkbox_status"
+                    android:button="@null"
+                    android:drawableTop="@drawable/wl_kt_1"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
+                    android:gravity="center"
+                    android:text="空调制热"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -338,6 +378,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                 android:gravity="center"
+                android:visibility="gone"
                 android:orientation="vertical">
 
                 <Button
