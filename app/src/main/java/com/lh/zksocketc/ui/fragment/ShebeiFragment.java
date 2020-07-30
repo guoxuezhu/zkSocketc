@@ -2,17 +2,20 @@ package com.lh.zksocketc.ui.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
+import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
 import butterknife.BindView;
@@ -28,6 +31,38 @@ public class ShebeiFragment extends Fragment {
     @BindView(R.id.tv_wsd_pm)
     TextView tv_wsd_pm;
 
+    @BindView(R.id.rbtn_cl_open)
+    RadioButton rbtn_cl_open;
+    @BindView(R.id.rbtn_cl_close)
+    RadioButton rbtn_cl_close;
+
+    @BindView(R.id.rbtn_dg_open)
+    RadioButton rbtn_dg_open;
+    @BindView(R.id.rbtn_dg_close)
+    RadioButton rbtn_dg_close;
+
+    @BindView(R.id.rbtn_tyj_open)
+    RadioButton rbtn_tyj_open;
+    @BindView(R.id.rbtn_tyj_close)
+    RadioButton rbtn_tyj_close;
+
+    @BindView(R.id.rbtn_tyj_bu_open)
+    RadioButton rbtn_tyj_bu_open;
+    @BindView(R.id.rbtn_tyj_bu_close)
+    RadioButton rbtn_tyj_bu_close;
+
+    Handler sfHander = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 234:
+                    ELog.d("======sfHander====ShebeiFragment=============" + msg.obj.toString());
+                    setBtnStatus(msg.obj.toString());
+                    break;
+            }
+        }
+    };
 
     @Nullable
     @Override
@@ -49,7 +84,28 @@ public class ShebeiFragment extends Fragment {
             tv_wsd_sd.setText(wsdDataDao.loadAll().get(0).shidu);
             tv_wsd_pm.setText(wsdDataDao.loadAll().get(0).pm25);
         }
+        SerialPortUtil.readBtnStatus(sfHander);
+    }
 
+
+    private void setBtnStatus(String msg) {
+        if (msg.equals("0101")) {
+            rbtn_cl_open.setChecked(true);
+        } else if (msg.equals("0100")) {
+            rbtn_cl_close.setChecked(true);
+        } else if (msg.equals("0201")) {
+            rbtn_tyj_open.setChecked(true);
+        } else if (msg.equals("0200")) {
+            rbtn_tyj_close.setChecked(true);
+        } else if (msg.equals("0301")) {
+            rbtn_tyj_bu_open.setChecked(true);
+        } else if (msg.equals("0300")) {
+            rbtn_tyj_bu_close.setChecked(true);
+        } else if (msg.equals("0401")) {
+            rbtn_dg_open.setChecked(true);
+        } else if (msg.equals("0400")) {
+            rbtn_dg_close.setChecked(true);
+        }
     }
 
 
@@ -73,20 +129,17 @@ public class ShebeiFragment extends Fragment {
     @OnClick(R.id.rbtn_dg_close)
     public void rbtn_dg_close() {
         SerialPortUtil.sendMsg("MBS14");
-
     }
 
 
     @OnClick(R.id.rbtn_tyj_open)
     public void rbtn_tyj_open() {
         SerialPortUtil.sendMsg("MBS15");
-
     }
 
     @OnClick(R.id.rbtn_tyj_close)
     public void rbtn_tyj_close() {
         SerialPortUtil.sendMsg("MBS16");
-
     }
 
 
@@ -135,4 +188,10 @@ public class ShebeiFragment extends Fragment {
 //    }
 
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SerialPortUtil.stopReadBtnStatus();
+        ELog.i("========ShebeiFragment===onDestroy====");
+    }
 }

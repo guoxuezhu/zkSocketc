@@ -68,25 +68,34 @@ public class SerialPortUtil {
                     while (isReadWsd && (size = inputStream.read(buffer, 0, 64)) > 0) {
                         if (size > 0) {
                             String msg = new String(buffer, 0, size);
-                            ELog.i("=====接收到了数据==温湿度=====" + msg);
+                            ELog.i("=====接收到了数据=======" + msg);
                             String[] msglist = msg.split(";");
-                            if (msglist[0].equals("WSD")) {
-                                try {
+                            try {
+                                if (msglist[0].equals("WSD")) {
                                     WsdData wsd = new WsdData(msglist[1], msglist[2], msglist[3]);
                                     WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
                                     wsdDataDao.deleteAll();
                                     wsdDataDao.insert(wsd);
-                                } catch (Exception e) {
-                                    ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
+                                } else if (msglist[0].equals("KZQ")) {
+                                    if (myHander != null) {
+                                        Message message = new Message();
+                                        message.obj = msglist[1];
+                                        message.what = 234;
+                                        myHander.sendMessage(message);
+                                    }
+                                } else if (msglist[0].equals("SKJ")) {
+                                    if (myHander != null) {
+                                        Message message = new Message();
+                                        message.obj = msg;
+                                        message.what = 444;
+                                        myHander.sendMessage(message);
+                                    }
                                 }
-                            } else if (msglist[0].equals("SKJ")) {
-                                if (myHander != null) {
-                                    Message message = new Message();
-                                    message.obj = msg;
-                                    message.what = 444;
-                                    myHander.sendMessage(message);
-                                }
+                            } catch (Exception e) {
+                                ELog.i("========接收到了数据====异常========" + e.toString());
                             }
+
+
                         }
                     }
 
@@ -208,5 +217,14 @@ public class SerialPortUtil {
         serialPort1.close();
         myHander = null;
         ELog.i("========stopReadCard=============");
+    }
+
+    public static void readBtnStatus(Handler sfHander) {
+        myHander = sfHander;
+    }
+
+
+    public static void stopReadBtnStatus() {
+        myHander = null;
     }
 }
