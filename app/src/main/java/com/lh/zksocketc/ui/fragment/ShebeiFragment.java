@@ -114,13 +114,13 @@ public class ShebeiFragment extends Fragment {
 
     @OnClick(R.id.btn_kt_leng)
     public void btn_kt_leng() {
-        SerialPortUtil.sendMsg("MBS42");
+        SerialPortUtil.sendMsg("MBS64");
     }
 
 
     @OnClick(R.id.btn_kt_re)
     public void btn_kt_re() {
-        SerialPortUtil.sendMsg("MBS43");
+        SerialPortUtil.sendMsg("MBS65");
     }
 
 //
