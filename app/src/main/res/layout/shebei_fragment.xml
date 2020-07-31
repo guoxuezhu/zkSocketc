@@ -12,7 +12,6 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:background="@drawable/layout_bg_1"
-        android:visibility="gone"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -120,6 +119,7 @@
         android:layout_height="0dp"
         android:layout_weight="4"
         android:background="@drawable/layout_bg_1"
+        android:layout_marginTop="@dimen/dp_10"
         android:gravity="center"
         android:orientation="vertical">
 

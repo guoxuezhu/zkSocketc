@@ -81,6 +81,12 @@ public class SerialPortUtil {
                                     wsdDataDao.deleteAll();
                                     wsdDataDao.insert(wsd);
                                 } else if (msglist[0].equals("KZQ")) {
+                                    if (myHander != null) {
+                                        Message message = new Message();
+                                        message.obj = msglist[1];
+                                        message.what = 234;
+                                        myHander.sendMessage(message);
+                                    }
                                     if (msglist[1].equals("0101")) {
                                         btnStatusDataDao.update(new BtnStatusData("窗帘", 3, "1"));
                                     } else if (msglist[1].equals("0100")) {
@@ -88,7 +94,7 @@ public class SerialPortUtil {
                                     } else if (msglist[1].equals("0401")) {
                                         btnStatusDataDao.update(new BtnStatusData("黑板灯", 13, "1"));
                                     } else if (msglist[1].equals("0400")) {
-                                        btnStatusDataDao.update(new BtnStatusData("黑板灯", 14, "0"));
+                                        btnStatusDataDao.update(new BtnStatusData("黑板灯", 13, "0"));
                                     } else if (msglist[1].equals("0201")) {
                                         btnStatusDataDao.update(new BtnStatusData("教室灯", 15, "1"));
                                     } else if (msglist[1].equals("0200")) {
@@ -97,12 +103,6 @@ public class SerialPortUtil {
                                         btnStatusDataDao.update(new BtnStatusData("场景", 66, "1"));
                                     } else if (msglist[1].equals("0300")) {
                                         btnStatusDataDao.update(new BtnStatusData("场景", 66, "0"));
-                                    }
-                                    if (myHander != null) {
-                                        Message message = new Message();
-                                        message.obj = msglist[1];
-                                        message.what = 234;
-                                        myHander.sendMessage(message);
                                     }
                                 } else if (msglist[0].equals("SKJ")) {
                                     if (myHander != null) {
@@ -132,6 +132,7 @@ public class SerialPortUtil {
 
     private static void getBtnstatus() {
         btnStatusDataDao = MyApplication.getDaoSession().getBtnStatusDataDao();
+        btnStatusDataDao.deleteAll();
         if (btnStatusDataDao.loadAll().size() == 0) {
             btnStatusDataDao.insert(new BtnStatusData("窗帘", 3, "0"));
             btnStatusDataDao.insert(new BtnStatusData("黑板灯", 13, "0"));

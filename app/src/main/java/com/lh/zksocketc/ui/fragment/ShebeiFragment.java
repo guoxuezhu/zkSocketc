@@ -58,8 +58,12 @@ public class ShebeiFragment extends Fragment {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 234:
-                    ELog.d("======sfHander====ShebeiFragment=============" + msg.obj.toString());
+                    ELog.d("======sfHander====ShebeiFragment===1==========" + msg.obj.toString());
                     setBtnStatus(msg.obj.toString());
+                    break;
+                case 345:
+                    ELog.d("======sfHander====ShebeiFragment==2===========" + msg.obj.toString());
+//                    setInitBtn();
                     break;
             }
         }
@@ -85,32 +89,38 @@ public class ShebeiFragment extends Fragment {
             tv_wsd_sd.setText(wsdDataDao.loadAll().get(0).shidu);
             tv_wsd_pm.setText(wsdDataDao.loadAll().get(0).pm25);
         }
-        BtnStatusDataDao btnStatusDataDao = MyApplication.getDaoSession().getBtnStatusDataDao();
-        if (btnStatusDataDao.load((long) 3).getBtnStatus().equals("1")) {
-            rbtn_cl_open.setChecked(true);
-        } else if (btnStatusDataDao.load((long) 3).getBtnStatus().equals("0")) {
-            rbtn_cl_close.setChecked(true);
-        }
-
-        if (btnStatusDataDao.load((long) 13).getBtnStatus().equals("1")) {
-            rbtn_dg_open.setChecked(true);
-        } else if (btnStatusDataDao.load((long) 13).getBtnStatus().equals("0")) {
-            rbtn_dg_close.setChecked(true);
-        }
-
-        if (btnStatusDataDao.load((long) 15).getBtnStatus().equals("1")) {
-            rbtn_jsd_open.setChecked(true);
-        } else if (btnStatusDataDao.load((long) 15).getBtnStatus().equals("0")) {
-            rbtn_jsd_close.setChecked(true);
-        }
-
-        if (btnStatusDataDao.load((long) 66).getBtnStatus().equals("1")) {
-            rbtn_cj_open.setChecked(true);
-        } else if (btnStatusDataDao.load((long) 66).getBtnStatus().equals("0")) {
-            rbtn_cj_close.setChecked(true);
-        }
-
         SerialPortUtil.readBtnStatus(sfHander);
+//        sfHander.obtainMessage(345);
+        setInitBtn();
+    }
+
+    private void setInitBtn() {
+        BtnStatusDataDao btnStatusDataDao = MyApplication.getDaoSession().getBtnStatusDataDao();
+        if (btnStatusDataDao.loadAll().size() != 0) {
+            if (btnStatusDataDao.load((long) 3).getBtnStatus().equals("1")) {
+                rbtn_cl_open.setChecked(true);
+            } else if (btnStatusDataDao.load((long) 3).getBtnStatus().equals("0")) {
+                rbtn_cl_close.setChecked(true);
+            }
+
+            if (btnStatusDataDao.load((long) 13).getBtnStatus().equals("1")) {
+                rbtn_dg_open.setChecked(true);
+            } else if (btnStatusDataDao.load((long) 13).getBtnStatus().equals("0")) {
+                rbtn_dg_close.setChecked(true);
+            }
+
+            if (btnStatusDataDao.load((long) 15).getBtnStatus().equals("1")) {
+                rbtn_jsd_open.setChecked(true);
+            } else if (btnStatusDataDao.load((long) 15).getBtnStatus().equals("0")) {
+                rbtn_jsd_close.setChecked(true);
+            }
+
+            if (btnStatusDataDao.load((long) 66).getBtnStatus().equals("1")) {
+                rbtn_cj_open.setChecked(true);
+            } else if (btnStatusDataDao.load((long) 66).getBtnStatus().equals("0")) {
+                rbtn_cj_close.setChecked(true);
+            }
+        }
     }
 
 
