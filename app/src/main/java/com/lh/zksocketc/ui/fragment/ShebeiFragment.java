@@ -42,15 +42,15 @@ public class ShebeiFragment extends Fragment {
     @BindView(R.id.rbtn_dg_close)
     RadioButton rbtn_dg_close;
 
-    @BindView(R.id.rbtn_tyj_open)
-    RadioButton rbtn_tyj_open;
-    @BindView(R.id.rbtn_tyj_close)
-    RadioButton rbtn_tyj_close;
+    @BindView(R.id.rbtn_jsd_open)
+    RadioButton rbtn_jsd_open;
+    @BindView(R.id.rbtn_jsd_close)
+    RadioButton rbtn_jsd_close;
 
-    @BindView(R.id.rbtn_tyj_bu_open)
-    RadioButton rbtn_tyj_bu_open;
-    @BindView(R.id.rbtn_tyj_bu_close)
-    RadioButton rbtn_tyj_bu_close;
+    @BindView(R.id.rbtn_cj_open)
+    RadioButton rbtn_cj_open;
+    @BindView(R.id.rbtn_cj_close)
+    RadioButton rbtn_cj_close;
 
     Handler sfHander = new Handler() {
         @Override
@@ -99,15 +99,15 @@ public class ShebeiFragment extends Fragment {
         }
 
         if (btnStatusDataDao.load((long) 15).getBtnStatus().equals("1")) {
-            rbtn_tyj_open.setChecked(true);
+            rbtn_jsd_open.setChecked(true);
         } else if (btnStatusDataDao.load((long) 15).getBtnStatus().equals("0")) {
-            rbtn_tyj_close.setChecked(true);
+            rbtn_jsd_close.setChecked(true);
         }
 
         if (btnStatusDataDao.load((long) 66).getBtnStatus().equals("1")) {
-            rbtn_tyj_bu_open.setChecked(true);
+            rbtn_cj_open.setChecked(true);
         } else if (btnStatusDataDao.load((long) 66).getBtnStatus().equals("0")) {
-            rbtn_tyj_bu_close.setChecked(true);
+            rbtn_cj_close.setChecked(true);
         }
 
         SerialPortUtil.readBtnStatus(sfHander);
@@ -120,13 +120,13 @@ public class ShebeiFragment extends Fragment {
         } else if (msg.equals("0100")) {
             rbtn_cl_close.setChecked(true);
         } else if (msg.equals("0201")) {
-            rbtn_tyj_open.setChecked(true);
+            rbtn_jsd_open.setChecked(true);
         } else if (msg.equals("0200")) {
-            rbtn_tyj_close.setChecked(true);
+            rbtn_jsd_close.setChecked(true);
         } else if (msg.equals("0301")) {
-            rbtn_tyj_bu_open.setChecked(true);
+            rbtn_cj_open.setChecked(true);
         } else if (msg.equals("0300")) {
-            rbtn_tyj_bu_close.setChecked(true);
+            rbtn_cj_close.setChecked(true);
         } else if (msg.equals("0401")) {
             rbtn_dg_open.setChecked(true);
         } else if (msg.equals("0400")) {
@@ -140,12 +140,20 @@ public class ShebeiFragment extends Fragment {
         SerialPortUtil.sendMsg("MBS3");
     }
 
-
     @OnClick(R.id.rbtn_cl_close)
     public void rbtn_cl_close() {
         SerialPortUtil.sendMsg("MBS4");
     }
 
+    @OnClick(R.id.rbtn_tyj_open)
+    public void rbtn_tyj_open() {
+        SerialPortUtil.sendMsg("MBS9");
+    }
+
+    @OnClick(R.id.rbtn_tyj_close)
+    public void rbtn_tyj_close() {
+        SerialPortUtil.sendMsg("MBS10");
+    }
 
     @OnClick(R.id.rbtn_dg_open)
     public void rbtn_dg_open() {
@@ -158,24 +166,24 @@ public class ShebeiFragment extends Fragment {
     }
 
 
-    @OnClick(R.id.rbtn_tyj_open)
-    public void rbtn_tyj_open() {
+    @OnClick(R.id.rbtn_jsd_open)
+    public void rbtn_jsd_open() {
         SerialPortUtil.sendMsg("MBS15");
     }
 
-    @OnClick(R.id.rbtn_tyj_close)
-    public void rbtn_tyj_close() {
+    @OnClick(R.id.rbtn_jsd_close)
+    public void rbtn_jsd_close() {
         SerialPortUtil.sendMsg("MBS16");
     }
 
 
-    @OnClick(R.id.rbtn_tyj_bu_open)
-    public void rbtn_tyj_bu_open() {
+    @OnClick(R.id.rbtn_cj_open)
+    public void rbtn_cj_open() {
         SerialPortUtil.sendMsg("MBS66");
     }
 
-    @OnClick(R.id.rbtn_tyj_bu_close)
-    public void rbtn_tyj_bu_close() {
+    @OnClick(R.id.rbtn_cj_close)
+    public void rbtn_cj_close() {
         SerialPortUtil.sendMsg("MBS67");
     }
 
