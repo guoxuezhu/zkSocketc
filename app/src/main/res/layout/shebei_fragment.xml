@@ -189,7 +189,7 @@
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
                     android:gravity="center"
-                    android:text="黑板开"
+                    android:text="黑板灯开"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -204,7 +204,7 @@
                     android:paddingTop="13dp"
                     android:paddingBottom="13dp"
                     android:gravity="center"
-                    android:text="黑板关"
+                    android:text="黑板灯关"
                     android:textColor="@color/white"
                     android:textSize="@dimen/shebei_text_size" />
 

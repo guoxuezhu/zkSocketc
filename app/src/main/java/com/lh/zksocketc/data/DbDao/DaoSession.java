@@ -8,10 +8,12 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
+import com.lh.zksocketc.data.model.BtnStatusData;
 import com.lh.zksocketc.data.model.IcCardNumer;
 import com.lh.zksocketc.data.model.MLsLists;
 import com.lh.zksocketc.data.model.WsdData;
 
+import com.lh.zksocketc.data.DbDao.BtnStatusDataDao;
 import com.lh.zksocketc.data.DbDao.IcCardNumerDao;
 import com.lh.zksocketc.data.DbDao.MLsListsDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
@@ -25,10 +27,12 @@ import com.lh.zksocketc.data.DbDao.WsdDataDao;
  */
 public class DaoSession extends AbstractDaoSession {
 
+    private final DaoConfig btnStatusDataDaoConfig;
     private final DaoConfig icCardNumerDaoConfig;
     private final DaoConfig mLsListsDaoConfig;
     private final DaoConfig wsdDataDaoConfig;
 
+    private final BtnStatusDataDao btnStatusDataDao;
     private final IcCardNumerDao icCardNumerDao;
     private final MLsListsDao mLsListsDao;
     private final WsdDataDao wsdDataDao;
@@ -36,6 +40,9 @@ public class DaoSession extends AbstractDaoSession {
     public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
             daoConfigMap) {
         super(db);
+
+        btnStatusDataDaoConfig = daoConfigMap.get(BtnStatusDataDao.class).clone();
+        btnStatusDataDaoConfig.initIdentityScope(type);
 
         icCardNumerDaoConfig = daoConfigMap.get(IcCardNumerDao.class).clone();
         icCardNumerDaoConfig.initIdentityScope(type);
@@ -46,19 +53,26 @@ public class DaoSession extends AbstractDaoSession {
         wsdDataDaoConfig = daoConfigMap.get(WsdDataDao.class).clone();
         wsdDataDaoConfig.initIdentityScope(type);
 
+        btnStatusDataDao = new BtnStatusDataDao(btnStatusDataDaoConfig, this);
         icCardNumerDao = new IcCardNumerDao(icCardNumerDaoConfig, this);
         mLsListsDao = new MLsListsDao(mLsListsDaoConfig, this);
         wsdDataDao = new WsdDataDao(wsdDataDaoConfig, this);
 
+        registerDao(BtnStatusData.class, btnStatusDataDao);
         registerDao(IcCardNumer.class, icCardNumerDao);
         registerDao(MLsLists.class, mLsListsDao);
         registerDao(WsdData.class, wsdDataDao);
     }
     
     public void clear() {
+        btnStatusDataDaoConfig.clearIdentityScope();
         icCardNumerDaoConfig.clearIdentityScope();
         mLsListsDaoConfig.clearIdentityScope();
         wsdDataDaoConfig.clearIdentityScope();
+    }
+
+    public BtnStatusDataDao getBtnStatusDataDao() {
+        return btnStatusDataDao;
     }
 
     public IcCardNumerDao getIcCardNumerDao() {

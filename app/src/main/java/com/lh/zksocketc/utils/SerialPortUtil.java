@@ -4,7 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.lh.zksocketc.MyApplication;
+import com.lh.zksocketc.data.DbDao.BtnStatusDataDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
+import com.lh.zksocketc.data.model.BtnStatusData;
 import com.lh.zksocketc.data.model.WsdData;
 
 import java.io.File;
@@ -26,6 +28,7 @@ public class SerialPortUtil {
     private static InputStream inputStream1;
     private static boolean isReadCard;
     private static Handler myHander;
+    private static BtnStatusDataDao btnStatusDataDao;
 
     public static void open() {
         try {
@@ -56,6 +59,7 @@ public class SerialPortUtil {
     }
 
     public static void readSerialPortData() {
+        getBtnstatus();
         new Thread() {
             @Override
             public void run() {
@@ -77,6 +81,23 @@ public class SerialPortUtil {
                                     wsdDataDao.deleteAll();
                                     wsdDataDao.insert(wsd);
                                 } else if (msglist[0].equals("KZQ")) {
+                                    if (msglist[1].equals("0101")) {
+                                        btnStatusDataDao.update(new BtnStatusData("窗帘", 3, "1"));
+                                    } else if (msglist[1].equals("0100")) {
+                                        btnStatusDataDao.update(new BtnStatusData("窗帘", 3, "0"));
+                                    } else if (msglist[1].equals("0401")) {
+                                        btnStatusDataDao.update(new BtnStatusData("黑板灯", 13, "1"));
+                                    } else if (msglist[1].equals("0400")) {
+                                        btnStatusDataDao.update(new BtnStatusData("黑板灯", 14, "0"));
+                                    } else if (msglist[1].equals("0201")) {
+                                        btnStatusDataDao.update(new BtnStatusData("教室灯", 15, "1"));
+                                    } else if (msglist[1].equals("0200")) {
+                                        btnStatusDataDao.update(new BtnStatusData("教室灯", 15, "0"));
+                                    } else if (msglist[1].equals("0301")) {
+                                        btnStatusDataDao.update(new BtnStatusData("场景", 66, "1"));
+                                    } else if (msglist[1].equals("0300")) {
+                                        btnStatusDataDao.update(new BtnStatusData("场景", 66, "0"));
+                                    }
                                     if (myHander != null) {
                                         Message message = new Message();
                                         message.obj = msglist[1];
@@ -106,6 +127,17 @@ public class SerialPortUtil {
             }
         }.start();
 
+
+    }
+
+    private static void getBtnstatus() {
+        btnStatusDataDao = MyApplication.getDaoSession().getBtnStatusDataDao();
+        if (btnStatusDataDao.loadAll().size() == 0) {
+            btnStatusDataDao.insert(new BtnStatusData("窗帘", 3, "0"));
+            btnStatusDataDao.insert(new BtnStatusData("黑板灯", 13, "0"));
+            btnStatusDataDao.insert(new BtnStatusData("教室灯", 15, "0"));
+            btnStatusDataDao.insert(new BtnStatusData("场景", 66, "0"));
+        }
 
     }
 

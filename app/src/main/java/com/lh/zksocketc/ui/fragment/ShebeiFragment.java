@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.data.DbDao.BtnStatusDataDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
 import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
@@ -84,6 +85,31 @@ public class ShebeiFragment extends Fragment {
             tv_wsd_sd.setText(wsdDataDao.loadAll().get(0).shidu);
             tv_wsd_pm.setText(wsdDataDao.loadAll().get(0).pm25);
         }
+        BtnStatusDataDao btnStatusDataDao = MyApplication.getDaoSession().getBtnStatusDataDao();
+        if (btnStatusDataDao.load((long) 3).getBtnStatus().equals("1")) {
+            rbtn_cl_open.setChecked(true);
+        } else if (btnStatusDataDao.load((long) 3).getBtnStatus().equals("0")) {
+            rbtn_cl_close.setChecked(true);
+        }
+
+        if (btnStatusDataDao.load((long) 13).getBtnStatus().equals("1")) {
+            rbtn_dg_open.setChecked(true);
+        } else if (btnStatusDataDao.load((long) 13).getBtnStatus().equals("0")) {
+            rbtn_dg_close.setChecked(true);
+        }
+
+        if (btnStatusDataDao.load((long) 15).getBtnStatus().equals("1")) {
+            rbtn_tyj_open.setChecked(true);
+        } else if (btnStatusDataDao.load((long) 15).getBtnStatus().equals("0")) {
+            rbtn_tyj_close.setChecked(true);
+        }
+
+        if (btnStatusDataDao.load((long) 66).getBtnStatus().equals("1")) {
+            rbtn_tyj_bu_open.setChecked(true);
+        } else if (btnStatusDataDao.load((long) 66).getBtnStatus().equals("0")) {
+            rbtn_tyj_bu_close.setChecked(true);
+        }
+
         SerialPortUtil.readBtnStatus(sfHander);
     }
 
