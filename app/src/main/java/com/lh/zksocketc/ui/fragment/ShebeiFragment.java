@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
@@ -58,12 +57,8 @@ public class ShebeiFragment extends Fragment {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 234:
-                    ELog.d("======sfHander====ShebeiFragment===1==========" + msg.obj.toString());
+                    ELog.d("======sfHander====ShebeiFragment===234==========" + msg.obj.toString());
                     setBtnStatus(msg.obj.toString());
-                    break;
-                case 345:
-                    ELog.d("======sfHander====ShebeiFragment==2===========" + msg.obj.toString());
-//                    setInitBtn();
                     break;
             }
         }
@@ -74,11 +69,17 @@ public class ShebeiFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.shebei_fragment, container, false);
         ButterKnife.bind(this, view);
-        showView();
+        SerialPortUtil.readBtnStatus(sfHander);
         return view;
     }
 
-    private void showView() {
+    @Override
+    public void onResume() {
+        super.onResume();
+        setInitBtn();
+    }
+
+    private void setInitBtn() {
         WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
         if (wsdDataDao.loadAll().size() == 0) {
             tv_wsd_wd.setText("");
@@ -89,12 +90,6 @@ public class ShebeiFragment extends Fragment {
             tv_wsd_sd.setText(wsdDataDao.loadAll().get(0).shidu);
             tv_wsd_pm.setText(wsdDataDao.loadAll().get(0).pm25);
         }
-        SerialPortUtil.readBtnStatus(sfHander);
-//        sfHander.obtainMessage(345);
-        setInitBtn();
-    }
-
-    private void setInitBtn() {
         BtnStatusDataDao btnStatusDataDao = MyApplication.getDaoSession().getBtnStatusDataDao();
         if (btnStatusDataDao.loadAll().size() != 0) {
             if (btnStatusDataDao.load((long) 3).getBtnStatus().equals("1")) {
@@ -235,7 +230,6 @@ public class ShebeiFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        SerialPortUtil.stopReadBtnStatus();
         ELog.i("========ShebeiFragment===onDestroy====");
     }
 }
