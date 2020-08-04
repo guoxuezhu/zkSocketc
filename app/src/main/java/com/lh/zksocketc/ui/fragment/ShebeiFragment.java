@@ -15,6 +15,7 @@ import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.data.DbDao.BtnStatusDataDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
+import com.lh.zksocketc.data.model.BtnStatusData;
 import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
@@ -63,6 +64,7 @@ public class ShebeiFragment extends Fragment {
             }
         }
     };
+    private BtnStatusDataDao btnStatusDataDao;
 
     @Nullable
     @Override
@@ -90,7 +92,7 @@ public class ShebeiFragment extends Fragment {
             tv_wsd_sd.setText(wsdDataDao.loadAll().get(0).shidu);
             tv_wsd_pm.setText(wsdDataDao.loadAll().get(0).pm25);
         }
-        BtnStatusDataDao btnStatusDataDao = MyApplication.getDaoSession().getBtnStatusDataDao();
+        btnStatusDataDao = MyApplication.getDaoSession().getBtnStatusDataDao();
         if (btnStatusDataDao.loadAll().size() != 0) {
             if (btnStatusDataDao.load((long) 3).getBtnStatus().equals("1")) {
                 rbtn_cl_open.setChecked(true);
@@ -143,11 +145,13 @@ public class ShebeiFragment extends Fragment {
     @OnClick(R.id.rbtn_cl_open)
     public void rbtn_cl_open() {
         SerialPortUtil.sendMsg("MBS3");
+        btnStatusDataDao.update(new BtnStatusData("窗帘", 3, "1"));
     }
 
     @OnClick(R.id.rbtn_cl_close)
     public void rbtn_cl_close() {
         SerialPortUtil.sendMsg("MBS4");
+        btnStatusDataDao.update(new BtnStatusData("窗帘", 3, "0"));
     }
 
     @OnClick(R.id.rbtn_tyj_open)
@@ -163,33 +167,39 @@ public class ShebeiFragment extends Fragment {
     @OnClick(R.id.rbtn_dg_open)
     public void rbtn_dg_open() {
         SerialPortUtil.sendMsg("MBS13");
+        btnStatusDataDao.update(new BtnStatusData("黑板灯", 13, "1"));
     }
 
     @OnClick(R.id.rbtn_dg_close)
     public void rbtn_dg_close() {
         SerialPortUtil.sendMsg("MBS14");
+        btnStatusDataDao.update(new BtnStatusData("黑板灯", 13, "0"));
     }
 
 
     @OnClick(R.id.rbtn_jsd_open)
     public void rbtn_jsd_open() {
         SerialPortUtil.sendMsg("MBS15");
+        btnStatusDataDao.update(new BtnStatusData("教室灯", 15, "1"));
     }
 
     @OnClick(R.id.rbtn_jsd_close)
     public void rbtn_jsd_close() {
         SerialPortUtil.sendMsg("MBS16");
+        btnStatusDataDao.update(new BtnStatusData("教室灯", 15, "0"));
     }
 
 
     @OnClick(R.id.rbtn_cj_open)
     public void rbtn_cj_open() {
         SerialPortUtil.sendMsg("MBS66");
+        btnStatusDataDao.update(new BtnStatusData("场景", 66, "1"));
     }
 
     @OnClick(R.id.rbtn_cj_close)
     public void rbtn_cj_close() {
         SerialPortUtil.sendMsg("MBS67");
+        btnStatusDataDao.update(new BtnStatusData("场景", 66, "0"));
     }
 
 
