@@ -48,6 +48,7 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_diannao.setChecked(false);
         spbtn_all_bjb_1.setChecked(false);
         spbtn_all_laoshi_diannao.setChecked(true);
+        SerialPortUtil.hdmiSeting("MBS50");
     }
 
     @OnClick(R.id.spbtn_all_diannao)
@@ -57,6 +58,7 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_diannao.setChecked(true);
         spbtn_all_bjb_1.setChecked(false);
         spbtn_all_laoshi_diannao.setChecked(false);
+        SerialPortUtil.hdmiSeting("MBS51");
     }
 
     @OnClick(R.id.spbtn_all_bjb_1)
@@ -66,6 +68,7 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_diannao.setChecked(false);
         spbtn_all_bjb_1.setChecked(true);
         spbtn_all_laoshi_diannao.setChecked(false);
+        SerialPortUtil.hdmiSeting("MBS51");
     }
 
     @OnClick(R.id.spbtn_all_gpy)
@@ -75,6 +78,7 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_diannao.setChecked(false);
         spbtn_all_bjb_1.setChecked(false);
         spbtn_all_laoshi_diannao.setChecked(false);
+        SerialPortUtil.hdmiSeting("MBS51");
     }
 
 

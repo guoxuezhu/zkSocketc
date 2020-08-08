@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android_serialport_api.SerialPort;
 
@@ -29,6 +31,7 @@ public class SerialPortUtil {
     private static boolean isReadCard;
     private static Handler myHander;
     private static BtnStatusDataDao btnStatusDataDao;
+    private static Timer timer1;
 
     public static void open() {
         try {
@@ -40,6 +43,19 @@ public class SerialPortUtil {
             ELog.e("======open_ck=====打开串口异常");
             e.printStackTrace();
         }
+    }
+
+    public static void hdmiSeting(final String msg) {
+        if (timer1 == null) {
+            timer1 = new Timer();
+        }
+        timer1.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                sendMsg(msg);
+            }
+        }, 800);
+
     }
 
     public synchronized static void sendMsg(String msg) {
@@ -260,4 +276,6 @@ public class SerialPortUtil {
     public static void stopReadBtnStatus() {
         myHander = null;
     }
+
+
 }
