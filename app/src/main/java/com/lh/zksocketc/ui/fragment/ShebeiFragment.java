@@ -34,8 +34,13 @@ public class ShebeiFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.shebei_fragment, container, false);
         ButterKnife.bind(this, view);
-        showView();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        showView();
     }
 
     private void showView() {
