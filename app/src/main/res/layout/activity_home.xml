@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@color/activity_bg"
+    android:gravity="center"
     android:orientation="horizontal"
     tools:context=".ui.HomeActivity">
 
@@ -29,7 +29,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/changjing"
                 android:gravity="center"
-                android:paddingTop="13dp"
+                android:paddingTop="40dp"
                 android:paddingBottom="13dp"
                 android:text="一键"
                 android:textColor="@color/white"
@@ -49,7 +49,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/shipin"
                 android:gravity="center"
-                android:paddingTop="13dp"
+                android:paddingTop="40dp"
                 android:paddingBottom="13dp"
                 android:text="互动"
                 android:textColor="@color/white"
@@ -69,7 +69,7 @@
                 android:button="@null"
                 android:drawableTop="@drawable/shebei"
                 android:gravity="center"
-                android:paddingTop="13dp"
+                android:paddingTop="40dp"
                 android:paddingBottom="13dp"
                 android:text="物联"
                 android:textColor="@color/white"
@@ -79,7 +79,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/xian_1" />
+                android:background="@color/xian_1"
+                android:visibility="gone" />
 
             <RadioButton
                 android:id="@+id/rbtn_lubo"
@@ -94,12 +95,14 @@
                 android:paddingBottom="13dp"
                 android:text="录播"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/xian_1" />
+                android:background="@color/xian_1"
+                android:visibility="gone" />
 
             <RadioButton
                 android:id="@+id/rbtn_yinpin"
@@ -114,12 +117,14 @@
                 android:paddingBottom="13dp"
                 android:text="音频"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/xian_1" />
+                android:background="@color/xian_1"
+                android:visibility="gone" />
 
             <RadioButton
                 android:id="@+id/rbtn_dianyuan"
@@ -134,7 +139,8 @@
                 android:paddingBottom="13dp"
                 android:text="其它"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
 
         </RadioGroup>
@@ -163,11 +169,12 @@
                 android:textSize="@dimen/text_size_34" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="@dimen/context_padding_dp"
             android:layout_marginLeft="@dimen/context_padding_dp"
+            android:layout_marginTop="@dimen/context_padding_dp"
             android:layout_marginRight="@dimen/context_padding_dp"
             android:background="@color/rdio_btn_bg_color"
             android:orientation="horizontal">
@@ -197,8 +204,8 @@
                     android:id="@+id/rbtn_xiake"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
                     android:background="@drawable/radio_btn_status_2"
                     android:button="@null"
                     android:drawableLeft="@drawable/xiake"
@@ -220,11 +227,10 @@
             android:id="@+id/mFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="@dimen/context_padding_dp"
             android:layout_marginLeft="@dimen/context_padding_dp"
             android:layout_marginTop="@dimen/context_padding_dp"
-            android:layout_marginBottom="@dimen/dp_20">
-        </FrameLayout>
+            android:layout_marginRight="@dimen/context_padding_dp"
+            android:layout_marginBottom="@dimen/dp_20"></FrameLayout>
 
     </LinearLayout>
 
