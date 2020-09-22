@@ -22,15 +22,15 @@ public class DaoMaster extends AbstractDaoMaster {
     /** Creates underlying database table using DAOs. */
     public static void createAllTables(Database db, boolean ifNotExists) {
         IcCardNumerDao.createTable(db, ifNotExists);
-        WsdDataDao.createTable(db, ifNotExists);
         MLsListsDao.createTable(db, ifNotExists);
+        WsdDataDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
     public static void dropAllTables(Database db, boolean ifExists) {
         IcCardNumerDao.dropTable(db, ifExists);
-        WsdDataDao.dropTable(db, ifExists);
         MLsListsDao.dropTable(db, ifExists);
+        WsdDataDao.dropTable(db, ifExists);
     }
 
     /**
@@ -50,8 +50,8 @@ public class DaoMaster extends AbstractDaoMaster {
     public DaoMaster(Database db) {
         super(db, SCHEMA_VERSION);
         registerDaoClass(IcCardNumerDao.class);
-        registerDaoClass(WsdDataDao.class);
         registerDaoClass(MLsListsDao.class);
+        registerDaoClass(WsdDataDao.class);
     }
 
     public DaoSession newSession() {
