@@ -70,28 +70,46 @@ public class ShebeiFragment extends Fragment {
     }
 
 
-    @OnClick(R.id.rbtn_dg_open)
-    public void rbtn_dg_open() {
+    @OnClick(R.id.rbtn_hbd_open)
+    public void rbtn_hbd_open() {
         SerialPortUtil.sendMsg("MBS13");
     }
 
-    @OnClick(R.id.rbtn_dg_close)
-    public void rbtn_dg_close() {
+    @OnClick(R.id.rbtn_hbd_close)
+    public void rbtn_hbd_close() {
         SerialPortUtil.sendMsg("MBS14");
+    }
 
+    @OnClick(R.id.rbtn_jsd_open)
+    public void rbtn_jsd_open() {
+        SerialPortUtil.sendMsg("MBS13");
+    }
+
+    @OnClick(R.id.rbtn_jsd_close)
+    public void rbtn_jsd_close() {
+        SerialPortUtil.sendMsg("MBS14");
+    }
+
+
+    @OnClick(R.id.rbtn_cj_open)
+    public void rbtn_cj_open() {
+        SerialPortUtil.sendMsg("MBS13");
+    }
+
+    @OnClick(R.id.rbtn_cj_close)
+    public void rbtn_cj_close() {
+        SerialPortUtil.sendMsg("MBS14");
     }
 
 
     @OnClick(R.id.rbtn_tyj_open)
     public void rbtn_tyj_open() {
         SerialPortUtil.sendMsg("MBS9");
-
     }
 
     @OnClick(R.id.rbtn_tyj_close)
     public void rbtn_tyj_close() {
         SerialPortUtil.sendMsg("MBS10");
-
     }
 
 
