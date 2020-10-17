@@ -177,7 +177,7 @@
                     android:background="@drawable/shebei_checkbox_status"
                     android:button="@null"
                     android:gravity="center"
-                    android:text="灯光开"
+                    android:text="黑板灯开"
                     android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size" />
 
@@ -189,7 +189,7 @@
                     android:background="@drawable/shebei_checkbox_status"
                     android:button="@null"
                     android:gravity="center"
-                    android:text="灯光关"
+                    android:text="黑板灯关"
                     android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size" />
 

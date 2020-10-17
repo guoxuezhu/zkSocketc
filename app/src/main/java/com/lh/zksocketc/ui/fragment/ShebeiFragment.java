@@ -67,26 +67,23 @@ public class ShebeiFragment extends Fragment {
 
     @OnClick(R.id.rbtn_dg_open)
     public void rbtn_dg_open() {
-        SerialPortUtil.sendMsg("MBS13");
+        SerialPortUtil.sendMsg("MBS62");
     }
 
     @OnClick(R.id.rbtn_dg_close)
     public void rbtn_dg_close() {
-        SerialPortUtil.sendMsg("MBS14");
-
+        SerialPortUtil.sendMsg("MBS63");
     }
 
 
     @OnClick(R.id.rbtn_tyj_open)
     public void rbtn_tyj_open() {
         SerialPortUtil.sendMsg("MBS9");
-
     }
 
     @OnClick(R.id.rbtn_tyj_close)
     public void rbtn_tyj_close() {
         SerialPortUtil.sendMsg("MBS10");
-
     }
 
 
