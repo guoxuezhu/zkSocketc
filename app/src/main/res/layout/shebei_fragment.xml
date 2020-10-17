@@ -301,7 +301,7 @@
                 android:layout_height="@dimen/shebei_btn_height"
                 android:layout_marginLeft="@dimen/shebei_btn_marginLeft_1"
                 android:background="@drawable/huanjing_btn_status"
-                android:text="自动"
+                android:text="空调自动"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
 
