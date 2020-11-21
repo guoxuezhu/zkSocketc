@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_bg"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btn_mj_1"
+        android:layout_width="@dimen/yinpin_btn_height"
+        android:layout_height="@dimen/yinpin_btn_height"
+        android:background="@drawable/huanjing_btn_status"
+        android:drawableTop="@drawable/wl_mj_1"
+        android:drawablePadding="0dp"
+        android:gravity="center"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:text="前门开"
+        android:textColor="@color/white"
+        android:textSize="@dimen/shebei_text_size" />
+
+    <Button
+        android:id="@+id/btn_mj_2"
+        android:layout_width="@dimen/yinpin_btn_height"
+        android:layout_height="@dimen/yinpin_btn_height"
+        android:layout_marginLeft="100dp"
+        android:background="@drawable/huanjing_btn_status"
+        android:drawableTop="@drawable/wl_mj_1"
+        android:drawablePadding="0dp"
+        android:gravity="center"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:text="后门开"
+        android:textColor="@color/white"
+        android:textSize="@dimen/shebei_text_size" />
+
+</LinearLayout>

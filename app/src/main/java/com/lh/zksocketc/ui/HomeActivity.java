@@ -10,7 +10,10 @@ import android.widget.TextView;
 
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
+import com.lh.zksocketc.ui.fragment.DengguangFragment;
 import com.lh.zksocketc.ui.fragment.DianyuanFragment;
+import com.lh.zksocketc.ui.fragment.DoorFragment;
+import com.lh.zksocketc.ui.fragment.HuanjingFragment;
 import com.lh.zksocketc.ui.fragment.JuzhenFragment;
 import com.lh.zksocketc.ui.fragment.LuboFragment;
 import com.lh.zksocketc.ui.fragment.ShebeiFragment;
@@ -81,7 +84,7 @@ public class HomeActivity extends BaseActivity {
                 message.what = 326;
                 homeHander.sendMessage(message);
             }
-        }, 100,1000);
+        }, 100, 1000);
     }
 
     private void stopTimeTimer() {
@@ -94,12 +97,14 @@ public class HomeActivity extends BaseActivity {
 
     public List<Fragment> getFragments() {
         fragments.add(new ChuanjingFragment());
-        fragments.add(new ShebeiFragment());
-        fragments.add(new LuboFragment());
         fragments.add(new JuzhenFragment());
-//        fragments.add(new HuanjingFragment());
-        fragments.add(new YinpinFragment());
+        fragments.add(new LuboFragment());
         fragments.add(new DianyuanFragment());
+        fragments.add(new ShebeiFragment());
+        fragments.add(new DengguangFragment());
+        fragments.add(new HuanjingFragment());
+        fragments.add(new DoorFragment());
+        fragments.add(new YinpinFragment());
         return fragments;
     }
 
@@ -108,8 +113,8 @@ public class HomeActivity extends BaseActivity {
         showFragment(0);
     }
 
-    @OnClick(R.id.rbtn_shebei)
-    public void rbtn_shebei() {
+    @OnClick(R.id.rbtn_juzhen)
+    public void rbtn_juzhen() {
         showFragment(1);
     }
 
@@ -119,21 +124,36 @@ public class HomeActivity extends BaseActivity {
         showFragment(2);
     }
 
-    @OnClick(R.id.rbtn_juzhen)
-    public void rbtn_juzhen() {
+    @OnClick(R.id.rbtn_dmt)
+    public void rbtn_dmt() {
         showFragment(3);
     }
 
 
-    @OnClick(R.id.rbtn_yinpin)
-    public void rbtn_yinpin() {
+    @OnClick(R.id.rbtn_cl)
+    public void rbtn_cl() {
         showFragment(4);
     }
 
 
-    @OnClick(R.id.rbtn_dianyuan)
-    public void rbtn_dianyuan() {
+    @OnClick(R.id.rbtn_dg)
+    public void rbtn_dg() {
         showFragment(5);
+    }
+
+    @OnClick(R.id.rbtn_kt)
+    public void rbtn_kt() {
+        showFragment(6);
+    }
+
+    @OnClick(R.id.rbtn_door)
+    public void rbtn_door() {
+        showFragment(7);
+    }
+
+    @OnClick(R.id.rbtn_yinpin)
+    public void rbtn_yinpin() {
+        showFragment(8);
     }
 
 
