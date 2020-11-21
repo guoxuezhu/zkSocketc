@@ -31,7 +31,7 @@
                 android:gravity="center"
                 android:paddingTop="13dp"
                 android:paddingBottom="13dp"
-                android:text="一键"
+                android:text="一键互动"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -51,7 +51,7 @@
                 android:gravity="center"
                 android:paddingTop="13dp"
                 android:paddingBottom="13dp"
-                android:text="互动"
+                android:text="自由互动"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
