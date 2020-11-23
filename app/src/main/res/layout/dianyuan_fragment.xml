@@ -208,7 +208,7 @@
                         android:paddingTop="13dp"
                         android:paddingBottom="13dp"
                         android:gravity="center"
-                        android:text="内置HDMI"
+                        android:text="内置显示"
                         android:textColor="@color/white"
                         android:textSize="@dimen/shebei_text_size" />
 
