@@ -21,6 +21,8 @@ public class LuboFragment extends Fragment {
     CheckBox luzhi;
     @BindView(R.id.zanting)
     CheckBox zanting;
+    @BindView(R.id.jixu)
+    CheckBox jixu;
     @BindView(R.id.tingzhi)
     CheckBox tingzhi;
     @BindView(R.id.zhibo)
@@ -39,6 +41,7 @@ public class LuboFragment extends Fragment {
     public void luzhi() {
         luzhi.setChecked(true);
         zanting.setChecked(false);
+        jixu.setChecked(false);
         tingzhi.setChecked(false);
         SerialPortUtil.sendMsg("LUB1");
     }
@@ -47,14 +50,25 @@ public class LuboFragment extends Fragment {
     public void zanting() {
         luzhi.setChecked(false);
         zanting.setChecked(true);
+        jixu.setChecked(false);
         tingzhi.setChecked(false);
         SerialPortUtil.sendMsg("LUB2");
+    }
+
+    @OnClick(R.id.jixu)
+    public void jixu() {
+        luzhi.setChecked(false);
+        zanting.setChecked(false);
+        jixu.setChecked(true);
+        tingzhi.setChecked(false);
+        SerialPortUtil.sendMsg("LUB6");
     }
 
     @OnClick(R.id.tingzhi)
     public void tingzhi() {
         luzhi.setChecked(false);
         zanting.setChecked(false);
+        jixu.setChecked(false);
         tingzhi.setChecked(true);
         SerialPortUtil.sendMsg("LUB3");
     }

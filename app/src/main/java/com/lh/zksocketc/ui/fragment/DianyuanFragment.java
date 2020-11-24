@@ -25,15 +25,49 @@ public class DianyuanFragment extends Fragment {
     }
 
 
-    @OnClick(R.id.dy_all_open)
-    public void dy_all_open() {
-        SerialPortUtil.sendMsg("MBS37");
+    @OnClick(R.id.rbtn_tyj_open)
+    public void rbtn_tyj_open() {
+        SerialPortUtil.sendMsg("MBS9");
     }
 
-    @OnClick(R.id.dy_all_close)
-    public void dy_all_close() {
-        SerialPortUtil.sendMsg("MBS38");
+    @OnClick(R.id.rbtn_tyj_close)
+    public void rbtn_tyj_close() {
+        SerialPortUtil.sendMsg("MBS10");
     }
+
+
+    @OnClick(R.id.rbtn_tyj_bu_open)
+    public void rbtn_tyj_bu_open() {
+        SerialPortUtil.sendMsg("MBS11");
+    }
+
+    @OnClick(R.id.rbtn_tyj_bu_close)
+    public void rbtn_tyj_bu_close() {
+        SerialPortUtil.sendMsg("MBS12");
+    }
+
+
+
+    @OnClick(R.id.rbtn_ytj_open)
+    public void rbtn_ytj_open() {
+        SerialPortUtil.sendMsg("MBS48");
+    }
+
+    @OnClick(R.id.rbtn_ytj_close)
+    public void rbtn_ytj_close() {
+        SerialPortUtil.sendMsg("MBS49");
+    }
+
+    @OnClick(R.id.rbtn_nei_hdmi)
+    public void rbtn_nei_hdmi() {
+        SerialPortUtil.sendMsg("MBS50");
+    }
+
+    @OnClick(R.id.rbtn_wai_hdmi)
+    public void rbtn_wai_hdmi() {
+        SerialPortUtil.sendMsg("MBS51");
+    }
+
 
 
     @OnClick(R.id.btn_hw_ds_1)
@@ -79,13 +113,5 @@ public class DianyuanFragment extends Fragment {
     }
 
 
-    @OnClick(R.id.rbtn_nei_hdmi)
-    public void rbtn_nei_hdmi() {
-        SerialPortUtil.sendMsg("MBS50");
-    }
 
-    @OnClick(R.id.rbtn_wai_hdmi)
-    public void rbtn_wai_hdmi() {
-        SerialPortUtil.sendMsg("MBS51");
-    }
 }

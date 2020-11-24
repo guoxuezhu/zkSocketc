@@ -3,13 +3,14 @@ package com.lh.zksocketc.ui;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
 
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
+import com.lh.zksocketc.ui.fragment.DengguangFragment;
 import com.lh.zksocketc.ui.fragment.DianyuanFragment;
+import com.lh.zksocketc.ui.fragment.DoorFragment;
+import com.lh.zksocketc.ui.fragment.HuanjingFragment;
 import com.lh.zksocketc.ui.fragment.JuzhenFragment;
 import com.lh.zksocketc.ui.fragment.LuboFragment;
 import com.lh.zksocketc.ui.fragment.ShebeiFragment;
@@ -47,14 +48,17 @@ public class HomeActivity extends BaseActivity {
 
     }
 
+
     public List<Fragment> getFragments() {
         fragments.add(new ChuanjingFragment());
-        fragments.add(new ShebeiFragment());
-        fragments.add(new LuboFragment());
         fragments.add(new JuzhenFragment());
-//        fragments.add(new HuanjingFragment());
-        fragments.add(new YinpinFragment());
+        fragments.add(new LuboFragment());
         fragments.add(new DianyuanFragment());
+        fragments.add(new ShebeiFragment());
+        fragments.add(new DengguangFragment());
+        fragments.add(new HuanjingFragment());
+        fragments.add(new DoorFragment());
+        fragments.add(new YinpinFragment());
         return fragments;
     }
 
@@ -63,8 +67,8 @@ public class HomeActivity extends BaseActivity {
         showFragment(0);
     }
 
-    @OnClick(R.id.rbtn_shebei)
-    public void rbtn_shebei() {
+    @OnClick(R.id.rbtn_juzhen)
+    public void rbtn_juzhen() {
         showFragment(1);
     }
 
@@ -74,21 +78,36 @@ public class HomeActivity extends BaseActivity {
         showFragment(2);
     }
 
-    @OnClick(R.id.rbtn_juzhen)
-    public void rbtn_juzhen() {
+    @OnClick(R.id.rbtn_dmti)
+    public void rbtn_dmti() {
         showFragment(3);
     }
 
 
-    @OnClick(R.id.rbtn_yinpin)
-    public void rbtn_yinpin() {
+    @OnClick(R.id.rbtn_chaungl)
+    public void rbtn_chaungl() {
         showFragment(4);
     }
 
 
-    @OnClick(R.id.rbtn_dianyuan)
-    public void rbtn_dianyuan() {
+    @OnClick(R.id.rbtn_dengg)
+    public void rbtn_dengg() {
         showFragment(5);
+    }
+
+    @OnClick(R.id.rbtn_kongt)
+    public void rbtn_kongt() {
+        showFragment(6);
+    }
+
+    @OnClick(R.id.rbtn_door)
+    public void rbtn_door() {
+        showFragment(7);
+    }
+
+    @OnClick(R.id.rbtn_yinpin)
+    public void rbtn_yinpin() {
+        showFragment(8);
     }
 
 
