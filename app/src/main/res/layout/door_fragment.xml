@@ -8,20 +8,29 @@
 
     <Button
         android:id="@+id/btn_mj_1"
-        android:layout_width="@dimen/shebei_btn_width"
-        android:layout_height="@dimen/shebei_btn_height"
-        android:layout_marginLeft="100dp"
-        android:background="@drawable/huanjing_btn_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yinpin_checked_status"
+        android:button="@null"
+        android:drawableTop="@drawable/zongyinliang"
+        android:drawablePadding="0dp"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_10"
         android:text="前门开"
         android:textColor="@color/text_color_1"
-        android:textSize="@dimen/shebei_text_size" />
+        android:textSize="@dimen/text_size_20" />
 
     <Button
         android:id="@+id/btn_mj_2"
-        android:layout_width="@dimen/shebei_btn_width"
-        android:layout_height="@dimen/shebei_btn_height"
-        android:layout_marginLeft="100dp"
-        android:background="@drawable/huanjing_btn_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:background="@drawable/yinpin_checked_status"
+        android:button="@null"
+        android:drawableTop="@drawable/zongyinliang"
+        android:drawablePadding="0dp"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_10"
         android:text="后门开"
         android:textColor="@color/text_color_1"
         android:textSize="@dimen/shebei_text_size" />

@@ -23,11 +23,14 @@
 
             <RadioButton
                 android:id="@+id/rbtn_dg_all_open"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_width"
-                android:background="@drawable/shebei_checkbox_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
+                android:drawableTop="@drawable/zongyinliang"
+                android:drawablePadding="0dp"
                 android:gravity="center"
+                android:paddingTop="@dimen/dp_10"
                 android:text="灯光全开"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
@@ -35,12 +38,15 @@
 
             <RadioButton
                 android:id="@+id/rbtn_dg_all_close"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/shebei_checkbox_status"
+                android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
+                android:drawableTop="@drawable/zongyinliang"
+                android:drawablePadding="0dp"
                 android:gravity="center"
+                android:paddingTop="@dimen/dp_10"
                 android:text="灯光全关"
                 android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size" />
@@ -75,11 +81,14 @@
 
                 <RadioButton
                     android:id="@+id/rbtn_hbd_open"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_width"
-                    android:background="@drawable/shebei_checkbox_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yinpin_checked_status"
                     android:button="@null"
+                    android:drawableTop="@drawable/zongyinliang"
+                    android:drawablePadding="0dp"
                     android:gravity="center"
+                    android:paddingTop="@dimen/dp_10"
                     android:text="黑板灯开"
                     android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size" />
@@ -87,12 +96,15 @@
 
                 <RadioButton
                     android:id="@+id/rbtn_hbd_close"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:background="@drawable/shebei_checkbox_status"
+                    android:background="@drawable/yinpin_checked_status"
                     android:button="@null"
+                    android:drawableTop="@drawable/zongyinliang"
+                    android:drawablePadding="0dp"
                     android:gravity="center"
+                    android:paddingTop="@dimen/dp_10"
                     android:text="黑板灯关"
                     android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size" />
@@ -110,23 +122,29 @@
 
                 <RadioButton
                     android:id="@+id/rbtn_jsd_open"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_width"
-                    android:background="@drawable/shebei_checkbox_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yinpin_checked_status"
                     android:button="@null"
+                    android:drawableTop="@drawable/zongyinliang"
+                    android:drawablePadding="0dp"
                     android:gravity="center"
+                    android:paddingTop="@dimen/dp_10"
                     android:text="教室灯开"
                     android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size" />
 
                 <RadioButton
                     android:id="@+id/rbtn_jsd_close"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:background="@drawable/shebei_checkbox_status"
+                    android:background="@drawable/yinpin_checked_status"
                     android:button="@null"
+                    android:drawableTop="@drawable/zongyinliang"
+                    android:drawablePadding="0dp"
                     android:gravity="center"
+                    android:paddingTop="@dimen/dp_10"
                     android:text="教室灯关"
                     android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size" />
@@ -135,13 +153,9 @@
             </RadioGroup>
 
 
-
-
-
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </LinearLayout>
