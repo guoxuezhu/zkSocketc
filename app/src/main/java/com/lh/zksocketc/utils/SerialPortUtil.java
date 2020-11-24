@@ -26,6 +26,7 @@ public class SerialPortUtil {
     private static InputStream inputStream1;
     private static boolean isReadCard;
     private static Handler myHander;
+    private static OutputStream outputStream1;
 
     public static void open() {
         try {
@@ -125,6 +126,7 @@ public class SerialPortUtil {
         try {
             serialPort1 = new SerialPort(new File("/dev/ttyS1"), 9600, 0);
             inputStream1 = serialPort1.getInputStream();
+            outputStream1 = serialPort1.getOutputStream();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -140,45 +142,15 @@ public class SerialPortUtil {
                 try {
                     while (isReadCard && (size = inputStream1.read(buffer, 0, 64)) > 0) {
                         if (isReadCard && size > 0) {
-                            ELog.i("=========size======" + size);
-                            byte[] bs = new byte[4];
-                            System.arraycopy(buffer, 1, bs, 0, 4);
-                            String ret = "";
-                            for (int i = 0; i < bs.length; i++) {
-                                String hex = Integer.toHexString(bs[i] & 0xFF);
-                                if (hex.length() == 1) {
-                                    hex = "0" + hex;
-                                }
-                                ret += hex.toUpperCase();
+                            String msg = new String(buffer, 0, size).substring(3);
+                            ELog.i("=====接收到了卡号=====" + msg);
+                            if (msg.length() == 10) {
+                                Message message = new Message();
+                                message.obj = msg;
+                                message.what = 333;
+                                myHander.sendMessage(message);
                             }
-                            String msg = Long.parseLong(ret, 16) + "";
-                            ELog.i("=========run: 接收到了卡号=======" + msg);
-                            ELog.i("=========run: 接收到了卡号大小=======" + msg.length());
-                            if (msg.length() == 9) {
-                                msg = "0" + msg;
-                            } else if (msg.length() == 8) {
-                                msg = "00" + msg;
-                            } else if (msg.length() == 7) {
-                                msg = "000" + msg;
-                            } else if (msg.length() == 6) {
-                                msg = "0000" + msg;
-                            } else if (msg.length() == 5) {
-                                msg = "00000" + msg;
-                            } else if (msg.length() == 4) {
-                                msg = "000000" + msg;
-                            } else if (msg.length() == 3) {
-                                msg = "0000000" + msg;
-                            } else if (msg.length() == 2) {
-                                msg = "00000000" + msg;
-                            } else if (msg.length() == 1) {
-                                msg = "000000000" + msg;
-                            }
-
-                            Message message = new Message();
-                            message.obj = msg;
-                            message.what = 333;
-                            myHander.sendMessage(message);
-
+                            sendMsgIc("ICKERROR");
                             sleep(500);
                         }
                     }
@@ -195,12 +167,29 @@ public class SerialPortUtil {
 
     }
 
+    private synchronized static void sendMsgIc(String msg) {
+        byte[] data = msg.getBytes();
+        try {
+            if (data.length > 0) {
+                outputStream1.write(data);
+                outputStream1.flush();
+                ELog.e("====sendMsgIc: 串口数据发送成功");
+            }
+        } catch (IOException e) {
+            ELog.e("====sendMsgIc: 串口数据发送失败：" + e.toString());
+        }
+
+
+    }
 
     public static void stopReadCard() {
         isReadCard = false;
         try {
             if (inputStream1 != null) {
                 inputStream1.close();
+            }
+            if (outputStream1 != null) {
+                outputStream1.close();
             }
         } catch (IOException e) {
             // Ignore.
