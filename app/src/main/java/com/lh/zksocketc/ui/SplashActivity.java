@@ -171,7 +171,7 @@ public class SplashActivity extends BaseActivity {
                 screenOff();
                 stopTimerOff();
             }
-        }, 1000 * 60 * 5);
+        }, 1500 * 60);
 
     }
 
