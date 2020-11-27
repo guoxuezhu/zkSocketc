@@ -50,66 +50,66 @@ public class DianyuanFragment extends Fragment {
 
     @OnClick(R.id.rbtn_ytj_open)
     public void rbtn_ytj_open() {
-        SerialPortUtil.sendMsg("MBS48");
+        SerialPortUtil.sendMsg("MBS5001");
     }
 
     @OnClick(R.id.rbtn_ytj_close)
     public void rbtn_ytj_close() {
-        SerialPortUtil.sendMsg("MBS49");
+        SerialPortUtil.sendMsg("MBS5002");
     }
 
     @OnClick(R.id.rbtn_nei_hdmi)
     public void rbtn_nei_hdmi() {
-        SerialPortUtil.sendMsg("MBS50");
+        SerialPortUtil.sendMsg("MBS5003");
     }
 
     @OnClick(R.id.rbtn_wai_hdmi)
     public void rbtn_wai_hdmi() {
-        SerialPortUtil.sendMsg("MBS51");
+        SerialPortUtil.sendMsg("MBS5004");
     }
 
 
 
     @OnClick(R.id.btn_hw_ds_1)
     public void btn_hw_ds_1() {
-        SerialPortUtil.sendMsg("MBS52");
+        SerialPortUtil.sendMsg("MBS5005");
     }
 
     @OnClick(R.id.btn_hw_ds_2)
     public void btn_hw_ds_2() {
-        SerialPortUtil.sendMsg("MBS53");
+        SerialPortUtil.sendMsg("MBS5006");
     }
 
     @OnClick(R.id.btn_hw_ds_3)
     public void btn_hw_ds_3() {
-        SerialPortUtil.sendMsg("MBS54");
+        SerialPortUtil.sendMsg("MBS5007");
     }
 
     @OnClick(R.id.btn_hw_ds_4)
     public void btn_hw_ds_4() {
-        SerialPortUtil.sendMsg("MBS55");
+        SerialPortUtil.sendMsg("MBS5008");
     }
 
 
     @OnClick(R.id.btn_hw_ds_5)
     public void btn_hw_ds_5() {
-        SerialPortUtil.sendMsg("MBS56");
+        SerialPortUtil.sendMsg("MBS5009");
     }
 
     @OnClick(R.id.btn_hw_ds_6)
     public void btn_hw_ds_6() {
-        SerialPortUtil.sendMsg("MBS57");
+        SerialPortUtil.sendMsg("MBS5010");
     }
 
 
     @OnClick(R.id.btn_hw_ds_7)
     public void btn_hw_ds_7() {
-        SerialPortUtil.sendMsg("MBS58");
+        SerialPortUtil.sendMsg("MBS5011");
     }
 
     @OnClick(R.id.btn_hw_ds_8)
     public void btn_hw_ds_8() {
-        SerialPortUtil.sendMsg("MBS59");
+        SerialPortUtil.sendMsg("MBS5012");
     }
 
 

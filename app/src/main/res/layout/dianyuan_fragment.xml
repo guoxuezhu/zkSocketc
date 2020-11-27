@@ -35,7 +35,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/shebei_btn_marginTop"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -135,7 +134,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/shebei_btn_marginTop"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -237,7 +235,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/shebei_btn_marginTop"
             android:gravity="center"
             android:orientation="vertical">
 
