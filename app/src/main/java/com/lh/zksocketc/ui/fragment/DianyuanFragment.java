@@ -50,21 +50,21 @@ public class DianyuanFragment extends Fragment {
 
     @OnClick(R.id.rbtn_ytj_open)
     public void rbtn_ytj_open() {
-        SerialPortUtil.sendMsg("MBS48");
+        SerialPortUtil.sendMsg("MBS5001");
     }
 
     @OnClick(R.id.rbtn_ytj_close)
     public void rbtn_ytj_close() {
-        SerialPortUtil.sendMsg("MBS49");
+        SerialPortUtil.sendMsg("MBS5002");
     }
 
     @OnClick(R.id.rbtn_nei_hdmi)
     public void rbtn_nei_hdmi() {
-        SerialPortUtil.sendMsg("MBS50");
+        SerialPortUtil.sendMsg("MBS5003");
     }
 
     @OnClick(R.id.rbtn_wai_hdmi)
     public void rbtn_wai_hdmi() {
-        SerialPortUtil.sendMsg("MBS51");
+        SerialPortUtil.sendMsg("MBS5004");
     }
 }
