@@ -158,7 +158,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/xian_1" />
+                android:background="@color/xian_1"
+                android:visibility="gone" />
 
             <RadioButton
                 android:id="@+id/rbtn_yinpin"
@@ -170,7 +171,8 @@
                 android:gravity="center"
                 android:text="音频"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
 
         </RadioGroup>
