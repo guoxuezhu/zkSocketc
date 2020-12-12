@@ -170,8 +170,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/xian"
-                android:visibility="gone" />
+                android:background="@color/xian" />
 
             <RadioButton
                 android:id="@+id/rbtn_yinpin"
@@ -185,8 +184,7 @@
                 android:paddingRight="20dp"
                 android:text="音频"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:visibility="gone" />
+                android:textSize="20sp" />
 
         </RadioGroup>
     </LinearLayout>
@@ -226,12 +224,14 @@
                     android:padding="15dp"
                     android:text="互动复位"
                     android:textColor="@color/text_color_1"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:visibility="gone" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/xian" />
+                    android:background="@color/xian"
+                    android:visibility="gone" />
 
                 <RadioButton
                     android:id="@+id/rbtn_shangke"
