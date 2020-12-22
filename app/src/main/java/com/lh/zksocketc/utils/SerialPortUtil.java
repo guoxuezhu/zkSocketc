@@ -142,11 +142,30 @@ public class SerialPortUtil {
                 try {
                     while (isReadCard && (size = inputStream1.read(buffer, 0, 64)) > 0) {
                         if (isReadCard && size > 0) {
-                            String msg = new String(buffer, 0, size).substring(3);
-                            ELog.i("=====接收到了卡号=====" + msg);
-                            if (msg.length() == 10) {
+                            String kahao = Long.parseLong(new String(buffer, 0, size).substring(3), 16) + "";
+                            if (kahao.length() == 9) {
+                                kahao = "0" + kahao;
+                            } else if (kahao.length() == 8) {
+                                kahao = "00" + kahao;
+                            } else if (kahao.length() == 7) {
+                                kahao = "000" + kahao;
+                            } else if (kahao.length() == 6) {
+                                kahao = "0000" + kahao;
+                            } else if (kahao.length() == 5) {
+                                kahao = "00000" + kahao;
+                            } else if (kahao.length() == 4) {
+                                kahao = "000000" + kahao;
+                            } else if (kahao.length() == 3) {
+                                kahao = "0000000" + kahao;
+                            } else if (kahao.length() == 2) {
+                                kahao = "00000000" + kahao;
+                            } else if (kahao.length() == 1) {
+                                kahao = "000000000" + kahao;
+                            }
+                            ELog.d("=====接收到了卡号=======" + kahao);
+                            if (kahao.length() == 10) {
                                 Message message = new Message();
-                                message.obj = msg;
+                                message.obj = kahao;
                                 message.what = 333;
                                 myHander.sendMessage(message);
                             }
