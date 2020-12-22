@@ -21,15 +21,8 @@ public class MyApplication extends Application {
         daoSession = daoMaster.newSession();
     }
 
-
-
-
     public static DaoSession getDaoSession() {
         return daoSession;
     }
-
-
-
-
 
 }

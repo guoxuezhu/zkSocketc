@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/layout_bg"
@@ -25,7 +26,8 @@
             android:paddingTop="@dimen/dp_20"
             android:text="录制"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
         <CheckBox
             android:id="@+id/zanting"
@@ -40,7 +42,8 @@
             android:paddingTop="@dimen/dp_20"
             android:text="暂停"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
 
     </LinearLayout>
@@ -65,7 +68,8 @@
             android:paddingTop="@dimen/dp_20"
             android:text="继续"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
         <CheckBox
             android:id="@+id/tingzhi"
@@ -80,7 +84,8 @@
             android:paddingTop="@dimen/dp_20"
             android:text="停止"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
         <CheckBox
             android:id="@+id/zhibo"
@@ -95,7 +100,8 @@
             android:paddingTop="@dimen/dp_20"
             android:text="直播"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
 
     </LinearLayout>

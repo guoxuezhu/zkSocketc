@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@drawable/layout_bg"
+    android:gravity="center"
     android:orientation="vertical">
 
 
@@ -27,7 +28,8 @@
             android:paddingTop="@dimen/dp_30"
             android:text="老师电脑"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
         <CheckBox
             android:id="@+id/spbtn_all_diannao"
@@ -42,7 +44,8 @@
             android:paddingTop="@dimen/dp_30"
             android:text="台式机"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
 
     </LinearLayout>
@@ -67,7 +70,8 @@
             android:paddingTop="@dimen/dp_30"
             android:text="笔记本"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
         <CheckBox
             android:id="@+id/spbtn_all_gpy"
@@ -82,7 +86,8 @@
             android:paddingTop="@dimen/dp_30"
             android:text="高拍仪"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
 
     </LinearLayout>
 
