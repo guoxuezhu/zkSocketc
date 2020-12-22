@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/layout_bg"
     android:gravity="center"
     android:orientation="horizontal"
     android:padding="@dimen/dp_20">
@@ -12,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:background="@drawable/layout_bg_1"
+        android:background="@drawable/layout_bg"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -25,33 +24,33 @@
 
             <RadioButton
                 android:id="@+id/rbtn_cl_all_open"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_width"
-                android:background="@drawable/shebei_checkbox_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
-                android:drawableTop="@drawable/wl_cl_2"
+                android:drawableTop="@drawable/cl_1"
+                android:drawablePadding="0dp"
                 android:gravity="center"
-                android:paddingTop="13dp"
-                android:paddingBottom="13dp"
+                android:paddingTop="@dimen/dp_10"
                 android:text="窗帘全开"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size"
                 app:buttonCompat="@null" />
 
 
             <RadioButton
                 android:id="@+id/rbtn_cl_all_close"
-                android:layout_width="@dimen/shebei_btn_width"
-                android:layout_height="@dimen/shebei_btn_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/shebei_checkbox_status"
+                android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
-                android:drawableTop="@drawable/wl_cl_1"
+                android:drawableTop="@drawable/cl_2"
+                android:drawablePadding="0dp"
                 android:gravity="center"
-                android:paddingTop="13dp"
-                android:paddingBottom="13dp"
+                android:paddingTop="@dimen/dp_10"
                 android:text="窗帘全关"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color_1"
                 android:textSize="@dimen/shebei_text_size"
                 app:buttonCompat="@null" />
 
@@ -66,7 +65,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/dp_10"
         android:layout_weight="4"
-        android:background="@drawable/layout_bg_1"
+        android:background="@drawable/layout_bg"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -86,33 +85,33 @@
 
                 <RadioButton
                     android:id="@+id/rbtn_cl1_open"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_width"
-                    android:background="@drawable/shebei_checkbox_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yinpin_checked_status"
                     android:button="@null"
-                    android:drawableTop="@drawable/wl_cl_2"
+                    android:drawableTop="@drawable/cl_1"
+                    android:drawablePadding="0dp"
                     android:gravity="center"
-                    android:paddingTop="13dp"
-                    android:paddingBottom="13dp"
+                    android:paddingTop="@dimen/dp_10"
                     android:text="窗帘1开"
-                    android:textColor="@color/white"
+                    android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size"
                     app:buttonCompat="@null" />
 
 
                 <RadioButton
                     android:id="@+id/rbtn_cl1_close"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:background="@drawable/shebei_checkbox_status"
+                    android:background="@drawable/yinpin_checked_status"
                     android:button="@null"
-                    android:drawableTop="@drawable/wl_cl_1"
+                    android:drawableTop="@drawable/cl_2"
+                    android:drawablePadding="0dp"
                     android:gravity="center"
-                    android:paddingTop="13dp"
-                    android:paddingBottom="13dp"
+                    android:paddingTop="@dimen/dp_10"
                     android:text="窗帘1关"
-                    android:textColor="@color/white"
+                    android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size"
                     app:buttonCompat="@null" />
 
@@ -129,32 +128,32 @@
 
                 <RadioButton
                     android:id="@+id/rbtn_cl2_open"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_width"
-                    android:background="@drawable/shebei_checkbox_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yinpin_checked_status"
                     android:button="@null"
-                    android:drawableTop="@drawable/wl_cl_2"
+                    android:drawableTop="@drawable/cl_1"
+                    android:drawablePadding="0dp"
                     android:gravity="center"
-                    android:paddingTop="13dp"
-                    android:paddingBottom="13dp"
+                    android:paddingTop="@dimen/dp_10"
                     android:text="窗帘2开"
-                    android:textColor="@color/white"
+                    android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size"
                     app:buttonCompat="@null" />
 
                 <RadioButton
                     android:id="@+id/rbtn_cl2_close"
-                    android:layout_width="@dimen/shebei_btn_width"
-                    android:layout_height="@dimen/shebei_btn_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:background="@drawable/shebei_checkbox_status"
+                    android:background="@drawable/yinpin_checked_status"
                     android:button="@null"
-                    android:drawableTop="@drawable/wl_cl_1"
+                    android:drawableTop="@drawable/cl_2"
+                    android:drawablePadding="0dp"
                     android:gravity="center"
-                    android:paddingTop="13dp"
-                    android:paddingBottom="13dp"
+                    android:paddingTop="@dimen/dp_10"
                     android:text="窗帘2关"
-                    android:textColor="@color/white"
+                    android:textColor="@color/text_color_1"
                     android:textSize="@dimen/shebei_text_size"
                     app:buttonCompat="@null" />
 

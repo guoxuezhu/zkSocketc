@@ -68,4 +68,51 @@ public class DianyuanFragment extends Fragment {
     public void rbtn_wai_hdmi() {
         SerialPortUtil.sendMsg("MBS5004");
     }
+
+
+
+    @OnClick(R.id.btn_hw_ds_1)
+    public void btn_hw_ds_1() {
+        SerialPortUtil.sendMsg("MBS5005");
+    }
+
+    @OnClick(R.id.btn_hw_ds_2)
+    public void btn_hw_ds_2() {
+        SerialPortUtil.sendMsg("MBS5006");
+    }
+
+    @OnClick(R.id.btn_hw_ds_3)
+    public void btn_hw_ds_3() {
+        SerialPortUtil.sendMsg("MBS5007");
+    }
+
+    @OnClick(R.id.btn_hw_ds_4)
+    public void btn_hw_ds_4() {
+        SerialPortUtil.sendMsg("MBS5008");
+    }
+
+
+    @OnClick(R.id.btn_hw_ds_5)
+    public void btn_hw_ds_5() {
+        SerialPortUtil.sendMsg("MBS5009");
+    }
+
+    @OnClick(R.id.btn_hw_ds_6)
+    public void btn_hw_ds_6() {
+        SerialPortUtil.sendMsg("MBS5010");
+    }
+
+
+    @OnClick(R.id.btn_hw_ds_7)
+    public void btn_hw_ds_7() {
+        SerialPortUtil.sendMsg("MBS5011");
+    }
+
+    @OnClick(R.id.btn_hw_ds_8)
+    public void btn_hw_ds_8() {
+        SerialPortUtil.sendMsg("MBS5012");
+    }
+
+
+
 }
