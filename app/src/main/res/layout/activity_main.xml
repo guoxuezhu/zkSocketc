@@ -35,23 +35,23 @@
             android:layout_height="wrap_content"
             android:text="帐号:admin      密码:admin"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_25"
             android:text="设置新帐号/密码"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:visibility="gone" />
 
 
         <EditText
             android:id="@+id/et_new_user"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="@dimen/dp_15"
             android:background="@drawable/login_et_bg"
             android:hint="请输入新帐号"
             android:paddingLeft="@dimen/dp_10"
@@ -60,12 +60,37 @@
 
 
         <EditText
-            android:id="@+id/et_new_password"
+            android:id="@+id/et_old_password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/login_et_bg"
+            android:hint="请输入旧密码"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <EditText
+            android:id="@+id/et_new_password1"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="@dimen/dp_10"
             android:background="@drawable/login_et_bg"
             android:hint="请输入新密码"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <EditText
+            android:id="@+id/et_new_password2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/login_et_bg"
+            android:hint="请再次输入新密码"
+            android:inputType="textPassword"
             android:paddingLeft="@dimen/dp_10"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
