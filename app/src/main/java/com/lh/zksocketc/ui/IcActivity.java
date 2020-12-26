@@ -81,6 +81,7 @@ public class IcActivity extends BaseActivity {
             exitTime = System.currentTimeMillis();
         } else {
             icCardNumerDao.deleteAll();
+            et_kaohao.setText("");
             Toast.makeText(this, "清空所有IC卡数据成功", Toast.LENGTH_SHORT).show();
         }
     }
