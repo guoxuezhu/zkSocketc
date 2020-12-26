@@ -52,6 +52,7 @@ public class IcActivity extends BaseActivity {
             }
         }
     };
+    private long exitTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public class IcActivity extends BaseActivity {
         if (icCardNumerDao.loadAll().size() != 0) {
             if (MyApplication.prefs.getIsAddCrad()) {
                 rbtn_add.setChecked(true);
-                et_kaohao.setText(icCardNumerDao.loadAll().get(0).cardNum);
+                et_kaohao.setText(icCardNumerDao.loadAll().get(icCardNumerDao.loadAll().size() - 1).cardNum);
             } else {
                 rbtn_http.setChecked(true);
                 et_ic_http.setText(MyApplication.prefs.getHttpUrl());
@@ -73,6 +74,15 @@ public class IcActivity extends BaseActivity {
         SerialPortUtil.readCardnumer(icHander);
     }
 
+    @OnClick(R.id.btn_ic_clear)
+    public void btn_ic_clear() {
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(getApplicationContext(), "再按一次清空所有IC卡数据", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            icCardNumerDao.deleteAll();
+        }
+    }
 
     @OnClick(R.id.btn_ic_baocun)
     public void btn_ic_baocun() {
