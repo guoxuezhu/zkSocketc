@@ -107,8 +107,10 @@ public class IcActivity extends BaseActivity {
             ELog.e("======IcActivity====add=======" + cardNumers.size());
             if (cardNumers.size() == 0) {
                 icCardNumerDao.insert(new IcCardNumer(et_kaohao.getText().toString()));
+                Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "此卡号已存在", Toast.LENGTH_SHORT).show();
             }
-            Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
         } else if (rbtn_http.isChecked()) {
             if (et_ic_http.getText().toString().length() == 0) {
                 Toast.makeText(this, "请输入服务器IC卡数据接口", Toast.LENGTH_SHORT).show();
