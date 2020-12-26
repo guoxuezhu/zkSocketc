@@ -64,11 +64,11 @@ public class IcActivity extends BaseActivity {
         if (icCardNumerDao.loadAll().size() != 0) {
             if (MyApplication.prefs.getIsAddCrad()) {
                 rbtn_add.setChecked(true);
-                et_kaohao.setText(icCardNumerDao.loadAll().get(icCardNumerDao.loadAll().size() - 1).cardNum);
             } else {
                 rbtn_http.setChecked(true);
                 et_ic_http.setText(MyApplication.prefs.getHttpUrl());
             }
+            et_kaohao.setText(icCardNumerDao.loadAll().get(icCardNumerDao.loadAll().size() - 1).cardNum);
         }
 
         SerialPortUtil.readCardnumer(icHander);
