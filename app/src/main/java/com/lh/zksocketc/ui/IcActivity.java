@@ -77,10 +77,11 @@ public class IcActivity extends BaseActivity {
     @OnClick(R.id.btn_ic_clear)
     public void btn_ic_clear() {
         if ((System.currentTimeMillis() - exitTime) > 2000) {
-            Toast.makeText(getApplicationContext(), "再按一次清空所有IC卡数据", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "再按一次清空所有IC卡数据", Toast.LENGTH_SHORT).show();
             exitTime = System.currentTimeMillis();
         } else {
             icCardNumerDao.deleteAll();
+            Toast.makeText(this, "清空所有IC卡数据成功", Toast.LENGTH_SHORT).show();
         }
     }
 
