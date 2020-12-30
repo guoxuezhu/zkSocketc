@@ -10,8 +10,8 @@ android {
         applicationId "com.lh.zksocketc"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 4
-        versionName "1.9.4"
+        versionCode 5
+        versionName "1.9.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
@@ -34,8 +34,9 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            buildConfigField 'boolean', 'JAVA_LOG_ENABLED', 'true'
+            minifyEnabled true
+            shrinkResources true
+            buildConfigField 'boolean', 'JAVA_LOG_ENABLED', 'false'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
