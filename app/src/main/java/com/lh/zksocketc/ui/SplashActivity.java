@@ -42,6 +42,10 @@ public class SplashActivity extends BaseActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
+                case 555:
+                    ELog.e("======sHander====SplashActivity====555=========" + msg.obj.toString());
+                    screenOn();
+                    break;
                 case 444:
                     ELog.e("======sHander====SplashActivity====444=========" + msg.obj.toString());
                     screenOn();

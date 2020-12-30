@@ -69,7 +69,7 @@ public class SerialPortUtil {
                     while (isReadWsd && (size = inputStream.read(buffer, 0, 64)) > 0) {
                         if (size > 0) {
                             String msg = new String(buffer, 0, size);
-                            ELog.i("=====接收到了数据==温湿度=====" + msg);
+                            ELog.i("=====接收到了中控数据=======" + msg);
                             String[] msglist = msg.split(";");
                             if (msglist[0].equals("WSD")) {
                                 try {
@@ -80,6 +80,25 @@ public class SerialPortUtil {
                                 } catch (Exception e) {
                                     ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
                                 }
+                            } else if (msglist[0].equals("LOGIN")) {
+                                Message message = new Message();
+                                if (msglist[1].equals("200")) {
+                                    message.obj = msglist[2];
+                                    message.what = 20;
+                                } else {
+                                    message.obj = msglist[2];
+                                    message.what = 21;
+                                }
+                                if (myHander != null) {
+                                    myHander.sendMessage(message);
+                                }
+                            } else if (msglist[0].equals("SKJAA")) {
+                                if (myHander != null) {
+                                    Message message = new Message();
+                                    message.obj = msg;
+                                    message.what = 444;
+                                    myHander.sendMessage(message);
+                                }
                             } else if (msglist[0].equals("SKJ")) {
                                 if (myHander != null) {
                                     Message message = new Message();
@@ -88,6 +107,7 @@ public class SerialPortUtil {
                                     myHander.sendMessage(message);
                                 }
                             }
+
                         }
                     }
 
@@ -122,7 +142,6 @@ public class SerialPortUtil {
 
     public static void readCardnumer(Handler hander) {
         myHander = hander;
-
         try {
             serialPort1 = new SerialPort(new File("/dev/ttyS1"), 9600, 0);
             inputStream1 = serialPort1.getInputStream();
@@ -142,38 +161,17 @@ public class SerialPortUtil {
                 try {
                     while (isReadCard && (size = inputStream1.read(buffer, 0, 64)) > 0) {
                         if (isReadCard && size > 0) {
-                            String kahao = Long.parseLong(new String(buffer, 0, size).substring(3), 16) + "";
-                            if (kahao.length() == 9) {
-                                kahao = "0" + kahao;
-                            } else if (kahao.length() == 8) {
-                                kahao = "00" + kahao;
-                            } else if (kahao.length() == 7) {
-                                kahao = "000" + kahao;
-                            } else if (kahao.length() == 6) {
-                                kahao = "0000" + kahao;
-                            } else if (kahao.length() == 5) {
-                                kahao = "00000" + kahao;
-                            } else if (kahao.length() == 4) {
-                                kahao = "000000" + kahao;
-                            } else if (kahao.length() == 3) {
-                                kahao = "0000000" + kahao;
-                            } else if (kahao.length() == 2) {
-                                kahao = "00000000" + kahao;
-                            } else if (kahao.length() == 1) {
-                                kahao = "000000000" + kahao;
-                            }
-                            ELog.d("=====接收到了卡号=======" + kahao);
-                            if (kahao.length() == 10) {
-                                Message message = new Message();
-                                message.obj = kahao;
-                                message.what = 333;
-                                myHander.sendMessage(message);
-                            }
+                            String kahaodata = new String(buffer, 0, size);
+                            ELog.d("=====接收到了卡号=======" + kahaodata);
+                            sendMsg(kahaodata);
+                            Message message = new Message();
+                            message.obj = kahaodata;
+                            message.what = 555;
+                            myHander.sendMessage(message);
                             sendMsgIc("ICKERROR");
                             sleep(500);
                         }
                     }
-
                 } catch (IOException e) {
                     ELog.i("=========run: 数据读取异常========" + e.toString());
                 } catch (InterruptedException e) {
@@ -182,7 +180,6 @@ public class SerialPortUtil {
 
             }
         }.start();
-
 
     }
 
@@ -216,5 +213,13 @@ public class SerialPortUtil {
         serialPort1.close();
         myHander = null;
         ELog.i("========stopReadCard=============");
+    }
+
+    public static void loginMsg(Handler loginHandler) {
+        myHander = loginHandler;
+    }
+
+    public static void loginMsgstop() {
+        myHander = null;
     }
 }
