@@ -161,14 +161,23 @@ public class SerialPortUtil {
                 try {
                     while (isReadCard && (size = inputStream1.read(buffer, 0, 64)) > 0) {
                         if (isReadCard && size > 0) {
-                            String kahaodata = new String(buffer, 0, size);
+                            byte[] bs = new byte[4];
+                            System.arraycopy(buffer, 1, bs, 0, 4);
+                            String ret = "";
+                            for (int i = 0; i < bs.length; i++) {
+                                String hex = Integer.toHexString(bs[i] & 0xFF);
+                                if (hex.length() == 1) {
+                                    hex = "0" + hex;
+                                }
+                                ret += hex.toUpperCase();
+                            }
+                            String kahaodata = "ICK" + ret;
                             ELog.d("=====接收到了卡号=======" + kahaodata);
                             sendMsg(kahaodata);
                             Message message = new Message();
                             message.obj = kahaodata;
                             message.what = 555;
                             myHander.sendMessage(message);
-                            sendMsgIc("ICKERROR");
                             sleep(500);
                         }
                     }
