@@ -98,7 +98,7 @@
             android:drawablePadding="0dp"
             android:gravity="center"
             android:paddingTop="@dimen/dp_10"
-            android:text="直播"
+            android:text="直播开/关"
             android:textColor="@color/text_color_1"
             android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />
