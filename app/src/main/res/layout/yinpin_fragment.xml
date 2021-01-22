@@ -115,7 +115,7 @@
             android:drawablePadding="0dp"
             android:gravity="center"
             android:paddingTop="@dimen/dp_10"
-            android:text="静音"
+            android:text="静音开/关"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />

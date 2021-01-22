@@ -21,6 +21,7 @@ import com.lh.zksocketc.ui.fragment.YinpinFragment;
 import com.lh.zksocketc.utils.DateUtil;
 import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
+import com.lh.zksocketc.utils.TishiDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +32,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements TishiDialog.DialogCallBack {
 
     @BindView(R.id.rbtn_changjing)
     RadioButton rbtn_changjing;
-
+    @BindView(R.id.rbtn_shangke)
+    RadioButton rbtn_shangke;
+    @BindView(R.id.rbtn_xiake)
+    RadioButton rbtn_xiake;
     @BindView(R.id.time_tv_home)
     TextView time_tv_home;
 
@@ -55,6 +59,7 @@ public class HomeActivity extends BaseActivity {
             }
         }
     };
+    private TishiDialog tishiDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,6 +187,17 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.rbtn_xiake)
     public void rbtn_xiake() {
+        if (tishiDialog == null) {
+            tishiDialog = new TishiDialog(this, this);
+        }
+        if (tishiDialog != null) {
+            tishiDialog.show();
+            tishiDialog.setCanceledOnTouchOutside(false);
+        }
+    }
+
+    @Override
+    public void tishiOkDialog() {
         SerialPortUtil.sendMsg("MBS2");
         isShangke = false;
         startActivity(new Intent(this, SplashActivity.class));
@@ -189,8 +205,23 @@ public class HomeActivity extends BaseActivity {
     }
 
     @Override
+    public void tishiCancelDialog() {
+        if (tishiDialog != null) {
+            tishiDialog.dismiss();
+            tishiDialog = null;
+        }
+        if (isShangke) {
+            rbtn_shangke.setChecked(true);
+        } else {
+            rbtn_xiake.setChecked(false);
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         stopTimeTimer();
     }
+
+
 }

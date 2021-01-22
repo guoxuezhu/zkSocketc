@@ -40,10 +40,10 @@ public class BindActivity extends BaseActivity {
             return;
         }
 
-        if (et_name.getText().toString().trim().equals("hzlhadmin")) {
-            if (et_password.getText().toString().trim().equals("hzlhadmin")) {
-                MyApplication.prefs.setZhanghao("hzlhadmin");
-                MyApplication.prefs.setMima("hzlhadmin");
+        if (et_name.getText().toString().trim().equals("admin")) {
+            if (et_password.getText().toString().trim().equals("hik12345")) {
+                MyApplication.prefs.setZhanghao("admin");
+                MyApplication.prefs.setMima("hik12345");
                 startActivity(new Intent(this, AdminActivity.class));
                 finish();
                 return;

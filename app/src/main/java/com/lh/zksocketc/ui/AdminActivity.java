@@ -4,24 +4,29 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.utils.DisplayTools;
 
 import java.io.File;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AdminActivity extends BaseActivity {
 
+    @BindView(R.id.updata_seting)
+    Button updata_seting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
         ButterKnife.bind(this);
-
+        updata_seting.setText("升级" + DisplayTools.getVersionName(this));
     }
 
     @OnClick(R.id.xitong_seting)
@@ -50,7 +55,8 @@ public class AdminActivity extends BaseActivity {
             intent.setDataAndType(Uri.fromFile(apkFile3), "application/vnd.android.package-archive");
             startActivity(intent);
         } else {
-            Toast.makeText(this, "请插入有升级包的U盘", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "请插入有升级包的U盘", Toast.LENGTH_SHORT).show();
+            startActivity(getPackageManager().getLaunchIntentForPackage("com.softwinner.explore"));
         }
     }
 
