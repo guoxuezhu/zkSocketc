@@ -44,7 +44,7 @@
         <Button
             android:id="@+id/tishi_dialog_btn_no"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_weight="1"
             android:background="@drawable/but_bg_no"
             android:text="取消"
@@ -54,7 +54,7 @@
         <Button
             android:id="@+id/tishi_dialog_btn_ok"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_weight="1"
             android:background="@drawable/but_bg"
             android:text="确定"

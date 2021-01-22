@@ -36,6 +36,10 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
 
     @BindView(R.id.rbtn_changjing)
     RadioButton rbtn_changjing;
+    @BindView(R.id.rbtn_shangke)
+    RadioButton rbtn_shangke;
+    @BindView(R.id.rbtn_xiake)
+    RadioButton rbtn_xiake;
 
     @BindView(R.id.time_tv_home)
     TextView time_tv_home;
@@ -206,6 +210,11 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
         if (tishiDialog != null) {
             tishiDialog.dismiss();
             tishiDialog = null;
+        }
+        if (isShangke) {
+            rbtn_shangke.setChecked(true);
+        } else {
+            rbtn_xiake.setChecked(false);
         }
     }
 
