@@ -129,7 +129,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/xian_1" />
+                android:background="@color/xian_1"
+                android:visibility="gone" />
 
             <RadioButton
                 android:id="@+id/rbtn_kt"
@@ -142,13 +143,15 @@
                 android:text="空调"
                 android:textColor="@color/white"
                 android:textSize="20sp"
+                android:visibility="gone"
                 app:buttonCompat="@null" />
 
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/xian_1" />
+                android:background="@color/xian_1"
+                android:visibility="gone" />
 
             <RadioButton
                 android:id="@+id/rbtn_door"
@@ -161,6 +164,7 @@
                 android:text="门禁"
                 android:textColor="@color/white"
                 android:textSize="20sp"
+                android:visibility="gone"
                 app:buttonCompat="@null" />
 
             <View
