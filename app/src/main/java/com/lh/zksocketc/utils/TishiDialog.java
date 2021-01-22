@@ -17,8 +17,7 @@ public class TishiDialog extends Dialog {
     private DialogCallBack mDialogCallBack;
 
     public TishiDialog(@NonNull Context context, DialogCallBack dialogCallBack) {
-        super(context);
-//        super(context, R.style.FullHeightDialog);
+        super(context, R.style.FullHeightDialog);
         mContext = context;
         mDialogCallBack = dialogCallBack;
     }
