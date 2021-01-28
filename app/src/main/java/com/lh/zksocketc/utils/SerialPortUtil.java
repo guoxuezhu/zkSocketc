@@ -68,44 +68,48 @@ public class SerialPortUtil {
                 try {
                     while (isReadWsd && (size = inputStream.read(buffer, 0, 64)) > 0) {
                         if (size > 0) {
-                            String msg = new String(buffer, 0, size);
-                            ELog.i("=====接收到了中控数据=======" + msg);
-                            String[] msglist = msg.split(";");
-                            if (msglist[0].equals("WSD")) {
-                                try {
-                                    WsdData wsd = new WsdData(msglist[1], msglist[2], msglist[3]);
-                                    WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
-                                    wsdDataDao.deleteAll();
-                                    wsdDataDao.insert(wsd);
-                                } catch (Exception e) {
-                                    ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
-                                }
-                            } else if (msglist[0].equals("LOGIN")) {
-                                Message message = new Message();
-                                if (msglist[1].equals("200")) {
-                                    message.obj = msglist[2];
-                                    message.what = 20;
-                                } else {
-                                    message.obj = msglist[2];
-                                    message.what = 21;
-                                }
-                                if (myHander != null) {
-                                    myHander.sendMessage(message);
-                                }
-                            } else if (msglist[0].equals("SKJAA")) {
-                                if (myHander != null) {
+                            try {
+                                String msg = new String(buffer, 0, size);
+                                ELog.i("=====接收到了中控数据=======" + msg);
+                                String[] msglist = msg.split(";");
+                                if (msglist[0].equals("WSD")) {
+                                    try {
+                                        WsdData wsd = new WsdData(msglist[1], msglist[2], msglist[3]);
+                                        WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
+                                        wsdDataDao.deleteAll();
+                                        wsdDataDao.insert(wsd);
+                                    } catch (Exception e) {
+                                        ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
+                                    }
+                                } else if (msglist[0].equals("LOGIN")) {
                                     Message message = new Message();
-                                    message.obj = msg;
-                                    message.what = 444;
-                                    myHander.sendMessage(message);
+                                    if (msglist[1].equals("200")) {
+                                        message.obj = msglist[2];
+                                        message.what = 20;
+                                    } else {
+                                        message.obj = msglist[2];
+                                        message.what = 21;
+                                    }
+                                    if (myHander != null) {
+                                        myHander.sendMessage(message);
+                                    }
+                                } else if (msglist[0].equals("SKJAA")) {
+                                    if (myHander != null) {
+                                        Message message = new Message();
+                                        message.obj = msg;
+                                        message.what = 444;
+                                        myHander.sendMessage(message);
+                                    }
+                                } else if (msglist[0].equals("SKJ")) {
+                                    if (myHander != null) {
+                                        Message message = new Message();
+                                        message.obj = msg;
+                                        message.what = 444;
+                                        myHander.sendMessage(message);
+                                    }
                                 }
-                            } else if (msglist[0].equals("SKJ")) {
-                                if (myHander != null) {
-                                    Message message = new Message();
-                                    message.obj = msg;
-                                    message.what = 444;
-                                    myHander.sendMessage(message);
-                                }
+                            } catch (Exception e) {
+                                ELog.i("=========中控===数据读取异常===Exception=====" + e.toString());
                             }
 
                         }
@@ -161,20 +165,22 @@ public class SerialPortUtil {
                 try {
                     while (isReadCard && (size = inputStream1.read(buffer, 0, 64)) > 0) {
                         if (isReadCard && size > 0) {
-                            String kahaodata = new String(buffer, 0, size);
-                            ELog.d("=====接收到了卡号=======" + kahaodata);
-                            sendMsg(kahaodata);
-                            Message message = new Message();
-                            message.obj = kahaodata;
-                            message.what = 555;
-                            myHander.sendMessage(message);
-                            sendMsgIc("ICKERROR");
-                            sleep(500);
+                            try {
+                                String kahaodata = new String(buffer, 0, size);
+                                ELog.d("=====接收到了卡号=======" + kahaodata);
+                                sendMsg(kahaodata);
+                                Message message = new Message();
+                                message.obj = kahaodata;
+                                message.what = 555;
+                                myHander.sendMessage(message);
+                                 sendMsgIc("ICKERROR");
+                                sleep(500);
+                            } catch (Exception e) {
+                                ELog.i("=========卡号数据读取异常===Exception=====" + e.toString());
+                            }
                         }
                     }
-                } catch (IOException e) {
-                    ELog.i("=========run: 数据读取异常========" + e.toString());
-                } catch (InterruptedException e) {
+                } catch (Exception e) {
                     ELog.i("=========run: 数据读取异常========" + e.toString());
                 }
 
