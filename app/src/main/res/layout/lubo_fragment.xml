@@ -29,47 +29,6 @@
             android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />
 
-        <CheckBox
-            android:id="@+id/zanting"
-            android:layout_width="@dimen/shipin_btn_height_1"
-            android:layout_height="@dimen/shipin_btn_height_1"
-            android:layout_marginLeft="@dimen/changjing_btn_marginLeft"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
-            android:drawableTop="@drawable/zanting"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_20"
-            android:text="暂停"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/changjing_btn_marginTop"
-        android:orientation="horizontal">
-
-
-        <CheckBox
-            android:id="@+id/jixu"
-            android:layout_width="@dimen/shipin_btn_height_1"
-            android:layout_height="@dimen/shipin_btn_height_1"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
-            android:drawableTop="@drawable/lubo_restart"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_20"
-            android:text="继续"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
 
         <CheckBox
             android:id="@+id/tingzhi"
@@ -86,6 +45,47 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/changjing_btn_marginTop"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <CheckBox
+            android:id="@+id/zanting"
+            android:layout_width="@dimen/shipin_btn_height_1"
+            android:layout_height="@dimen/shipin_btn_height_1"
+            android:background="@drawable/yinpin_checked_status"
+            android:button="@null"
+            android:drawableTop="@drawable/zanting"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_20"
+            android:text="暂停"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
+
+        <CheckBox
+            android:id="@+id/jixu"
+            android:layout_width="@dimen/shipin_btn_height_1"
+            android:layout_height="@dimen/shipin_btn_height_1"
+            android:layout_marginLeft="@dimen/changjing_btn_marginLeft"
+            android:background="@drawable/yinpin_checked_status"
+            android:button="@null"
+            android:drawableTop="@drawable/lubo_restart"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_20"
+            android:text="继续"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
+
 
         <CheckBox
             android:id="@+id/zhibo"

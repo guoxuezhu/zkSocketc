@@ -129,6 +129,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:visibility="gone"
                 android:background="@color/xian_1" />
 
             <RadioButton
@@ -140,6 +141,7 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="空调"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:buttonCompat="@null" />
@@ -148,6 +150,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:visibility="gone"
                 android:background="@color/xian_1" />
 
             <RadioButton
@@ -159,6 +162,7 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="门禁"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:buttonCompat="@null" />
@@ -204,8 +208,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp_10"
-                android:src="@mipmap/logo"
-                android:visibility="gone" />
+                android:src="@mipmap/logo" />
 
             <TextView
                 android:id="@+id/time_tv_home"

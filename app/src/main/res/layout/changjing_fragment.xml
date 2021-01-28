@@ -47,21 +47,11 @@
             android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-
         <CheckBox
             android:id="@+id/spbtn_all_bjb_1"
             android:layout_width="@dimen/shipin_btn_height_1"
             android:layout_height="@dimen/shipin_btn_height_1"
+            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
             android:background="@drawable/yinpin_checked_status"
             android:button="@null"
             android:drawableTop="@drawable/sp_1"
@@ -72,6 +62,18 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
 
         <CheckBox
             android:id="@+id/spbtn_all_gpy"
