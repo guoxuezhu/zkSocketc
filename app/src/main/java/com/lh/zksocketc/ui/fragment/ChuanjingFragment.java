@@ -28,7 +28,8 @@ public class ChuanjingFragment extends Fragment {
     @BindView(R.id.spbtn_all_laoshi_diannao)
     CheckBox spbtn_all_laoshi_diannao;
 
-
+    @BindView(R.id.in_all_ops)
+    CheckBox in_all_ops;
 
     @Nullable
     @Override
@@ -47,6 +48,7 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_diannao.setChecked(false);
         spbtn_all_bjb_1.setChecked(false);
         spbtn_all_laoshi_diannao.setChecked(true);
+        in_all_ops.setChecked(false);
     }
 
     @OnClick(R.id.spbtn_all_diannao)
@@ -56,6 +58,7 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_diannao.setChecked(true);
         spbtn_all_bjb_1.setChecked(false);
         spbtn_all_laoshi_diannao.setChecked(false);
+        in_all_ops.setChecked(false);
     }
 
     @OnClick(R.id.spbtn_all_bjb_1)
@@ -65,6 +68,7 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_diannao.setChecked(false);
         spbtn_all_bjb_1.setChecked(true);
         spbtn_all_laoshi_diannao.setChecked(false);
+        in_all_ops.setChecked(false);
     }
 
     @OnClick(R.id.spbtn_all_gpy)
@@ -74,8 +78,17 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_diannao.setChecked(false);
         spbtn_all_bjb_1.setChecked(false);
         spbtn_all_laoshi_diannao.setChecked(false);
+        in_all_ops.setChecked(false);
     }
 
-
+    @OnClick(R.id.in_all_ops)
+    public void in_all_ops() {
+        SerialPortUtil.sendMsg("MBS5102");
+        spbtn_all_gpy.setChecked(false);
+        spbtn_all_diannao.setChecked(false);
+        spbtn_all_bjb_1.setChecked(false);
+        spbtn_all_laoshi_diannao.setChecked(false);
+        in_all_ops.setChecked(true);
+    }
 
 }

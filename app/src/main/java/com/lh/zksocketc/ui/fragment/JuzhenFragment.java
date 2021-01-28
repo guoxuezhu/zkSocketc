@@ -19,7 +19,6 @@ import butterknife.OnClick;
 public class JuzhenFragment extends Fragment {
 
 
-
     @BindView(R.id.spbtn_dan_in_gaopaiyi)
     CheckBox spbtn_dan_in_gaopaiyi;
     @BindView(R.id.spbtn_dan_in_diannao)
@@ -37,6 +36,8 @@ public class JuzhenFragment extends Fragment {
     @BindView(R.id.spbtn_dan_out_dp_2)
     CheckBox spbtn_dan_out_dp_2;
 
+    @BindView(R.id.out_all_ops)
+    CheckBox out_all_ops;
 
     @Nullable
     @Override
@@ -89,6 +90,7 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_touying.setChecked(false);
         spbtn_dan_out_dp_1.setChecked(false);
         spbtn_dan_out_dp_2.setChecked(false);
+        out_all_ops.setChecked(false);
     }
 
 
@@ -98,8 +100,6 @@ public class JuzhenFragment extends Fragment {
         spbtn_dan_out_dp_1.setChecked(false);
         spbtn_dan_out_dp_2.setChecked(false);
         sendDan(1);
-
-
     }
 
     @OnClick(R.id.spbtn_dan_out_dp_1)
@@ -131,5 +131,8 @@ public class JuzhenFragment extends Fragment {
         }
     }
 
-
+    @OnClick(R.id.out_all_ops)
+    public void out_all_ops() {
+        SerialPortUtil.sendMsg("MBS5102");
+    }
 }

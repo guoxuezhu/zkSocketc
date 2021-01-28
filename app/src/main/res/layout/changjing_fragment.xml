@@ -7,6 +7,49 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+
+        <CheckBox
+            android:id="@+id/spbtn_all_gpy"
+            android:layout_width="@dimen/shipin_btn_height_1"
+            android:layout_height="@dimen/shipin_btn_height_1"
+            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
+            android:background="@drawable/yinpin_checked_status"
+            android:button="@null"
+            android:drawableTop="@drawable/sp_3"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_30"
+            android:text="高拍仪"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20"
+            android:visibility="gone"
+            app:buttonCompat="@null" />
+
+        <CheckBox
+            android:id="@+id/in_all_ops"
+            android:layout_width="@dimen/shipin_btn_height_1"
+            android:layout_height="@dimen/shipin_btn_height_1"
+            android:background="@drawable/yinpin_checked_status"
+            android:button="@null"
+            android:drawableTop="@drawable/sp_2"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_30"
+            android:text="OPS信号"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20"
+            app:buttonCompat="@null" />
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,33 +106,6 @@
             android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-
-        <CheckBox
-            android:id="@+id/spbtn_all_gpy"
-            android:layout_width="@dimen/shipin_btn_height_1"
-            android:layout_height="@dimen/shipin_btn_height_1"
-            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
-            android:background="@drawable/yinpin_checked_status"
-            android:button="@null"
-            android:drawableTop="@drawable/sp_3"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_30"
-            android:text="高拍仪"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
 
     </LinearLayout>
 
