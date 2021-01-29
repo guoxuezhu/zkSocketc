@@ -197,6 +197,10 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
 
     @Override
     public void tishiOkDialog() {
+        if (tishiDialog != null) {
+            tishiDialog.dismiss();
+            tishiDialog = null;
+        }
         SerialPortUtil.sendMsg("MBS2");
         isShangke = false;
         startActivity(new Intent(this, SplashActivity.class));
