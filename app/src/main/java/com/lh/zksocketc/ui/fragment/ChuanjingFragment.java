@@ -1,6 +1,5 @@
 package com.lh.zksocketc.ui.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.utils.SerialPortUtil;
@@ -27,7 +27,6 @@ public class ChuanjingFragment extends Fragment {
     CheckBox spbtn_all_bjb_1;
     @BindView(R.id.spbtn_all_laoshi_diannao)
     CheckBox spbtn_all_laoshi_diannao;
-
 
 
     @Nullable
@@ -75,7 +74,6 @@ public class ChuanjingFragment extends Fragment {
         spbtn_all_bjb_1.setChecked(false);
         spbtn_all_laoshi_diannao.setChecked(false);
     }
-
 
 
 }
