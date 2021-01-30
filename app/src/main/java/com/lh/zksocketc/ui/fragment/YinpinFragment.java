@@ -61,10 +61,11 @@ public class YinpinFragment extends Fragment {
         MicDatas smicdata = micDatasDao.loadAll().get(0);
         if (smicdata.mic_a_status == 1) {
             jingyin.setChecked(false);
+            seek_bar_yl.setProgress(22 - Integer.valueOf(smicdata.mic_a));
         } else {
             jingyin.setChecked(true);
+            seek_bar_yl.setProgress(0);
         }
-        seek_bar_yl.setProgress(22 - Integer.valueOf(smicdata.mic_a));
         seek_bar_yl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -106,10 +107,11 @@ public class YinpinFragment extends Fragment {
         MicDatas micdata = micDatasDao.loadAll().get(0);
         if (micdata.mic_a_status == 1) {
             jingyin.setChecked(false);
+            seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_a));
         } else {
             jingyin.setChecked(true);
+            seek_bar_yl.setProgress(0);
         }
-        seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_a));
     }
 
     @OnClick(R.id.yinxiang)
@@ -117,10 +119,11 @@ public class YinpinFragment extends Fragment {
         MicDatas micdata = micDatasDao.loadAll().get(0);
         if (micdata.mic_b_status == 1) {
             jingyin.setChecked(false);
+            seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_b));
         } else {
             jingyin.setChecked(true);
+            seek_bar_yl.setProgress(0);
         }
-        seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_b));
     }
 
     @OnClick(R.id.maikefeng)
@@ -128,10 +131,11 @@ public class YinpinFragment extends Fragment {
         MicDatas micdata = micDatasDao.loadAll().get(0);
         if (micdata.mic_c_status == 1) {
             jingyin.setChecked(false);
+            seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_c));
         } else {
             jingyin.setChecked(true);
+            seek_bar_yl.setProgress(0);
         }
-        seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_c));
     }
 
 
