@@ -75,9 +75,8 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
         fragments = getFragments(); //添加布局
         showFragment(0);
         isShangke = false;
-
+        SerialPortUtil.sendMsg("VOLABC");
         tvgetTime();
-
     }
 
     private void tvgetTime() {

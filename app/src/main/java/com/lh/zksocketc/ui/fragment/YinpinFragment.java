@@ -11,7 +11,10 @@ import android.widget.SeekBar;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.data.DbDao.MicDatasDao;
+import com.lh.zksocketc.data.model.MicDatas;
 import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
@@ -33,6 +36,7 @@ public class YinpinFragment extends Fragment {
     @BindView(R.id.seek_bar_yl)
     SeekBar seek_bar_yl;
 
+    private MicDatasDao micDatasDao;
 
     @Nullable
     @Override
@@ -50,7 +54,17 @@ public class YinpinFragment extends Fragment {
 
     private void showypView() {
         zongyinliang.setChecked(true);
-        seek_bar_yl.setProgress(1);
+        micDatasDao = MyApplication.getDaoSession().getMicDatasDao();
+        if (micDatasDao.loadAll().size() == 0) {
+            micDatasDao.insert(new MicDatas("22", 1, "22", 1, "22", 1));
+        }
+        MicDatas micdata = micDatasDao.loadAll().get(0);
+        if (micdata.mic_a_status == 1) {
+            jingyin.setChecked(false);
+        } else {
+            jingyin.setChecked(true);
+        }
+        seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_a));
         seek_bar_yl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -62,56 +76,94 @@ public class YinpinFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                ELog.e("===========SeekBar=====onStopTrackingTouch=======" + seekBar.getProgress());
-                int ylstr = 22 - seekBar.getProgress();
+                ELog.i("===========SeekBar=====onStopTrackingTouch=======" + seekBar.getProgress());
+                int yl = 22 - seekBar.getProgress();
+                String ylstr;
+                if (yl < 10) {
+                    ylstr = "0" + yl;
+                } else {
+                    ylstr = "" + yl;
+                }
                 if (zongyinliang.isChecked()) {
                     SerialPortUtil.sendMsg("MICA" + ylstr);
+                    micdata.setMic_a(ylstr);
                 } else if (yinxiang.isChecked()) {
                     SerialPortUtil.sendMsg("MICB" + ylstr);
+                    micdata.setMic_b(ylstr);
                 } else if (maikefeng.isChecked()) {
                     SerialPortUtil.sendMsg("MICC" + ylstr);
+                    micdata.setMic_c(ylstr);
                 }
+                ELog.i("=======yinpin=======" + micDatasDao.loadAll().toString());
             }
         });
     }
 
     @OnClick(R.id.zongyinliang)
     public void zongyinliang() {
-        jingyin.setChecked(false);
+        MicDatas micdata = micDatasDao.loadAll().get(0);
+        if (micdata.mic_a_status == 1) {
+            jingyin.setChecked(false);
+        } else {
+            jingyin.setChecked(true);
+        }
+        seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_a));
     }
 
     @OnClick(R.id.yinxiang)
     public void yinxiang() {
-        jingyin.setChecked(false);
+        MicDatas micdata = micDatasDao.loadAll().get(0);
+        if (micdata.mic_b_status == 1) {
+            jingyin.setChecked(false);
+        } else {
+            jingyin.setChecked(true);
+        }
+        seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_b));
     }
 
     @OnClick(R.id.maikefeng)
     public void maikefeng() {
-        jingyin.setChecked(false);
+        MicDatas micdata = micDatasDao.loadAll().get(0);
+        if (micdata.mic_c_status == 1) {
+            jingyin.setChecked(false);
+        } else {
+            jingyin.setChecked(true);
+        }
+        seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_c));
     }
 
 
     @OnClick(R.id.jingyin)
     public void jingyin() {
+        MicDatas micdata = micDatasDao.loadAll().get(0);
         if (jingyin.isChecked()) {
             seek_bar_yl.setProgress(0);
             if (zongyinliang.isChecked()) {
                 SerialPortUtil.sendMsg("MICAJY");
+                micdata.setMic_a_status(0);
             } else if (yinxiang.isChecked()) {
                 SerialPortUtil.sendMsg("MICBJY");
+                micdata.setMic_b_status(0);
             } else if (maikefeng.isChecked()) {
                 SerialPortUtil.sendMsg("MICCJY");
+                micdata.setMic_c_status(0);
             }
         } else {
-            seek_bar_yl.setProgress(1);
             if (zongyinliang.isChecked()) {
-                SerialPortUtil.sendMsg("MICA01");
+                SerialPortUtil.sendMsg("MICA" + micdata.mic_a);
+                seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_a));
+                micdata.setMic_a_status(1);
             } else if (yinxiang.isChecked()) {
-                SerialPortUtil.sendMsg("MICB01");
+                SerialPortUtil.sendMsg("MICB" + micdata.mic_b);
+                seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_b));
+                micdata.setMic_b_status(1);
             } else if (maikefeng.isChecked()) {
-                SerialPortUtil.sendMsg("MICC01");
+                SerialPortUtil.sendMsg("MICC" + micdata.mic_c);
+                seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_c));
+                micdata.setMic_c_status(1);
             }
         }
+        ELog.i("=======111===jingyin====" + micDatasDao.loadAll().toString());
     }
 
 }

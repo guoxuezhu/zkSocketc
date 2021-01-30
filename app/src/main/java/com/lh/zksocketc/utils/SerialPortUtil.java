@@ -4,7 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.lh.zksocketc.MyApplication;
+import com.lh.zksocketc.data.DbDao.MicDatasDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
+import com.lh.zksocketc.data.model.MicDatas;
 import com.lh.zksocketc.data.model.WsdData;
 
 import java.io.File;
@@ -81,6 +83,17 @@ public class SerialPortUtil {
                                     } catch (Exception e) {
                                         ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
                                     }
+                                } else if (msglist[0].substring(0, 3).equals("MIC")) {
+                                    try {
+                                        MicDatasDao micDatasDao = MyApplication.getDaoSession().getMicDatasDao();
+                                        MicDatas micDatas = new MicDatas(msglist[0].substring(4, 6), Integer.valueOf(msglist[0].substring(6)),
+                                                msglist[1].substring(4, 6), Integer.valueOf(msglist[1].substring(6)),
+                                                msglist[2].substring(4, 6), Integer.valueOf(msglist[2].substring(6)));
+                                        micDatasDao.deleteAll();
+                                        micDatasDao.insert(micDatas);
+                                    } catch (Exception e) {
+                                        ELog.i("========音量====异常========" + e.toString());
+                                    }
                                 } else if (msglist[0].equals("LOGIN")) {
                                     Message message = new Message();
                                     if (msglist[1].equals("200")) {
@@ -111,10 +124,8 @@ public class SerialPortUtil {
                             } catch (Exception e) {
                                 ELog.i("=========中控===数据读取异常===Exception=====" + e.toString());
                             }
-
                         }
                     }
-
                 } catch (IOException e) {
                     ELog.i("=========run: 数据读取异常========" + e.toString());
                 }
@@ -173,7 +184,7 @@ public class SerialPortUtil {
                                 message.obj = kahaodata;
                                 message.what = 555;
                                 myHander.sendMessage(message);
-                                 sendMsgIc("ICKERROR");
+                                sendMsgIc("ICKERROR");
                                 sleep(500);
                             } catch (Exception e) {
                                 ELog.i("=========卡号数据读取异常===Exception=====" + e.toString());
@@ -183,10 +194,8 @@ public class SerialPortUtil {
                 } catch (Exception e) {
                     ELog.i("=========run: 数据读取异常========" + e.toString());
                 }
-
             }
         }.start();
-
     }
 
     private synchronized static void sendMsgIc(String msg) {
