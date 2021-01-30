@@ -58,13 +58,13 @@ public class YinpinFragment extends Fragment {
         if (micDatasDao.loadAll().size() == 0) {
             micDatasDao.insert(new MicDatas("22", 1, "22", 1, "22", 1));
         }
-        MicDatas micdata = micDatasDao.loadAll().get(0);
-        if (micdata.mic_a_status == 1) {
+        MicDatas smicdata = micDatasDao.loadAll().get(0);
+        if (smicdata.mic_a_status == 1) {
             jingyin.setChecked(false);
         } else {
             jingyin.setChecked(true);
         }
-        seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_a));
+        seek_bar_yl.setProgress(22 - Integer.valueOf(smicdata.mic_a));
         seek_bar_yl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -86,14 +86,16 @@ public class YinpinFragment extends Fragment {
                 }
                 if (zongyinliang.isChecked()) {
                     SerialPortUtil.sendMsg("MICA" + ylstr);
-                    micdata.setMic_a(ylstr);
+                    smicdata.setMic_a(ylstr);
                 } else if (yinxiang.isChecked()) {
                     SerialPortUtil.sendMsg("MICB" + ylstr);
-                    micdata.setMic_b(ylstr);
+                    smicdata.setMic_b(ylstr);
                 } else if (maikefeng.isChecked()) {
                     SerialPortUtil.sendMsg("MICC" + ylstr);
-                    micdata.setMic_c(ylstr);
+                    smicdata.setMic_c(ylstr);
                 }
+                micDatasDao.deleteAll();
+                micDatasDao.insert(smicdata);
                 ELog.i("=======yinpin=======" + micDatasDao.loadAll().toString());
             }
         });
@@ -163,6 +165,8 @@ public class YinpinFragment extends Fragment {
                 micdata.setMic_c_status(1);
             }
         }
+        micDatasDao.deleteAll();
+        micDatasDao.insert(micdata);
         ELog.i("=======111===jingyin====" + micDatasDao.loadAll().toString());
     }
 
