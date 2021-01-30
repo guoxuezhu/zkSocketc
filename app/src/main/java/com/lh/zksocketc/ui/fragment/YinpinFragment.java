@@ -37,6 +37,7 @@ public class YinpinFragment extends Fragment {
     SeekBar seek_bar_yl;
 
     private MicDatasDao micDatasDao;
+    private MicDatas micdata;
 
     @Nullable
     @Override
@@ -58,10 +59,10 @@ public class YinpinFragment extends Fragment {
         if (micDatasDao.loadAll().size() == 0) {
             micDatasDao.insert(new MicDatas("22", 1, "22", 1, "22", 1));
         }
-        MicDatas smicdata = micDatasDao.loadAll().get(0);
-        if (smicdata.mic_a_status == 1) {
+        micdata = micDatasDao.loadAll().get(0);
+        if (micdata.mic_a_status == 1) {
             jingyin.setChecked(false);
-            seek_bar_yl.setProgress(22 - Integer.valueOf(smicdata.mic_a));
+            seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_a));
         } else {
             jingyin.setChecked(true);
             seek_bar_yl.setProgress(0);
@@ -87,16 +88,20 @@ public class YinpinFragment extends Fragment {
                 }
                 if (zongyinliang.isChecked()) {
                     SerialPortUtil.sendMsg("MICA" + ylstr);
-                    smicdata.setMic_a(ylstr);
+                    micdata.setMic_a(ylstr);
+                    micdata.setMic_a_status(1);
                 } else if (yinxiang.isChecked()) {
                     SerialPortUtil.sendMsg("MICB" + ylstr);
-                    smicdata.setMic_b(ylstr);
+                    micdata.setMic_b(ylstr);
+                    micdata.setMic_b_status(1);
                 } else if (maikefeng.isChecked()) {
                     SerialPortUtil.sendMsg("MICC" + ylstr);
-                    smicdata.setMic_c(ylstr);
+                    micdata.setMic_c(ylstr);
+                    micdata.setMic_c_status(1);
                 }
                 micDatasDao.deleteAll();
-                micDatasDao.insert(smicdata);
+                micDatasDao.insert(micdata);
+                jingyin.setChecked(false);
                 ELog.i("=======yinpin=======" + micDatasDao.loadAll().toString());
             }
         });
@@ -104,7 +109,6 @@ public class YinpinFragment extends Fragment {
 
     @OnClick(R.id.zongyinliang)
     public void zongyinliang() {
-        MicDatas micdata = micDatasDao.loadAll().get(0);
         if (micdata.mic_a_status == 1) {
             jingyin.setChecked(false);
             seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_a));
@@ -116,7 +120,6 @@ public class YinpinFragment extends Fragment {
 
     @OnClick(R.id.yinxiang)
     public void yinxiang() {
-        MicDatas micdata = micDatasDao.loadAll().get(0);
         if (micdata.mic_b_status == 1) {
             jingyin.setChecked(false);
             seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_b));
@@ -128,7 +131,6 @@ public class YinpinFragment extends Fragment {
 
     @OnClick(R.id.maikefeng)
     public void maikefeng() {
-        MicDatas micdata = micDatasDao.loadAll().get(0);
         if (micdata.mic_c_status == 1) {
             jingyin.setChecked(false);
             seek_bar_yl.setProgress(22 - Integer.valueOf(micdata.mic_c));
@@ -141,7 +143,6 @@ public class YinpinFragment extends Fragment {
 
     @OnClick(R.id.jingyin)
     public void jingyin() {
-        MicDatas micdata = micDatasDao.loadAll().get(0);
         if (jingyin.isChecked()) {
             seek_bar_yl.setProgress(0);
             if (zongyinliang.isChecked()) {
