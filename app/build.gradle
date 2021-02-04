@@ -60,7 +60,7 @@ android {
     }
 
     greendao {
-        schemaVersion 2
+        schemaVersion 3
         daoPackage 'com.lh.zksocketc.data.DbDao'
         targetGenDir 'src/main/java'
     }

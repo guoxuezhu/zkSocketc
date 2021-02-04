@@ -11,15 +11,11 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.widget.Toast;
 
-import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.ScreenOffAdminReceiver;
-import com.lh.zksocketc.data.DbDao.IcCardNumerDao;
-import com.lh.zksocketc.data.model.IcCardNumer;
 import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
 
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,8 +23,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SplashActivity extends BaseActivity {
-
-    private IcCardNumerDao icCardNumerDao;
 
     private ComponentName adminReceiver;
     private PowerManager mPowerManager;
@@ -45,6 +39,7 @@ public class SplashActivity extends BaseActivity {
                 case 555:
                     ELog.e("======sHander====SplashActivity====555=========" + msg.obj.toString());
                     screenOn();
+                    startTimerOff();
                     break;
                 case 444:
                     ELog.e("======sHander====SplashActivity====444=========" + msg.obj.toString());
@@ -54,26 +49,6 @@ public class SplashActivity extends BaseActivity {
                     startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                     finish();
                     break;
-                case 333:
-                    ELog.e("======sHander=====333=====SplashActivity=======" + msg.obj.toString());
-                    screenOn();
-                    if (icCardNumerDao.loadAll().size() != 0) {
-                        List<IcCardNumer> cardNumers = icCardNumerDao.queryBuilder()
-                                .where(IcCardNumerDao.Properties.CardNum.eq(msg.obj.toString()))
-                                .list();
-                        ELog.e("==========cardNumers=======" + cardNumers.size());
-                        if (cardNumers.size() != 0) {
-                            SerialPortUtil.sendMsg("CRD" + msg.obj.toString());
-                            destroyFinish();
-                            startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-                            finish();
-                        } else {
-                            startTimerOff();
-                        }
-                    } else {
-                        startTimerOff();
-                    }
-                    break;
             }
         }
     };
@@ -82,12 +57,7 @@ public class SplashActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         ButterKnife.bind(this);
-
-
-        icCardNumerDao = MyApplication.getDaoSession().getIcCardNumerDao();
-
 
         adminReceiver = new ComponentName(SplashActivity.this, ScreenOffAdminReceiver.class);
         mPowerManager = (PowerManager) getSystemService(POWER_SERVICE);
@@ -96,6 +66,7 @@ public class SplashActivity extends BaseActivity {
 
         startTimerOff();
         SerialPortUtil.readCardnumer(sHander);
+        SerialPortUtil.sendMsg("UISET");
     }
 
 

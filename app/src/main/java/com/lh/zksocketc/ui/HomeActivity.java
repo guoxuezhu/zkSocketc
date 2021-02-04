@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
+import com.lh.zksocketc.data.DbDao.UIsetDataDao;
 import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
 import com.lh.zksocketc.ui.fragment.DengguangFragment;
 import com.lh.zksocketc.ui.fragment.DianyuanFragment;
@@ -20,7 +23,6 @@ import com.lh.zksocketc.ui.fragment.LuboFragment;
 import com.lh.zksocketc.ui.fragment.ShebeiFragment;
 import com.lh.zksocketc.ui.fragment.YinpinFragment;
 import com.lh.zksocketc.utils.DateUtil;
-import com.lh.zksocketc.utils.ELog;
 import com.lh.zksocketc.utils.SerialPortUtil;
 import com.lh.zksocketc.utils.TishiDialog;
 
@@ -35,8 +37,41 @@ import butterknife.OnClick;
 
 public class HomeActivity extends BaseActivity implements TishiDialog.DialogCallBack {
 
+    @BindView(R.id.xian_view_1)
+    View xian_view_1;
+    @BindView(R.id.xian_view_2)
+    View xian_view_2;
+    @BindView(R.id.xian_view_3)
+    View xian_view_3;
+    @BindView(R.id.xian_view_4)
+    View xian_view_4;
+    @BindView(R.id.xian_view_5)
+    View xian_view_5;
+    @BindView(R.id.xian_view_6)
+    View xian_view_6;
+    @BindView(R.id.xian_view_7)
+    View xian_view_7;
+    @BindView(R.id.xian_view_8)
+    View xian_view_8;
+
     @BindView(R.id.rbtn_changjing)
     RadioButton rbtn_changjing;
+    @BindView(R.id.rbtn_juzhen)
+    RadioButton rbtn_juzhen;
+    @BindView(R.id.rbtn_lubo)
+    RadioButton rbtn_lubo;
+    @BindView(R.id.rbtn_dmt)
+    RadioButton rbtn_dmt;
+    @BindView(R.id.rbtn_cl)
+    RadioButton rbtn_cl;
+    @BindView(R.id.rbtn_dg)
+    RadioButton rbtn_dg;
+    @BindView(R.id.rbtn_kt)
+    RadioButton rbtn_kt;
+    @BindView(R.id.rbtn_door)
+    RadioButton rbtn_door;
+    @BindView(R.id.rbtn_yinpin)
+    RadioButton rbtn_yinpin;
     @BindView(R.id.rbtn_shangke)
     RadioButton rbtn_shangke;
     @BindView(R.id.rbtn_xiake)
@@ -69,14 +104,82 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        rbtn_changjing.setChecked(true);
-//        rbtn_fuwei.setChecked(true);
-
+        initView();
         fragments = getFragments(); //添加布局
         showFragment(0);
         isShangke = false;
         SerialPortUtil.sendMsg("VOLABC");
         tvgetTime();
+    }
+
+    private void initView() {
+        UIsetDataDao uIsetDataDao = MyApplication.getDaoSession().getUIsetDataDao();
+        if (uIsetDataDao.loadAll().size() == 0) {
+//            uIsetDataDao.insert(new UIsetData("", "", "", "", "", "", "", "", ""));
+            rbtn_changjing.setChecked(true);
+            return;
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_1_status.equals("0")) {
+            rbtn_changjing.setVisibility(View.GONE);
+            xian_view_1.setVisibility(View.GONE);
+        } else {
+            rbtn_changjing.setVisibility(View.VISIBLE);
+            xian_view_1.setVisibility(View.VISIBLE);
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_2_status.equals("0")) {
+            rbtn_juzhen.setVisibility(View.GONE);
+            xian_view_2.setVisibility(View.GONE);
+        } else {
+            rbtn_juzhen.setVisibility(View.VISIBLE);
+            xian_view_2.setVisibility(View.VISIBLE);
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_3_status.equals("0")) {
+            rbtn_lubo.setVisibility(View.GONE);
+            xian_view_3.setVisibility(View.GONE);
+        } else {
+            rbtn_lubo.setVisibility(View.VISIBLE);
+            xian_view_3.setVisibility(View.VISIBLE);
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_4_status.equals("0")) {
+            rbtn_dmt.setVisibility(View.GONE);
+            xian_view_4.setVisibility(View.GONE);
+        } else {
+            rbtn_dmt.setVisibility(View.VISIBLE);
+            xian_view_4.setVisibility(View.VISIBLE);
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_5_status.equals("0")) {
+            rbtn_cl.setVisibility(View.GONE);
+            xian_view_5.setVisibility(View.GONE);
+        } else {
+            rbtn_cl.setVisibility(View.VISIBLE);
+            xian_view_5.setVisibility(View.VISIBLE);
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_6_status.equals("0")) {
+            rbtn_dg.setVisibility(View.GONE);
+            xian_view_6.setVisibility(View.GONE);
+        } else {
+            rbtn_dg.setVisibility(View.VISIBLE);
+            xian_view_6.setVisibility(View.VISIBLE);
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_7_status.equals("0")) {
+            rbtn_kt.setVisibility(View.GONE);
+            xian_view_7.setVisibility(View.GONE);
+        } else {
+            rbtn_kt.setVisibility(View.VISIBLE);
+            xian_view_7.setVisibility(View.VISIBLE);
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_8_status.equals("0")) {
+            rbtn_door.setVisibility(View.GONE);
+            xian_view_8.setVisibility(View.GONE);
+        } else {
+            rbtn_door.setVisibility(View.VISIBLE);
+            xian_view_8.setVisibility(View.VISIBLE);
+        }
+        if (uIsetDataDao.loadAll().get(0).btn_9_status.equals("0")) {
+            rbtn_yinpin.setVisibility(View.GONE);
+        } else {
+            rbtn_yinpin.setVisibility(View.VISIBLE);
+        }
     }
 
     private void tvgetTime() {

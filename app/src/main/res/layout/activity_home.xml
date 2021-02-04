@@ -35,6 +35,7 @@
 
 
             <View
+                android:id="@+id/xian_view_1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/xian_1" />
@@ -53,6 +54,7 @@
                 app:buttonCompat="@null" />
 
             <View
+                android:id="@+id/xian_view_2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/xian_1" />
@@ -71,6 +73,7 @@
                 app:buttonCompat="@null" />
 
             <View
+                android:id="@+id/xian_view_3"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/xian_1" />
@@ -89,6 +92,7 @@
                 app:buttonCompat="@null" />
 
             <View
+                android:id="@+id/xian_view_4"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/xian_1" />
@@ -108,6 +112,7 @@
 
 
             <View
+                android:id="@+id/xian_view_5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/xian_1" />
@@ -127,6 +132,7 @@
 
 
             <View
+                android:id="@+id/xian_view_6"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/xian_1" />
@@ -146,6 +152,7 @@
 
 
             <View
+                android:id="@+id/xian_view_7"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/xian_1" />
@@ -164,6 +171,7 @@
                 app:buttonCompat="@null" />
 
             <View
+                android:id="@+id/xian_view_8"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/xian_1" />

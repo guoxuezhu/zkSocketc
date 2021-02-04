@@ -5,8 +5,10 @@ import android.os.Message;
 
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.data.DbDao.MicDatasDao;
+import com.lh.zksocketc.data.DbDao.UIsetDataDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
 import com.lh.zksocketc.data.model.MicDatas;
+import com.lh.zksocketc.data.model.UIsetData;
 import com.lh.zksocketc.data.model.WsdData;
 
 import java.io.File;
@@ -83,6 +85,17 @@ public class SerialPortUtil {
                                     } catch (Exception e) {
                                         ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
                                     }
+                                } else if (msglist[0].substring(0, 3).equals("UIS")) {
+                                    try {
+                                        UIsetDataDao uIsetDataDao = MyApplication.getDaoSession().getUIsetDataDao();
+                                        UIsetData uIsetData = new UIsetData(msglist[1].substring(0, 1), msglist[1].substring(1, 2), msglist[1].substring(2, 3),
+                                                msglist[1].substring(3, 4), msglist[1].substring(4, 5), msglist[1].substring(5, 6), msglist[1].substring(6, 7),
+                                                msglist[1].substring(7, 8), msglist[1].substring(8, 9));
+                                        uIsetDataDao.deleteAll();
+                                        uIsetDataDao.insert(uIsetData);
+                                    } catch (Exception e) {
+                                        ELog.i("========布局====异常========" + e.toString());
+                                    }
                                 } else if (msglist[0].substring(0, 3).equals("MIC")) {
                                     try {
                                         MicDatasDao micDatasDao = MyApplication.getDaoSession().getMicDatasDao();
@@ -126,7 +139,7 @@ public class SerialPortUtil {
                             }
                         }
                     }
-                } catch (IOException e) {
+                } catch (Exception e) {
                     ELog.i("=========run: 数据读取异常========" + e.toString());
                 }
 
