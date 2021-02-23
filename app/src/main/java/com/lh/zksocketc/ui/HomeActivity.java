@@ -104,21 +104,33 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        initView();
         fragments = getFragments(); //添加布局
-        showFragment(0);
         isShangke = false;
         SerialPortUtil.sendMsg("VOLABC");
         tvgetTime();
+        initView();
     }
 
     private void initView() {
         UIsetDataDao uIsetDataDao = MyApplication.getDaoSession().getUIsetDataDao();
         if (uIsetDataDao.loadAll().size() == 0) {
-//            uIsetDataDao.insert(new UIsetData("", "", "", "", "", "", "", "", ""));
             rbtn_changjing.setChecked(true);
+            showFragment(0);
             return;
         }
+        String statusstr = uIsetDataDao.loadAll().get(0).btn_1_status + ";" + uIsetDataDao.loadAll().get(0).btn_2_status + ";"
+                + uIsetDataDao.loadAll().get(0).btn_3_status + ";" + uIsetDataDao.loadAll().get(0).btn_4_status + ";"
+                + uIsetDataDao.loadAll().get(0).btn_5_status + ";" + uIsetDataDao.loadAll().get(0).btn_6_status + ";"
+                + uIsetDataDao.loadAll().get(0).btn_7_status + ";" + uIsetDataDao.loadAll().get(0).btn_8_status + ";"
+                + uIsetDataDao.loadAll().get(0).btn_9_status + "";
+        String[] statuslist = statusstr.split(";");
+        for (int i = 0; i < statuslist.length; i++) {
+            if (statuslist[i].equals("1")) {
+                showFragment(i);
+                break;
+            }
+        }
+
         if (uIsetDataDao.loadAll().get(0).btn_1_status.equals("0")) {
             rbtn_changjing.setVisibility(View.GONE);
             xian_view_1.setVisibility(View.GONE);
