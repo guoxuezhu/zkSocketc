@@ -44,7 +44,7 @@ public class SplashActivity extends BaseActivity {
                 case 444:
                     ELog.e("======sHander====SplashActivity====444=========" + msg.obj.toString());
                     screenOn();
-                    SerialPortUtil.sendMsg("MBS37");
+//                    SerialPortUtil.sendMsg("MBS37");
                     destroyFinish();
                     startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                     finish();
