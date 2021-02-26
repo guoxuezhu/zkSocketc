@@ -1,6 +1,5 @@
 package com.lh.zksocketc.ui.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.utils.SerialPortUtil;

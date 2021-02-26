@@ -1,12 +1,13 @@
 package com.lh.zksocketc.ui;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
@@ -165,10 +166,10 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
 
     private void showFragment(int i) {
         fragment = fragments.get(i);
-        getFragmentManager().beginTransaction()
-                .replace(R.id.mFragment, fragment).commit();
+//        getFragmentManager().beginTransaction()
+//                .replace(R.id.mFragment, fragment).commit();
 //        getFragmentManager().beginTransaction().show(fragment);
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.mFragment, fragment).commit();
     }
 
 //    @OnClick(R.id.rbtn_fuwei)

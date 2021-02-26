@@ -4,7 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.lh.zksocketc.MyApplication;
+import com.lh.zksocketc.data.DbDao.WgBtnStatusDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
+import com.lh.zksocketc.data.model.WgBtnStatus;
 import com.lh.zksocketc.data.model.WsdData;
 
 import java.io.File;
@@ -26,6 +28,7 @@ public class SerialPortUtil {
     private static InputStream inputStream1;
     private static boolean isReadCard;
     private static Handler myHander;
+    private static Handler myclHander;
     private static OutputStream outputStream1;
 
     public static void open() {
@@ -79,6 +82,17 @@ public class SerialPortUtil {
                                     wsdDataDao.insert(wsd);
                                 } catch (Exception e) {
                                     ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
+                                }
+                            } else if (msglist[0].equals("TST")) {
+                                WgBtnStatusDao wgBtnStatusDao = MyApplication.getDaoSession().getWgBtnStatusDao();
+                                WgBtnStatus wgBtnStatus = new WgBtnStatus(msglist[1], msglist[2], msglist[3], msglist[4]);
+                                wgBtnStatusDao.deleteAll();
+                                wgBtnStatusDao.insert(wgBtnStatus);
+                                if (myHander != null) {
+                                    myHander.sendEmptyMessage(369);
+                                }
+                                if (myclHander != null) {
+                                    myclHander.sendEmptyMessage(563);
                                 }
                             } else if (msglist[0].equals("LOGIN")) {
                                 Message message = new Message();
@@ -221,5 +235,21 @@ public class SerialPortUtil {
 
     public static void loginMsgstop() {
         myHander = null;
+    }
+
+    public static void setDgHander(Handler dgFragmentHander) {
+        myHander = dgFragmentHander;
+    }
+
+    public static void closeDgHander() {
+        myHander = null;
+    }
+
+    public static void closeCLHander() {
+        myclHander = null;
+    }
+
+    public static void setCLHander(Handler clFragmentHander) {
+        myclHander = clFragmentHander;
     }
 }
