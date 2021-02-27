@@ -13,7 +13,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal"
-        android:visibility="visible">
+        android:visibility="gone">
 
 
         <CheckBox
@@ -65,11 +65,11 @@
             android:layout_height="@dimen/shipin_btn_height_1"
             android:background="@drawable/yinpin_checked_status"
             android:button="@null"
-            android:drawableTop="@drawable/sp_4"
+            android:drawableTop="@drawable/sp_2"
             android:drawablePadding="0dp"
             android:gravity="center"
             android:paddingTop="@dimen/dp_30"
-            android:text="老师电脑"
+            android:text="OPS信号"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />

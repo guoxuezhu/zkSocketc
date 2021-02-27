@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/dp_40"
-        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_40"
         android:layout_weight="3"
         android:gravity="center"
         android:orientation="vertical">
@@ -38,11 +38,11 @@
                 android:layout_height="@dimen/shipin_btn_height"
                 android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
-                android:drawableTop="@drawable/sp_4"
+                android:drawableTop="@drawable/sp_2"
                 android:drawablePadding="0dp"
                 android:gravity="center"
                 android:paddingTop="@dimen/dp_15"
-                android:text="老师电脑"
+                android:text="OPS信号"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20"
                 app:buttonCompat="@null" />
@@ -122,11 +122,11 @@
                 android:layout_height="@dimen/shipin_btn_height"
                 android:background="@drawable/yinpin_checked_status"
                 android:button="@null"
-                android:drawableTop="@drawable/sp_6"
+                android:drawableTop="@drawable/sp_2"
                 android:drawablePadding="0dp"
                 android:gravity="center"
                 android:paddingTop="@dimen/dp_15"
-                android:text="投影"
+                android:text="纳米黑板"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20"
                 app:buttonCompat="@null" />
@@ -142,7 +142,7 @@
                 android:drawablePadding="0dp"
                 android:gravity="center"
                 android:paddingTop="@dimen/dp_15"
-                android:text="学生屏幕"
+                android:text="辅屏左"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20"
                 app:buttonCompat="@null" />
@@ -158,7 +158,7 @@
                 android:drawablePadding="0dp"
                 android:gravity="center"
                 android:paddingTop="@dimen/dp_15"
-                android:text="大屏2"
+                android:text="辅屏右"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20"
                 app:buttonCompat="@null" />
@@ -174,7 +174,8 @@
         android:layout_marginRight="@dimen/dp_40"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
