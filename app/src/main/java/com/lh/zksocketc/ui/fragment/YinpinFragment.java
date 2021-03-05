@@ -42,8 +42,11 @@ public class YinpinFragment extends Fragment {
     }
 
     private void showypView() {
-//        jingyin.setChecked(true);
-        seek_bar_yl.setProgress(MyApplication.prefs.getYinliang());
+        if (jingyin.isChecked()) {
+            seek_bar_yl.setProgress(0);
+        } else {
+            seek_bar_yl.setProgress(MyApplication.prefs.getYinliang());
+        }
         seek_bar_yl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -66,11 +69,11 @@ public class YinpinFragment extends Fragment {
     @OnClick(R.id.jingyin)
     public void jingyin() {
         if (jingyin.isChecked()) {
-//            seek_bar_yl.setProgress(0);
+            seek_bar_yl.setProgress(0);
             SerialPortUtil.sendMsg("MBS31");
         } else {
-            SerialPortUtil.sendMsg("MBS" + (21 + MyApplication.prefs.getYinliang()));
-//            seek_bar_yl.setProgress(2);
+            seek_bar_yl.setProgress(MyApplication.prefs.getYinliang());
+            SerialPortUtil.sendMsg("MBS32");
         }
     }
 
