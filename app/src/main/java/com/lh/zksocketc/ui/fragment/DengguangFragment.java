@@ -49,7 +49,7 @@ public class DengguangFragment extends Fragment {
             switch (msg.what) {
                 case 369:
                     ELog.e("==========dgFragmentHander===369=====");
-                    initBtnView();
+//                    initBtnView();
                     break;
             }
         }
@@ -66,14 +66,14 @@ public class DengguangFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        SerialPortUtil.setDgHander(dgFragmentHander);
-        initBtnView();
+//        SerialPortUtil.setDgHander(dgFragmentHander);
+//        initBtnView();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        SerialPortUtil.closeDgHander();
+//        SerialPortUtil.closeDgHander();
     }
 
     private void initBtnView() {
@@ -149,4 +149,23 @@ public class DengguangFragment extends Fragment {
         }
     }
 
+    @OnClick(R.id.rbtn_dgms_1)
+    public void rbtn_dgms_1() {
+        SerialPortUtil.sendMsg("HWG1011");
+    }
+
+    @OnClick(R.id.rbtn_dgms_2)
+    public void rbtn_dgms_2() {
+        SerialPortUtil.sendMsg("HWG1012");
+    }
+
+    @OnClick(R.id.rbtn_dgms_3)
+    public void rbtn_dgms_3() {
+        SerialPortUtil.sendMsg("HWG1013");
+    }
+
+    @OnClick(R.id.rbtn_dgms_4)
+    public void rbtn_dgms_4() {
+        SerialPortUtil.sendMsg("HWG1014");
+    }
 }
