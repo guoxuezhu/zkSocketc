@@ -11,7 +11,8 @@
     <dimen name="shipin_btn_marginTop">20dp</dimen>
     <dimen name="shipin_btn_marginLeft">60dp</dimen>
 
-    <dimen name="cl_btn_width">100dp</dimen>
+    <dimen name="cl_btn_width">190dp</dimen>
+    <dimen name="cl_btn_height">90dp</dimen>
 
     <dimen name="shebei_btn_width">140dp</dimen>
     <dimen name="shebei_btn_height">100dp</dimen>
@@ -69,7 +70,7 @@
     <dimen name="spjz_text_size_all">24sp</dimen>
     <dimen name="spjz_text_size">22sp</dimen>
 
-    <dimen name="cl_text_size">14sp</dimen>
+    <dimen name="cl_text_size">18sp</dimen>
     <dimen name="shebei_text_size">20sp</dimen>
 
 

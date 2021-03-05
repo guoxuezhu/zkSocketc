@@ -28,16 +28,22 @@ public class ShebeiFragment extends Fragment {
     RadioButton rbtn_cl_all_open;
     @BindView(R.id.rbtn_cl_all_close)
     RadioButton rbtn_cl_all_close;
+    @BindView(R.id.rbtn_cl_all_stop)
+    RadioButton rbtn_cl_all_stop;
 
     @BindView(R.id.rbtn_cl1_open)
     RadioButton rbtn_cl1_open;
     @BindView(R.id.rbtn_cl1_close)
     RadioButton rbtn_cl1_close;
+    @BindView(R.id.rbtn_cl1_stop)
+    RadioButton rbtn_cl1_stop;
 
     @BindView(R.id.rbtn_cl2_open)
     RadioButton rbtn_cl2_open;
     @BindView(R.id.rbtn_cl2_close)
     RadioButton rbtn_cl2_close;
+    @BindView(R.id.rbtn_cl2_stop)
+    RadioButton rbtn_cl2_stop;
 
     @BindView(R.id.radio_group_cl_all)
     RadioGroup radio_group_cl_all;
@@ -49,7 +55,7 @@ public class ShebeiFragment extends Fragment {
             switch (msg.what) {
                 case 563:
                     ELog.e("==========dgFragmentHander===563=====");
-                    initBtnView();
+//                    initBtnView();
                     break;
             }
         }
@@ -66,14 +72,14 @@ public class ShebeiFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        SerialPortUtil.setCLHander(clFragmentHander);
-        initBtnView();
+//        SerialPortUtil.setCLHander(clFragmentHander);
+//        initBtnView();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        SerialPortUtil.closeCLHander();
+//        SerialPortUtil.closeCLHander();
     }
 
     private void initBtnView() {
@@ -113,6 +119,14 @@ public class ShebeiFragment extends Fragment {
         rbtn_cl2_close.setChecked(true);
     }
 
+    @OnClick(R.id.rbtn_cl_all_stop)
+    public void rbtn_cl_all_stop() {
+        SerialPortUtil.sendMsg("HWG1001");
+        rbtn_cl1_stop.setChecked(true);
+        rbtn_cl2_stop.setChecked(true);
+    }
+
+
     @OnClick(R.id.rbtn_cl1_open)
     public void rbtn_cl1_open() {
         SerialPortUtil.sendMsg("MBS5");
@@ -130,6 +144,16 @@ public class ShebeiFragment extends Fragment {
             rbtn_cl_all_close.setChecked(true);
         }
     }
+
+    @OnClick(R.id.rbtn_cl1_stop)
+    public void rbtn_cl1_stop() {
+        SerialPortUtil.sendMsg("HWG1002");
+        radio_group_cl_all.clearCheck();
+        if (rbtn_cl2_stop.isChecked()) {
+            rbtn_cl_all_close.setChecked(true);
+        }
+    }
+
 
     @OnClick(R.id.rbtn_cl2_open)
     public void rbtn_cl2_open() {
@@ -149,5 +173,13 @@ public class ShebeiFragment extends Fragment {
         }
     }
 
+    @OnClick(R.id.rbtn_cl2_stop)
+    public void rbtn_cl2_stop() {
+        SerialPortUtil.sendMsg("HWG1003");
+        radio_group_cl_all.clearCheck();
+        if (rbtn_cl1_stop.isChecked()) {
+            rbtn_cl_all_close.setChecked(true);
+        }
+    }
 
 }
