@@ -129,8 +129,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:visibility="gone"
-                android:background="@color/xian_1" />
+                android:background="@color/xian_1"
+                android:visibility="gone" />
 
             <RadioButton
                 android:id="@+id/rbtn_kt"
@@ -141,17 +141,17 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="空调"
-                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="20sp"
+                android:visibility="gone"
                 app:buttonCompat="@null" />
 
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:visibility="gone"
-                android:background="@color/xian_1" />
+                android:background="@color/xian_1"
+                android:visibility="gone" />
 
             <RadioButton
                 android:id="@+id/rbtn_door"
@@ -162,16 +162,15 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="门禁"
-                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="20sp"
+                android:visibility="gone"
                 app:buttonCompat="@null" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/xian_1"
-                android:visibility="gone" />
+                android:background="@color/xian_1" />
 
             <RadioButton
                 android:id="@+id/rbtn_yinpin"
@@ -184,7 +183,6 @@
                 android:text="音频"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:visibility="gone"
                 app:buttonCompat="@null" />
 
 

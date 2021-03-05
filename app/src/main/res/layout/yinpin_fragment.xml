@@ -7,119 +7,35 @@
     android:gravity="center"
     android:orientation="vertical">
 
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <RadioButton
-                android:id="@+id/zongyinliang"
-                android:layout_width="@dimen/yinpin_btn_height"
-                android:layout_height="@dimen/yinpin_btn_height"
-                android:background="@drawable/yinpin_checked_status"
-                android:button="@null"
-                android:drawableTop="@drawable/zongyinliang"
-                android:drawablePadding="0dp"
-                android:gravity="center"
-                android:paddingTop="@dimen/dp_10"
-                android:text="总音量"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20" />
-
-            <RadioButton
-                android:id="@+id/yinxiang"
-                android:layout_width="@dimen/yinpin_btn_height"
-                android:layout_height="@dimen/yinpin_btn_height"
-                android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
-                android:background="@drawable/yinpin_checked_status"
-                android:button="@null"
-                android:drawableTop="@drawable/yinxiang"
-                android:drawablePadding="0dp"
-                android:gravity="center"
-                android:paddingTop="@dimen/dp_10"
-                android:text="音响"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20" />
-
-            <RadioButton
-                android:id="@+id/maikefeng"
-                android:layout_width="@dimen/yinpin_btn_height"
-                android:layout_height="@dimen/yinpin_btn_height"
-                android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
-                android:background="@drawable/yinpin_checked_status"
-                android:button="@null"
-                android:drawableTop="@drawable/maikefeng_1"
-                android:drawablePadding="0dp"
-                android:gravity="center"
-                android:paddingTop="@dimen/dp_10"
-                android:text="麦克风"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_20" />
-
-        </RadioGroup>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
-
-
-        <Button
-            android:id="@+id/yinliang_jia"
-            android:layout_width="@dimen/yinpin_btn_height"
-            android:layout_height="@dimen/yinpin_btn_height"
-            android:background="@drawable/yinpin_btn_status"
-            android:drawableTop="@drawable/yin_jia"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="音量＋"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
-
-        <Button
-            android:id="@+id/yinliang_jian"
-            android:layout_width="@dimen/yinpin_btn_height"
-            android:layout_height="@dimen/yinpin_btn_height"
-            android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
-            android:background="@drawable/yinpin_btn_status"
-            android:drawableTop="@drawable/yin_jian"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="音量－"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20" />
-
 
         <CheckBox
             android:id="@+id/jingyin"
-            android:layout_width="@dimen/yinpin_btn_height"
-            android:layout_height="@dimen/yinpin_btn_height"
-            android:layout_marginLeft="@dimen/yinpin_btn_marginLeft"
-            android:background="@drawable/yinpin_checked_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:button="@null"
-            android:drawableTop="@drawable/jingyin"
+            android:drawableLeft="@drawable/checked_status_1"
             android:drawablePadding="0dp"
             android:gravity="center"
-            android:paddingTop="@dimen/dp_10"
-            android:text="静音开/关"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
             app:buttonCompat="@null" />
 
+
+        <SeekBar
+            android:id="@+id/seek_bar_yl"
+            android:layout_width="530dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:max="9"
+            android:maxHeight="30dp"
+            android:minHeight="30dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:progressDrawable="@drawable/seek_bar_style"
+            android:thumb="@drawable/seek_bar_thumb" />
 
     </LinearLayout>
 

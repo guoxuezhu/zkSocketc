@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
 import com.lh.zksocketc.ui.fragment.DengguangFragment;
@@ -202,6 +203,7 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
     public void tishiOkDialog() {
         SerialPortUtil.sendMsg("MBS2");
         isShangke = false;
+        MyApplication.prefs.setYinliang(4);
         startActivity(new Intent(this, SplashActivity.class));
         finish();
     }

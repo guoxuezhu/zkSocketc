@@ -61,13 +61,13 @@ public class SharePreferenceUtil {
     }
 
 
-//    public void setCardNum(String cardNum) {
-//        editor.putString("cardNum", cardNum);
-//        editor.commit();
-//    }
-//
-//    public String getCardNum() {
-//        return sp.getString("cardNum", "");
-//    }
+    public void setYinliang(int yinliang) {
+        editor.putInt("yinliang", yinliang);
+        editor.commit();
+    }
+
+    public int getYinliang() {
+        return sp.getInt("yinliang", 4);
+    }
 
 }
