@@ -150,7 +150,7 @@ public class ShebeiFragment extends Fragment {
         SerialPortUtil.sendMsg("HWG1002");
         radio_group_cl_all.clearCheck();
         if (rbtn_cl2_stop.isChecked()) {
-            rbtn_cl_all_close.setChecked(true);
+            rbtn_cl_all_stop.setChecked(true);
         }
     }
 
@@ -178,7 +178,7 @@ public class ShebeiFragment extends Fragment {
         SerialPortUtil.sendMsg("HWG1003");
         radio_group_cl_all.clearCheck();
         if (rbtn_cl1_stop.isChecked()) {
-            rbtn_cl_all_close.setChecked(true);
+            rbtn_cl_all_stop.setChecked(true);
         }
     }
 

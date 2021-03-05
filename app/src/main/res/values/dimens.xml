@@ -14,7 +14,7 @@
     <dimen name="cl_btn_width">190dp</dimen>
     <dimen name="cl_btn_height">90dp</dimen>
 
-    <dimen name="dg_btn_width">190dp</dimen>
+    <dimen name="dg_btn_width">170dp</dimen>
     <dimen name="dg_btn_height">90dp</dimen>
 
     <dimen name="shebei_btn_width">140dp</dimen>
