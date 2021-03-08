@@ -35,16 +35,8 @@
                 <category android:name="android.intent.category.MONKEY" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.IcActivity"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".ui.AdminActivity"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".ui.SplashActivity"></activity>
-        <activity
-            android:name=".ui.MainActivity"
-            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ui.AdminActivity" />
+        <activity android:name=".ui.SplashActivity" />
         <activity
             android:name=".ui.BindActivity"
             android:windowSoftInputMode="stateHidden" />
