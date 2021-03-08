@@ -36,15 +36,6 @@
             android:textColor="@color/white"
             android:textSize="30sp" />
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="USER LOGIN"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
-
         <EditText
             android:id="@+id/et_name"
             android:layout_width="match_parent"
@@ -81,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="@dimen/dp_25"
-            android:background="@drawable/login_btn_status"
+            android:background="@drawable/login_et_bg"
             android:text="登录"
             android:textColor="@color/white"
             android:textSize="20sp" />

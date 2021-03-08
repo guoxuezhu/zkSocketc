@@ -29,62 +29,25 @@
         android:layout_marginRight="200dp"
         android:orientation="vertical">
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/updata_seting"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:background="@drawable/admin_btn_bg"
+            android:text="升级1.4.4"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btn_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/admin_btn_status"
-                android:text="帐号管理"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btn_ic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/admin_btn_status"
-                android:text="IC卡管理"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/xitong_seting"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/updata_seting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/admin_btn_status"
-                android:text="升级1.4.4"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/xitong_seting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/admin_btn_status"
-                android:text="系统设置"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:visibility="gone" />
-
-
-        </LinearLayout>
+            android:layout_marginTop="30dp"
+            android:background="@drawable/admin_btn_bg"
+            android:text="系统设置"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="gone" />
 
 
     </LinearLayout>

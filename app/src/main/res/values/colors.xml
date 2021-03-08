@@ -8,16 +8,20 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="red">#ffff0000</color>
+
+
+    <color name="dialog_btn_ok_1">#13BF44</color>
+    <color name="dialog_btn_ok_2">#22f033</color>
+    <color name="dialog_btn_no_1">#A1A39E</color>
+    <color name="dialog_btn_no_2">#636660</color>
+
 
 
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
-
-    <color name="red">#ffff0000</color>
-
 
     <color name="xian_color">#c7c5c5</color>
     <color name="di_color">#f0f0f0</color>

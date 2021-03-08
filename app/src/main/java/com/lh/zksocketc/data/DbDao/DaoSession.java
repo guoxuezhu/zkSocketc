@@ -8,14 +8,10 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import com.lh.zksocketc.data.model.IcCardNumer;
-import com.lh.zksocketc.data.model.MLsLists;
 import com.lh.zksocketc.data.model.MicDatas;
 import com.lh.zksocketc.data.model.UIsetData;
 import com.lh.zksocketc.data.model.WsdData;
 
-import com.lh.zksocketc.data.DbDao.IcCardNumerDao;
-import com.lh.zksocketc.data.DbDao.MLsListsDao;
 import com.lh.zksocketc.data.DbDao.MicDatasDao;
 import com.lh.zksocketc.data.DbDao.UIsetDataDao;
 import com.lh.zksocketc.data.DbDao.WsdDataDao;
@@ -29,14 +25,10 @@ import com.lh.zksocketc.data.DbDao.WsdDataDao;
  */
 public class DaoSession extends AbstractDaoSession {
 
-    private final DaoConfig icCardNumerDaoConfig;
-    private final DaoConfig mLsListsDaoConfig;
     private final DaoConfig micDatasDaoConfig;
     private final DaoConfig uIsetDataDaoConfig;
     private final DaoConfig wsdDataDaoConfig;
 
-    private final IcCardNumerDao icCardNumerDao;
-    private final MLsListsDao mLsListsDao;
     private final MicDatasDao micDatasDao;
     private final UIsetDataDao uIsetDataDao;
     private final WsdDataDao wsdDataDao;
@@ -44,12 +36,6 @@ public class DaoSession extends AbstractDaoSession {
     public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
             daoConfigMap) {
         super(db);
-
-        icCardNumerDaoConfig = daoConfigMap.get(IcCardNumerDao.class).clone();
-        icCardNumerDaoConfig.initIdentityScope(type);
-
-        mLsListsDaoConfig = daoConfigMap.get(MLsListsDao.class).clone();
-        mLsListsDaoConfig.initIdentityScope(type);
 
         micDatasDaoConfig = daoConfigMap.get(MicDatasDao.class).clone();
         micDatasDaoConfig.initIdentityScope(type);
@@ -60,33 +46,19 @@ public class DaoSession extends AbstractDaoSession {
         wsdDataDaoConfig = daoConfigMap.get(WsdDataDao.class).clone();
         wsdDataDaoConfig.initIdentityScope(type);
 
-        icCardNumerDao = new IcCardNumerDao(icCardNumerDaoConfig, this);
-        mLsListsDao = new MLsListsDao(mLsListsDaoConfig, this);
         micDatasDao = new MicDatasDao(micDatasDaoConfig, this);
         uIsetDataDao = new UIsetDataDao(uIsetDataDaoConfig, this);
         wsdDataDao = new WsdDataDao(wsdDataDaoConfig, this);
 
-        registerDao(IcCardNumer.class, icCardNumerDao);
-        registerDao(MLsLists.class, mLsListsDao);
         registerDao(MicDatas.class, micDatasDao);
         registerDao(UIsetData.class, uIsetDataDao);
         registerDao(WsdData.class, wsdDataDao);
     }
     
     public void clear() {
-        icCardNumerDaoConfig.clearIdentityScope();
-        mLsListsDaoConfig.clearIdentityScope();
         micDatasDaoConfig.clearIdentityScope();
         uIsetDataDaoConfig.clearIdentityScope();
         wsdDataDaoConfig.clearIdentityScope();
-    }
-
-    public IcCardNumerDao getIcCardNumerDao() {
-        return icCardNumerDao;
-    }
-
-    public MLsListsDao getMLsListsDao() {
-        return mLsListsDao;
     }
 
     public MicDatasDao getMicDatasDao() {
