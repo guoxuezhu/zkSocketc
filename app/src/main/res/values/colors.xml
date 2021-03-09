@@ -16,7 +16,8 @@
     <color name="dialog_btn_no_1">#A1A39E</color>
     <color name="dialog_btn_no_2">#636660</color>
 
-
+    <color name="btn_status_color_1">#00C46C</color>
+    <color name="btn_status_color_2">#303F9F</color>
 
 
     <color name="colorPrimary">#3F51B5</color>

@@ -13,12 +13,12 @@ import androidx.fragment.app.Fragment;
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.data.DbDao.UIsetDataDao;
-//import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
+import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
 //import com.lh.zksocketc.ui.fragment.DengguangFragment;
 //import com.lh.zksocketc.ui.fragment.DianyuanFragment;
 //import com.lh.zksocketc.ui.fragment.DoorFragment;
 //import com.lh.zksocketc.ui.fragment.HuanjingFragment;
-//import com.lh.zksocketc.ui.fragment.JuzhenFragment;
+import com.lh.zksocketc.ui.fragment.JuzhenFragment;
 //import com.lh.zksocketc.ui.fragment.LuboFragment;
 //import com.lh.zksocketc.ui.fragment.ShebeiFragment;
 //import com.lh.zksocketc.ui.fragment.YinpinFragment;
@@ -217,8 +217,8 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
 
 
     public List<Fragment> getFragments() {
-//        fragments.add(new ChuanjingFragment());
-//        fragments.add(new JuzhenFragment());
+        fragments.add(new ChuanjingFragment());
+        fragments.add(new JuzhenFragment());
 //        fragments.add(new LuboFragment());
 //        fragments.add(new DianyuanFragment());
 //        fragments.add(new ShebeiFragment());
