@@ -6,7 +6,7 @@
 
     <!-- 设置圆角矩形 -->
     <corners
-        android:bottomLeftRadius="20dp"
+        android:bottomLeftRadius="@dimen/dialog_radius_1"
         android:bottomRightRadius="0dp"
         android:topLeftRadius="0dp"
         android:topRightRadius="0dp" />
