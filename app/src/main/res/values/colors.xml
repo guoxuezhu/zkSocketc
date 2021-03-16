@@ -21,13 +21,16 @@
 
     <color name="activity_bg">#082859</color>
 
-    <color name="rbtn_solid_color_1">#00082859</color>
+    <color name="rbtn_solid_color_1">#3F51B5</color>
+    <color name="rbtn_solid_color_2">#00082859</color>
 
     <color name="rbtn_text_color_1">#FFFFFFFF</color>
     <color name="rbtn_text_color_2">#28c8c8</color>
 
 
-
+    <color name="xian_1">#001e40</color>
+    <color name="xian_2">#ff9e9e9e</color>
+    <color name="xian_3">#ffff5722</color>
 
 
 
@@ -62,7 +65,7 @@
     <color name="fragement_bg_xian">#006CC5</color>
     <color name="fragement_bg">#006CC5</color>
 
-    <color name="xian_1">#ffffffff</color>
+
 
 
     <color name="et_bg_xian">#4b4b83</color>

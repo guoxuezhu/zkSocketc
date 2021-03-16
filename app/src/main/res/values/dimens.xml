@@ -6,10 +6,12 @@
 
     <dimen name="dialog_radius_1">20dp</dimen>
 
-    <dimen name="btn_radius_1">10dp</dimen>
+    <dimen name="btn_radius_1">0dp</dimen>
+    <dimen name="btn_radius_2">10dp</dimen>
+    <dimen name="btn_radius_3">10dp</dimen>
 
-    <dimen name="sk_btn_width">100dp</dimen>
-    <dimen name="sk_btn_height">100dp</dimen>
+    <dimen name="sk_btn_width">90dp</dimen>
+    <dimen name="sk_btn_height">90dp</dimen>
 
     <dimen name="shipin_btn_width_1">230dp</dimen>
     <dimen name="shipin_btn_height_1">150dp</dimen>
