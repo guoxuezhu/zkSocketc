@@ -19,7 +19,7 @@ public class LauncherActivity extends BaseActivity {
         ButterKnife.bind(this);
         SerialPortUtil.open();
         SerialPortUtil.readSerialPortData();
-        startActivity(new Intent(this, SplashActivity.class));
+        startActivity(new Intent(this, HomeActivity.class));
 
     }
 

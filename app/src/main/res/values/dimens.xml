@@ -6,8 +6,10 @@
 
     <dimen name="dialog_radius_1">20dp</dimen>
 
-    <dimen name="btn_radius_1">20dp</dimen>
+    <dimen name="btn_radius_1">10dp</dimen>
 
+    <dimen name="sk_btn_width">100dp</dimen>
+    <dimen name="sk_btn_height">100dp</dimen>
 
     <dimen name="shipin_btn_width_1">230dp</dimen>
     <dimen name="shipin_btn_height_1">150dp</dimen>
@@ -70,10 +72,15 @@
 
 
     <!-- 字体大小 -->
+    <dimen name="btn_text_size_1">20sp</dimen>
+
+
+
     <dimen name="spjz_text_size_all">24sp</dimen>
     <dimen name="spjz_text_size">22sp</dimen>
 
     <dimen name="shebei_text_size">20sp</dimen>
+
 
 
 

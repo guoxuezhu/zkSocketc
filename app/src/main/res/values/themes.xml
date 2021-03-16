@@ -22,4 +22,22 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
+    <style name="my_radio_button_2">
+        <item name="android:layout_width">@dimen/sk_btn_width</item>
+        <item name="android:layout_height">@dimen/sk_btn_height</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/btn_text_size_1</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:textColor">@color/radio_btn_text_color_2</item>
+        <item name="android:background">@drawable/radio_btn_status_2</item>
+    </style>
+
+    <style name="xian_1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
 </resources>
