@@ -3,160 +3,190 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/layout_bg"
+    android:background="@color/fram_bg_color"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:text="视频输入"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_20" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/dp_40"
-        android:layout_marginRight="@dimen/dp_40"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_30"
         android:layout_weight="1"
-        android:background="@drawable/layout_bg_1"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/spbtn_dan_in_bjb_2"
-            android:layout_width="@dimen/shipin_btn_height"
-            android:layout_height="@dimen/shipin_btn_height"
-            android:background="@drawable/checked_btn_bg"
-            android:button="@null"
-            android:drawableTop="@drawable/sp_4"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_15"
-            android:text="老师电脑"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一键互动"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
+            android:textSize="@dimen/btn_text_size_1" />
 
-        <CheckBox
-            android:id="@+id/spbtn_dan_in_diannao"
-            android:layout_width="@dimen/shipin_btn_height"
-            android:layout_height="@dimen/shipin_btn_height"
-            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
-            android:background="@drawable/checked_btn_bg"
-            android:button="@null"
-            android:drawableTop="@drawable/sp_4"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_15"
-            android:text="台式机"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg_1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingTop="18dp"
+            android:paddingRight="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_20">
 
-        <CheckBox
-            android:id="@+id/spbtn_dan_in_bjb_1"
-            android:layout_width="@dimen/shipin_btn_height"
-            android:layout_height="@dimen/shipin_btn_height"
-            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
-            android:background="@drawable/checked_btn_bg"
-            android:button="@null"
-            android:drawableTop="@drawable/sp_1"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_15"
-            android:text="笔记本"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/btn_text_size_1" />
 
-        <CheckBox
-            android:id="@+id/spbtn_dan_in_gaopaiyi"
-            android:layout_width="@dimen/shipin_btn_height"
-            android:layout_height="@dimen/shipin_btn_height"
-            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
-            android:background="@drawable/checked_btn_bg"
-            android:button="@null"
-            android:drawableTop="@drawable/sp_3"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_15"
-            android:text="高拍仪"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
+            <RadioButton
+                style="@style/my_radio_button_3"
+                android:drawableLeft="@drawable/drawable_left_lsdn"
+                android:text="老师电脑"
+                app:buttonCompat="@null" />
+
+            <RadioButton
+                style="@style/my_radio_button_3"
+                android:drawableLeft="@drawable/drawable_left_tsj"
+                android:text="台式机"
+                app:buttonCompat="@null" />
+
+
+            <RadioButton
+                style="@style/my_radio_button_3"
+                android:drawableLeft="@drawable/drawable_left_bjb"
+                android:text="笔记本"
+                app:buttonCompat="@null" />
+
+            <RadioButton
+                style="@style/my_radio_button_3"
+                android:drawableLeft="@drawable/drawable_left_gpy"
+                android:text="高拍仪"
+                app:buttonCompat="@null" />
+
+
+        </RadioGroup>
 
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:text="视频输出"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_20" />
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/dp_40"
-        android:layout_marginRight="@dimen/dp_40"
-        android:layout_marginBottom="@dimen/dp_20"
-        android:layout_weight="1"
-        android:background="@drawable/layout_bg_1"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_weight="2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/spbtn_dan_out_touying"
-            android:layout_width="@dimen/shipin_btn_height"
-            android:layout_height="@dimen/shipin_btn_height"
-            android:background="@drawable/checked_btn_bg"
-            android:button="@null"
-            android:drawableTop="@drawable/sp_5"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_15"
-            android:text="投影"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一键互动"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
+            android:textSize="@dimen/btn_text_size_1" />
 
-        <CheckBox
-            android:id="@+id/spbtn_dan_out_dp_1"
-            android:layout_width="@dimen/shipin_btn_height"
-            android:layout_height="@dimen/shipin_btn_height"
-            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
-            android:background="@drawable/checked_btn_bg"
-            android:button="@null"
-            android:drawableTop="@drawable/sp_2"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_15"
-            android:text="大屏1"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bg_1"
+            android:orientation="horizontal">
 
-        <CheckBox
-            android:id="@+id/spbtn_dan_out_dp_2"
-            android:layout_width="@dimen/shipin_btn_height"
-            android:layout_height="@dimen/shipin_btn_height"
-            android:layout_marginLeft="@dimen/shipin_btn_marginLeft"
-            android:background="@drawable/checked_btn_bg"
-            android:button="@null"
-            android:drawableTop="@drawable/sp_2"
-            android:drawablePadding="0dp"
-            android:gravity="center"
-            android:paddingTop="@dimen/dp_15"
-            android:text="大屏2"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_20"
-            app:buttonCompat="@null" />
+            <RadioGroup
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="18dp"
+                android:paddingRight="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="视频输入"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/btn_text_size_1" />
+
+                <RadioButton
+                    style="@style/my_radio_button_3"
+                    android:drawableLeft="@drawable/drawable_left_lsdn"
+                    android:text="老师电脑"
+                    app:buttonCompat="@null" />
+
+                <RadioButton
+                    style="@style/my_radio_button_3"
+                    android:drawableLeft="@drawable/drawable_left_tsj"
+                    android:text="台式机"
+                    app:buttonCompat="@null" />
+
+
+                <RadioButton
+                    style="@style/my_radio_button_3"
+                    android:drawableLeft="@drawable/drawable_left_bjb"
+                    android:text="笔记本"
+                    app:buttonCompat="@null" />
+
+                <RadioButton
+                    style="@style/my_radio_button_3"
+                    android:drawableLeft="@drawable/drawable_left_gpy"
+                    android:text="高拍仪"
+                    app:buttonCompat="@null" />
+
+
+            </RadioGroup>
+
+            <View
+                style="@style/xian_3"
+                android:layout_marginTop="10dp" />
+
+            <RadioGroup
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="18dp"
+                android:paddingRight="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="视频输出"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/btn_text_size_1" />
+
+                <RadioButton
+                    style="@style/my_radio_button_3"
+                    android:drawableLeft="@drawable/drawable_left_spty"
+                    android:text="投影"
+                    app:buttonCompat="@null" />
+
+                <RadioButton
+                    style="@style/my_radio_button_3"
+                    android:drawableLeft="@drawable/drawable_left_daping"
+                    android:text="大屏1"
+                    app:buttonCompat="@null" />
+
+
+                <RadioButton
+                    style="@style/my_radio_button_3"
+                    android:drawableLeft="@drawable/drawable_left_daping"
+                    android:text="大屏2"
+                    app:buttonCompat="@null" />
+
+
+            </RadioGroup>
+        </LinearLayout>
 
 
     </LinearLayout>

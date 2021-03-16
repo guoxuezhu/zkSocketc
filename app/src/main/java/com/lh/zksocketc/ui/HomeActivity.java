@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -13,15 +12,11 @@ import androidx.fragment.app.Fragment;
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.data.DbDao.UIsetDataDao;
-import com.lh.zksocketc.ui.fragment.ChuanjingFragment;
-//import com.lh.zksocketc.ui.fragment.DengguangFragment;
-//import com.lh.zksocketc.ui.fragment.DianyuanFragment;
-//import com.lh.zksocketc.ui.fragment.DoorFragment;
-//import com.lh.zksocketc.ui.fragment.HuanjingFragment;
+import com.lh.zksocketc.ui.fragment.DuomeitiFragment;
+import com.lh.zksocketc.ui.fragment.HuanjingFragment;
 import com.lh.zksocketc.ui.fragment.JuzhenFragment;
-//import com.lh.zksocketc.ui.fragment.LuboFragment;
-//import com.lh.zksocketc.ui.fragment.ShebeiFragment;
-//import com.lh.zksocketc.ui.fragment.YinpinFragment;
+import com.lh.zksocketc.ui.fragment.LuboFragment;
+import com.lh.zksocketc.ui.fragment.YinpinFragment;
 import com.lh.zksocketc.utils.DateUtil;
 import com.lh.zksocketc.utils.SerialPortUtil;
 import com.lh.zksocketc.utils.TishiDialog;
@@ -230,77 +225,45 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
 
 
     public List<Fragment> getFragments() {
-        fragments.add(new ChuanjingFragment());
         fragments.add(new JuzhenFragment());
-//        fragments.add(new LuboFragment());
-//        fragments.add(new DianyuanFragment());
-//        fragments.add(new ShebeiFragment());
-//        fragments.add(new DengguangFragment());
-//        fragments.add(new HuanjingFragment());
-//        fragments.add(new DoorFragment());
-//        fragments.add(new YinpinFragment());
+        fragments.add(new DuomeitiFragment());
+        fragments.add(new HuanjingFragment());
+        fragments.add(new LuboFragment());
+        fragments.add(new YinpinFragment());
         return fragments;
     }
 
-//    @OnClick(R.id.rbtn_changjing)
-//    public void rbtn_changjing() {
-//        showFragment(0);
-//    }
-//
-//    @OnClick(R.id.rbtn_juzhen)
-//    public void rbtn_juzhen() {
-//        showFragment(1);
-//    }
-//
-//
-//    @OnClick(R.id.rbtn_lubo)
-//    public void rbtn_lubo() {
-//        showFragment(2);
-//    }
-//
-//    @OnClick(R.id.rbtn_dmt)
-//    public void rbtn_dmt() {
-//        showFragment(3);
-//    }
-//
-//
-//    @OnClick(R.id.rbtn_cl)
-//    public void rbtn_cl() {
-//        showFragment(4);
-//    }
-//
-//
-//    @OnClick(R.id.rbtn_dg)
-//    public void rbtn_dg() {
-//        showFragment(5);
-//    }
-//
-//    @OnClick(R.id.rbtn_kt)
-//    public void rbtn_kt() {
-//        showFragment(6);
-//    }
-//
-//    @OnClick(R.id.rbtn_door)
-//    public void rbtn_door() {
-//        showFragment(7);
-//    }
-//
-//    @OnClick(R.id.rbtn_yinpin)
-//    public void rbtn_yinpin() {
-//        showFragment(8);
-//    }
+
+    @OnClick(R.id.rbtn_juzhen)
+    public void rbtn_juzhen() {
+        showFragment(0);
+    }
+
+    @OnClick(R.id.rbtn_dmt)
+    public void rbtn_dmt() {
+        showFragment(1);
+    }
+
+    @OnClick(R.id.rbtn_hjkz)
+    public void rbtn_hjkz() {
+        showFragment(2);
+    }
+
+    @OnClick(R.id.rbtn_lubo)
+    public void rbtn_lubo() {
+        showFragment(3);
+    }
+
+    @OnClick(R.id.rbtn_yinpin)
+    public void rbtn_yinpin() {
+        showFragment(4);
+    }
 
 
     private void showFragment(int i) {
         fragment = fragments.get(i);
         getSupportFragmentManager().beginTransaction().replace(R.id.mFragment, fragment).commit();
     }
-
-//    @OnClick(R.id.rbtn_fuwei)
-//    public void rbtn_fuwei() {
-//        SerialPortUtil.sendMsg("FWS0");
-//    }
-
 
     @OnClick(R.id.rbtn_shangke)
     public void rbtn_shangke() {
