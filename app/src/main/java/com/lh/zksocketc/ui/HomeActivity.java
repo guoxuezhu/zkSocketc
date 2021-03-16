@@ -51,9 +51,9 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
 
     //    @BindView(R.id.rbtn_changjing)
 //    RadioButton rbtn_changjing;
-//    @BindView(R.id.rbtn_juzhen)
-//    RadioButton rbtn_juzhen;
-//    @BindView(R.id.rbtn_lubo)
+    @BindView(R.id.rbtn_juzhen)
+    RadioButton rbtn_juzhen;
+    //    @BindView(R.id.rbtn_lubo)
 //    RadioButton rbtn_lubo;
 //    @BindView(R.id.rbtn_dmt)
 //    RadioButton rbtn_dmt;
@@ -122,7 +122,7 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
     private void initView() {
         UIsetDataDao uIsetDataDao = MyApplication.getDaoSession().getUIsetDataDao();
         if (uIsetDataDao.loadAll().size() == 0) {
-//            rbtn_changjing.setChecked(true);
+            rbtn_juzhen.setChecked(true);
             showFragment(0);
             return;
         }

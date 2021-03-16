@@ -8,5 +8,189 @@
     android:orientation="horizontal">
 
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/kt_img"
+            android:text="空调"
+            android:textColor="@color/white"
+            android:textSize="@dimen/btn_text_size_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_weight="3"
+            android:background="@drawable/layout_bg_1"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_20">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    style="@style/my_radio_button_6"
+                    android:drawableLeft="@drawable/drawable_top_kaiguan"
+                    android:text="开/关"
+                    app:buttonCompat="@null" />
+
+                <RadioButton
+                    style="@style/my_radio_button_6"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:drawableLeft="@drawable/drawable_left_kt_zl"
+                    android:text="制冷"
+                    app:buttonCompat="@null" />
+
+
+                <RadioButton
+                    style="@style/my_radio_button_6"
+                    android:drawableLeft="@drawable/drawable_left_kt_zr"
+                    android:text="制热"
+                    app:buttonCompat="@null" />
+
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    style="@style/my_radio_button_6"
+                    android:drawableLeft="@drawable/drawable_left_kt_fs_1"
+                    android:text="低风"
+                    app:buttonCompat="@null" />
+
+                <RadioButton
+                    style="@style/my_radio_button_6"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:drawableLeft="@drawable/drawable_left_kt_fs_2"
+                    android:text="中风"
+                    app:buttonCompat="@null" />
+
+
+                <RadioButton
+                    style="@style/my_radio_button_6"
+                    android:drawableLeft="@drawable/drawable_left_kt_fs_3"
+                    android:text="大风"
+                    app:buttonCompat="@null" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:drawableLeft="@drawable/tyj_img"
+            android:text="投影机"
+            android:textColor="@color/white"
+            android:textSize="@dimen/btn_text_size_1" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_weight="2"
+            android:background="@drawable/layout_bg_1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_20">
+
+
+            <RadioButton
+                style="@style/my_radio_button_5"
+                android:drawableTop="@drawable/drawable_top_kaiguan"
+                android:text="开/关"
+                app:buttonCompat="@null" />
+
+            <RadioButton
+                style="@style/my_radio_button_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:drawableTop="@drawable/drawable_top_mubu_s"
+                android:text="幕布升"
+                app:buttonCompat="@null" />
+
+            <RadioButton
+                style="@style/my_radio_button_5"
+                android:drawableTop="@drawable/drawable_top_mubu_j"
+                android:text="幕布降"
+                app:buttonCompat="@null" />
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/dpytj"
+            android:text="大屏一体机"
+            android:textColor="@color/white"
+            android:textSize="@dimen/btn_text_size_1" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/layout_bg_1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_20">
+
+
+            <RadioButton
+                style="@style/my_radio_button_4"
+                android:drawableTop="@drawable/drawable_top_kaiguan"
+                android:text="开/关"
+                app:buttonCompat="@null" />
+
+            <RadioButton
+                style="@style/my_radio_button_4"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:drawableTop="@drawable/drawable_top_dping_nei"
+                android:text="内置显示"
+                app:buttonCompat="@null" />
+
+            <RadioButton
+                style="@style/my_radio_button_4"
+                android:drawableTop="@drawable/drawable_top_dping_wai"
+                android:text="外置HDMI"
+                app:buttonCompat="@null" />
+
+
+        </RadioGroup>
+
+    </LinearLayout>
 
 </LinearLayout>

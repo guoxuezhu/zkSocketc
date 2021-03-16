@@ -23,6 +23,9 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+
+
+
     <style name="my_radio_button_1">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
@@ -47,17 +50,42 @@
         <item name="android:background">@drawable/radio_btn_status_2</item>
     </style>
 
-    <style name="my_radio_button_3">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">94dp</item>
-        <item name="android:layout_marginTop">10dp</item>
+    <style name="my_radio_button">
         <item name="android:background">@drawable/radio_btn_status_3</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
-        <item name="android:paddingLeft">30dp</item>
         <item name="android:textColor">@color/radio_btn_text_color_2</item>
         <item name="android:textSize">@dimen/btn_text_size_1</item>
     </style>
+
+    <style name="my_radio_button_3" parent="my_radio_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">94dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:paddingLeft">30dp</item>
+    </style>
+
+    <style name="my_radio_button_4" parent="my_radio_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">30dp</item>
+    </style>
+
+    <style name="my_radio_button_5" parent="my_radio_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">30dp</item>
+    </style>
+
+    <style name="my_radio_button_6" parent="my_radio_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+
 
     <style name="xian_1">
         <item name="android:layout_width">match_parent</item>
