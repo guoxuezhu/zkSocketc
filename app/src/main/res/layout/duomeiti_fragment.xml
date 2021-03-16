@@ -39,7 +39,7 @@
                 android:orientation="horizontal">
 
 
-                <RadioButton
+                <CheckBox
                     style="@style/my_radio_button_6"
                     android:drawableLeft="@drawable/drawable_top_kaiguan"
                     android:text="开/关"
@@ -117,7 +117,7 @@
             android:padding="@dimen/dp_20">
 
 
-            <RadioButton
+            <CheckBox
                 style="@style/my_radio_button_5"
                 android:drawableTop="@drawable/drawable_top_kaiguan"
                 android:text="开/关"
@@ -168,7 +168,7 @@
             android:padding="@dimen/dp_20">
 
 
-            <RadioButton
+            <CheckBox
                 style="@style/my_radio_button_4"
                 android:drawableTop="@drawable/drawable_top_kaiguan"
                 android:text="开/关"
