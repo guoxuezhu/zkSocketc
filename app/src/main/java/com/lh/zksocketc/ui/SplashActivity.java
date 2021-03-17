@@ -66,7 +66,7 @@ public class SplashActivity extends BaseActivity {
 
         startTimerOff();
         SerialPortUtil.readCardnumer(sHander);
-        SerialPortUtil.sendMsg("UISET");
+//        SerialPortUtil.sendMsg("UISET");
     }
 
 
@@ -170,7 +170,6 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
     }
 
 

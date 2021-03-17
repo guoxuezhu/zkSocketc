@@ -29,7 +29,7 @@ public class BindActivity extends BaseActivity {
             switch (msg.what) {
                 case 20:
                     ELog.e("======loginHandler=====20====" + msg.obj.toString());
-                    SerialPortUtil.loginMsgstop();
+                    SerialPortUtil.handerMsgstop();
                     startActivity(new Intent(BindActivity.this, AdminActivity.class));
                     finish();
                     break;
@@ -101,6 +101,7 @@ public class BindActivity extends BaseActivity {
 
     @OnClick(R.id.login_back)
     public void login_back() {
+        loginHandler = null;
         startActivity(new Intent(this, SplashActivity.class));
         finish();
     }

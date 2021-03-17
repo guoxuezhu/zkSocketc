@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.lh.zksocketc.MyApplication;
 import com.lh.zksocketc.R;
 import com.lh.zksocketc.data.DbDao.UIsetDataDao;
+import com.lh.zksocketc.data.DbDao.WsdDataDao;
 import com.lh.zksocketc.ui.fragment.DuomeitiFragment;
 import com.lh.zksocketc.ui.fragment.HuanjingFragment;
 import com.lh.zksocketc.ui.fragment.JuzhenFragment;
@@ -90,6 +91,9 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
+                case 223:
+                    wsdInitView();
+                    break;
                 case 326:
 //                    ELog.e("======HomeActivity====homeHander===326=====" + msg.obj.toString());
                     time_tv_home.setText(msg.obj.toString());
@@ -107,16 +111,24 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
 
         fragments = getFragments(); //添加布局
         isShangke = false;
-        SerialPortUtil.sendMsg("VOLABC");
+//        SerialPortUtil.sendMsg("VOLABC");
         tvgetTime();
         initView();
         wsdInitView();
+        SerialPortUtil.getWsdMsg(homeHander);
     }
 
     private void wsdInitView() {
-        tv_wendu.setText("温度" + "\n" + 22 + "°C");
-        tv_shidu.setText("湿度" + "\n" + 22 + "%RH");
-        tv_pm.setText("PM2.5" + "\n" + 22 + "ug/m3");
+        WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
+        if (wsdDataDao.loadAll().size() != 0) {
+            tv_wendu.setText("温度" + "\n" + wsdDataDao.loadAll().get(0).wendu);
+            tv_shidu.setText("湿度" + "\n" + wsdDataDao.loadAll().get(0).shidu);
+            tv_pm.setText("PM2.5" + "\n" + wsdDataDao.loadAll().get(0).pm25);
+        } else {
+            tv_wendu.setText("温度" + "\n" + 0 + "°C");
+            tv_shidu.setText("湿度" + "\n" + 0 + "%RH");
+            tv_pm.setText("PM2.5" + "\n" + 0 + "ug/m3");
+        }
     }
 
     private void initView() {
@@ -292,6 +304,7 @@ public class HomeActivity extends BaseActivity implements TishiDialog.DialogCall
             tishiDialog = null;
         }
         SerialPortUtil.sendMsg("MBS2");
+        homeHander = null;
         isShangke = false;
         startActivity(new Intent(this, SplashActivity.class));
         finish();

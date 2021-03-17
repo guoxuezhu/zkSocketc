@@ -82,6 +82,9 @@ public class SerialPortUtil {
                                         WsdDataDao wsdDataDao = MyApplication.getDaoSession().getWsdDataDao();
                                         wsdDataDao.deleteAll();
                                         wsdDataDao.insert(wsd);
+                                        if (myHander != null) {
+                                            myHander.sendEmptyMessage(223);
+                                        }
                                     } catch (Exception e) {
                                         ELog.i("=========温湿度====WsdDataDao====异常========" + e.toString());
                                     }
@@ -247,7 +250,13 @@ public class SerialPortUtil {
         myHander = loginHandler;
     }
 
-    public static void loginMsgstop() {
+    public static void handerMsgstop() {
         myHander = null;
     }
+
+    public static void getWsdMsg(Handler homeHander) {
+        ELog.i("========getWsdMsg=====myHander========");
+        myHander = homeHander;
+    }
+
 }
