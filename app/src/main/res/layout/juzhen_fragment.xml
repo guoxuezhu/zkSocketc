@@ -7,7 +7,6 @@
     android:gravity="center"
     android:orientation="horizontal">
 
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -43,33 +42,34 @@
                 android:textSize="@dimen/btn_text_size_1" />
 
             <RadioButton
+                android:id="@+id/spbtn_all_lsdn"
                 style="@style/my_radio_button_3"
                 android:drawableLeft="@drawable/drawable_left_lsdn"
                 android:text="老师电脑"
                 app:buttonCompat="@null" />
 
             <RadioButton
+                android:id="@+id/spbtn_all_tsj"
                 style="@style/my_radio_button_3"
                 android:drawableLeft="@drawable/drawable_left_tsj"
                 android:text="台式机"
                 app:buttonCompat="@null" />
 
-
             <RadioButton
+                android:id="@+id/spbtn_all_bjb"
                 style="@style/my_radio_button_3"
                 android:drawableLeft="@drawable/drawable_left_bjb"
                 android:text="笔记本"
                 app:buttonCompat="@null" />
 
             <RadioButton
+                android:id="@+id/spbtn_all_gpy"
                 style="@style/my_radio_button_3"
                 android:drawableLeft="@drawable/drawable_left_gpy"
                 android:text="高拍仪"
                 app:buttonCompat="@null" />
 
-
         </RadioGroup>
-
 
     </LinearLayout>
 
@@ -115,30 +115,32 @@
                     android:textSize="@dimen/btn_text_size_1" />
 
                 <RadioButton
+                    android:id="@+id/spbtn_dan_in_lsdn"
                     style="@style/my_radio_button_3"
                     android:drawableLeft="@drawable/drawable_left_lsdn"
                     android:text="老师电脑"
                     app:buttonCompat="@null" />
 
                 <RadioButton
+                    android:id="@+id/spbtn_dan_in_tsj"
                     style="@style/my_radio_button_3"
                     android:drawableLeft="@drawable/drawable_left_tsj"
                     android:text="台式机"
                     app:buttonCompat="@null" />
 
-
                 <RadioButton
+                    android:id="@+id/spbtn_dan_in_bjb"
                     style="@style/my_radio_button_3"
                     android:drawableLeft="@drawable/drawable_left_bjb"
                     android:text="笔记本"
                     app:buttonCompat="@null" />
 
                 <RadioButton
+                    android:id="@+id/spbtn_dan_in_gpy"
                     style="@style/my_radio_button_3"
                     android:drawableLeft="@drawable/drawable_left_gpy"
                     android:text="高拍仪"
                     app:buttonCompat="@null" />
-
 
             </RadioGroup>
 
@@ -147,6 +149,7 @@
                 android:layout_marginTop="10dp" />
 
             <RadioGroup
+                android:id="@+id/radio_group_out"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -166,24 +169,25 @@
                     android:textSize="@dimen/btn_text_size_1" />
 
                 <RadioButton
+                    android:id="@+id/spbtn_dan_out_ty"
                     style="@style/my_radio_button_3"
                     android:drawableLeft="@drawable/drawable_left_spty"
                     android:text="投影"
                     app:buttonCompat="@null" />
 
                 <RadioButton
+                    android:id="@+id/spbtn_dan_out_ping1"
                     style="@style/my_radio_button_3"
                     android:drawableLeft="@drawable/drawable_left_daping"
                     android:text="大屏1"
                     app:buttonCompat="@null" />
 
-
                 <RadioButton
+                    android:id="@+id/spbtn_dan_out_ping2"
                     style="@style/my_radio_button_3"
                     android:drawableLeft="@drawable/drawable_left_daping"
                     android:text="大屏2"
                     app:buttonCompat="@null" />
-
 
             </RadioGroup>
         </LinearLayout>
